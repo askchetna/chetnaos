@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalpavriksha ROI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Kalpavriksha ROI Calculator</h2>
+
+        <label>Acres:</label>
+        <input id="acres" type="number" placeholder="Enter acres">
+
+        <label>Plantation Model:</label>
+        <select id="model">
+            <option value="sandalwood">Sandalwood</option>
+            <option value="red_sanders">Red Sanders</option>
+            <option value="fruit_mix">Fruit Mix</option>
+        </select>
+
+        <button onclick="calculateROI()">Calculate ROI</button>
+
+        <div id="result" class="result-box hidden"></div>
+    </div>
+
+    <script src="js/roi.js"></script>
+</body>
+</html>

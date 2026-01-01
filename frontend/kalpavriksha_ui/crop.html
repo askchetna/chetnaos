@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kalpavriksha — Crop Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Kalpavriksha Crop Planner</h2>
+
+    <div class="form-row">
+      <label>Soil pH</label>
+      <input id="soil_ph" type="number" step="0.1" value="7.0" />
+    </div>
+
+    <div class="form-row">
+      <label>Temperature (°C)</label>
+      <input id="temp" type="number" step="0.1" value="28" />
+    </div>
+
+    <div class="form-row">
+      <label>Water table depth (ft)</label>
+      <input id="water_depth" type="number" step="0.1" value="10" />
+    </div>
+
+    <div class="form-row">
+      <label>Soil Type</label>
+      <select id="soil_type">
+        <option value="loamy">Loamy</option>
+        <option value="sandy">Sandy</option>
+        <option value="clay">Clay</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Road Access</label>
+      <select id="road_access">
+        <option value="highway">Highway / Paved</option>
+        <option value="good">Good</option>
+        <option value="katcha">Katcha / Poor</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Acre(s)</label>
+      <input id="acres" type="number" step="0.1" value="1" />
+    </div>
+
+    <div class="form-row">
+      <button id="planBtn">Plan Crop</button>
+    </div>
+
+    <div id="result" class="result-box hidden"></div>
+  </div>
+
+  <script src="js/crop.js"></script>
+</body>
+</html>
