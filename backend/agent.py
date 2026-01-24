@@ -11,9 +11,32 @@ from memory.db import memory_db
 router = APIRouter(prefix="/api")
 
 
+def _get_api_key(request: Request) -> str:
+    """
+    Resolve the Groq API key from app settings or environment.
+
+    This keeps /api/agent robust even if settings are missing, and ensures we
+    never crash the whole app at import time due to a missing key.
+    """
+    settings = getattr(request.app.state, "settings", None)
+    api_key = getattr(settings, "GROQ_API_KEY", None) if settings else None
+    if not api_key:
+        api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise HTTPException(
+            status_code=500,
+            detail="GROQ_API_KEY not configured on server. "
+            "Set it in environment variables to enable agent LLM responses.",
+        )
+    return api_key
+
+
 def get_client(request: Request) -> Groq:
     try:
-        return Groq(api_key=request.app.state.settings.GROQ_API_KEY)
+        api_key = _get_api_key(request)
+        return Groq(api_key=api_key)
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to initialize Groq client: {str(e)}")
 

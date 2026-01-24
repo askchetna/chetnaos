@@ -7,35 +7,72 @@ from pathlib import Path
 
 # Global cache for embedding model
 _embedding_model = None
-_embedding_cache = {}
+_embedding_cache: Dict[str, np.ndarray] = {}
+
+
+def _parse_bool(value: str | None, default: bool) -> bool:
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
+# LIGHT_MODE / embeddings toggle (kept local to avoid import cycles)
+_LIGHT_MODE = _parse_bool(os.getenv("LIGHT_MODE"), default=True)
+_EMBEDDINGS_ENABLED = (
+    _parse_bool(os.getenv("EMBEDDINGS_ENABLED"), default=not _LIGHT_MODE)
+)
+
 
 def get_embedding_model():
-    """Get or create embedding model singleton"""
+    """Get or create embedding model singleton.
+
+    In LIGHT_MODE or when embeddings are disabled, this becomes a no-op that
+    returns None so the rest of the app can continue without vector memory.
+    """
     global _embedding_model
+
+    if not _EMBEDDINGS_ENABLED:
+        # Hard-disable embeddings for lightweight / Railway-friendly deploys.
+        if _embedding_model is None:
+            print(
+                "[ChetnaOS] Embeddings disabled "
+                "(LIGHT_MODE/EMBEDDINGS_ENABLED). Memory will be sparse-only."
+            )
+            _embedding_model = None
+        return _embedding_model
+
     if _embedding_model is None:
         try:
             from sentence_transformers import SentenceTransformer
-            _embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+
+            _embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
         except ImportError:
-            print("Warning: sentence-transformers not available, memory disabled")
+            print(
+                "[ChetnaOS] Warning: sentence-transformers not available, "
+                "disabling embedding-backed memory."
+            )
+            _embedding_model = None
+        except Exception as e:
+            print(f"[ChetnaOS] Error initializing embedding model: {e}")
             _embedding_model = None
     return _embedding_model
 
+
 def get_embedding(text: str) -> Optional[np.ndarray]:
-    """Get embedding for text, with caching"""
+    """Get embedding for text, with caching and LIGHT_MODE aware fallback."""
     if text in _embedding_cache:
         return _embedding_cache[text]
-    
+
     model = get_embedding_model()
     if model is None:
         return None
-    
+
     try:
         embedding = model.encode(text)
         _embedding_cache[text] = embedding
         return embedding
     except Exception as e:
-        print(f"Embedding error: {e}")
+        print(f"[ChetnaOS] Embedding error: {e}")
         return None
 
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:

@@ -11,6 +11,7 @@ from .chetna_core import ChetnaCore
 from .api import setup_kalpavriksha_routes
 from .agent import router as agent_router
 from .agi.goal_agent import execute_goal
+from .config import get_settings
 
 app = FastAPI(
     title="ChetnaOS API",
@@ -27,8 +28,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize ChetnaCore
+# Global settings & core initialization
+settings = get_settings()
 core = ChetnaCore()
+
+
+@app.on_event("startup")
+async def on_startup() -> None:
+    """
+    Lightweight startup hook to attach settings and log LIGHT_MODE status.
+    Keeps boot fast while making runtime mode visible in logs.
+    """
+    app.state.settings = settings
+    print(
+        f"[ChetnaOS] Startup - LIGHT_MODE={settings.LIGHT_MODE}, "
+        f"EMBEDDINGS_ENABLED={settings.EMBEDDINGS_ENABLED}, "
+        f"GROQ_MODEL={settings.GROQ_MODEL}"
+    )
 
 
 class ChatRequest(BaseModel):
@@ -122,8 +138,15 @@ async def chetna_route(payload: ChatRequest):
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
-    return {"status": "ok", "service": "ChetnaOS"}
+    """Health check endpoint (must always work, even in LIGHT_MODE)."""
+    return {
+        "ok": True,
+        "status": "ok",
+        "service": "ChetnaOS",
+        "light_mode": settings.LIGHT_MODE,
+        "embeddings_enabled": settings.EMBEDDINGS_ENABLED,
+        "model": settings.GROQ_MODEL,
+    }
 
 
 setup_kalpavriksha_routes(app)

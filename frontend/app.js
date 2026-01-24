@@ -62,15 +62,16 @@
   }
 
   async function callChat(payload) {
-    return fetchJson('http://127.0.0.1:8000/api/chat', payload);
+    // Use same-origin relative paths so this works on Railway and locally.
+    return fetchJson('/api/chat', payload);
   }
 
   async function callAgent(payload) {
-    return fetchJson('http://127.0.0.1:8000/api/agent', payload);
+    return fetchJson('/api/agent', payload);
   }
 
   async function callGoal(payload) {
-    return fetchJson('http://127.0.0.1:8000/api/goal', payload);
+    return fetchJson('/api/goal', payload);
   }
 
   async function fetchJson(url, payload) {
