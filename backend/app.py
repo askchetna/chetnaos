@@ -2,8 +2,11 @@
 ChetnaOS Backend - Unified FastAPI Application
 Run with: python -m uvicorn backend.app:app --reload
 """
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 
@@ -12,6 +15,8 @@ from .api import setup_kalpavriksha_routes
 from .agent import router as agent_router
 from .agi.goal_agent import execute_goal
 from .config import get_settings
+
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 
 app = FastAPI(
     title="ChetnaOS API",
@@ -152,5 +157,9 @@ async def health_check():
 setup_kalpavriksha_routes(app)
 app.include_router(agent_router)
 
+@app.get("/")
+async def serve_index():
+    return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
 
+app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 
