@@ -3,26 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ChetnaOS — Conscious Runtime</title>
+  <title>ChetnaOS — Developmental Cognitive Organism</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0d0f14;
-      --surface:   #161920;
-      --surface2:  #1e2230;
-      --border:    #2a2f42;
+      --bg:        #080b12;
+      --surface:   #0e1120;
+      --surface2:  #151929;
+      --surface3:  #1c2238;
+      --border:    #252d47;
       --accent:    #6366f1;
       --accent2:   #818cf8;
       --green:     #22c55e;
-      --text:      #e2e4f0;
-      --muted:     #6b7280;
-      --user-bg:   #2d2f5e;
-      --ai-bg:     #1e2230;
-      --error-bg:  #3b1111;
+      --gold:      #f59e0b;
+      --red:       #ef4444;
+      --text:      #e2e5f0;
+      --muted:     #64748b;
+      --user-bg:   #1e2050;
+      --ai-bg:     #0e1120;
+      --error-bg:  #2d1111;
       --error-txt: #fca5a5;
-      --radius:    12px;
       --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      --radius: 12px;
     }
 
     html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); }
@@ -32,202 +35,216 @@
 
     /* ── Sidebar ── */
     .sidebar {
-      width: 260px; min-width: 260px;
+      width: 272px; min-width: 272px;
       background: var(--surface);
       border-right: 1px solid var(--border);
       display: flex; flex-direction: column;
-      padding: 0;
+      overflow-y: auto; overflow-x: hidden;
       transition: transform .25s ease;
       z-index: 10;
     }
-    .sidebar-header {
-      padding: 24px 20px 16px;
-      border-bottom: 1px solid var(--border);
-    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+    .sidebar-header { padding: 20px 18px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-icon {
-      width: 38px; height: 38px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 60%, #06b6d4 100%);
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
     }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-title { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -.3px; }
-    .logo-sub   { font-size: 11px; color: var(--muted); }
+    .logo-name { font-size: 16px; font-weight: 800; letter-spacing: -.3px; }
+    .logo-ver  { font-size: 10px; color: var(--muted); }
+    .logo-level { font-size: 10px; color: var(--accent2); margin-top: 1px; }
 
-    .sidebar-section { padding: 12px 12px 6px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+    .sec-label { padding: 10px 16px 4px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase; }
 
     .nav-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 14px; margin: 2px 8px;
+      display: flex; align-items: center; gap: 9px;
+      padding: 9px 12px; margin: 1px 8px;
       border-radius: 8px; cursor: pointer;
-      font-size: 14px; color: var(--muted);
+      font-size: 13px; color: var(--muted);
       transition: background .15s, color .15s;
       border: none; background: none; width: calc(100% - 16px); text-align: left;
     }
     .nav-item:hover { background: var(--surface2); color: var(--text); }
     .nav-item.active { background: rgba(99,102,241,.18); color: var(--accent2); }
-    .nav-icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
+    .nav-icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
     .nav-badge {
       margin-left: auto; font-size: 10px; padding: 2px 7px;
       border-radius: 99px; background: var(--accent); color: #fff; font-weight: 600;
     }
-
-    .sidebar-divider { height: 1px; background: var(--border); margin: 10px 16px; }
-
     .nav-link {
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 14px; margin: 2px 8px;
-      border-radius: 8px;
-      font-size: 14px; color: var(--muted);
+      display: flex; align-items: center; gap: 9px;
+      padding: 9px 12px; margin: 1px 8px; border-radius: 8px;
+      font-size: 13px; color: var(--muted);
       transition: background .15s, color .15s; text-decoration: none;
     }
     .nav-link:hover { background: var(--surface2); color: var(--text); }
 
-    .status-card {
-      margin: auto 12px 16px;
+    /* ── Cognitive State Panel ── */
+    .cog-panel {
+      margin: 10px 10px 6px;
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 10px; padding: 12px 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
     }
-    .status-title { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; }
-    .status-row { display: flex; align-items: center; justify-content: space-between; margin: 5px 0; font-size: 12px; }
+    .cog-panel-head {
+      padding: 9px 12px;
+      background: linear-gradient(90deg, rgba(99,102,241,.12), transparent);
+      border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--accent2);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cog-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 12px; font-size: 12px; }
+    .cog-label { color: var(--muted); }
+    .cog-val { color: var(--text); font-weight: 600; font-size: 11px; }
+    .cog-val.good    { color: var(--green); }
+    .cog-val.fair    { color: var(--gold); }
+    .cog-val.poor    { color: var(--red); }
+    .cog-val.high    { color: var(--green); }
+    .cog-val.medium  { color: var(--gold); }
+    .cog-val.low     { color: var(--red); }
+
+    /* ── Cycle Wheel ── */
+    .cycle-section {
+      margin: 6px 10px 10px;
+      flex-shrink: 0;
+    }
+    .cycle-title { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding: 0 2px; }
+    .cycle-stages { display: flex; flex-wrap: wrap; gap: 3px; }
+    .stage-dot {
+      font-size: 9px; padding: 2px 6px; border-radius: 4px;
+      background: var(--surface3); color: var(--muted);
+      border: 1px solid var(--border);
+      transition: all .2s;
+      cursor: default;
+    }
+    .stage-dot.done   { background: rgba(99,102,241,.15); color: var(--accent2); border-color: rgba(99,102,241,.3); }
+    .stage-dot.active { background: var(--accent); color: #fff; border-color: var(--accent); animation: pulse .8s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+
+    /* ── Status footer ── */
+    .status-card {
+      margin: auto 10px 14px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 12px; flex-shrink: 0;
+    }
+    .status-title { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .8px; text-transform: uppercase; margin-bottom: 7px; }
+    .status-row { display: flex; align-items: center; justify-content: space-between; margin: 4px 0; font-size: 11px; }
     .status-label { color: var(--muted); }
     .status-val { color: var(--text); font-weight: 500; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 4px; }
-    .dot.off { background: var(--muted); }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 4px; }
+    .dot.off { background: var(--red); }
 
     /* ── Main ── */
     .main { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 
     .topbar {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-      flex-shrink: 0;
+      padding: 13px 22px; border-bottom: 1px solid var(--border);
+      background: var(--surface); flex-shrink: 0;
     }
-    .topbar-left { display: flex; align-items: center; gap: 12px; }
-    .topbar-title { font-size: 15px; font-weight: 600; }
-    .topbar-sub   { font-size: 12px; color: var(--muted); }
+    .topbar-left { display: flex; align-items: center; gap: 11px; }
+    .topbar-title { font-size: 15px; font-weight: 700; }
+    .topbar-sub   { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
-    .mode-pills { display: flex; gap: 4px; background: var(--surface2); border-radius: 9px; padding: 3px; }
-    .pill {
-      padding: 5px 14px; border-radius: 7px; font-size: 13px; font-weight: 500;
-      cursor: pointer; border: none; background: none; color: var(--muted);
-      transition: background .15s, color .15s;
-    }
+    .mode-pills { display: flex; gap: 3px; background: var(--surface2); border-radius: 9px; padding: 3px; }
+    .pill { padding: 5px 14px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--muted); transition: background .15s, color .15s; }
     .pill.active { background: var(--accent); color: #fff; }
     .pill:hover:not(.active) { color: var(--text); }
 
-    /* ── Chat area ── */
-    .chat-wrap { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
-    .chat-wrap::-webkit-scrollbar { width: 5px; }
-    .chat-wrap::-webkit-scrollbar-track { background: transparent; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+
+    /* ── Chat ── */
+    .chat-wrap { flex: 1; overflow-y: auto; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
+    .chat-wrap::-webkit-scrollbar { width: 4px; }
     .chat-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-    .msg-row { display: flex; gap: 10px; max-width: 780px; }
+    .msg-row { display: flex; gap: 10px; max-width: 800px; }
     .msg-row.user { flex-direction: row-reverse; margin-left: auto; }
 
-    .avatar {
-      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px; margin-top: 2px;
-    }
-    .avatar.ai  { background: linear-gradient(135deg, var(--accent), #a78bfa); }
-    .avatar.usr { background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; margin-top: 2px; }
+    .avatar.ai  { background: linear-gradient(135deg, #6366f1, #a78bfa); }
+    .avatar.usr { background: var(--surface3); border: 1px solid var(--border); }
 
-    .bubble-wrap { display: flex; flex-direction: column; gap: 4px; max-width: calc(100% - 44px); }
-    .bubble-meta { font-size: 11px; color: var(--muted); }
+    .bubble-wrap { display: flex; flex-direction: column; gap: 4px; max-width: calc(100% - 42px); }
+    .bubble-meta { font-size: 10px; color: var(--muted); }
     .msg-row.user .bubble-meta { text-align: right; }
 
-    .bubble {
-      padding: 12px 16px; border-radius: var(--radius); font-size: 14px; line-height: 1.6;
-      white-space: pre-wrap; word-break: break-word;
-    }
+    .bubble { padding: 11px 15px; border-radius: var(--radius); font-size: 14px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
     .bubble.ai   { background: var(--ai-bg); border: 1px solid var(--border); border-top-left-radius: 4px; }
     .bubble.user { background: var(--user-bg); border: 1px solid rgba(99,102,241,.3); border-top-right-radius: 4px; }
     .bubble.error { background: var(--error-bg); color: var(--error-txt); border: 1px solid #7f1d1d; }
 
-    .typing-dots { display: flex; gap: 4px; padding: 14px 16px; }
-    .typing-dots span {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
-      animation: bounce .9s infinite ease-in-out;
+    /* ── Cycle meta strip ── */
+    .cycle-meta {
+      display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px;
     }
+    .meta-tag {
+      font-size: 10px; padding: 2px 8px; border-radius: 99px;
+      background: var(--surface3); color: var(--muted); border: 1px solid var(--border);
+    }
+    .meta-tag.green { background: rgba(34,197,94,.1); color: var(--green); border-color: rgba(34,197,94,.3); }
+    .meta-tag.gold  { background: rgba(245,158,11,.1); color: var(--gold); border-color: rgba(245,158,11,.3); }
+    .meta-tag.red   { background: rgba(239,68,68,.1);  color: var(--red);  border-color: rgba(239,68,68,.3); }
+    .meta-tag.blue  { background: rgba(99,102,241,.1); color: var(--accent2); border-color: rgba(99,102,241,.3); }
+
+    /* ── Stage flow strip ── */
+    .stage-flow {
+      margin-top: 8px; font-size: 9px; color: var(--muted); line-height: 1.8;
+      background: var(--surface2); padding: 8px 12px; border-radius: 8px;
+      border: 1px solid var(--border); display: none;
+    }
+    .stage-flow.open { display: block; }
+    .stage-flow-toggle { font-size: 10px; color: var(--muted); cursor: pointer; margin-top: 4px; background: none; border: none; padding: 2px 0; }
+    .stage-flow-toggle:hover { color: var(--accent2); }
+
+    /* ── Typing ── */
+    .typing-dots { display: flex; gap: 4px; padding: 12px 15px; }
+    .typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: bounce .9s infinite ease-in-out; }
     .typing-dots span:nth-child(2) { animation-delay: .18s; }
     .typing-dots span:nth-child(3) { animation-delay: .36s; }
     @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-6px)} }
 
-    .empty-state {
-      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px; color: var(--muted); text-align: center; padding: 40px;
-    }
-    .empty-icon { font-size: 48px; opacity: .4; }
-    .empty-title { font-size: 18px; font-weight: 600; color: var(--text); opacity: .6; }
-    .empty-sub   { font-size: 13px; }
-
-    .suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 8px; }
-    .suggestion {
-      padding: 7px 14px; border-radius: 99px;
-      border: 1px solid var(--border); font-size: 12px; color: var(--muted);
-      cursor: pointer; transition: border-color .15s, color .15s; background: none;
-    }
+    /* ── Empty state ── */
+    .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 32px; }
+    .empty-icon { font-size: 52px; opacity: .3; }
+    .empty-title { font-size: 20px; font-weight: 700; opacity: .5; }
+    .empty-sub   { font-size: 13px; color: var(--muted); }
+    .suggestions { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-top: 10px; }
+    .suggestion { padding: 7px 14px; border-radius: 99px; border: 1px solid var(--border); font-size: 12px; color: var(--muted); cursor: pointer; transition: border-color .15s, color .15s; background: none; }
     .suggestion:hover { border-color: var(--accent); color: var(--accent2); }
 
-    /* ── Input area ── */
-    .input-area {
-      padding: 16px 24px 20px;
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-      flex-shrink: 0;
-    }
-    .input-box {
-      display: flex; align-items: flex-end; gap: 10px;
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 10px 14px;
-      transition: border-color .2s;
-    }
+    /* ── Input ── */
+    .input-area { padding: 14px 22px 18px; border-top: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+    .input-box { display: flex; align-items: flex-end; gap: 9px; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 9px 12px; transition: border-color .2s; }
     .input-box:focus-within { border-color: var(--accent); }
-    #msg {
-      flex: 1; background: none; border: none; outline: none;
-      color: var(--text); font-family: var(--font); font-size: 14px;
-      resize: none; min-height: 24px; max-height: 140px; line-height: 1.5;
-    }
+    #msg { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: var(--font); font-size: 14px; resize: none; min-height: 22px; max-height: 120px; line-height: 1.5; }
     #msg::placeholder { color: var(--muted); }
-    #send {
-      flex-shrink: 0;
-      width: 36px; height: 36px; border-radius: 8px;
-      background: var(--accent); border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: opacity .15s, transform .1s;
-    }
+    #send { flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity .15s, transform .1s; }
     #send:hover:not(:disabled) { opacity: .85; }
     #send:active:not(:disabled) { transform: scale(.93); }
     #send:disabled { opacity: .35; cursor: not-allowed; }
     #send svg { fill: #fff; }
-    .input-hint { font-size: 11px; color: var(--muted); margin-top: 8px; text-align: center; }
+    .input-hint { font-size: 10px; color: var(--muted); margin-top: 7px; text-align: center; }
 
-    /* ── Mobile ── */
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 4px;
-    }
-    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+    /* ── Overlay ── */
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 9; }
 
-    @media (max-width: 700px) {
-      .sidebar {
-        position: fixed; left: 0; top: 0; bottom: 0;
-        transform: translateX(-100%);
-      }
+    @media (max-width: 720px) {
+      .sidebar { position: fixed; left: 0; top: 0; bottom: 0; transform: translateX(-100%); }
       .sidebar.open { transform: translateX(0); }
       .overlay.open { display: block; }
       .hamburger { display: flex; }
-      .chat-wrap { padding: 16px; }
-      .input-area { padding: 12px 16px 16px; }
-      .topbar { padding: 12px 16px; }
       .mode-pills { display: none; }
       .topbar-sub { display: none; }
+      .chat-wrap { padding: 14px 16px; }
+      .input-area { padding: 10px 14px 14px; }
     }
   </style>
 </head>
@@ -236,35 +253,57 @@
 <div class="overlay" id="overlay"></div>
 
 <div class="app">
-  <!-- Sidebar -->
+  <!-- ── Sidebar ── -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <a href="/" class="logo">
         <div class="logo-icon">🧠</div>
-        <div class="logo-text">
-          <span class="logo-title">ChetnaOS</span>
-          <span class="logo-sub">Conscious Runtime v1.0</span>
+        <div>
+          <div class="logo-name">ChetnaOS</div>
+          <div class="logo-ver">v2.0 — Cognitive Architecture</div>
+          <div class="logo-level" id="sidebar-level">Level 6 — Developmental Organism</div>
         </div>
       </a>
     </div>
 
-    <div class="sidebar-section">Modes</div>
-    <button class="nav-item active" id="nav-chat" onclick="setMode('chat')">
+    <div class="sec-label">Interaction Modes</div>
+    <button class="nav-item active" id="nav-chat"  onclick="setMode('chat')">
       <span class="nav-icon">💬</span> Chat
-      <span class="nav-badge" id="badge-chat">LLM</span>
+      <span class="nav-badge">LLM</span>
     </button>
     <button class="nav-item" id="nav-agent" onclick="setMode('agent')">
       <span class="nav-icon">🤖</span> Agent
-      <span class="nav-badge" id="badge-agent" style="background:#059669">Tools</span>
+      <span class="nav-badge" style="background:#059669">Tools</span>
     </button>
-    <button class="nav-item" id="nav-goal" onclick="setMode('goal')">
+    <button class="nav-item" id="nav-goal"  onclick="setMode('goal')">
       <span class="nav-icon">🎯</span> Goal (AGI Loop)
     </button>
 
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Modules</div>
+    <!-- Cognitive State Panel -->
+    <div class="cog-panel" id="cog-panel">
+      <div class="cog-panel-head">⚙️ &nbsp;Cognitive State</div>
+      <div class="cog-row"><span class="cog-label">Cycle</span><span class="cog-val" id="cog-cycle">—</span></div>
+      <div class="cog-row"><span class="cog-label">Quality</span><span class="cog-val" id="cog-quality">—</span></div>
+      <div class="cog-row"><span class="cog-label">Confidence</span><span class="cog-val" id="cog-conf">—</span></div>
+      <div class="cog-row"><span class="cog-label">Dharma</span><span class="cog-val" id="cog-dharma">—</span></div>
+      <div class="cog-row"><span class="cog-label">Domain</span><span class="cog-val" id="cog-domain">—</span></div>
+      <div class="cog-row"><span class="cog-label">Beliefs</span><span class="cog-val" id="cog-beliefs">—</span></div>
+      <div class="cog-row"><span class="cog-label">Health</span><span class="cog-val" id="cog-health">—</span></div>
+    </div>
+
+    <!-- 27-Stage Cycle -->
+    <div class="cycle-section">
+      <div class="cycle-title">🔄 Cognitive Cycle Stages</div>
+      <div class="cycle-stages" id="cycle-stages"></div>
+    </div>
+
+    <div style="height:8px;flex-shrink:0;"></div>
+    <div class="sec-label">Modules</div>
     <a class="nav-link" href="/kalpavriksha_ui/index.html">
       <span class="nav-icon">🌳</span> Kalpavriksha Suite
+    </a>
+    <a class="nav-link" href="/api/state" target="_blank">
+      <span class="nav-icon">🧬</span> Live State API
     </a>
     <a class="nav-link" href="/docs" target="_blank">
       <span class="nav-icon">📖</span> API Docs
@@ -276,36 +315,34 @@
     <div class="status-card" id="status-card">
       <div class="status-title">System Status</div>
       <div class="status-row">
-        <span class="status-label">Service</span>
-        <span class="status-val"><span class="dot" id="dot-service"></span><span id="svc-name">—</span></span>
+        <span class="status-label">Runtime</span>
+        <span class="status-val"><span class="dot off" id="dot-rt"></span><span id="svc-rt">Loading…</span></span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">LLM</span>
+        <span class="status-val"><span class="dot off" id="dot-llm"></span><span id="svc-llm">—</span></span>
       </div>
       <div class="status-row">
         <span class="status-label">Model</span>
         <span class="status-val" id="svc-model">—</span>
       </div>
-      <div class="status-row">
-        <span class="status-label">Light Mode</span>
-        <span class="status-val" id="svc-light">—</span>
-      </div>
     </div>
   </aside>
 
-  <!-- Main -->
+  <!-- ── Main ── -->
   <div class="main">
     <header class="topbar">
       <div class="topbar-left">
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         <div>
           <div class="topbar-title" id="topbar-title">Chat Mode</div>
-          <div class="topbar-sub" id="topbar-sub">Direct conversation with ChetnaOS</div>
+          <div class="topbar-sub"  id="topbar-sub">Runs the full 27-stage cognitive cycle</div>
         </div>
       </div>
       <div class="mode-pills">
-        <button class="pill active" id="pill-chat" onclick="setMode('chat')">Chat</button>
-        <button class="pill" id="pill-agent" onclick="setMode('agent')">Agent</button>
-        <button class="pill" id="pill-goal" onclick="setMode('goal')">Goal</button>
+        <button class="pill active" id="pill-chat"  onclick="setMode('chat')">Chat</button>
+        <button class="pill"        id="pill-agent" onclick="setMode('agent')">Agent</button>
+        <button class="pill"        id="pill-goal"  onclick="setMode('goal')">Goal</button>
       </div>
     </header>
 
@@ -313,12 +350,13 @@
       <div class="empty-state" id="empty-state">
         <div class="empty-icon">🧠</div>
         <div class="empty-title">How can I help you?</div>
-        <div class="empty-sub">Start a conversation or try a suggestion below</div>
+        <div class="empty-sub">Every message runs the 27-stage cognitive cycle</div>
         <div class="suggestions">
-          <button class="suggestion" onclick="fillSuggestion('Hello, what can you do?')">Hello, what can you do?</button>
-          <button class="suggestion" onclick="fillSuggestion('calc: (23+7)*4')">calc: (23+7)×4</button>
-          <button class="suggestion" onclick="fillSuggestion('search latest AI news')">Search AI news</button>
-          <button class="suggestion" onclick="fillSuggestion('What is the current world state?')">World state?</button>
+          <button class="suggestion" onclick="fill('Hello, what are you?')">Hello, what are you?</button>
+          <button class="suggestion" onclick="fill('What is artificial intelligence?')">What is AI?</button>
+          <button class="suggestion" onclick="fill('calc: (23+7)*4')">calc: (23+7)×4</button>
+          <button class="suggestion" onclick="fill('search latest AI news')">Search AI news</button>
+          <button class="suggestion" onclick="fill('Explain the concept of consciousness')">What is consciousness?</button>
         </div>
       </div>
     </div>
@@ -327,250 +365,370 @@
       <div class="input-box">
         <textarea id="msg" rows="1" placeholder="Type a message… (Ctrl+Enter to send)"></textarea>
         <button id="send" title="Send (Ctrl+Enter)">
-          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </button>
       </div>
-      <div class="input-hint">Ctrl+Enter to send &nbsp;·&nbsp; Agent mode: try <code>calc: 2+2</code> or <code>search AI news</code></div>
+      <div class="input-hint">Ctrl+Enter to send &nbsp;·&nbsp; Agent: <code>calc: 2+2</code> or <code>search topic</code></div>
     </div>
   </div>
 </div>
 
 <script>
-// ── State ──────────────────────────────────────────
-let currentMode = 'chat';
-let msgCount = 0;
+// ── Constants ──────────────────────────────────────────────────────────────
+const ALL_STAGES = [
+  "EXIST","PURPOSE","OBSERVE","ATTEND","RECALL","PREDICT","IMAGINE",
+  "PLAY","PLAN","DECIDE","ACT","HABIT","WORLD_UPDATE","EXPERIENCE",
+  "REALITY_CHECK","EVALUATE","FAILURE_RECOVERY","REFLECT","SELF_QUESTION",
+  "UPDATE_BELIEFS","UPDATE_IDENTITY","REFINE_PURPOSE",
+  "SLEEP","FORGET","CONSOLIDATE","WAKE"
+];
 
-const modeConfig = {
-  chat:  { title: 'Chat Mode',      sub: 'Direct conversation with ChetnaOS' },
-  agent: { title: 'Agent Mode',     sub: 'Tool-enabled: calculator, web search, web fetch' },
-  goal:  { title: 'Goal (AGI Loop)',sub: 'Multi-step recursive goal execution' },
+const MODE_CONFIG = {
+  chat:  { title: "Chat Mode",      sub: "Runs the full 27-stage cognitive cycle" },
+  agent: { title: "Agent Mode",     sub: "Tool-enabled: calculator · web search · web fetch" },
+  goal:  { title: "Goal (AGI Loop)",sub: "Multi-step goal execution via cognitive cycle" },
 };
 
-// ── Mode switching ──────────────────────────────────
+// ── State ─────────────────────────────────────────────────────────────────
+let currentMode = "chat";
+let lastMeta    = null;
+
+// ── Build stage dots ───────────────────────────────────────────────────────
+(function buildCycleDots() {
+  const wrap = document.getElementById("cycle-stages");
+  ALL_STAGES.forEach(s => {
+    const d = document.createElement("div");
+    d.className = "stage-dot";
+    d.id = "dot-" + s;
+    d.title = s.replace(/_/g," ");
+    d.textContent = s.length > 7 ? s.slice(0,6)+"…" : s;
+    wrap.appendChild(d);
+  });
+})();
+
+function updateCycleDots(trace) {
+  ALL_STAGES.forEach(s => {
+    const d = document.getElementById("dot-" + s);
+    if (!d) return;
+    d.classList.remove("done","active");
+    if (trace && trace.includes(s)) d.classList.add("done");
+  });
+}
+
+function animateCycle(trace) {
+  ALL_STAGES.forEach(s => document.getElementById("dot-"+s)?.classList.remove("done","active"));
+  let i = 0;
+  function step() {
+    if (i >= trace.length) { updateCycleDots(trace); return; }
+    const d = document.getElementById("dot-"+trace[i]);
+    if (d) {
+      if (i > 0) document.getElementById("dot-"+trace[i-1])?.classList.replace("active","done");
+      d.classList.add("active");
+    }
+    i++;
+    setTimeout(step, 80);
+  }
+  step();
+}
+
+// ── Mode switching ─────────────────────────────────────────────────────────
 function setMode(m) {
   currentMode = m;
-  ['chat','agent','goal'].forEach(x => {
-    document.getElementById('nav-'+x)?.classList.toggle('active', x===m);
-    document.getElementById('pill-'+x)?.classList.toggle('active', x===m);
+  ["chat","agent","goal"].forEach(x => {
+    document.getElementById("nav-"+x)?.classList.toggle("active", x===m);
+    document.getElementById("pill-"+x)?.classList.toggle("active", x===m);
   });
-  document.getElementById('topbar-title').textContent = modeConfig[m].title;
-  document.getElementById('topbar-sub').textContent   = modeConfig[m].sub;
-  document.getElementById('msg').placeholder = m === 'agent'
-    ? "Agent mode: try 'calc: 2+2' or 'search AI news'…"
-    : m === 'goal'
-    ? "Describe a goal for the AGI loop…"
-    : "Type a message…";
+  document.getElementById("topbar-title").textContent = MODE_CONFIG[m].title;
+  document.getElementById("topbar-sub").textContent   = MODE_CONFIG[m].sub;
+  document.getElementById("msg").placeholder = m === "agent"
+    ? "Agent: try 'calc: 2+2' or 'search AI news'…"
+    : m === "goal" ? "Describe a goal for the AGI loop…"
+    : "Type a message… (Ctrl+Enter to send)";
   closeSidebar();
 }
 
-// ── Sidebar mobile ──────────────────────────────────
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('overlay').classList.toggle('open');
+// ── Sidebar mobile ─────────────────────────────────────────────────────────
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("sidebar").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("open");
 });
-document.getElementById('overlay').addEventListener('click', closeSidebar);
+document.getElementById("overlay").addEventListener("click", closeSidebar);
 function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("overlay").classList.remove("open");
 }
 
-// ── Auto-resize textarea ────────────────────────────
-const msgEl = document.getElementById('msg');
-msgEl.addEventListener('input', () => {
-  msgEl.style.height = 'auto';
-  msgEl.style.height = Math.min(msgEl.scrollHeight, 140) + 'px';
+// ── Auto-resize textarea ───────────────────────────────────────────────────
+const msgEl = document.getElementById("msg");
+msgEl.addEventListener("input", () => {
+  msgEl.style.height = "auto";
+  msgEl.style.height = Math.min(msgEl.scrollHeight, 120) + "px";
 });
 
-// ── Timestamps ─────────────────────────────────────
-function timeNow() {
-  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-}
-
-// ── Chat rendering ──────────────────────────────────
+// ── Utilities ─────────────────────────────────────────────────────────────
+function timeNow() { return new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}); }
 function escapeHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function fill(text) {
+  msgEl.value = text;
+  msgEl.dispatchEvent(new Event("input"));
+  msgEl.focus();
+}
+function hideEmpty() {
+  const e = document.getElementById("empty-state");
+  if (e) e.style.display = "none";
 }
 
-function addBubble(text, who) {
+// ── Chat rendering ─────────────────────────────────────────────────────────
+function addBubble(text, who, meta) {
   hideEmpty();
-  const chat = document.getElementById('chat');
-  const row = document.createElement('div');
-  row.className = `msg-row ${who === 'user' ? 'user' : ''}`;
+  const chat = document.getElementById("chat");
+  const row  = document.createElement("div");
+  row.className = `msg-row ${who === "user" ? "user" : ""}`;
 
-  const avatar = document.createElement('div');
-  avatar.className = `avatar ${who === 'user' ? 'usr' : 'ai'}`;
-  avatar.textContent = who === 'user' ? '👤' : '🧠';
+  const av = document.createElement("div");
+  av.className = `avatar ${who === "user" ? "usr" : "ai"}`;
+  av.textContent = who === "user" ? "👤" : "🧠";
 
-  const wrap = document.createElement('div');
-  wrap.className = 'bubble-wrap';
+  const wrap = document.createElement("div");
+  wrap.className = "bubble-wrap";
 
-  const meta = document.createElement('div');
-  meta.className = 'bubble-meta';
-  meta.textContent = (who === 'user' ? 'You' : 'ChetnaOS') + ' · ' + timeNow();
+  const metaEl = document.createElement("div");
+  metaEl.className = "bubble-meta";
+  metaEl.textContent = (who === "user" ? "You" : "ChetnaOS") + " · " + timeNow();
 
-  const bubble = document.createElement('div');
-  bubble.className = `bubble ${who === 'user' ? 'user' : 'ai'}`;
-  if (typeof text === 'string' && text.includes('\n')) {
-    bubble.innerHTML = text.split('\n').map(escapeHtml).join('<br/>');
+  const bub = document.createElement("div");
+  bub.className = `bubble ${who === "user" ? "user" : "ai"}`;
+  if (typeof text === "string" && text.includes("\n")) {
+    bub.innerHTML = text.split("\n").map(escapeHtml).join("<br/>");
   } else {
-    bubble.textContent = typeof text === 'string' ? text : String(text);
+    bub.textContent = typeof text === "string" ? text : String(text);
   }
 
-  wrap.appendChild(meta);
-  wrap.appendChild(bubble);
-  row.appendChild(avatar);
+  wrap.appendChild(metaEl);
+  wrap.appendChild(bub);
+
+  // Meta tags + stage flow (AI only)
+  if (who === "ai" && meta) {
+    const tags = document.createElement("div");
+    tags.className = "cycle-meta";
+
+    const qualColor = {good:"green",fair:"gold",poor:"red"}[meta.quality] || "";
+    const confColor = {HIGH:"green",MEDIUM:"gold",LOW:"red",VERY_LOW:"red"}[meta.confidence_level] || "";
+
+    if (meta.cycle)           addTag(tags, `Cycle #${meta.cycle}`, "blue");
+    if (meta.quality)         addTag(tags, `Quality: ${meta.quality}`, qualColor);
+    if (meta.confidence_level) addTag(tags, `Confidence: ${meta.confidence_level}`, confColor);
+    if (meta.dharma_score)    addTag(tags, `Dharma: ${meta.dharma_score}`, meta.dharma_score>=65?"green":"red");
+    if (meta.domain)          addTag(tags, `Domain: ${meta.domain}`, "");
+    if (meta.reality?.truth)  addTag(tags, meta.reality.truth.replace(/_/g," "), "");
+
+    wrap.appendChild(tags);
+
+    if (meta.stage_trace && meta.stage_trace.length > 0) {
+      const toggleBtn = document.createElement("button");
+      toggleBtn.className = "stage-flow-toggle";
+      toggleBtn.textContent = "▸ Show cognitive cycle trace";
+      const flow = document.createElement("div");
+      flow.className = "stage-flow";
+      flow.textContent = meta.stage_trace.join(" → ");
+      toggleBtn.addEventListener("click", () => {
+        flow.classList.toggle("open");
+        toggleBtn.textContent = flow.classList.contains("open")
+          ? "▾ Hide cognitive cycle trace"
+          : "▸ Show cognitive cycle trace";
+      });
+      wrap.appendChild(toggleBtn);
+      wrap.appendChild(flow);
+    }
+  }
+
+  row.appendChild(av);
   row.appendChild(wrap);
   chat.appendChild(row);
   chat.scrollTop = chat.scrollHeight;
+}
+
+function addTag(parent, text, cls) {
+  const t = document.createElement("span");
+  t.className = "meta-tag" + (cls ? " "+cls : "");
+  t.textContent = text;
+  parent.appendChild(t);
 }
 
 function addErrorBubble(text) {
   hideEmpty();
-  const chat = document.getElementById('chat');
-  const row = document.createElement('div');
-  row.className = 'msg-row';
-  const avatar = document.createElement('div');
-  avatar.className = 'avatar ai';
-  avatar.textContent = '⚠️';
-  const wrap = document.createElement('div');
-  wrap.className = 'bubble-wrap';
-  const meta = document.createElement('div');
-  meta.className = 'bubble-meta';
-  meta.textContent = 'Error · ' + timeNow();
-  const bubble = document.createElement('div');
-  bubble.className = 'bubble error';
-  bubble.textContent = text;
-  wrap.appendChild(meta);
-  wrap.appendChild(bubble);
-  row.appendChild(avatar);
-  row.appendChild(wrap);
+  const chat = document.getElementById("chat");
+  const row  = document.createElement("div");
+  row.className = "msg-row";
+  const av  = document.createElement("div");
+  av.className = "avatar ai"; av.textContent = "⚠️";
+  const wrap = document.createElement("div");
+  wrap.className = "bubble-wrap";
+  const m   = document.createElement("div");
+  m.className = "bubble-meta";
+  m.textContent = "Error · " + timeNow();
+  const bub = document.createElement("div");
+  bub.className = "bubble error";
+  bub.textContent = text;
+  wrap.appendChild(m); wrap.appendChild(bub);
+  row.appendChild(av); row.appendChild(wrap);
   chat.appendChild(row);
   chat.scrollTop = chat.scrollHeight;
 }
 
-let typingEl = null;
 function addTypingIndicator() {
   removeTypingIndicator();
   hideEmpty();
-  const chat = document.getElementById('chat');
-  const row = document.createElement('div');
-  row.className = 'msg-row';
-  row.id = 'typing-row';
-  const avatar = document.createElement('div');
-  avatar.className = 'avatar ai';
-  avatar.textContent = '🧠';
-  const wrap = document.createElement('div');
-  wrap.className = 'bubble-wrap';
-  const meta = document.createElement('div');
-  meta.className = 'bubble-meta';
-  meta.textContent = 'ChetnaOS · thinking…';
-  const dots = document.createElement('div');
-  dots.className = 'bubble ai typing-dots';
-  dots.innerHTML = '<span></span><span></span><span></span>';
-  wrap.appendChild(meta);
-  wrap.appendChild(dots);
-  row.appendChild(avatar);
-  row.appendChild(wrap);
+  const chat = document.getElementById("chat");
+  const row  = document.createElement("div");
+  row.className = "msg-row"; row.id = "typing-row";
+  const av  = document.createElement("div");
+  av.className = "avatar ai"; av.textContent = "🧠";
+  const wrap = document.createElement("div");
+  wrap.className = "bubble-wrap";
+  const m   = document.createElement("div");
+  m.className = "bubble-meta"; m.textContent = "ChetnaOS · running cognitive cycle…";
+  const dots = document.createElement("div");
+  dots.className = "bubble ai typing-dots";
+  dots.innerHTML = "<span></span><span></span><span></span>";
+  wrap.appendChild(m); wrap.appendChild(dots);
+  row.appendChild(av); row.appendChild(wrap);
   chat.appendChild(row);
   chat.scrollTop = chat.scrollHeight;
+
+  // Animate cycle dots while waiting
+  let si = 0;
+  window._cycleAnim = setInterval(() => {
+    ALL_STAGES.forEach((s,i) => {
+      const d = document.getElementById("dot-"+s);
+      if (!d) return;
+      d.classList.remove("done","active");
+      if (i < si) d.classList.add("done");
+      if (i === si) d.classList.add("active");
+    });
+    si = (si + 1) % ALL_STAGES.length;
+  }, 120);
 }
+
 function removeTypingIndicator() {
-  document.getElementById('typing-row')?.remove();
-}
-function hideEmpty() {
-  const e = document.getElementById('empty-state');
-  if (e) e.style.display = 'none';
+  document.getElementById("typing-row")?.remove();
+  if (window._cycleAnim) { clearInterval(window._cycleAnim); window._cycleAnim = null; }
 }
 
-// ── Suggestions ─────────────────────────────────────
-function fillSuggestion(text) {
-  msgEl.value = text;
-  msgEl.dispatchEvent(new Event('input'));
-  msgEl.focus();
+// ── Update cognitive state panel ───────────────────────────────────────────
+function updateCogState(meta) {
+  if (!meta) return;
+  lastMeta = meta;
+  const qi = meta.quality || "";
+  const ci = (meta.confidence_level || "").toLowerCase();
+
+  const set = (id, text, cls) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = text;
+    el.className   = "cog-val" + (cls ? " "+cls : "");
+  };
+
+  set("cog-cycle",   `#${meta.cycle || "—"}`);
+  set("cog-quality", qi,  qi);
+  set("cog-conf",    meta.confidence ? `${(meta.confidence*100).toFixed(0)}%  (${meta.confidence_level||""})`, ci);
+  set("cog-dharma",  meta.dharma_score ? `${meta.dharma_score}/100` : "—",
+      meta.dharma_score >= 80 ? "good" : meta.dharma_score >= 65 ? "fair" : "poor");
+  set("cog-domain",  meta.domain || "—");
+  set("cog-beliefs", meta.beliefs_count || "—");
+  set("cog-health",  meta.health || "—",
+      meta.health === "healthy" ? "good" : meta.health === "stressed" ? "fair" : "poor");
+
+  if (meta.stage_trace) animateCycle(meta.stage_trace);
 }
 
-// ── API calls ───────────────────────────────────────
+// ── API calls ──────────────────────────────────────────────────────────────
 async function fetchJson(url, payload) {
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
+  const res  = await fetch(url, {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify(payload),
   });
   const data = await res.json().catch(() => null);
   if (!res.ok) {
-    const msg = data && data.detail ? data.detail : `HTTP ${res.status}`;
-    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    const msg = data?.detail || `HTTP ${res.status}`;
+    throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
   }
-  if (!data) throw new Error('Invalid JSON response from server.');
+  if (!data) throw new Error("Invalid JSON response.");
   return data;
 }
 
-function formatChetnaResponse(obj) {
-  try {
-    if (obj.identity || obj.filtered || obj.world_state) {
-      const lines = [];
-      if (obj.identity)    lines.push(`Identity: ${obj.identity}`);
-      if (obj.filtered)    lines.push(`Response: ${obj.filtered}`);
-      if (obj.evolution)   lines.push(`Evolution: ${obj.evolution}`);
-      if (obj.world_state) lines.push(`World: ${JSON.stringify(obj.world_state, null, 2)}`);
-      if (obj.timestamp)   lines.push(`Timestamp: ${obj.timestamp}`);
-      return lines.join('\n\n');
-    }
-    return JSON.stringify(obj, null, 2);
-  } catch { return JSON.stringify(obj); }
-}
-
-// ── Send ────────────────────────────────────────────
+// ── Send ───────────────────────────────────────────────────────────────────
 async function sendMessage() {
   const text = msgEl.value.trim();
   if (!text) return;
   const mode = currentMode;
 
-  const sendBtn = document.getElementById('send');
-  sendBtn.disabled = true;
-  addBubble(text, 'user');
+  document.getElementById("send").disabled = true;
+  addBubble(text, "user");
   addTypingIndicator();
-  msgEl.value = '';
-  msgEl.style.height = 'auto';
+  msgEl.value = "";
+  msgEl.style.height = "auto";
   msgEl.focus();
 
   try {
-    let data;
-    if (mode === 'agent') {
-      data = await fetchJson('/api/agent', { text, agent: mode });
-    } else if (mode === 'goal') {
-      data = await fetchJson('/api/goal', { goal: text, context: { mode, client: 'web' }, constraints: {} });
+    let data, meta, reply;
+
+    if (mode === "agent") {
+      data  = await fetchJson("/api/agent", {text, agent: mode});
+      reply = data.reply;
+      meta  = null; // agent uses old path, no cycle meta
+    } else if (mode === "goal") {
+      data  = await fetchJson("/api/goal", {goal: text, context:{mode, client:"web"}, constraints:{}});
+      reply = data.reply;
+      meta  = data.meta || null;
     } else {
-      data = await fetchJson('/api/chat', { text, agent: mode });
+      data  = await fetchJson("/api/chat", {text, agent: mode});
+      reply = data.reply;
+      meta  = data.meta || null;
     }
+
     removeTypingIndicator();
-    const reply = typeof data.reply === 'string' ? data.reply : formatChetnaResponse(data);
-    addBubble(reply, 'ai');
+    addBubble(reply, "ai", meta);
+    if (meta) updateCogState(meta);
+
   } catch (e) {
     removeTypingIndicator();
-    addErrorBubble(`${e && e.message ? e.message : e}`);
+    addErrorBubble(e?.message || String(e));
   } finally {
-    sendBtn.disabled = false;
+    document.getElementById("send").disabled = false;
   }
 }
 
-document.getElementById('send').addEventListener('click', sendMessage);
-msgEl.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); sendMessage(); }
+document.getElementById("send").addEventListener("click", sendMessage);
+msgEl.addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); sendMessage(); }
 });
 
-// ── Health status ───────────────────────────────────
+// ── Health check ───────────────────────────────────────────────────────────
 async function fetchHealth() {
   try {
-    const d = await fetch('/health').then(r => r.json());
-    document.getElementById('svc-name').textContent  = d.service || 'OK';
-    document.getElementById('svc-model').textContent = (d.model || '—').replace('llama-','').replace('-instant','');
-    document.getElementById('svc-light').textContent = d.light_mode ? 'Yes' : 'No';
-    document.getElementById('dot-service').classList.toggle('off', !d.ok);
-  } catch { document.getElementById('dot-service').classList.add('off'); }
-}
-fetchHealth();
+    const d = await fetch("/health").then(r => r.json());
+    const rtOk  = d.cognitive_runtime;
+    const llmOk = d.llm_available;
 
+    document.getElementById("dot-rt").classList.toggle("off", !rtOk);
+    document.getElementById("svc-rt").textContent = rtOk ? "Running" : "Unavailable";
+
+    document.getElementById("dot-llm").classList.toggle("off", !llmOk);
+    document.getElementById("svc-llm").textContent = llmOk ? "Connected" : "No API Key";
+
+    const m = (d.model || "").replace("llama-","").replace("-instant","");
+    document.getElementById("svc-model").textContent = m || "—";
+    document.getElementById("sidebar-level").textContent = d.architecture || "Level 6";
+  } catch {
+    document.getElementById("dot-rt").classList.add("off");
+  }
+}
+
+fetchHealth();
 try { msgEl.focus(); } catch {}
 window.sendMessage = sendMessage;
 </script>
