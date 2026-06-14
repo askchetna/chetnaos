@@ -34,6 +34,10 @@ from src.chetnaos.organism.sleep              import Sleep
 from src.chetnaos.organism.relationship       import Relationship
 from src.chetnaos.organism.artifacts          import Artifacts
 from src.chetnaos.organism.civilization_memory import CivilizationMemory
+# New modules (feedback priorities)
+from src.chetnaos.organism.founder_context    import FounderContext
+from src.chetnaos.organism.simulation         import SimulationEngine
+from src.chetnaos.organism.meta_cognition     import MetaCognition
 
 from .state_machine import StateMachine, CycleStage
 from .sleep_manager import SleepManager
@@ -53,32 +57,36 @@ class CognitiveCycle:
         self.sleeper  = SleepManager()
 
         # Organism modules
-        self.existence  = Existence()
-        self.purpose    = Purpose()
-        self.perception = Perception()
-        self.attention  = Attention()
-        self.memory     = Memory()
-        self.imagination = Imagination()
-        self.play_mod   = Play()
-        self.abstraction = Abstraction()
-        self.world      = WorldModel()
-        self.reasoning  = Reasoning()
-        self.planning   = Planning()
-        self.decision   = Decision()
-        self.embodiment = Embodiment()
-        self.habit      = Habit()
-        self.experience = Experience()
-        self.reality    = RealityChecker()
-        self.reflection = Reflection()
-        self.learning   = Learning()
-        self.beliefs    = Beliefs()
-        self.identity   = Identity()
-        self.development = Development()
-        self.homeostasis = Homeostasis()
-        self.sleep_mod  = Sleep()
-        self.relationship = Relationship()
-        self.artifacts  = Artifacts()
-        self.civ_memory = CivilizationMemory()
+        self.existence      = Existence()
+        self.purpose        = Purpose()
+        self.perception     = Perception()
+        self.attention      = Attention()
+        self.memory         = Memory()
+        self.imagination    = Imagination()
+        self.play_mod       = Play()
+        self.abstraction    = Abstraction()
+        self.world          = WorldModel()
+        self.reasoning      = Reasoning()
+        self.planning       = Planning()
+        self.decision       = Decision()
+        self.embodiment     = Embodiment()
+        self.habit          = Habit()
+        self.experience     = Experience()
+        self.reality        = RealityChecker()
+        self.reflection     = Reflection()
+        self.learning       = Learning()
+        self.beliefs        = Beliefs()
+        self.identity       = Identity()
+        self.development    = Development()
+        self.homeostasis    = Homeostasis()
+        self.sleep_mod      = Sleep()
+        self.relationship   = Relationship()
+        self.artifacts      = Artifacts()
+        self.civ_memory     = CivilizationMemory()
+        # New modules
+        self.founder_ctx    = FounderContext()
+        self.simulation     = SimulationEngine()
+        self.meta_cog       = MetaCognition()
 
     def run(self, user_input: str, mode: str = "chat") -> dict:
         """Execute the full cognitive cycle for one input."""
@@ -86,7 +94,8 @@ class CognitiveCycle:
 
         def step(stage: CycleStage, result: dict):
             self.sm.advance(stage)
-            trace.append({"stage": stage.value, **{k: v for k, v in result.items() if k != "stage"}})
+            trace.append({"stage": stage.value,
+                          **{k: v for k, v in result.items() if k != "stage"}})
             return result
 
         # ── EXIST ──────────────────────────────────────────────────
@@ -106,31 +115,43 @@ class CognitiveCycle:
 
         # ── RECALL ─────────────────────────────────────────────────
         recalled = self.memory.recall(user_input, k=4)
-        step(CycleStage.RECALL, {"recalled_count": len(recalled), "items": recalled[:2]})
+        founder_ctx_str = self.founder_ctx.get_system_context()
+        step(CycleStage.RECALL, {
+            "recalled_count": len(recalled),
+            "items": recalled[:2],
+            "founder_context_loaded": True,
+        })
 
-        # ── PREDICT (abstraction acts as prediction context) ────────
+        # ── PREDICT (abstraction as prediction context) ─────────────
         abstr = self.abstraction.abstract(percept, att)
         step(CycleStage.PREDICT, {**abstr, "domain": abstr["domain"]})
 
         # ── IMAGINE ────────────────────────────────────────────────
-        imag = self.imagination.imagine(att, self.llm if abstr["complexity"] == "complex" else None)
+        use_llm = abstr["complexity"] == "complex"
+        imag = self.imagination.imagine(att, self.llm if use_llm else None)
         step(CycleStage.IMAGINE, imag)
 
         # ── PLAY ───────────────────────────────────────────────────
         play_r = self.play_mod.explore(att, imag)
         step(CycleStage.PLAY, play_r)
 
-        # ── PLAN ───────────────────────────────────────────────────
-        plan_r = self.planning.plan(play_r, abstr,
-                                    self.llm if abstr["complexity"] == "complex" else None)
-        step(CycleStage.PLAN, plan_r)
+        # ── PLAN (+ Simulation sub-step) ───────────────────────────
+        plan_r  = self.planning.plan(play_r, abstr, self.llm if use_llm else None)
+        # Simulation Engine: generate Plan A / B / C
+        sim_r   = self.simulation.simulate(plan_r["plan"], abstr,
+                                           self.llm if use_llm else None)
+        selected_plan = sim_r["selected"]
+        step(CycleStage.PLAN, {**plan_r, "simulation": sim_r})
 
-        # ── DECIDE (pre-reason) — habit check ──────────────────────
+        # ── DECIDE (pre-reason habit check) ────────────────────────
         habit_r = self.habit.check(percept["intent"], abstr["domain"])
         step(CycleStage.HABIT, habit_r)
 
         # ── ACT (REASON — primary LLM call) ────────────────────────
-        reason_r = self.reasoning.reason(user_input, recalled, plan_r["plan"], self.llm)
+        reason_r = self.reasoning.reason(
+            user_input, recalled, selected_plan,
+            self.llm, founder_context=founder_ctx_str
+        )
         raw_response = reason_r["response"]
         step(CycleStage.ACT, reason_r)
 
@@ -140,13 +161,15 @@ class CognitiveCycle:
 
         # ── EXPERIENCE ─────────────────────────────────────────────
         exp_r = self.experience.record({
-            "input": user_input, "output": raw_response,
-            "domain": abstr["domain"], "cycle_count": cycle_n,
-            "confidence": 0.6,
+            "input":       user_input,
+            "output":      raw_response,
+            "domain":      abstr["domain"],
+            "cycle_count": cycle_n,
+            "confidence":  0.6,
         })
         step(CycleStage.EXPERIENCE, exp_r)
 
-        # ── REALITY CHECK ──────────────────────────────────────────
+        # ── REALITY CHECK (+ feasibility) ──────────────────────────
         reality_r = self.reality.check(raw_response, {
             "beliefs": self.beliefs.get_all(),
         })
@@ -160,22 +183,23 @@ class CognitiveCycle:
         final_output = dec_r["final"]
         step(CycleStage.FAILURE_RECOVERY, {
             "recovered": False,
-            "output": final_output,
+            "output":    final_output,
         })
 
         # ── REFLECT ────────────────────────────────────────────────
         reflect_r = self.reflection.reflect(dec_r, reality_r, {
-            "intent": percept["intent"],
+            "intent":     percept["intent"],
             "risk_level": "low",
         })
         step(CycleStage.REFLECT, reflect_r)
 
-        # ── SELF QUESTION ──────────────────────────────────────────
-        self_q = {
-            "question": f"Did I answer '{percept['intent']}' with truth and compassion?",
-            "answer": "yes" if reflect_r["quality"] in ("good", "fair") else "needs_improvement",
-        }
-        step(CycleStage.SELF_QUESTION, self_q)
+        # ── SELF QUESTION + META-COGNITION ─────────────────────────
+        meta_r = self.meta_cog.evaluate(percept, dec_r, reflect_r, reality_r)
+        step(CycleStage.SELF_QUESTION, {
+            "question":  f"Did I serve '{percept['intent']}' with truth and compassion?",
+            "answer":    "yes" if reflect_r["quality"] in ("good", "fair") else "needs_improvement",
+            "meta":      meta_r,
+        })
 
         # ── UPDATE BELIEFS ─────────────────────────────────────────
         learn_r   = self.learning.learn(reflect_r, exp_r)
@@ -189,61 +213,73 @@ class CognitiveCycle:
 
         # ── REFINE PURPOSE ─────────────────────────────────────────
         if reflect_r["quality"] == "good":
-            self.purpose.refine(f"Handled {abstr['domain']} {percept['intent']} well.")
+            self.purpose.refine(
+                f"Handled {abstr['domain']} {percept['intent']} well "
+                f"(dharma={reflect_r['dharma_score']})."
+            )
         step(CycleStage.REFINE_PURPOSE, self.purpose.get())
 
         # ── SLEEP / FORGET / CONSOLIDATE / WAKE ────────────────────
         slept = False
         if self.sleeper.should_sleep(cycle_n):
             sleep_r = self.sleep_mod.consolidate(self.beliefs, self.memory, cycle_n)
-            step(CycleStage.SLEEP, sleep_r)
-            step(CycleStage.FORGET, {"forgotten": sleep_r.get("forgotten", 0)})
+            step(CycleStage.SLEEP,       sleep_r)
+            step(CycleStage.FORGET,      {"forgotten": sleep_r.get("forgotten", 0)})
             step(CycleStage.CONSOLIDATE, {"consolidated": sleep_r.get("consolidated", 0)})
-            step(CycleStage.WAKE, self.sleep_mod.wake())
+            step(CycleStage.WAKE,        self.sleep_mod.wake())
             self.sleeper.mark_slept(cycle_n)
             slept = True
         else:
-            step(CycleStage.SLEEP, {"slept": False, "next_in": self.sleeper.cycles_until_sleep(cycle_n)})
-            step(CycleStage.FORGET, {"forgotten": 0})
+            step(CycleStage.SLEEP,       {"slept": False,
+                                           "next_in": self.sleeper.cycles_until_sleep(cycle_n)})
+            step(CycleStage.FORGET,      {"forgotten": 0})
             step(CycleStage.CONSOLIDATE, {"consolidated": 0})
-            step(CycleStage.WAKE, {"refreshed": True})
+            step(CycleStage.WAKE,        {"refreshed": True})
 
-        # Development + homeostasis
+        # Development + homeostasis + side effects
         dev_r  = self.development.record(reflect_r, reality_r["confidence"])
         home_r = self.homeostasis.check(dev_r, reflect_r)
 
-        # Habit + relationship + artifacts + civilization
         self.habit.record(percept["intent"], abstr["domain"])
         self.relationship.update("user")
         self.artifacts.store(final_output, abstr["domain"], percept["intent"])
-        civ_r = self.civ_memory.contribute(reflect_r["cycle_score"], final_output, abstr["domain"])
-
-        # Store this interaction in memory
-        self.memory.store("interaction", f"Q: {user_input[:200]}\nA: {final_output[:300]}")
+        civ_r = self.civ_memory.contribute(
+            reflect_r["cycle_score"], final_output, abstr["domain"]
+        )
+        self.memory.store("interaction",
+                          f"Q: {user_input[:200]}\nA: {final_output[:300]}")
 
         self.sm.complete_cycle()
 
         return {
-            "reply":       final_output,
-            "cycle":       cycle_n,
-            "stage_trace": [t["stage"] for t in trace],
-            "confidence":  reality_r["confidence"],
+            "reply":            final_output,
+            "cycle":            cycle_n,
+            "stage_trace":      [t["stage"] for t in trace],
+            "confidence":       reality_r["confidence"],
             "confidence_level": reality_r["confidence_level"],
-            "dharma_score": reflect_r["dharma_score"],
-            "cycle_score": reflect_r["cycle_score"],
-            "quality":     reflect_r["quality"],
-            "domain":      abstr["domain"],
-            "intent":      percept["intent"],
-            "beliefs_count": beliefs_r["count"],
-            "slept":       slept,
-            "health":      home_r["health"],
-            "identity":    identity_r["identity"]["name"],
-            "purpose":     purpose_r.get("statement", ""),
+            "dharma_score":     reflect_r["dharma_score"],
+            "cycle_score":      reflect_r["cycle_score"],
+            "quality":          reflect_r["quality"],
+            "domain":           abstr["domain"],
+            "intent":           percept["intent"],
+            "beliefs_count":    beliefs_r["count"],
+            "slept":            slept,
+            "health":           home_r["health"],
+            "identity":         identity_r["identity"]["name"],
+            "purpose":          purpose_r.get("statement", ""),
             "reality": {
                 "passed":     reality_r["passed"],
                 "confidence": reality_r["confidence"],
                 "level":      reality_r["confidence_level"],
                 "truth":      reality_r["truth_estimate"],
+            },
+            "simulation":       sim_r,
+            "meta_cognition": {
+                "why":          meta_r["why"],
+                "was_correct":  meta_r["was_correct"],
+                "correctness":  meta_r["correctness"],
+                "can_improve":  meta_r["can_improve"],
+                "self_verdict": meta_r["self_verdict"],
             },
             "trace": trace,
         }

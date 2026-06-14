@@ -30,221 +30,174 @@
 
     html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); }
 
-    /* ── Layout ── */
     .app { display: flex; height: 100vh; }
 
     /* ── Sidebar ── */
     .sidebar {
-      width: 272px; min-width: 272px;
+      width: 264px; min-width: 264px;
       background: var(--surface);
       border-right: 1px solid var(--border);
       display: flex; flex-direction: column;
       overflow-y: auto; overflow-x: hidden;
-      transition: transform .25s ease;
-      z-index: 10;
+      z-index: 10; transition: transform .25s ease;
     }
-    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar { width: 3px; }
     .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-    .sidebar-header { padding: 20px 18px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .sidebar-header { padding: 18px 16px 12px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
     .logo-icon {
-      width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
       background: linear-gradient(135deg, #6366f1 0%, #a78bfa 60%, #06b6d4 100%);
-      display: flex; align-items: center; justify-content: center; font-size: 20px;
+      display: flex; align-items: center; justify-content: center; font-size: 19px;
     }
-    .logo-name { font-size: 16px; font-weight: 800; letter-spacing: -.3px; }
-    .logo-ver  { font-size: 10px; color: var(--muted); }
+    .logo-name  { font-size: 15px; font-weight: 800; letter-spacing: -.3px; }
+    .logo-ver   { font-size: 10px; color: var(--muted); }
     .logo-level { font-size: 10px; color: var(--accent2); margin-top: 1px; }
 
-    .sec-label { padding: 10px 16px 4px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase; }
+    .sec-label { padding: 10px 14px 4px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1.2px; text-transform: uppercase; }
 
     .nav-item {
-      display: flex; align-items: center; gap: 9px;
-      padding: 9px 12px; margin: 1px 8px;
-      border-radius: 8px; cursor: pointer;
-      font-size: 13px; color: var(--muted);
-      transition: background .15s, color .15s;
-      border: none; background: none; width: calc(100% - 16px); text-align: left;
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; margin: 1px 6px; border-radius: 7px;
+      cursor: pointer; font-size: 12.5px; color: var(--muted);
+      transition: background .12s, color .12s;
+      border: none; background: none; width: calc(100% - 12px); text-align: left;
     }
-    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item:hover  { background: var(--surface2); color: var(--text); }
     .nav-item.active { background: rgba(99,102,241,.18); color: var(--accent2); }
-    .nav-icon { font-size: 15px; width: 18px; text-align: center; flex-shrink: 0; }
-    .nav-badge {
-      margin-left: auto; font-size: 10px; padding: 2px 7px;
-      border-radius: 99px; background: var(--accent); color: #fff; font-weight: 600;
-    }
-    .nav-link {
-      display: flex; align-items: center; gap: 9px;
-      padding: 9px 12px; margin: 1px 8px; border-radius: 8px;
-      font-size: 13px; color: var(--muted);
-      transition: background .15s, color .15s; text-decoration: none;
-    }
+    .nav-icon  { font-size: 14px; width: 17px; text-align: center; flex-shrink: 0; }
+    .nav-badge { margin-left: auto; font-size: 9px; padding: 2px 6px; border-radius: 99px; background: var(--accent); color: #fff; font-weight: 600; }
+    .nav-link  { display: flex; align-items: center; gap: 8px; padding: 8px 10px; margin: 1px 6px; border-radius: 7px; font-size: 12.5px; color: var(--muted); transition: background .12s, color .12s; text-decoration: none; }
     .nav-link:hover { background: var(--surface2); color: var(--text); }
 
-    /* ── Cognitive State Panel ── */
-    .cog-panel {
-      margin: 10px 10px 6px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .cog-panel-head {
-      padding: 9px 12px;
-      background: linear-gradient(90deg, rgba(99,102,241,.12), transparent);
-      border-bottom: 1px solid var(--border);
-      font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      color: var(--accent2);
-      display: flex; align-items: center; gap: 6px;
-    }
-    .cog-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 12px; font-size: 12px; }
+    /* ── Cognitive State ── */
+    .cog-panel { margin: 8px 8px 4px; background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; overflow: hidden; flex-shrink: 0; }
+    .cog-head  { padding: 8px 10px; background: linear-gradient(90deg,rgba(99,102,241,.12),transparent); border-bottom: 1px solid var(--border); font-size: 9.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent2); display: flex; align-items: center; gap: 5px; }
+    .cog-row   { display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; font-size: 11px; }
     .cog-label { color: var(--muted); }
-    .cog-val { color: var(--text); font-weight: 600; font-size: 11px; }
-    .cog-val.good    { color: var(--green); }
-    .cog-val.fair    { color: var(--gold); }
-    .cog-val.poor    { color: var(--red); }
-    .cog-val.high    { color: var(--green); }
-    .cog-val.medium  { color: var(--gold); }
-    .cog-val.low     { color: var(--red); }
+    .cog-val   { color: var(--text); font-weight: 600; font-size: 10.5px; }
+    .cog-val.good   { color: var(--green); }
+    .cog-val.fair   { color: var(--gold); }
+    .cog-val.poor   { color: var(--red); }
+    .cog-val.high   { color: var(--green); }
+    .cog-val.medium { color: var(--gold); }
+    .cog-val.low, .cog-val.very_low { color: var(--red); }
 
-    /* ── Cycle Wheel ── */
-    .cycle-section {
-      margin: 6px 10px 10px;
-      flex-shrink: 0;
+    /* ── Stage dots ── */
+    .cycle-sec  { margin: 4px 8px 8px; flex-shrink: 0; }
+    .cycle-title { font-size: 9.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .cycle-dots  { display: flex; flex-wrap: wrap; gap: 2px; }
+    .sdot {
+      font-size: 8.5px; padding: 2px 5px; border-radius: 3px;
+      background: var(--surface3); color: var(--muted); border: 1px solid var(--border);
+      transition: all .15s; cursor: default; white-space: nowrap;
     }
-    .cycle-title { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding: 0 2px; }
-    .cycle-stages { display: flex; flex-wrap: wrap; gap: 3px; }
-    .stage-dot {
-      font-size: 9px; padding: 2px 6px; border-radius: 4px;
-      background: var(--surface3); color: var(--muted);
-      border: 1px solid var(--border);
-      transition: all .2s;
-      cursor: default;
-    }
-    .stage-dot.done   { background: rgba(99,102,241,.15); color: var(--accent2); border-color: rgba(99,102,241,.3); }
-    .stage-dot.active { background: var(--accent); color: #fff; border-color: var(--accent); animation: pulse .8s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+    .sdot.done   { background: rgba(99,102,241,.12); color: var(--accent2); border-color: rgba(99,102,241,.25); }
+    .sdot.active { background: var(--accent); color: #fff; border-color: var(--accent); animation: pulse .7s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.55} }
 
-    /* ── Status footer ── */
-    .status-card {
-      margin: auto 10px 14px;
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 10px; padding: 10px 12px; flex-shrink: 0;
-    }
-    .status-title { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .8px; text-transform: uppercase; margin-bottom: 7px; }
-    .status-row { display: flex; align-items: center; justify-content: space-between; margin: 4px 0; font-size: 11px; }
+    /* ── Status ── */
+    .status-card { margin: auto 8px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; padding: 9px 10px; flex-shrink: 0; }
+    .status-title { font-size: 9.5px; font-weight: 700; color: var(--muted); letter-spacing: .8px; text-transform: uppercase; margin-bottom: 6px; }
+    .status-row   { display: flex; align-items: center; justify-content: space-between; margin: 3px 0; font-size: 10.5px; }
     .status-label { color: var(--muted); }
-    .status-val { color: var(--text); font-weight: 500; }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 4px; }
+    .status-val   { color: var(--text); font-weight: 500; }
+    .dot   { width: 5px; height: 5px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 3px; }
     .dot.off { background: var(--red); }
 
     /* ── Main ── */
     .main { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 
-    .topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 13px 22px; border-bottom: 1px solid var(--border);
-      background: var(--surface); flex-shrink: 0;
-    }
-    .topbar-left { display: flex; align-items: center; gap: 11px; }
-    .topbar-title { font-size: 15px; font-weight: 700; }
-    .topbar-sub   { font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+    .tb-left  { display: flex; align-items: center; gap: 10px; }
+    .tb-title { font-size: 14.5px; font-weight: 700; }
+    .tb-sub   { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
-    .mode-pills { display: flex; gap: 3px; background: var(--surface2); border-radius: 9px; padding: 3px; }
-    .pill { padding: 5px 14px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--muted); transition: background .15s, color .15s; }
+    .mode-pills { display: flex; gap: 2px; background: var(--surface2); border-radius: 8px; padding: 3px; }
+    .pill { padding: 5px 13px; border-radius: 6px; font-size: 11.5px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--muted); transition: background .12s, color .12s; }
     .pill.active { background: var(--accent); color: #fff; }
     .pill:hover:not(.active) { color: var(--text); }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { width: 20px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+    .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
 
     /* ── Chat ── */
-    .chat-wrap { flex: 1; overflow-y: auto; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
-    .chat-wrap::-webkit-scrollbar { width: 4px; }
+    .chat-wrap { flex: 1; overflow-y: auto; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+    .chat-wrap::-webkit-scrollbar { width: 3px; }
     .chat-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
-    .msg-row { display: flex; gap: 10px; max-width: 800px; }
-    .msg-row.user { flex-direction: row-reverse; margin-left: auto; }
-
-    .avatar { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; margin-top: 2px; }
-    .avatar.ai  { background: linear-gradient(135deg, #6366f1, #a78bfa); }
-    .avatar.usr { background: var(--surface3); border: 1px solid var(--border); }
-
-    .bubble-wrap { display: flex; flex-direction: column; gap: 4px; max-width: calc(100% - 42px); }
-    .bubble-meta { font-size: 10px; color: var(--muted); }
+    .msg-row       { display: flex; gap: 9px; max-width: 820px; }
+    .msg-row.user  { flex-direction: row-reverse; margin-left: auto; }
+    .avatar        { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; margin-top: 2px; }
+    .avatar.ai     { background: linear-gradient(135deg, #6366f1, #a78bfa); }
+    .avatar.usr    { background: var(--surface3); border: 1px solid var(--border); }
+    .bubble-wrap   { display: flex; flex-direction: column; gap: 3px; max-width: calc(100% - 39px); }
+    .bubble-meta   { font-size: 9.5px; color: var(--muted); }
     .msg-row.user .bubble-meta { text-align: right; }
+    .bubble        { padding: 10px 14px; border-radius: var(--radius); font-size: 13.5px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
+    .bubble.ai     { background: var(--ai-bg); border: 1px solid var(--border); border-top-left-radius: 4px; }
+    .bubble.user   { background: var(--user-bg); border: 1px solid rgba(99,102,241,.3); border-top-right-radius: 4px; }
+    .bubble.error  { background: var(--error-bg); color: var(--error-txt); border: 1px solid #7f1d1d; }
 
-    .bubble { padding: 11px 15px; border-radius: var(--radius); font-size: 14px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
-    .bubble.ai   { background: var(--ai-bg); border: 1px solid var(--border); border-top-left-radius: 4px; }
-    .bubble.user { background: var(--user-bg); border: 1px solid rgba(99,102,241,.3); border-top-right-radius: 4px; }
-    .bubble.error { background: var(--error-bg); color: var(--error-txt); border: 1px solid #7f1d1d; }
+    /* ── Meta tags ── */
+    .cycle-meta  { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+    .meta-tag    { font-size: 9.5px; padding: 2px 7px; border-radius: 99px; background: var(--surface3); color: var(--muted); border: 1px solid var(--border); }
+    .meta-tag.green { background: rgba(34,197,94,.08);  color: var(--green); border-color: rgba(34,197,94,.25); }
+    .meta-tag.gold  { background: rgba(245,158,11,.08); color: var(--gold);  border-color: rgba(245,158,11,.25); }
+    .meta-tag.red   { background: rgba(239,68,68,.08);  color: var(--red);   border-color: rgba(239,68,68,.25); }
+    .meta-tag.blue  { background: rgba(99,102,241,.08); color: var(--accent2); border-color: rgba(99,102,241,.25); }
+    .meta-tag.purple { background: rgba(167,139,250,.08); color: #a78bfa; border-color: rgba(167,139,250,.25); }
 
-    /* ── Cycle meta strip ── */
-    .cycle-meta {
-      display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px;
-    }
-    .meta-tag {
-      font-size: 10px; padding: 2px 8px; border-radius: 99px;
-      background: var(--surface3); color: var(--muted); border: 1px solid var(--border);
-    }
-    .meta-tag.green { background: rgba(34,197,94,.1); color: var(--green); border-color: rgba(34,197,94,.3); }
-    .meta-tag.gold  { background: rgba(245,158,11,.1); color: var(--gold); border-color: rgba(245,158,11,.3); }
-    .meta-tag.red   { background: rgba(239,68,68,.1);  color: var(--red);  border-color: rgba(239,68,68,.3); }
-    .meta-tag.blue  { background: rgba(99,102,241,.1); color: var(--accent2); border-color: rgba(99,102,241,.3); }
-
-    /* ── Stage flow strip ── */
-    .stage-flow {
-      margin-top: 8px; font-size: 9px; color: var(--muted); line-height: 1.8;
-      background: var(--surface2); padding: 8px 12px; border-radius: 8px;
-      border: 1px solid var(--border); display: none;
-    }
-    .stage-flow.open { display: block; }
-    .stage-flow-toggle { font-size: 10px; color: var(--muted); cursor: pointer; margin-top: 4px; background: none; border: none; padding: 2px 0; }
-    .stage-flow-toggle:hover { color: var(--accent2); }
+    /* ── Expandable panels ── */
+    .expand-btn  { font-size: 9.5px; color: var(--muted); cursor: pointer; margin-top: 3px; background: none; border: none; padding: 1px 0; }
+    .expand-btn:hover { color: var(--accent2); }
+    .expand-body { margin-top: 5px; font-size: 11px; color: var(--muted); background: var(--surface2); padding: 8px 11px; border-radius: 7px; border: 1px solid var(--border); display: none; }
+    .expand-body.open { display: block; }
+    .expand-body p { margin: 3px 0; line-height: 1.5; }
+    .expand-body strong { color: var(--text); font-weight: 600; }
 
     /* ── Typing ── */
-    .typing-dots { display: flex; gap: 4px; padding: 12px 15px; }
+    .typing-dots { display: flex; gap: 4px; padding: 10px 14px; }
     .typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: bounce .9s infinite ease-in-out; }
     .typing-dots span:nth-child(2) { animation-delay: .18s; }
     .typing-dots span:nth-child(3) { animation-delay: .36s; }
     @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-6px)} }
 
     /* ── Empty state ── */
-    .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 32px; }
-    .empty-icon { font-size: 52px; opacity: .3; }
-    .empty-title { font-size: 20px; font-weight: 700; opacity: .5; }
-    .empty-sub   { font-size: 13px; color: var(--muted); }
-    .suggestions { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin-top: 10px; }
-    .suggestion { padding: 7px 14px; border-radius: 99px; border: 1px solid var(--border); font-size: 12px; color: var(--muted); cursor: pointer; transition: border-color .15s, color .15s; background: none; }
-    .suggestion:hover { border-color: var(--accent); color: var(--accent2); }
+    .empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 28px; }
+    .empty-icon  { font-size: 48px; opacity: .25; }
+    .empty-title { font-size: 19px; font-weight: 700; opacity: .4; }
+    .empty-sub   { font-size: 12.5px; color: var(--muted); }
+    .suggestions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+    /* Suggestions are fully clickable — they fill AND send */
+    .suggestion  { padding: 6px 13px; border-radius: 99px; border: 1px solid var(--border); font-size: 12px; color: var(--muted); cursor: pointer; transition: border-color .12s, color .12s, background .12s; background: none; }
+    .suggestion:hover { border-color: var(--accent); color: var(--accent2); background: rgba(99,102,241,.06); }
 
     /* ── Input ── */
-    .input-area { padding: 14px 22px 18px; border-top: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
-    .input-box { display: flex; align-items: flex-end; gap: 9px; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 9px 12px; transition: border-color .2s; }
+    .input-area { padding: 12px 20px 16px; border-top: 1px solid var(--border); background: var(--surface); flex-shrink: 0; }
+    .input-box  { display: flex; align-items: flex-end; gap: 8px; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 8px 10px; transition: border-color .15s; }
     .input-box:focus-within { border-color: var(--accent); }
-    #msg { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: var(--font); font-size: 14px; resize: none; min-height: 22px; max-height: 120px; line-height: 1.5; }
+    #msg        { flex: 1; background: none; border: none; outline: none; color: var(--text); font-family: var(--font); font-size: 13.5px; resize: none; min-height: 22px; max-height: 110px; line-height: 1.5; }
     #msg::placeholder { color: var(--muted); }
-    #send { flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity .15s, transform .1s; }
-    #send:hover:not(:disabled) { opacity: .85; }
-    #send:active:not(:disabled) { transform: scale(.93); }
-    #send:disabled { opacity: .35; cursor: not-allowed; }
+    #send       { flex-shrink: 0; width: 32px; height: 32px; border-radius: 7px; background: var(--accent); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity .12s, transform .1s; }
+    #send:hover:not(:disabled)  { opacity: .82; }
+    #send:active:not(:disabled) { transform: scale(.92); }
+    #send:disabled { opacity: .3; cursor: not-allowed; }
     #send svg { fill: #fff; }
-    .input-hint { font-size: 10px; color: var(--muted); margin-top: 7px; text-align: center; }
+    .input-hint { font-size: 9.5px; color: var(--muted); margin-top: 6px; text-align: center; }
 
-    /* ── Overlay ── */
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 9; }
 
-    @media (max-width: 720px) {
+    @media (max-width: 700px) {
       .sidebar { position: fixed; left: 0; top: 0; bottom: 0; transform: translateX(-100%); }
       .sidebar.open { transform: translateX(0); }
       .overlay.open { display: block; }
       .hamburger { display: flex; }
       .mode-pills { display: none; }
-      .topbar-sub { display: none; }
-      .chat-wrap { padding: 14px 16px; }
-      .input-area { padding: 10px 14px 14px; }
+      .tb-sub { display: none; }
+      .chat-wrap { padding: 12px 14px; }
+      .input-area { padding: 10px 12px 14px; }
     }
   </style>
 </head>
@@ -253,6 +206,7 @@
 <div class="overlay" id="overlay"></div>
 
 <div class="app">
+
   <!-- ── Sidebar ── -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
@@ -260,8 +214,8 @@
         <div class="logo-icon">🧠</div>
         <div>
           <div class="logo-name">ChetnaOS</div>
-          <div class="logo-ver">v2.0 — Cognitive Architecture</div>
-          <div class="logo-level" id="sidebar-level">Level 6 — Developmental Organism</div>
+          <div class="logo-ver">v2.0 · Cognitive Architecture</div>
+          <div class="logo-level" id="sb-level">Level 6 — Developmental Organism</div>
         </div>
       </a>
     </div>
@@ -280,63 +234,46 @@
     </button>
 
     <!-- Cognitive State Panel -->
-    <div class="cog-panel" id="cog-panel">
-      <div class="cog-panel-head">⚙️ &nbsp;Cognitive State</div>
-      <div class="cog-row"><span class="cog-label">Cycle</span><span class="cog-val" id="cog-cycle">—</span></div>
-      <div class="cog-row"><span class="cog-label">Quality</span><span class="cog-val" id="cog-quality">—</span></div>
-      <div class="cog-row"><span class="cog-label">Confidence</span><span class="cog-val" id="cog-conf">—</span></div>
-      <div class="cog-row"><span class="cog-label">Dharma</span><span class="cog-val" id="cog-dharma">—</span></div>
-      <div class="cog-row"><span class="cog-label">Domain</span><span class="cog-val" id="cog-domain">—</span></div>
-      <div class="cog-row"><span class="cog-label">Beliefs</span><span class="cog-val" id="cog-beliefs">—</span></div>
-      <div class="cog-row"><span class="cog-label">Health</span><span class="cog-val" id="cog-health">—</span></div>
+    <div class="cog-panel">
+      <div class="cog-head">⚙️ &nbsp;Cognitive State</div>
+      <div class="cog-row"><span class="cog-label">Cycle</span>      <span class="cog-val" id="cg-cycle">—</span></div>
+      <div class="cog-row"><span class="cog-label">Quality</span>    <span class="cog-val" id="cg-quality">—</span></div>
+      <div class="cog-row"><span class="cog-label">Confidence</span> <span class="cog-val" id="cg-conf">—</span></div>
+      <div class="cog-row"><span class="cog-label">Dharma</span>     <span class="cog-val" id="cg-dharma">—</span></div>
+      <div class="cog-row"><span class="cog-label">Domain</span>     <span class="cog-val" id="cg-domain">—</span></div>
+      <div class="cog-row"><span class="cog-label">Beliefs</span>    <span class="cog-val" id="cg-beliefs">—</span></div>
+      <div class="cog-row"><span class="cog-label">Self-verdict</span><span class="cog-val" id="cg-verdict">—</span></div>
+      <div class="cog-row"><span class="cog-label">Health</span>     <span class="cog-val" id="cg-health">—</span></div>
     </div>
 
     <!-- 27-Stage Cycle -->
-    <div class="cycle-section">
-      <div class="cycle-title">🔄 Cognitive Cycle Stages</div>
-      <div class="cycle-stages" id="cycle-stages"></div>
+    <div class="cycle-sec">
+      <div class="cycle-title">🔄 Cognitive Cycle</div>
+      <div class="cycle-dots" id="cycle-dots"></div>
     </div>
 
-    <div style="height:8px;flex-shrink:0;"></div>
     <div class="sec-label">Modules</div>
-    <a class="nav-link" href="/kalpavriksha_ui/index.html">
-      <span class="nav-icon">🌳</span> Kalpavriksha Suite
-    </a>
-    <a class="nav-link" href="/api/state" target="_blank">
-      <span class="nav-icon">🧬</span> Live State API
-    </a>
-    <a class="nav-link" href="/docs" target="_blank">
-      <span class="nav-icon">📖</span> API Docs
-    </a>
-    <a class="nav-link" href="/health" target="_blank">
-      <span class="nav-icon">❤️</span> Health Check
-    </a>
+    <a class="nav-link" href="/kalpavriksha_ui/index.html"><span class="nav-icon">🌳</span> Kalpavriksha Suite</a>
+    <a class="nav-link" href="/api/state" target="_blank"><span class="nav-icon">🧬</span> Live State API</a>
+    <a class="nav-link" href="/docs"      target="_blank"><span class="nav-icon">📖</span> API Docs</a>
+    <a class="nav-link" href="/health"   target="_blank"><span class="nav-icon">❤️</span> Health Check</a>
 
-    <div class="status-card" id="status-card">
+    <div class="status-card">
       <div class="status-title">System Status</div>
-      <div class="status-row">
-        <span class="status-label">Runtime</span>
-        <span class="status-val"><span class="dot off" id="dot-rt"></span><span id="svc-rt">Loading…</span></span>
-      </div>
-      <div class="status-row">
-        <span class="status-label">LLM</span>
-        <span class="status-val"><span class="dot off" id="dot-llm"></span><span id="svc-llm">—</span></span>
-      </div>
-      <div class="status-row">
-        <span class="status-label">Model</span>
-        <span class="status-val" id="svc-model">—</span>
-      </div>
+      <div class="status-row"><span class="status-label">Runtime</span> <span class="status-val"><span class="dot off" id="dot-rt"></span><span id="svc-rt">Loading…</span></span></div>
+      <div class="status-row"><span class="status-label">LLM</span>     <span class="status-val"><span class="dot off" id="dot-llm"></span><span id="svc-llm">—</span></span></div>
+      <div class="status-row"><span class="status-label">Model</span>   <span class="status-val" id="svc-model">—</span></div>
     </div>
   </aside>
 
   <!-- ── Main ── -->
   <div class="main">
     <header class="topbar">
-      <div class="topbar-left">
+      <div class="tb-left">
         <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         <div>
-          <div class="topbar-title" id="topbar-title">Chat Mode</div>
-          <div class="topbar-sub"  id="topbar-sub">Runs the full 27-stage cognitive cycle</div>
+          <div class="tb-title" id="tb-title">Chat Mode</div>
+          <div class="tb-sub"   id="tb-sub">Runs the full 27-stage cognitive cycle</div>
         </div>
       </div>
       <div class="mode-pills">
@@ -347,35 +284,36 @@
     </header>
 
     <div class="chat-wrap" id="chat">
-      <div class="empty-state" id="empty-state">
+      <div class="empty" id="empty-state">
         <div class="empty-icon">🧠</div>
         <div class="empty-title">How can I help you?</div>
-        <div class="empty-sub">Every message runs the 27-stage cognitive cycle</div>
+        <div class="empty-sub">Click any suggestion or type below — every message runs the 27-stage cognitive cycle</div>
         <div class="suggestions">
-          <button class="suggestion" onclick="fill('Hello, what are you?')">Hello, what are you?</button>
-          <button class="suggestion" onclick="fill('What is artificial intelligence?')">What is AI?</button>
-          <button class="suggestion" onclick="fill('calc: (23+7)*4')">calc: (23+7)×4</button>
-          <button class="suggestion" onclick="fill('search latest AI news')">Search AI news</button>
-          <button class="suggestion" onclick="fill('Explain the concept of consciousness')">What is consciousness?</button>
+          <button class="suggestion" onclick="sendSuggestion('Hello! What are you and how do you think?')">Hello, what are you?</button>
+          <button class="suggestion" onclick="sendSuggestion('What is artificial intelligence?')">What is AI?</button>
+          <button class="suggestion" onclick="sendSuggestion('calc: (23+7)*4')">calc: (23+7)×4</button>
+          <button class="suggestion" onclick="sendSuggestion('search latest AI news')">Search AI news</button>
+          <button class="suggestion" onclick="sendSuggestion('What is consciousness and self-awareness?')">Consciousness?</button>
+          <button class="suggestion" onclick="sendSuggestion('How should I build a business with near-zero budget?')">Business with zero budget?</button>
         </div>
       </div>
     </div>
 
     <div class="input-area">
       <div class="input-box">
-        <textarea id="msg" rows="1" placeholder="Type a message… (Ctrl+Enter to send)"></textarea>
-        <button id="send" title="Send (Ctrl+Enter)">
-          <svg width="15" height="15" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        <textarea id="msg" rows="1" placeholder="Type a message… (Enter to send)"></textarea>
+        <button id="send" title="Send (Enter)">
+          <svg width="14" height="14" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </button>
       </div>
-      <div class="input-hint">Ctrl+Enter to send &nbsp;·&nbsp; Agent: <code>calc: 2+2</code> or <code>search topic</code></div>
+      <div class="input-hint">Enter to send &nbsp;·&nbsp; Shift+Enter for new line &nbsp;·&nbsp; Agent: <code>calc: 2+2</code> or <code>search topic</code></div>
     </div>
   </div>
 </div>
 
 <script>
-// ── Constants ──────────────────────────────────────────────────────────────
-const ALL_STAGES = [
+// ── Stage list ─────────────────────────────────────────────────────────────
+const STAGES = [
   "EXIST","PURPOSE","OBSERVE","ATTEND","RECALL","PREDICT","IMAGINE",
   "PLAY","PLAN","DECIDE","ACT","HABIT","WORLD_UPDATE","EXPERIENCE",
   "REALITY_CHECK","EVALUATE","FAILURE_RECOVERY","REFLECT","SELF_QUESTION",
@@ -383,50 +321,39 @@ const ALL_STAGES = [
   "SLEEP","FORGET","CONSOLIDATE","WAKE"
 ];
 
-const MODE_CONFIG = {
-  chat:  { title: "Chat Mode",      sub: "Runs the full 27-stage cognitive cycle" },
-  agent: { title: "Agent Mode",     sub: "Tool-enabled: calculator · web search · web fetch" },
-  goal:  { title: "Goal (AGI Loop)",sub: "Multi-step goal execution via cognitive cycle" },
+const MODE_CFG = {
+  chat:  { title: "Chat Mode",       sub: "Runs the full 27-stage cognitive cycle" },
+  agent: { title: "Agent Mode",      sub: "Tool-enabled: calculator · web search · web fetch" },
+  goal:  { title: "Goal (AGI Loop)", sub: "Multi-step goal execution via cognitive cycle" },
 };
 
-// ── State ─────────────────────────────────────────────────────────────────
+// ── State ──────────────────────────────────────────────────────────────────
 let currentMode = "chat";
-let lastMeta    = null;
+let _cycleAnim  = null;
 
-// ── Build stage dots ───────────────────────────────────────────────────────
-(function buildCycleDots() {
-  const wrap = document.getElementById("cycle-stages");
-  ALL_STAGES.forEach(s => {
+// ── Build cycle stage dots ─────────────────────────────────────────────────
+(function() {
+  const wrap = document.getElementById("cycle-dots");
+  STAGES.forEach(s => {
     const d = document.createElement("div");
-    d.className = "stage-dot";
-    d.id = "dot-" + s;
+    d.className = "sdot";
+    d.id = "sdot-" + s;
     d.title = s.replace(/_/g," ");
-    d.textContent = s.length > 7 ? s.slice(0,6)+"…" : s;
+    d.textContent = s.length > 7 ? s.slice(0,6) : s;
     wrap.appendChild(d);
   });
 })();
 
-function updateCycleDots(trace) {
-  ALL_STAGES.forEach(s => {
-    const d = document.getElementById("dot-" + s);
-    if (!d) return;
-    d.classList.remove("done","active");
-    if (trace && trace.includes(s)) d.classList.add("done");
-  });
-}
-
+function clearDots()    { STAGES.forEach(s => document.getElementById("sdot-"+s)?.classList.remove("done","active")); }
+function markDone(t)    { STAGES.forEach(s => document.getElementById("sdot-"+s)?.classList.toggle("done", (t||[]).includes(s))); }
 function animateCycle(trace) {
-  ALL_STAGES.forEach(s => document.getElementById("dot-"+s)?.classList.remove("done","active"));
+  clearDots();
   let i = 0;
   function step() {
-    if (i >= trace.length) { updateCycleDots(trace); return; }
-    const d = document.getElementById("dot-"+trace[i]);
-    if (d) {
-      if (i > 0) document.getElementById("dot-"+trace[i-1])?.classList.replace("active","done");
-      d.classList.add("active");
-    }
-    i++;
-    setTimeout(step, 80);
+    if (i >= trace.length) { markDone(trace); return; }
+    if (i > 0) document.getElementById("sdot-"+trace[i-1])?.classList.replace("active","done");
+    document.getElementById("sdot-"+trace[i])?.classList.add("active");
+    i++; setTimeout(step, 75);
   }
   step();
 }
@@ -438,16 +365,16 @@ function setMode(m) {
     document.getElementById("nav-"+x)?.classList.toggle("active", x===m);
     document.getElementById("pill-"+x)?.classList.toggle("active", x===m);
   });
-  document.getElementById("topbar-title").textContent = MODE_CONFIG[m].title;
-  document.getElementById("topbar-sub").textContent   = MODE_CONFIG[m].sub;
+  document.getElementById("tb-title").textContent = MODE_CFG[m].title;
+  document.getElementById("tb-sub").textContent   = MODE_CFG[m].sub;
   document.getElementById("msg").placeholder = m === "agent"
     ? "Agent: try 'calc: 2+2' or 'search AI news'…"
-    : m === "goal" ? "Describe a goal for the AGI loop…"
-    : "Type a message… (Ctrl+Enter to send)";
+    : m === "goal" ? "Describe a goal…"
+    : "Type a message… (Enter to send)";
   closeSidebar();
 }
 
-// ── Sidebar mobile ─────────────────────────────────────────────────────────
+// ── Sidebar ────────────────────────────────────────────────────────────────
 document.getElementById("hamburger").addEventListener("click", () => {
   document.getElementById("sidebar").classList.toggle("open");
   document.getElementById("overlay").classList.toggle("open");
@@ -458,37 +385,48 @@ function closeSidebar() {
   document.getElementById("overlay").classList.remove("open");
 }
 
-// ── Auto-resize textarea ───────────────────────────────────────────────────
+// ── Textarea auto-resize ───────────────────────────────────────────────────
 const msgEl = document.getElementById("msg");
 msgEl.addEventListener("input", () => {
   msgEl.style.height = "auto";
-  msgEl.style.height = Math.min(msgEl.scrollHeight, 120) + "px";
+  msgEl.style.height = Math.min(msgEl.scrollHeight, 110) + "px";
 });
 
-// ── Utilities ─────────────────────────────────────────────────────────────
-function timeNow() { return new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}); }
-function escapeHtml(s) {
-  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-}
-function fill(text) {
-  msgEl.value = text;
-  msgEl.dispatchEvent(new Event("input"));
-  msgEl.focus();
-}
-function hideEmpty() {
-  const e = document.getElementById("empty-state");
-  if (e) e.style.display = "none";
+// ── Helpers ────────────────────────────────────────────────────────────────
+const timeNow  = () => new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+function hideEmpty() { const e = document.getElementById("empty-state"); if(e) e.style.display = "none"; }
+
+function tag(parent, text, cls) {
+  const t = document.createElement("span");
+  t.className = "meta-tag" + (cls ? " "+cls : "");
+  t.textContent = text;
+  parent.appendChild(t);
 }
 
-// ── Chat rendering ─────────────────────────────────────────────────────────
+function expandable(parent, label, content) {
+  const btn  = document.createElement("button");
+  btn.className = "expand-btn";
+  btn.textContent = "▸ " + label;
+  const body = document.createElement("div");
+  body.className = "expand-body";
+  body.innerHTML = content;
+  btn.addEventListener("click", () => {
+    body.classList.toggle("open");
+    btn.textContent = (body.classList.contains("open") ? "▾ " : "▸ ") + label;
+  });
+  parent.appendChild(btn);
+  parent.appendChild(body);
+}
+
+// ── Render bubbles ─────────────────────────────────────────────────────────
 function addBubble(text, who, meta) {
   hideEmpty();
   const chat = document.getElementById("chat");
   const row  = document.createElement("div");
-  row.className = `msg-row ${who === "user" ? "user" : ""}`;
+  row.className = "msg-row" + (who==="user" ? " user" : "");
 
   const av = document.createElement("div");
-  av.className = `avatar ${who === "user" ? "usr" : "ai"}`;
+  av.className = "avatar " + (who==="user" ? "usr" : "ai");
   av.textContent = who === "user" ? "👤" : "🧠";
 
   const wrap = document.createElement("div");
@@ -496,51 +434,56 @@ function addBubble(text, who, meta) {
 
   const metaEl = document.createElement("div");
   metaEl.className = "bubble-meta";
-  metaEl.textContent = (who === "user" ? "You" : "ChetnaOS") + " · " + timeNow();
+  metaEl.textContent = (who==="user" ? "You" : "ChetnaOS") + " · " + timeNow();
 
   const bub = document.createElement("div");
-  bub.className = `bubble ${who === "user" ? "user" : "ai"}`;
-  if (typeof text === "string" && text.includes("\n")) {
-    bub.innerHTML = text.split("\n").map(escapeHtml).join("<br/>");
-  } else {
-    bub.textContent = typeof text === "string" ? text : String(text);
-  }
+  bub.className = "bubble " + (who==="user" ? "user" : "ai");
+  if (typeof text === "string" && text.includes("\n"))
+    bub.innerHTML = text.split("\n").map(l => l.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")).join("<br/>");
+  else
+    bub.textContent = String(text);
 
   wrap.appendChild(metaEl);
   wrap.appendChild(bub);
 
-  // Meta tags + stage flow (AI only)
   if (who === "ai" && meta) {
     const tags = document.createElement("div");
     tags.className = "cycle-meta";
 
-    const qualColor = {good:"green",fair:"gold",poor:"red"}[meta.quality] || "";
-    const confColor = {HIGH:"green",MEDIUM:"gold",LOW:"red",VERY_LOW:"red"}[meta.confidence_level] || "";
+    const qc  = {good:"green",fair:"gold",poor:"red"}[meta.quality] || "";
+    const cc  = {HIGH:"green",MEDIUM:"gold",LOW:"red",VERY_LOW:"red"}[(meta.confidence_level||"").toUpperCase()] || "";
+    const vc  = meta.meta_cognition?.self_verdict === "good" ? "green" : "gold";
 
-    if (meta.cycle)           addTag(tags, `Cycle #${meta.cycle}`, "blue");
-    if (meta.quality)         addTag(tags, `Quality: ${meta.quality}`, qualColor);
-    if (meta.confidence_level) addTag(tags, `Confidence: ${meta.confidence_level}`, confColor);
-    if (meta.dharma_score)    addTag(tags, `Dharma: ${meta.dharma_score}`, meta.dharma_score>=65?"green":"red");
-    if (meta.domain)          addTag(tags, `Domain: ${meta.domain}`, "");
-    if (meta.reality?.truth)  addTag(tags, meta.reality.truth.replace(/_/g," "), "");
+    if (meta.cycle)             tag(tags, `Cycle #${meta.cycle}`,              "blue");
+    if (meta.quality)           tag(tags, `Quality: ${meta.quality}`,          qc);
+    if (meta.confidence_level)  tag(tags, `Conf: ${meta.confidence_level}`,    cc);
+    if (meta.dharma_score)      tag(tags, `Dharma: ${meta.dharma_score}/100`,  meta.dharma_score>=65?"green":"red");
+    if (meta.domain)            tag(tags, meta.domain,                         "");
+    if (meta.meta_cognition?.self_verdict) tag(tags, `Self: ${meta.meta_cognition.self_verdict}`, vc);
+    if (meta.reality?.truth)    tag(tags, meta.reality.truth.replace(/_/g," "), "");
 
     wrap.appendChild(tags);
 
-    if (meta.stage_trace && meta.stage_trace.length > 0) {
-      const toggleBtn = document.createElement("button");
-      toggleBtn.className = "stage-flow-toggle";
-      toggleBtn.textContent = "▸ Show cognitive cycle trace";
-      const flow = document.createElement("div");
-      flow.className = "stage-flow";
-      flow.textContent = meta.stage_trace.join(" → ");
-      toggleBtn.addEventListener("click", () => {
-        flow.classList.toggle("open");
-        toggleBtn.textContent = flow.classList.contains("open")
-          ? "▾ Hide cognitive cycle trace"
-          : "▸ Show cognitive cycle trace";
-      });
-      wrap.appendChild(toggleBtn);
-      wrap.appendChild(flow);
+    // Simulation panel
+    if (meta.simulation?.plans?.length) {
+      const plans = meta.simulation.plans;
+      const html  = plans.map((p,i) => `<p><strong>Plan ${["A","B","C"][i]}:</strong> ${p.plan}<br><span style="color:var(--muted)">→ ${p.outcome}</span></p>`).join("");
+      expandable(wrap, "Simulation: Plan A/B/C", html);
+    }
+
+    // Meta-cognition panel
+    if (meta.meta_cognition) {
+      const mc   = meta.meta_cognition;
+      const improve = (mc.can_improve||[]).map(i => `<p>• ${i}</p>`).join("");
+      const html = `<p><strong>Why:</strong> ${mc.why}</p>
+                    <p><strong>Was correct:</strong> ${mc.was_correct ? "✅ Yes" : "⚠️ Needs review"} (${(mc.correctness*100).toFixed(0)}%)</p>
+                    ${improve ? `<p><strong>Improvements:</strong></p>${improve}` : ""}`;
+      expandable(wrap, "Meta-cognition analysis", html);
+    }
+
+    // Stage trace
+    if (meta.stage_trace?.length) {
+      expandable(wrap, "Cognitive cycle trace", `<p style="line-height:1.9">${meta.stage_trace.join(" → ")}</p>`);
     }
   }
 
@@ -550,113 +493,84 @@ function addBubble(text, who, meta) {
   chat.scrollTop = chat.scrollHeight;
 }
 
-function addTag(parent, text, cls) {
-  const t = document.createElement("span");
-  t.className = "meta-tag" + (cls ? " "+cls : "");
-  t.textContent = text;
-  parent.appendChild(t);
-}
-
-function addErrorBubble(text) {
+function addError(text) {
   hideEmpty();
   const chat = document.getElementById("chat");
-  const row  = document.createElement("div");
-  row.className = "msg-row";
-  const av  = document.createElement("div");
-  av.className = "avatar ai"; av.textContent = "⚠️";
-  const wrap = document.createElement("div");
-  wrap.className = "bubble-wrap";
-  const m   = document.createElement("div");
-  m.className = "bubble-meta";
-  m.textContent = "Error · " + timeNow();
-  const bub = document.createElement("div");
-  bub.className = "bubble error";
-  bub.textContent = text;
+  const row  = document.createElement("div"); row.className = "msg-row";
+  const av   = document.createElement("div"); av.className = "avatar ai"; av.textContent = "⚠️";
+  const wrap = document.createElement("div"); wrap.className = "bubble-wrap";
+  const m    = document.createElement("div"); m.className = "bubble-meta"; m.textContent = "Error · " + timeNow();
+  const bub  = document.createElement("div"); bub.className = "bubble error"; bub.textContent = text;
   wrap.appendChild(m); wrap.appendChild(bub);
   row.appendChild(av); row.appendChild(wrap);
-  chat.appendChild(row);
-  chat.scrollTop = chat.scrollHeight;
+  chat.appendChild(row); chat.scrollTop = chat.scrollHeight;
 }
 
-function addTypingIndicator() {
-  removeTypingIndicator();
+function addTyping() {
+  removeTyping();
   hideEmpty();
   const chat = document.getElementById("chat");
-  const row  = document.createElement("div");
-  row.className = "msg-row"; row.id = "typing-row";
-  const av  = document.createElement("div");
-  av.className = "avatar ai"; av.textContent = "🧠";
-  const wrap = document.createElement("div");
-  wrap.className = "bubble-wrap";
-  const m   = document.createElement("div");
-  m.className = "bubble-meta"; m.textContent = "ChetnaOS · running cognitive cycle…";
-  const dots = document.createElement("div");
-  dots.className = "bubble ai typing-dots";
+  const row  = document.createElement("div"); row.id = "typing-row"; row.className = "msg-row";
+  const av   = document.createElement("div"); av.className = "avatar ai"; av.textContent = "🧠";
+  const wrap = document.createElement("div"); wrap.className = "bubble-wrap";
+  const m    = document.createElement("div"); m.className = "bubble-meta"; m.textContent = "ChetnaOS · running cognitive cycle…";
+  const dots = document.createElement("div"); dots.className = "bubble ai typing-dots";
   dots.innerHTML = "<span></span><span></span><span></span>";
   wrap.appendChild(m); wrap.appendChild(dots);
   row.appendChild(av); row.appendChild(wrap);
-  chat.appendChild(row);
-  chat.scrollTop = chat.scrollHeight;
+  chat.appendChild(row); chat.scrollTop = chat.scrollHeight;
 
-  // Animate cycle dots while waiting
+  // Animate dots
   let si = 0;
-  window._cycleAnim = setInterval(() => {
-    ALL_STAGES.forEach((s,i) => {
-      const d = document.getElementById("dot-"+s);
+  _cycleAnim = setInterval(() => {
+    STAGES.forEach((s,i) => {
+      const d = document.getElementById("sdot-"+s);
       if (!d) return;
       d.classList.remove("done","active");
       if (i < si) d.classList.add("done");
       if (i === si) d.classList.add("active");
     });
-    si = (si + 1) % ALL_STAGES.length;
-  }, 120);
+    si = (si+1) % STAGES.length;
+  }, 100);
 }
 
-function removeTypingIndicator() {
+function removeTyping() {
   document.getElementById("typing-row")?.remove();
-  if (window._cycleAnim) { clearInterval(window._cycleAnim); window._cycleAnim = null; }
+  if (_cycleAnim) { clearInterval(_cycleAnim); _cycleAnim = null; }
 }
 
-// ── Update cognitive state panel ───────────────────────────────────────────
-function updateCogState(meta) {
+// ── Cognitive State Panel update ───────────────────────────────────────────
+function updateCogPanel(meta) {
   if (!meta) return;
-  lastMeta = meta;
-  const qi = meta.quality || "";
-  const ci = (meta.confidence_level || "").toLowerCase();
-
   const set = (id, text, cls) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.textContent = text;
-    el.className   = "cog-val" + (cls ? " "+cls : "");
+    el.className = "cog-val" + (cls ? " "+cls : "");
   };
+  const q = meta.quality || "";
+  const cl = (meta.confidence_level || "").toLowerCase().replace("_","");
+  const dScore = meta.dharma_score || 0;
+  const vc = meta.meta_cognition?.self_verdict || "";
 
-  set("cog-cycle",   `#${meta.cycle || "—"}`);
-  set("cog-quality", qi,  qi);
-  set("cog-conf",    meta.confidence ? `${(meta.confidence*100).toFixed(0)}%  (${meta.confidence_level||""})`, ci);
-  set("cog-dharma",  meta.dharma_score ? `${meta.dharma_score}/100` : "—",
-      meta.dharma_score >= 80 ? "good" : meta.dharma_score >= 65 ? "fair" : "poor");
-  set("cog-domain",  meta.domain || "—");
-  set("cog-beliefs", meta.beliefs_count || "—");
-  set("cog-health",  meta.health || "—",
-      meta.health === "healthy" ? "good" : meta.health === "stressed" ? "fair" : "poor");
+  set("cg-cycle",   `#${meta.cycle || "—"}`);
+  set("cg-quality", q, q);
+  set("cg-conf",    meta.confidence ? `${(meta.confidence*100).toFixed(0)}% · ${meta.confidence_level||""}` : "—", cl);
+  set("cg-dharma",  dScore ? `${dScore}/100` : "—", dScore>=80?"good":dScore>=65?"fair":"poor");
+  set("cg-domain",  meta.domain || "—");
+  set("cg-beliefs", meta.beliefs_count || "—");
+  set("cg-verdict", vc, vc==="good"?"good":"fair");
+  set("cg-health",  meta.health || "—", meta.health==="healthy"?"good":meta.health==="stressed"?"fair":"poor");
 
   if (meta.stage_trace) animateCycle(meta.stage_trace);
 }
 
-// ── API calls ──────────────────────────────────────────────────────────────
+// ── API ────────────────────────────────────────────────────────────────────
 async function fetchJson(url, payload) {
-  const res  = await fetch(url, {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify(payload),
-  });
+  const res  = await fetch(url, { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
   const data = await res.json().catch(() => null);
-  if (!res.ok) {
-    const msg = data?.detail || `HTTP ${res.status}`;
-    throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
-  }
-  if (!data) throw new Error("Invalid JSON response.");
+  if (!res.ok) { const m = data?.detail; throw new Error(typeof m==="string"?m:JSON.stringify(m)||`HTTP ${res.status}`); }
+  if (!data) throw new Error("Invalid server response.");
   return data;
 }
 
@@ -664,11 +578,11 @@ async function fetchJson(url, payload) {
 async function sendMessage() {
   const text = msgEl.value.trim();
   if (!text) return;
-  const mode = currentMode;
 
-  document.getElementById("send").disabled = true;
+  const sendBtn = document.getElementById("send");
+  sendBtn.disabled = true;
   addBubble(text, "user");
-  addTypingIndicator();
+  addTyping();
   msgEl.value = "";
   msgEl.style.height = "auto";
   msgEl.focus();
@@ -676,35 +590,43 @@ async function sendMessage() {
   try {
     let data, meta, reply;
 
-    if (mode === "agent") {
-      data  = await fetchJson("/api/agent", {text, agent: mode});
+    if (currentMode === "agent") {
+      data  = await fetchJson("/api/agent", {text, agent: currentMode});
       reply = data.reply;
-      meta  = null; // agent uses old path, no cycle meta
-    } else if (mode === "goal") {
-      data  = await fetchJson("/api/goal", {goal: text, context:{mode, client:"web"}, constraints:{}});
+      meta  = null;
+    } else if (currentMode === "goal") {
+      data  = await fetchJson("/api/goal",  {goal: text, context:{mode:currentMode,client:"web"}});
       reply = data.reply;
       meta  = data.meta || null;
     } else {
-      data  = await fetchJson("/api/chat", {text, agent: mode});
+      data  = await fetchJson("/api/chat",  {text});
       reply = data.reply;
       meta  = data.meta || null;
     }
 
-    removeTypingIndicator();
+    removeTyping();
     addBubble(reply, "ai", meta);
-    if (meta) updateCogState(meta);
+    updateCogPanel(meta);
 
-  } catch (e) {
-    removeTypingIndicator();
-    addErrorBubble(e?.message || String(e));
+  } catch(e) {
+    removeTyping();
+    addError(e?.message || String(e));
   } finally {
-    document.getElementById("send").disabled = false;
+    sendBtn.disabled = false;
   }
 }
 
+// ── Suggestion chips — click → auto-send ──────────────────────────────────
+function sendSuggestion(text) {
+  msgEl.value = text;
+  msgEl.dispatchEvent(new Event("input"));
+  sendMessage();
+}
+
+// ── Key bindings ───────────────────────────────────────────────────────────
 document.getElementById("send").addEventListener("click", sendMessage);
 msgEl.addEventListener("keydown", e => {
-  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); sendMessage(); }
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 });
 
 // ── Health check ───────────────────────────────────────────────────────────
@@ -713,24 +635,18 @@ async function fetchHealth() {
     const d = await fetch("/health").then(r => r.json());
     const rtOk  = d.cognitive_runtime;
     const llmOk = d.llm_available;
-
     document.getElementById("dot-rt").classList.toggle("off", !rtOk);
     document.getElementById("svc-rt").textContent = rtOk ? "Running" : "Unavailable";
-
     document.getElementById("dot-llm").classList.toggle("off", !llmOk);
     document.getElementById("svc-llm").textContent = llmOk ? "Connected" : "No API Key";
-
-    const m = (d.model || "").replace("llama-","").replace("-instant","");
+    const m = (d.model||"").replace("llama-","").replace("-instant","");
     document.getElementById("svc-model").textContent = m || "—";
-    document.getElementById("sidebar-level").textContent = d.architecture || "Level 6";
-  } catch {
-    document.getElementById("dot-rt").classList.add("off");
-  }
+    document.getElementById("sb-level").textContent = d.architecture || "Level 6";
+  } catch { document.getElementById("dot-rt").classList.add("off"); }
 }
 
 fetchHealth();
 try { msgEl.focus(); } catch {}
-window.sendMessage = sendMessage;
 </script>
 </body>
 </html>

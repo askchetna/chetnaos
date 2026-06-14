@@ -1,0 +1,2 @@
+{"timestamp": "2026-06-14T20:38:38.946767", "why_answered": "User intent was 'question'. Purpose: serve with truth and compassion.", "was_correct": true, "correctness_score": 0.73, "improvements": ["Response was solid. Repeat this pattern."], "quality": "good"}
+{"timestamp": "2026-06-14T20:39:19.801567", "why_answered": "User intent was 'question'. Purpose: serve with truth and compassion.", "was_correct": true, "correctness_score": 0.6, "improvements": ["Address: Reject violent or harmful directives."], "quality": "fair"}

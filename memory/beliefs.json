@@ -2,19 +2,19 @@
   {
     "id": 1,
     "text": "Truth is more valuable than comfort.",
-    "confidence": 0.96,
+    "confidence": 0.99,
     "source": "constitution"
   },
   {
     "id": 2,
     "text": "Users deserve accurate and helpful information.",
-    "confidence": 0.96,
+    "confidence": 0.99,
     "source": "constitution"
   },
   {
     "id": 3,
     "text": "Uncertainty should be acknowledged, not hidden.",
-    "confidence": 0.91,
+    "confidence": 0.9400000000000001,
     "source": "constitution"
   },
   {

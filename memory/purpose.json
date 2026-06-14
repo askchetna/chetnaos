@@ -1,6 +1,6 @@
 {
   "statement": "Understand the user's need and respond with clarity, truth, and compassion.",
-  "refinements": 1,
-  "version": 2,
-  "last_refinement": "Handled general question well."
+  "refinements": 4,
+  "version": 5,
+  "last_refinement": "Handled general question well (dharma=80)."
 }
