@@ -1,29 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kalpavriksha ROI Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Calculator — Kalpavriksha</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="container">
-        <h2>Kalpavriksha ROI Calculator</h2>
 
-        <label>Acres:</label>
-        <input id="acres" type="number" placeholder="Enter acres">
+<nav class="topnav">
+  <a href="/kalpavriksha_ui/index.html" class="topnav-brand">
+    <span class="icon">🌳</span>
+    <div>
+      <div class="name">Kalpavriksha</div>
+      <div class="sub">Intelligence Suite</div>
+    </div>
+  </a>
+  <div class="topnav-right">
+    <a href="/kalpavriksha_ui/index.html" class="nav-pill back">← Suite</a>
+    <a href="/" class="nav-pill back">ChetnaOS</a>
+  </div>
+</nav>
 
-        <label>Plantation Model:</label>
-        <select id="model">
-            <option value="sandalwood">Sandalwood</option>
-            <option value="red_sanders">Red Sanders</option>
-            <option value="fruit_mix">Fruit Mix</option>
-        </select>
+<div class="page-hero">
+  <div class="hero-icon">📈</div>
+  <h1>ROI Calculator</h1>
+  <p>Forecast plantation returns — total cost, revenue, net profit, and ROI across project duration</p>
+</div>
 
-        <button onclick="calculateROI()">Calculate ROI</button>
+<div class="page-wrap">
+  <div style="max-width:580px;margin:0 auto;">
 
-        <div id="result" class="result-box hidden"></div>
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-header">
+        <span class="card-icon">⚙️</span>
+        <div>
+          <h2>Plantation Parameters</h2>
+          <p>Enter your acreage and select a plantation model</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="acres">Land Area (Acres)</label>
+            <input id="acres" type="number" step="0.5" min="0.5" placeholder="e.g. 5" />
+            <span class="hint">Minimum 0.5 acres</span>
+          </div>
+
+          <div class="field">
+            <label for="model">Plantation Model</label>
+            <select id="model">
+              <option value="" disabled selected>Select model…</option>
+              <option value="sandalwood">🪵 Sandalwood</option>
+              <option value="red_sanders">🌲 Red Sanders</option>
+              <option value="fruit_mix">🍋 Fruit Mix</option>
+            </select>
+            <span class="hint">Each model has different ROI timelines</span>
+          </div>
+
+        </div>
+
+        <div style="margin-top:28px;">
+          <button class="btn btn-primary btn-full btn-lg" id="roiBtn" onclick="calculateROI()">
+            <span id="btn-text">📊 Calculate ROI</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script src="js/roi.js"></script>
+    <!-- Result -->
+    <div id="result" class="hidden">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">💰</span>
+          <div>
+            <h2>ROI Forecast</h2>
+            <p id="result-subtitle">Calculation complete</p>
+          </div>
+        </div>
+        <div class="card-body" id="result-body"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+async function calculateROI() {
+  const acres = document.getElementById('acres').value;
+  const model = document.getElementById('model').value;
+  const resultDiv = document.getElementById('result');
+  const body      = document.getElementById('result-body');
+  const btn       = document.getElementById('roiBtn');
+  const btnText   = document.getElementById('btn-text');
+
+  if (!acres || Number(acres) <= 0) {
+    resultDiv.classList.remove('hidden');
+    body.innerHTML = '<div class="result-error">⚠️ Please enter a valid number of acres (minimum 0.5).</div>';
+    return;
+  }
+  if (!model) {
+    resultDiv.classList.remove('hidden');
+    body.innerHTML = '<div class="result-error">⚠️ Please select a plantation model.</div>';
+    return;
+  }
+
+  btn.disabled = true;
+  btnText.textContent = 'Calculating…';
+  resultDiv.classList.remove('hidden');
+  body.innerHTML = '<div class="result-loading"><div class="spinner"></div><span>Running ROI model…</span></div>';
+
+  try {
+    const resp = await fetch('/roi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ acres: Number(acres), model }),
+    });
+    const result = await resp.json();
+
+    if (!resp.ok) {
+      body.innerHTML = `<div class="result-error">⚠️ ${result.detail || result.error || 'Something went wrong.'}</div>`;
+      return;
+    }
+
+    renderROI(result);
+  } catch (err) {
+    body.innerHTML = `<div class="result-error">⚠️ Failed to connect to the server.</div>`;
+  } finally {
+    btn.disabled = false;
+    btnText.textContent = '📊 Calculate ROI';
+  }
+}
+
+function fmt(n) {
+  return Number(n).toLocaleString('en-IN');
+}
+
+function renderROI(r) {
+  const body = document.getElementById('result-body');
+  const modelName = { sandalwood: 'Sandalwood', red_sanders: 'Red Sanders', fruit_mix: 'Fruit Mix' };
+  document.getElementById('result-subtitle').textContent =
+    `${r.acres} acre(s) · ${modelName[r.model] || r.model}`;
+
+  const roi = parseFloat(r.roi_percent);
+  const roiClass = roi >= 200 ? 'highlight' : '';
+
+  body.innerHTML = `
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Total Cost</div>
+        <div class="metric-value" style="font-size:18px;">₹${fmt(r.total_cost)}</div>
+        <div class="metric-sub">investment</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total Yield</div>
+        <div class="metric-value" style="font-size:18px;">₹${fmt(r.total_yield)}</div>
+        <div class="metric-sub">gross revenue</div>
+      </div>
+      <div class="metric ${roiClass}">
+        <div class="metric-label">Net Profit</div>
+        <div class="metric-value" style="font-size:18px;">₹${fmt(r.net_profit)}</div>
+        <div class="metric-sub">after costs</div>
+      </div>
+      <div class="metric ${roiClass}">
+        <div class="metric-label">ROI</div>
+        <div class="metric-value">${roi.toFixed(1)}%</div>
+        <div class="metric-sub">return on investment</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;">
+      <div style="font-size:14px;color:var(--muted);">Project Duration</div>
+      <div style="font-size:18px;font-weight:700;color:var(--green-dk);">${r.duration_years} Years</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--border);">
+      <div style="font-size:14px;color:var(--muted);">Annual Return</div>
+      <div style="font-size:18px;font-weight:700;color:var(--green-dk);">₹${fmt(Math.round(r.net_profit / r.duration_years))} / yr</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--border);">
+      <div style="font-size:14px;color:var(--muted);">Return per Acre</div>
+      <div style="font-size:18px;font-weight:700;color:var(--green-dk);">₹${fmt(Math.round(r.net_profit / r.acres))}</div>
+    </div>
+  `;
+}
+</script>
 </body>
 </html>

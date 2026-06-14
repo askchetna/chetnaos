@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalpavriksha Tools</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            text-align: center;
-            padding: 20px;
-            background: #e9f5e9;
-        }
-        h1 {
-            color: #1b5e20;
-            margin-bottom: 30px;
-        }
-        .menu-container {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            margin: auto;
-            margin-top: 50px;
-        }
-        .menu-btn {
-            padding: 15px;
-            margin: 10px 0;
-            background: #2E8B57;
-            color: white;
-            text-align: center;
-            font-size: 18px;
-            border-radius: 8px;
-            text-decoration: none;
-        }
-        .menu-btn:hover {
-            background: #246b44;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalpavriksha Intelligence Suite</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <h1>🌳 Kalpavriksha Intelligence Suite</h1>
 
-    <div class="menu-container">
-        <a class="menu-btn" href="./land.html">Land Evaluator</a>
-        <a class="menu-btn" href="./roi.html">ROI Calculator</a>
-        <a class="menu-btn" href="./crop.html">Crop Planner</a>
+<nav class="topnav">
+  <a href="/kalpavriksha_ui/index.html" class="topnav-brand">
+    <span class="icon">🌳</span>
+    <div>
+      <div class="name">Kalpavriksha</div>
+      <div class="sub">Intelligence Suite</div>
     </div>
+  </a>
+  <div class="topnav-right">
+    <a href="/" class="nav-pill back">← ChetnaOS</a>
+  </div>
+</nav>
 
+<div class="page-hero">
+  <div class="hero-icon">🌳</div>
+  <h1>Kalpavriksha Intelligence Suite</h1>
+  <p>AI-powered agricultural analysis — evaluate land, plan crops, and forecast returns for Indian farmland</p>
+</div>
+
+<div class="page-wrap">
+
+  <div class="dash-grid">
+
+    <a class="dash-card" href="./land.html">
+      <div class="dc-icon">🗺️</div>
+      <div class="dc-title">Land Evaluator</div>
+      <div class="dc-desc">Analyze soil pH, water table depth, temperature, and road access to score your farmland's agricultural potential.</div>
+      <div class="dc-arrow">→</div>
+    </a>
+
+    <a class="dash-card" href="./roi.html">
+      <div class="dc-icon">📈</div>
+      <div class="dc-title">ROI Calculator</div>
+      <div class="dc-desc">Forecast total cost, yield, net profit, and ROI percentage for Sandalwood, Red Sanders, and Fruit Mix plantations.</div>
+      <div class="dc-arrow">→</div>
+    </a>
+
+    <a class="dash-card" href="./crop.html">
+      <div class="dc-icon">🌾</div>
+      <div class="dc-title">Crop Planner</div>
+      <div class="dc-desc">Get ranked crop recommendations with suitability scores and economic projections based on your specific field conditions.</div>
+      <div class="dc-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="section-title">About This Suite</div>
+    <div class="card">
+      <div class="card-body">
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;">
+          Kalpavriksha ("wish-fulfilling tree" in Sanskrit) is ChetnaOS's agricultural intelligence module.
+          It applies heuristic models trained on Indian soil science, plantation economics, and climate data
+          to help farmers and agribusiness professionals make smarter land-use decisions — entirely offline
+          and without an internet connection.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;">
+          <span class="tag">🌱 Soil Analysis</span>
+          <span class="tag">💧 Water Table</span>
+          <span class="tag">🌡️ Temperature Modelling</span>
+          <span class="tag">🛣️ Market Access</span>
+          <span class="tag">📊 ROI Forecasting</span>
+          <span class="tag">🏆 Crop Ranking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>

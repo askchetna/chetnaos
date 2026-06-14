@@ -1,57 +1,578 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ChetnaOS Conscious Runtime v1.0</title>
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f6f7f9; color: #111827; }
-      .container { max-width: 800px; margin: 0 auto; padding: 24px; }
-      h1 { font-size: 22px; margin: 0 0 8px; }
-      .subheading { font-size: 13px; color: #6b7280; margin-bottom: 16px; }
-      .mode-selector { margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-      .mode-selector label { font-size: 14px; }
-      .mode-selector select { padding: 4px 8px; border-radius: 4px; border: 1px solid #d1d5db; background: #fff; }
-      #chat { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; height: 60vh; overflow-y: auto; box-shadow: 0 1px 2px rgba(15,23,42,0.04); }
-      .row { display: flex; gap: 8px; margin-top: 12px; }
-      textarea { flex: 1; min-height: 60px; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; resize: vertical; font-family: inherit; font-size: 14px; }
-      textarea:focus { outline: 2px solid #93c5fd; outline-offset: 1px; }
-      button { padding: 10px 16px; border: none; background: #111827; color: #fff; border-radius: 6px; cursor: pointer; font-size: 14px; }
-      button:hover:not(:disabled) { background: #374151; }
-      button:disabled { background: #6b7280; cursor: not-allowed; }
-      .bubble { max-width: 75%; padding: 10px 12px; border-radius: 12px; margin: 6px 0; line-height: 1.3; white-space: pre-wrap; font-size: 14px; }
-      .user { background: #dbedff; align-self: flex-end; margin-left: auto; }
-      .assistant { background: #f3f4f6; }
-      .error { background: #fee2e2; color: #991b1b; }
-      .chatline { display: flex; }
-      .typing { font-style: italic; color: #6b7280; }
-      .os-button { display: inline-block; padding: 10px 18px; margin-bottom: 16px; background: #2E8B57; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 14px; }
-      .os-button:hover { background: #246b44; }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <a href="./kalpavriksha_ui/index.html" class="os-button">
-        🌳 Launch Kalpavriksha
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChetnaOS — Conscious Runtime</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f14;
+      --surface:   #161920;
+      --surface2:  #1e2230;
+      --border:    #2a2f42;
+      --accent:    #6366f1;
+      --accent2:   #818cf8;
+      --green:     #22c55e;
+      --text:      #e2e4f0;
+      --muted:     #6b7280;
+      --user-bg:   #2d2f5e;
+      --ai-bg:     #1e2230;
+      --error-bg:  #3b1111;
+      --error-txt: #fca5a5;
+      --radius:    12px;
+      --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); }
+
+    /* ── Layout ── */
+    .app { display: flex; height: 100vh; }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: 260px; min-width: 260px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 0;
+      transition: transform .25s ease;
+      z-index: 10;
+    }
+    .sidebar-header {
+      padding: 24px 20px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-title { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -.3px; }
+    .logo-sub   { font-size: 11px; color: var(--muted); }
+
+    .sidebar-section { padding: 12px 12px 6px; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; margin: 2px 8px;
+      border-radius: 8px; cursor: pointer;
+      font-size: 14px; color: var(--muted);
+      transition: background .15s, color .15s;
+      border: none; background: none; width: calc(100% - 16px); text-align: left;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: rgba(99,102,241,.18); color: var(--accent2); }
+    .nav-icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
+    .nav-badge {
+      margin-left: auto; font-size: 10px; padding: 2px 7px;
+      border-radius: 99px; background: var(--accent); color: #fff; font-weight: 600;
+    }
+
+    .sidebar-divider { height: 1px; background: var(--border); margin: 10px 16px; }
+
+    .nav-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; margin: 2px 8px;
+      border-radius: 8px;
+      font-size: 14px; color: var(--muted);
+      transition: background .15s, color .15s; text-decoration: none;
+    }
+    .nav-link:hover { background: var(--surface2); color: var(--text); }
+
+    .status-card {
+      margin: auto 12px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
+    }
+    .status-title { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; }
+    .status-row { display: flex; align-items: center; justify-content: space-between; margin: 5px 0; font-size: 12px; }
+    .status-label { color: var(--muted); }
+    .status-val { color: var(--text); font-weight: 500; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 4px; }
+    .dot.off { background: var(--muted); }
+
+    /* ── Main ── */
+    .main { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .topbar-title { font-size: 15px; font-weight: 600; }
+    .topbar-sub   { font-size: 12px; color: var(--muted); }
+
+    .mode-pills { display: flex; gap: 4px; background: var(--surface2); border-radius: 9px; padding: 3px; }
+    .pill {
+      padding: 5px 14px; border-radius: 7px; font-size: 13px; font-weight: 500;
+      cursor: pointer; border: none; background: none; color: var(--muted);
+      transition: background .15s, color .15s;
+    }
+    .pill.active { background: var(--accent); color: #fff; }
+    .pill:hover:not(.active) { color: var(--text); }
+
+    /* ── Chat area ── */
+    .chat-wrap { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .chat-wrap::-webkit-scrollbar { width: 5px; }
+    .chat-wrap::-webkit-scrollbar-track { background: transparent; }
+    .chat-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+    .msg-row { display: flex; gap: 10px; max-width: 780px; }
+    .msg-row.user { flex-direction: row-reverse; margin-left: auto; }
+
+    .avatar {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; margin-top: 2px;
+    }
+    .avatar.ai  { background: linear-gradient(135deg, var(--accent), #a78bfa); }
+    .avatar.usr { background: var(--surface2); border: 1px solid var(--border); }
+
+    .bubble-wrap { display: flex; flex-direction: column; gap: 4px; max-width: calc(100% - 44px); }
+    .bubble-meta { font-size: 11px; color: var(--muted); }
+    .msg-row.user .bubble-meta { text-align: right; }
+
+    .bubble {
+      padding: 12px 16px; border-radius: var(--radius); font-size: 14px; line-height: 1.6;
+      white-space: pre-wrap; word-break: break-word;
+    }
+    .bubble.ai   { background: var(--ai-bg); border: 1px solid var(--border); border-top-left-radius: 4px; }
+    .bubble.user { background: var(--user-bg); border: 1px solid rgba(99,102,241,.3); border-top-right-radius: 4px; }
+    .bubble.error { background: var(--error-bg); color: var(--error-txt); border: 1px solid #7f1d1d; }
+
+    .typing-dots { display: flex; gap: 4px; padding: 14px 16px; }
+    .typing-dots span {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
+      animation: bounce .9s infinite ease-in-out;
+    }
+    .typing-dots span:nth-child(2) { animation-delay: .18s; }
+    .typing-dots span:nth-child(3) { animation-delay: .36s; }
+    @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-6px)} }
+
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--muted); text-align: center; padding: 40px;
+    }
+    .empty-icon { font-size: 48px; opacity: .4; }
+    .empty-title { font-size: 18px; font-weight: 600; color: var(--text); opacity: .6; }
+    .empty-sub   { font-size: 13px; }
+
+    .suggestions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 8px; }
+    .suggestion {
+      padding: 7px 14px; border-radius: 99px;
+      border: 1px solid var(--border); font-size: 12px; color: var(--muted);
+      cursor: pointer; transition: border-color .15s, color .15s; background: none;
+    }
+    .suggestion:hover { border-color: var(--accent); color: var(--accent2); }
+
+    /* ── Input area ── */
+    .input-area {
+      padding: 16px 24px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .input-box {
+      display: flex; align-items: flex-end; gap: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 10px 14px;
+      transition: border-color .2s;
+    }
+    .input-box:focus-within { border-color: var(--accent); }
+    #msg {
+      flex: 1; background: none; border: none; outline: none;
+      color: var(--text); font-family: var(--font); font-size: 14px;
+      resize: none; min-height: 24px; max-height: 140px; line-height: 1.5;
+    }
+    #msg::placeholder { color: var(--muted); }
+    #send {
+      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .15s, transform .1s;
+    }
+    #send:hover:not(:disabled) { opacity: .85; }
+    #send:active:not(:disabled) { transform: scale(.93); }
+    #send:disabled { opacity: .35; cursor: not-allowed; }
+    #send svg { fill: #fff; }
+    .input-hint { font-size: 11px; color: var(--muted); margin-top: 8px; text-align: center; }
+
+    /* ── Mobile ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 9; }
+
+    @media (max-width: 700px) {
+      .sidebar {
+        position: fixed; left: 0; top: 0; bottom: 0;
+        transform: translateX(-100%);
+      }
+      .sidebar.open { transform: translateX(0); }
+      .overlay.open { display: block; }
+      .hamburger { display: flex; }
+      .chat-wrap { padding: 16px; }
+      .input-area { padding: 12px 16px 16px; }
+      .topbar { padding: 12px 16px; }
+      .mode-pills { display: none; }
+      .topbar-sub { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="logo">
+        <div class="logo-icon">🧠</div>
+        <div class="logo-text">
+          <span class="logo-title">ChetnaOS</span>
+          <span class="logo-sub">Conscious Runtime v1.0</span>
+        </div>
       </a>
-      <h1>ChetnaOS</h1>
-      <div class="subheading">Conscious Runtime v1.0</div>
-      <div class="mode-selector">
-        <label for="modeSelect">Mode:</label>
-        <select id="modeSelect">
-          <option value="chat" selected>Chat</option>
-          <option value="agent">Agent</option>
-          <option value="goal">Goal</option>
-        </select>
+    </div>
+
+    <div class="sidebar-section">Modes</div>
+    <button class="nav-item active" id="nav-chat" onclick="setMode('chat')">
+      <span class="nav-icon">💬</span> Chat
+      <span class="nav-badge" id="badge-chat">LLM</span>
+    </button>
+    <button class="nav-item" id="nav-agent" onclick="setMode('agent')">
+      <span class="nav-icon">🤖</span> Agent
+      <span class="nav-badge" id="badge-agent" style="background:#059669">Tools</span>
+    </button>
+    <button class="nav-item" id="nav-goal" onclick="setMode('goal')">
+      <span class="nav-icon">🎯</span> Goal (AGI Loop)
+    </button>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Modules</div>
+    <a class="nav-link" href="/kalpavriksha_ui/index.html">
+      <span class="nav-icon">🌳</span> Kalpavriksha Suite
+    </a>
+    <a class="nav-link" href="/docs" target="_blank">
+      <span class="nav-icon">📖</span> API Docs
+    </a>
+    <a class="nav-link" href="/health" target="_blank">
+      <span class="nav-icon">❤️</span> Health Check
+    </a>
+
+    <div class="status-card" id="status-card">
+      <div class="status-title">System Status</div>
+      <div class="status-row">
+        <span class="status-label">Service</span>
+        <span class="status-val"><span class="dot" id="dot-service"></span><span id="svc-name">—</span></span>
       </div>
-      <div id="chat" aria-live="polite" aria-label="Chat transcript"></div>
-      <div class="row">
-        <textarea id="msg" placeholder="Type your message... (Agent mode: try 'calc: 2+2' or 'search AI news')"></textarea>
-        <button id="send">Send</button>
+      <div class="status-row">
+        <span class="status-label">Model</span>
+        <span class="status-val" id="svc-model">—</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Light Mode</span>
+        <span class="status-val" id="svc-light">—</span>
       </div>
     </div>
-    <script src="app.js"></script>
-  </body>
-  </html>
+  </aside>
 
+  <!-- Main -->
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <div class="topbar-title" id="topbar-title">Chat Mode</div>
+          <div class="topbar-sub" id="topbar-sub">Direct conversation with ChetnaOS</div>
+        </div>
+      </div>
+      <div class="mode-pills">
+        <button class="pill active" id="pill-chat" onclick="setMode('chat')">Chat</button>
+        <button class="pill" id="pill-agent" onclick="setMode('agent')">Agent</button>
+        <button class="pill" id="pill-goal" onclick="setMode('goal')">Goal</button>
+      </div>
+    </header>
 
+    <div class="chat-wrap" id="chat">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">🧠</div>
+        <div class="empty-title">How can I help you?</div>
+        <div class="empty-sub">Start a conversation or try a suggestion below</div>
+        <div class="suggestions">
+          <button class="suggestion" onclick="fillSuggestion('Hello, what can you do?')">Hello, what can you do?</button>
+          <button class="suggestion" onclick="fillSuggestion('calc: (23+7)*4')">calc: (23+7)×4</button>
+          <button class="suggestion" onclick="fillSuggestion('search latest AI news')">Search AI news</button>
+          <button class="suggestion" onclick="fillSuggestion('What is the current world state?')">World state?</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-box">
+        <textarea id="msg" rows="1" placeholder="Type a message… (Ctrl+Enter to send)"></textarea>
+        <button id="send" title="Send (Ctrl+Enter)">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="input-hint">Ctrl+Enter to send &nbsp;·&nbsp; Agent mode: try <code>calc: 2+2</code> or <code>search AI news</code></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────
+let currentMode = 'chat';
+let msgCount = 0;
+
+const modeConfig = {
+  chat:  { title: 'Chat Mode',      sub: 'Direct conversation with ChetnaOS' },
+  agent: { title: 'Agent Mode',     sub: 'Tool-enabled: calculator, web search, web fetch' },
+  goal:  { title: 'Goal (AGI Loop)',sub: 'Multi-step recursive goal execution' },
+};
+
+// ── Mode switching ──────────────────────────────────
+function setMode(m) {
+  currentMode = m;
+  ['chat','agent','goal'].forEach(x => {
+    document.getElementById('nav-'+x)?.classList.toggle('active', x===m);
+    document.getElementById('pill-'+x)?.classList.toggle('active', x===m);
+  });
+  document.getElementById('topbar-title').textContent = modeConfig[m].title;
+  document.getElementById('topbar-sub').textContent   = modeConfig[m].sub;
+  document.getElementById('msg').placeholder = m === 'agent'
+    ? "Agent mode: try 'calc: 2+2' or 'search AI news'…"
+    : m === 'goal'
+    ? "Describe a goal for the AGI loop…"
+    : "Type a message…";
+  closeSidebar();
+}
+
+// ── Sidebar mobile ──────────────────────────────────
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+});
+document.getElementById('overlay').addEventListener('click', closeSidebar);
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// ── Auto-resize textarea ────────────────────────────
+const msgEl = document.getElementById('msg');
+msgEl.addEventListener('input', () => {
+  msgEl.style.height = 'auto';
+  msgEl.style.height = Math.min(msgEl.scrollHeight, 140) + 'px';
+});
+
+// ── Timestamps ─────────────────────────────────────
+function timeNow() {
+  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+// ── Chat rendering ──────────────────────────────────
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function addBubble(text, who) {
+  hideEmpty();
+  const chat = document.getElementById('chat');
+  const row = document.createElement('div');
+  row.className = `msg-row ${who === 'user' ? 'user' : ''}`;
+
+  const avatar = document.createElement('div');
+  avatar.className = `avatar ${who === 'user' ? 'usr' : 'ai'}`;
+  avatar.textContent = who === 'user' ? '👤' : '🧠';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'bubble-wrap';
+
+  const meta = document.createElement('div');
+  meta.className = 'bubble-meta';
+  meta.textContent = (who === 'user' ? 'You' : 'ChetnaOS') + ' · ' + timeNow();
+
+  const bubble = document.createElement('div');
+  bubble.className = `bubble ${who === 'user' ? 'user' : 'ai'}`;
+  if (typeof text === 'string' && text.includes('\n')) {
+    bubble.innerHTML = text.split('\n').map(escapeHtml).join('<br/>');
+  } else {
+    bubble.textContent = typeof text === 'string' ? text : String(text);
+  }
+
+  wrap.appendChild(meta);
+  wrap.appendChild(bubble);
+  row.appendChild(avatar);
+  row.appendChild(wrap);
+  chat.appendChild(row);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function addErrorBubble(text) {
+  hideEmpty();
+  const chat = document.getElementById('chat');
+  const row = document.createElement('div');
+  row.className = 'msg-row';
+  const avatar = document.createElement('div');
+  avatar.className = 'avatar ai';
+  avatar.textContent = '⚠️';
+  const wrap = document.createElement('div');
+  wrap.className = 'bubble-wrap';
+  const meta = document.createElement('div');
+  meta.className = 'bubble-meta';
+  meta.textContent = 'Error · ' + timeNow();
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble error';
+  bubble.textContent = text;
+  wrap.appendChild(meta);
+  wrap.appendChild(bubble);
+  row.appendChild(avatar);
+  row.appendChild(wrap);
+  chat.appendChild(row);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+let typingEl = null;
+function addTypingIndicator() {
+  removeTypingIndicator();
+  hideEmpty();
+  const chat = document.getElementById('chat');
+  const row = document.createElement('div');
+  row.className = 'msg-row';
+  row.id = 'typing-row';
+  const avatar = document.createElement('div');
+  avatar.className = 'avatar ai';
+  avatar.textContent = '🧠';
+  const wrap = document.createElement('div');
+  wrap.className = 'bubble-wrap';
+  const meta = document.createElement('div');
+  meta.className = 'bubble-meta';
+  meta.textContent = 'ChetnaOS · thinking…';
+  const dots = document.createElement('div');
+  dots.className = 'bubble ai typing-dots';
+  dots.innerHTML = '<span></span><span></span><span></span>';
+  wrap.appendChild(meta);
+  wrap.appendChild(dots);
+  row.appendChild(avatar);
+  row.appendChild(wrap);
+  chat.appendChild(row);
+  chat.scrollTop = chat.scrollHeight;
+}
+function removeTypingIndicator() {
+  document.getElementById('typing-row')?.remove();
+}
+function hideEmpty() {
+  const e = document.getElementById('empty-state');
+  if (e) e.style.display = 'none';
+}
+
+// ── Suggestions ─────────────────────────────────────
+function fillSuggestion(text) {
+  msgEl.value = text;
+  msgEl.dispatchEvent(new Event('input'));
+  msgEl.focus();
+}
+
+// ── API calls ───────────────────────────────────────
+async function fetchJson(url, payload) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json().catch(() => null);
+  if (!res.ok) {
+    const msg = data && data.detail ? data.detail : `HTTP ${res.status}`;
+    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+  }
+  if (!data) throw new Error('Invalid JSON response from server.');
+  return data;
+}
+
+function formatChetnaResponse(obj) {
+  try {
+    if (obj.identity || obj.filtered || obj.world_state) {
+      const lines = [];
+      if (obj.identity)    lines.push(`Identity: ${obj.identity}`);
+      if (obj.filtered)    lines.push(`Response: ${obj.filtered}`);
+      if (obj.evolution)   lines.push(`Evolution: ${obj.evolution}`);
+      if (obj.world_state) lines.push(`World: ${JSON.stringify(obj.world_state, null, 2)}`);
+      if (obj.timestamp)   lines.push(`Timestamp: ${obj.timestamp}`);
+      return lines.join('\n\n');
+    }
+    return JSON.stringify(obj, null, 2);
+  } catch { return JSON.stringify(obj); }
+}
+
+// ── Send ────────────────────────────────────────────
+async function sendMessage() {
+  const text = msgEl.value.trim();
+  if (!text) return;
+  const mode = currentMode;
+
+  const sendBtn = document.getElementById('send');
+  sendBtn.disabled = true;
+  addBubble(text, 'user');
+  addTypingIndicator();
+  msgEl.value = '';
+  msgEl.style.height = 'auto';
+  msgEl.focus();
+
+  try {
+    let data;
+    if (mode === 'agent') {
+      data = await fetchJson('/api/agent', { text, agent: mode });
+    } else if (mode === 'goal') {
+      data = await fetchJson('/api/goal', { goal: text, context: { mode, client: 'web' }, constraints: {} });
+    } else {
+      data = await fetchJson('/api/chat', { text, agent: mode });
+    }
+    removeTypingIndicator();
+    const reply = typeof data.reply === 'string' ? data.reply : formatChetnaResponse(data);
+    addBubble(reply, 'ai');
+  } catch (e) {
+    removeTypingIndicator();
+    addErrorBubble(`${e && e.message ? e.message : e}`);
+  } finally {
+    sendBtn.disabled = false;
+  }
+}
+
+document.getElementById('send').addEventListener('click', sendMessage);
+msgEl.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); sendMessage(); }
+});
+
+// ── Health status ───────────────────────────────────
+async function fetchHealth() {
+  try {
+    const d = await fetch('/health').then(r => r.json());
+    document.getElementById('svc-name').textContent  = d.service || 'OK';
+    document.getElementById('svc-model').textContent = (d.model || '—').replace('llama-','').replace('-instant','');
+    document.getElementById('svc-light').textContent = d.light_mode ? 'Yes' : 'No';
+    document.getElementById('dot-service').classList.toggle('off', !d.ok);
+  } catch { document.getElementById('dot-service').classList.add('off'); }
+}
+fetchHealth();
+
+try { msgEl.focus(); } catch {}
+window.sendMessage = sendMessage;
+</script>
+</body>
+</html>
