@@ -1,0 +1,35 @@
+[
+  {
+    "skill": "Sales",
+    "current_pct": 38.2,
+    "target_pct": 65.0,
+    "gap_pct": 26.8,
+    "priority": 26.8,
+    "suggested_training": "16 sales interactions",
+    "practice_topics": "sales, clients, pitch, persuasion, revenue",
+    "expected_improvement": "+9.4%",
+    "category": "applied"
+  },
+  {
+    "skill": "Business",
+    "current_pct": 61.0,
+    "target_pct": 76.0,
+    "gap_pct": 15.0,
+    "priority": 15.0,
+    "suggested_training": "9 business interactions",
+    "practice_topics": "business, strategy, planning, revenue",
+    "expected_improvement": "+5.3%",
+    "category": "applied"
+  },
+  {
+    "skill": "Coding",
+    "current_pct": 73.1,
+    "target_pct": 86.0,
+    "gap_pct": 12.9,
+    "priority": 12.9,
+    "suggested_training": "7 coding interactions",
+    "practice_topics": "programming, debugging, code, algorithm",
+    "expected_improvement": "+4.5%",
+    "category": "technical"
+  }
+]

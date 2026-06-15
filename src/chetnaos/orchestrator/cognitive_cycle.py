@@ -40,6 +40,7 @@ from src.chetnaos.organism.skills             import Skills
 from src.chetnaos.organism.workspace_state    import WorkspaceState
 from src.chetnaos.organism.contradiction_tracker import ContradictionTracker
 from src.chetnaos.organism.memory_hierarchy   import MemoryHierarchy
+from src.chetnaos.organism.self_trainer       import SelfTrainer
 
 from .state_machine import StateMachine, CycleStage
 from .sleep_manager import SleepManager
@@ -91,12 +92,15 @@ class CognitiveCycle:
         self.workspace      = WorkspaceState()
         self.contradictions = ContradictionTracker()
         self.mem_hierarchy  = MemoryHierarchy()
+        self.self_trainer   = SelfTrainer()
 
         # In-memory session state
         self._recent_reality_checks: deque = deque(maxlen=8)
-        self._last_sim  = {}
-        self._last_meta = {}
+        self._last_sim          = {}
+        self._last_meta         = {}
         self._last_thought_birth = {}
+        self._last_sleep_data   = {}
+        self._training_goals    = self.self_trainer.get()
 
     # ──────────────────────────────────────────────────────────────────────
     def run(self, user_input: str, mode: str = "chat") -> dict:
@@ -219,8 +223,9 @@ class CognitiveCycle:
         })
         step(CycleStage.REFLECT, reflect_r)
 
-        # Skills: practice based on domain and quality
+        # Skills: practice based on domain and quality, then refresh training goals
         self.skills.practice(abstr["domain"], reflect_r["quality"])
+        self._training_goals = self.self_trainer.generate_goals(self.skills.get_all())
 
         # ── SELF QUESTION + META-COGNITION ─────────────────────────────
         meta_r = self.meta_cog.evaluate(percept, dec_r, reflect_r, reality_r)
@@ -235,9 +240,15 @@ class CognitiveCycle:
         learn_r   = self.learning.learn(reflect_r, exp_r)
         beliefs_r = self.beliefs.update(reflect_r, learn_r)
         step(CycleStage.UPDATE_BELIEFS, beliefs_r)
-        # Contradiction scan on updated beliefs
+        # Contradiction scan — beliefs, memories, and founder mission
         contradictions = self.contradictions.scan(self.beliefs.get_all())
-        self.workspace.set_contradictions(len(contradictions))
+        self.contradictions.scan_memory(
+            self.beliefs.get_all(), self.memory.recall(user_input, k=5)
+        )
+        self.contradictions.scan_founder(
+            self.beliefs.get_all(), self.founder_ctx.get().get("primary_mission", "")
+        )
+        self.workspace.set_contradictions(self.contradictions.count())
 
         # ── UPDATE IDENTITY ────────────────────────────────────────────
         identity_r = self.identity.update(reflect_r, beliefs_r)
@@ -265,6 +276,7 @@ class CognitiveCycle:
             self.mem_hierarchy.record_forgetting(sleep_r.get("forgotten", 0))
             slept = True
             sleep_data = sleep_r
+            self._last_sleep_data = sleep_r
         else:
             next_in = self.sleeper.cycles_until_sleep(cycle_n)
             step(CycleStage.SLEEP,       {"slept": False, "next_in": next_in})
@@ -376,4 +388,7 @@ class CognitiveCycle:
             ),
             "founder_context": self.founder_ctx.get(),
             "world":           self.world.snapshot(),
+            "training_goals":  self._training_goals,
+            "last_sleep":      self._last_sleep_data,
+            "last_sleep_log":  self.sleep_mod.get_last_sleep(),
         }

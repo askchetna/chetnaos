@@ -19,205 +19,222 @@
     .shell{display:flex;height:100vh;flex-direction:column;}
     .topbar{
       display:flex;align-items:center;justify-content:space-between;
-      padding:11px 20px;background:var(--s1);border-bottom:1px solid var(--border);
+      padding:10px 18px;background:var(--s1);border-bottom:1px solid var(--border);
       flex-shrink:0;
     }
     .tb-logo{display:flex;align-items:center;gap:9px;}
-    .tb-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#6366f1,#a78bfa,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:17px;}
-    .tb-name{font-size:14px;font-weight:800;letter-spacing:-.2px;}
-    .tb-sub{font-size:10px;color:var(--muted);}
-    .tb-right{display:flex;align-items:center;gap:10px;}
-    .refresh-badge{font-size:10px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:4px 10px;border-radius:99px;}
+    .tb-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#a78bfa,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:16px;}
+    .tb-name{font-size:13.5px;font-weight:800;letter-spacing:-.2px;}
+    .tb-sub{font-size:9.5px;color:var(--muted);}
+    .tb-right{display:flex;align-items:center;gap:9px;}
+    .refresh-badge{font-size:10px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:3px 9px;border-radius:99px;}
     .refresh-badge.live{color:var(--green);border-color:rgba(34,197,94,.3);}
-    .back-btn{font-size:11px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:5px 12px;border-radius:7px;cursor:pointer;text-decoration:none;transition:color .15s;}
+    .back-btn{font-size:11px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:4px 11px;border-radius:7px;cursor:pointer;text-decoration:none;transition:color .15s;}
     .back-btn:hover{color:var(--text);}
 
-    /* ── Scrollable grid area ── */
-    .grid-area{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 16px;}
+    /* ── Scrollable area ── */
+    .grid-area{flex:1;overflow-y:auto;overflow-x:hidden;padding:12px 14px 20px;}
     .grid-area::-webkit-scrollbar{width:4px;}
     .grid-area::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 
+    /* ── Grid ── */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
     @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:680px) {.grid{grid-template-columns:1fr;}}
 
     /* ── Card ── */
     .card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;}
     .card.span2{grid-column:span 2;}
-    .card.span3{grid-column:span 3;}
     .ch{
-      padding:9px 12px;border-bottom:1px solid var(--border);
+      padding:8px 12px;border-bottom:1px solid var(--border);
       display:flex;align-items:center;gap:7px;
-      font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
+      font-size:9.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
       color:var(--a2);background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);
       flex-shrink:0;
     }
-    .ch-icon{font-size:14px;}
-    .cb{padding:11px 12px;flex:1;}
+    .ch-icon{font-size:13px;}
+    .cb{padding:10px 12px;flex:1;}
 
     /* ── Identity ── */
-    .identity-name{font-size:18px;font-weight:800;letter-spacing:-.3px;margin-bottom:2px;}
-    .identity-level{font-size:10.5px;color:var(--a2);margin-bottom:9px;}
-    .traits{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
-    .trait{font-size:9.5px;padding:2px 8px;border-radius:99px;background:rgba(99,102,241,.1);color:var(--a2);border:1px solid rgba(99,102,241,.2);}
-    .roles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
-    .role{font-size:9px;padding:2px 7px;border-radius:4px;background:var(--s3);color:var(--muted);border:1px solid var(--border);}
-    .stability-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-    .stab-label{font-size:11px;color:var(--muted);min-width:60px;}
-    .stab-bar{flex:1;height:6px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .stab-fill{height:100%;border-radius:99px;background:var(--green);transition:width .6s;}
-    .stab-fill.drift{background:var(--gold);}
-    .stab-val{font-size:11px;font-weight:600;min-width:35px;text-align:right;}
-    .id-meta{display:flex;gap:10px;font-size:10.5px;margin-top:6px;}
-    .id-meta-item{color:var(--muted);}
-    .id-meta-item span{color:var(--text);font-weight:600;}
+    .identity-name{font-size:17px;font-weight:800;letter-spacing:-.3px;margin-bottom:1px;}
+    .identity-level{font-size:10px;color:var(--a2);margin-bottom:8px;}
+    .tags{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px;}
+    .tag{font-size:9px;padding:2px 7px;border-radius:99px;background:rgba(99,102,241,.1);color:var(--a2);border:1px solid rgba(99,102,241,.2);}
+    .tag.role{background:var(--s3);color:var(--muted);border-color:var(--border);}
+    .stab-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+    .stab-label{font-size:10px;color:var(--muted);min-width:58px;}
+    .bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .fill{height:100%;border-radius:99px;transition:width .6s;}
+    .bar-val{font-size:10.5px;font-weight:600;min-width:33px;text-align:right;}
+    .id-meta{display:flex;gap:9px;font-size:10px;margin-top:6px;}
+    .id-mi{color:var(--muted);}
+    .id-mi span{color:var(--text);font-weight:600;}
 
     /* ── Skills ── */
-    .skill-row{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
-    .skill-name{font-size:11px;min-width:90px;color:var(--text);}
-    .skill-cat{font-size:8.5px;padding:1px 5px;border-radius:3px;background:var(--s3);color:var(--muted);margin-right:3px;}
-    .skill-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .skill-fill{height:100%;border-radius:99px;transition:width .5s;}
-    .skill-val{font-size:11px;font-weight:600;min-width:35px;text-align:right;color:var(--text);}
-    .transfers{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
-    .transfer-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
-    .transfer-row{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-bottom:3px;}
-    .transfer-arrow{color:var(--a2);}
+    .skill-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
+    .skill-name{font-size:10.5px;min-width:88px;}
+    .skill-cat{font-size:8px;padding:1px 4px;border-radius:3px;background:var(--s3);color:var(--muted);}
+    .skill-delta{font-size:8.5px;font-weight:600;min-width:30px;text-align:right;}
+    .transfers{margin-top:7px;padding-top:7px;border-top:1px solid var(--border);}
+    .tr-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+    .tr-row{font-size:9.5px;color:var(--muted);display:flex;align-items:center;gap:4px;margin-bottom:2px;}
+    .tr-arr{color:var(--a2);}
 
     /* ── Workspace ── */
-    .ws-row{margin-bottom:8px;}
-    .ws-label{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px;}
-    .ws-val{font-size:12px;color:var(--text);line-height:1.4;}
-    .ws-priority{display:flex;align-items:center;gap:8px;margin-top:2px;}
-    .ws-pbar{flex:1;height:4px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .ws-pfill{height:100%;border-radius:99px;background:var(--accent);transition:width .4s;}
-    .ws-pval{font-size:10px;color:var(--a2);}
-    .artifact-list{display:flex;flex-direction:column;gap:3px;margin-top:5px;}
-    .artifact-item{font-size:10px;color:var(--muted);background:var(--s2);padding:3px 8px;border-radius:5px;border:1px solid var(--border);display:flex;align-items:center;gap:5px;}
-    .q-list{display:flex;flex-direction:column;gap:3px;margin-top:5px;}
-    .q-item{font-size:10px;color:var(--gold);padding:2px 0;}
+    .ws-row{margin-bottom:7px;}
+    .ws-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px;}
+    .ws-val{font-size:11.5px;color:var(--text);line-height:1.4;}
+    .artifact-list{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+    .artifact-item{font-size:9.5px;color:var(--muted);background:var(--s2);padding:2px 7px;border-radius:4px;border:1px solid var(--border);}
+    .q-list{display:flex;flex-direction:column;gap:2px;margin-top:4px;}
+    .q-item{font-size:9.5px;color:var(--gold);}
 
-    /* ── Memory Hierarchy ── */
-    .mem-layers{display:flex;flex-direction:column;gap:5px;}
-    .mem-layer{display:flex;align-items:center;gap:8px;}
-    .mem-label{font-size:10.5px;min-width:110px;color:var(--text);}
-    .mem-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .mem-fill{height:100%;border-radius:99px;transition:width .5s;}
-    .mem-count{font-size:10px;font-weight:600;min-width:28px;text-align:right;color:var(--a2);}
-    .mem-concepts{display:flex;flex-wrap:wrap;gap:3px;margin-top:8px;}
-    .mem-concept{font-size:9px;padding:2px 6px;border-radius:3px;background:var(--s3);color:var(--muted);border:1px solid var(--border);}
-    .dream-queue{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
-    .dq-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
-    .dq-item{font-size:10px;color:var(--a3);margin-bottom:2px;}
+    /* ── Memory ── */
+    .mem-layer{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+    .mem-label{font-size:10px;min-width:108px;}
+    .mem-count{font-size:9.5px;font-weight:600;min-width:26px;text-align:right;color:var(--a2);}
+    .mem-concepts{display:flex;flex-wrap:wrap;gap:2px;margin-top:6px;}
+    .concept{font-size:8.5px;padding:1px 5px;border-radius:3px;background:var(--s3);color:var(--muted);border:1px solid var(--border);}
+    .dream-queue{margin-top:7px;padding-top:7px;border-top:1px solid var(--border);}
+    .dq-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;}
+    .dq-item{font-size:9.5px;color:var(--a3);margin-bottom:2px;}
 
-    /* ── Reality Checks ── */
+    /* ── Reality ── */
     .rc-table{width:100%;border-collapse:collapse;}
-    .rc-table th{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;padding:4px 6px;text-align:left;border-bottom:1px solid var(--border);}
-    .rc-table td{font-size:10.5px;padding:5px 6px;border-bottom:1px solid rgba(30,40,72,.5);}
+    .rc-table th{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;padding:3px 5px;text-align:left;border-bottom:1px solid var(--border);}
+    .rc-table td{font-size:10px;padding:4px 5px;border-bottom:1px solid rgba(30,40,72,.5);}
     .rc-table tr:last-child td{border-bottom:none;}
     .rc-pass{color:var(--green);}
     .rc-fail{color:var(--red);}
     .conf-high{color:var(--green);}
     .conf-med{color:var(--gold);}
     .conf-low{color:var(--red);}
+    .ev-src{font-size:8px;color:var(--muted);background:var(--s3);padding:1px 4px;border-radius:3px;}
 
     /* ── Contradictions ── */
-    .contr-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;margin-bottom:6px;}
+    .contr-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;margin-bottom:5px;}
     .contr-item:last-child{margin-bottom:0;}
-    .contr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-    .contr-score{font-size:10px;font-weight:700;color:var(--red);}
-    .contr-status{font-size:9px;color:var(--gold);background:rgba(245,158,11,.1);padding:1px 6px;border-radius:99px;}
-    .contr-beliefs{display:flex;gap:5px;align-items:flex-start;}
-    .contr-belief{flex:1;font-size:10px;color:var(--muted);background:var(--s3);padding:4px 7px;border-radius:5px;line-height:1.4;}
-    .contr-vs{font-size:10px;color:var(--border);align-self:center;flex-shrink:0;}
-    .contr-reason{font-size:9px;color:var(--muted);margin-top:5px;font-style:italic;}
-    .no-contr{font-size:11px;color:var(--green);text-align:center;padding:12px 0;}
+    .contr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+    .contr-score{font-size:9.5px;font-weight:700;color:var(--red);}
+    .contr-type{font-size:8px;padding:1px 5px;border-radius:3px;background:rgba(99,102,241,.1);color:var(--a2);}
+    .contr-type.critical{background:rgba(239,68,68,.1);color:var(--red);}
+    .contr-beliefs{display:flex;gap:4px;align-items:flex-start;}
+    .contr-belief{flex:1;font-size:9.5px;color:var(--muted);background:var(--s3);padding:3px 6px;border-radius:4px;line-height:1.4;}
+    .contr-vs{font-size:9px;color:var(--border);align-self:center;flex-shrink:0;}
+    .contr-reason{font-size:8.5px;color:var(--muted);margin-top:4px;font-style:italic;}
+    .no-contr{font-size:11px;color:var(--green);text-align:center;padding:10px 0;}
 
-    /* ── Development Timeline ── */
-    .dev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;}
-    .dev-stat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;text-align:center;}
-    .dev-stat-val{font-size:18px;font-weight:800;color:var(--a2);}
-    .dev-stat-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:1px;}
-    .dev-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
-    .dev-bar-label{font-size:10px;color:var(--muted);min-width:70px;}
-    .dev-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .dev-bar-fill{height:100%;border-radius:99px;transition:width .5s;}
+    /* ── Development ── */
+    .dev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:9px;}
+    .dev-stat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:6px 8px;text-align:center;}
+    .dev-val{font-size:17px;font-weight:800;color:var(--a2);}
+    .dev-lbl{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:1px;}
+    .dev-bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+    .dev-bar-lbl{font-size:9.5px;color:var(--muted);min-width:68px;}
 
-    /* ── Sleep Report ── */
-    .sleep-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;}
-    .sleep-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;}
-    .sleep-val{font-size:17px;font-weight:800;color:var(--cyan);}
-    .sleep-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:1px;}
-    .sleep-next{margin-top:9px;font-size:11px;color:var(--muted);}
+    /* ── Sleep ── */
+    .sleep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;margin-bottom:8px;}
+    .sleep-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:6px 8px;}
+    .sleep-val{font-size:16px;font-weight:800;color:var(--cyan);}
+    .sleep-lbl{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:1px;}
+    .dream-insights{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+    .dream-title{font-size:9px;color:var(--a3);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+    .dream-item{font-size:10px;color:var(--muted);padding:3px 0;display:flex;gap:5px;align-items:flex-start;}
+    .dream-item::before{content:"💭";flex-shrink:0;}
+    .sleep-next{font-size:10.5px;color:var(--muted);}
     .sleep-next span{color:var(--a2);font-weight:600;}
 
     /* ── Thought Birth ── */
-    .tb-flow{display:flex;flex-direction:column;gap:5px;}
-    .tb-node{display:flex;align-items:flex-start;gap:8px;}
-    .tb-node-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:var(--s3);border:1px solid var(--border);}
-    .tb-node-body{flex:1;}
-    .tb-node-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px;}
-    .tb-node-text{font-size:11px;color:var(--text);line-height:1.45;}
-    .tb-arrow{font-size:12px;color:var(--border);padding-left:9px;}
-    .tb-result{background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:8px 10px;margin-top:4px;}
-    .tb-result-label{font-size:9px;color:var(--a2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;}
-    .tb-result-text{font-size:11.5px;color:var(--text);line-height:1.5;}
+    .tb-flow{display:flex;flex-direction:column;gap:4px;}
+    .tb-node{display:flex;align-items:flex-start;gap:7px;}
+    .tb-icon2{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;background:var(--s3);border:1px solid var(--border);}
+    .tb-body{flex:1;}
+    .tb-lbl{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:1px;}
+    .tb-txt{font-size:10.5px;color:var(--text);line-height:1.45;}
+    .tb-arr{font-size:11px;color:var(--border);padding-left:8px;}
+    .tb-result{background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:7px 9px;margin-top:3px;}
+    .tb-result-lbl{font-size:8.5px;color:var(--a2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px;}
+    .tb-result-txt{font-size:11px;color:var(--text);line-height:1.5;}
 
-    /* ── Simulation / Imagination ── */
-    .sim-plans{display:flex;flex-direction:column;gap:5px;}
-    .sim-plan{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;}
-    .sim-plan-head{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
-    .sim-plan-label{font-size:10px;font-weight:700;color:var(--a2);background:rgba(99,102,241,.12);padding:1px 7px;border-radius:4px;}
-    .sim-plan-text{font-size:11px;color:var(--text);line-height:1.4;margin-bottom:3px;}
-    .sim-outcome{font-size:10px;color:var(--muted);}
+    /* ── Simulation ── */
+    .sim-plans{display:flex;flex-direction:column;gap:4px;}
+    .sim-plan{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:6px 9px;}
+    .sim-plan-head{display:flex;align-items:center;gap:6px;margin-bottom:3px;}
+    .sim-label{font-size:9.5px;font-weight:700;color:var(--a2);background:rgba(99,102,241,.12);padding:1px 6px;border-radius:3px;}
+    .sim-text{font-size:10.5px;color:var(--text);line-height:1.4;margin-bottom:2px;}
+    .sim-outcome{font-size:9.5px;color:var(--muted);}
     .sim-outcome span{color:var(--green);}
-    .no-data{font-size:11px;color:var(--muted);text-align:center;padding:10px 0;font-style:italic;}
+    .no-data{font-size:10.5px;color:var(--muted);text-align:center;padding:10px 0;font-style:italic;}
 
     /* ── Meta Cognition ── */
-    .mc-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;}
-    .mc-icon{font-size:16px;flex-shrink:0;}
+    .mc-row{display:flex;align-items:flex-start;gap:7px;margin-bottom:7px;}
+    .mc-icon{font-size:14px;flex-shrink:0;}
     .mc-body{flex:1;}
-    .mc-label{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px;}
-    .mc-val{font-size:11.5px;color:var(--text);line-height:1.45;}
+    .mc-lbl{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:1px;}
+    .mc-val{font-size:11px;color:var(--text);line-height:1.4;}
     .mc-correct{color:var(--green);font-weight:600;}
-    .mc-incorrect{color:var(--gold);font-weight:600;}
-    .mc-score{font-size:13px;font-weight:800;}
-    .improve-list{display:flex;flex-direction:column;gap:3px;margin-top:3px;}
-    .improve-item{font-size:10px;color:var(--muted);}
+    .mc-warn{color:var(--gold);font-weight:600;}
 
-    /* ── Founder Context ── */
-    .fc-row{display:flex;flex-direction:column;gap:6px;}
-    .fc-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;}
-    .fc-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;}
-    .fc-val{font-size:11px;color:var(--text);line-height:1.4;}
-    .fc-phase-list{display:flex;flex-direction:column;gap:2px;margin-top:3px;}
-    .fc-phase{font-size:10px;color:var(--a2);}
+    /* ── Founder Deep ── */
+    .fd-section{margin-bottom:10px;}
+    .fd-section:last-child{margin-bottom:0;}
+    .fd-title{font-size:9px;color:var(--a2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;display:flex;align-items:center;gap:4px;}
+    .fd-goal-item{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:5px 8px;margin-bottom:3px;display:flex;align-items:center;justify-content:space-between;}
+    .fd-goal-text{font-size:10.5px;color:var(--text);}
+    .fd-goal-status{font-size:8px;padding:1px 6px;border-radius:99px;}
+    .fd-goal-status.in_progress{background:rgba(99,102,241,.15);color:var(--a2);}
+    .fd-goal-status.completed{background:rgba(34,197,94,.15);color:var(--green);}
+    .fd-goal-status.planned{background:rgba(75,86,117,.2);color:var(--muted);}
+    .fd-habit-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+    .fd-habit-name{font-size:10px;flex:1;color:var(--text);}
+    .fd-habit-freq{font-size:8px;color:var(--muted);background:var(--s3);padding:1px 4px;border-radius:3px;}
+    .stress-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+    .stress-label{font-size:10px;color:var(--muted);min-width:50px;}
+    .stress-sources{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px;}
+    .stress-source{font-size:8.5px;padding:1px 5px;border-radius:3px;background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2);}
+    .pref-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+    .pref-item{background:var(--s2);border:1px solid var(--border);border-radius:5px;padding:4px 7px;}
+    .pref-key{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px;}
+    .pref-val{font-size:10px;color:var(--text);}
+    .ltp-item{font-size:10px;color:var(--muted);padding:2px 0;display:flex;gap:5px;}
+    .ltp-item::before{content:"→";color:var(--a2);flex-shrink:0;}
+
+    /* ── Self Trainer ── */
+    .st-item{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-bottom:6px;}
+    .st-item:last-child{margin-bottom:0;}
+    .st-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+    .st-skill{font-size:12px;font-weight:700;color:var(--text);}
+    .st-priority{font-size:8.5px;font-weight:600;padding:2px 7px;border-radius:99px;background:rgba(239,68,68,.12);color:var(--red);}
+    .st-scores{display:flex;gap:6px;margin-bottom:6px;align-items:center;}
+    .st-score-box{text-align:center;flex:1;background:var(--s3);border-radius:5px;padding:4px 3px;}
+    .st-score-val{font-size:13px;font-weight:800;}
+    .st-score-lbl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+    .st-arrow{font-size:14px;color:var(--border);}
+    .st-suggestion{font-size:10px;color:var(--a2);margin-bottom:3px;}
+    .st-improvement{font-size:10.5px;font-weight:600;color:var(--green);}
+    .st-topics{font-size:9px;color:var(--muted);margin-top:3px;}
 
     /* ── Beliefs ── */
-    .belief-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;margin-bottom:5px;}
+    .belief-item{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:6px 9px;margin-bottom:4px;}
     .belief-item:last-child{margin-bottom:0;}
-    .belief-text{font-size:11px;color:var(--text);line-height:1.4;margin-bottom:5px;}
-    .belief-meta{display:flex;align-items:center;gap:7px;}
-    .belief-bar{flex:1;height:4px;background:var(--s3);border-radius:99px;overflow:hidden;}
-    .belief-fill{height:100%;border-radius:99px;background:var(--accent);transition:width .5s;}
-    .belief-conf{font-size:10px;font-weight:600;color:var(--a2);}
-    .belief-src{font-size:9px;color:var(--muted);margin-left:auto;}
+    .belief-txt{font-size:10.5px;color:var(--text);line-height:1.4;margin-bottom:4px;}
+    .belief-meta{display:flex;align-items:center;gap:6px;}
+    .belief-src{font-size:8.5px;color:var(--muted);margin-left:auto;}
 
     /* ── Pulsing dot ── */
-    .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:5px;animation:blink 1.5s infinite;}
+    .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:4px;animation:blink 1.5s infinite;}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
   </style>
 </head>
 <body>
 <div class="shell">
 
-  <!-- Top Bar -->
   <header class="topbar">
     <div class="tb-logo">
       <div class="tb-icon">🧠</div>
       <div>
         <div class="tb-name">ChetnaOS Cognitive Dashboard</div>
-        <div class="tb-sub">Full internal state — refreshes every 5 seconds</div>
+        <div class="tb-sub">Full internal state — auto-refresh every 5 seconds</div>
       </div>
     </div>
     <div class="tb-right">
@@ -226,10 +243,8 @@
     </div>
   </header>
 
-  <!-- Dashboard Grid -->
   <div class="grid-area">
     <div class="grid" id="dashboard-grid">
-      <!-- Rendered by JS -->
       <div style="grid-column:span 3;text-align:center;padding:40px;color:var(--muted);font-size:13px;">
         Loading cognitive state…
       </div>
@@ -239,164 +254,152 @@
 </div>
 
 <script>
-// ── Helpers ────────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const pct = (v,max=1) => Math.round(Math.min(100, Math.max(0, v/max*100)));
+const pct = (v,mx=1) => Math.round(Math.min(100, Math.max(0, v/mx*100)));
 const confColor = lvl => ({HIGH:"conf-high",MEDIUM:"conf-med",LOW:"conf-low",VERY_LOW:"conf-low"}[lvl]||"");
+function skillColor(s){return s>=0.8?"var(--green)":s>=0.6?"var(--cyan)":s>=0.4?"var(--gold)":"var(--red)";}
+function card(title,icon,body,cls=""){return `<div class="card ${cls}"><div class="ch"><span class="ch-icon">${icon}</span>${title}</div><div class="cb">${body}</div></div>`;}
 
-function skillColor(score) {
-  if (score >= 0.8) return "var(--green)";
-  if (score >= 0.6) return "var(--cyan)";
-  if (score >= 0.4) return "var(--gold)";
-  return "var(--red)";
-}
-
-function card(title, icon, body, cls="") {
-  return `<div class="card ${cls}">
-    <div class="ch"><span class="ch-icon">${icon}</span>${title}</div>
-    <div class="cb">${body}</div>
-  </div>`;
-}
-
-// ── Panel builders ──────────────────────────────────────────────────────────
-function buildIdentity(d) {
-  const id = d.identity || {};
-  const traits = (id.core_traits||[]).map(t=>`<span class="trait">${esc(t)}</span>`).join("");
-  const roles  = (id.roles||[]).map(r=>`<span class="role">${esc(r)}</span>`).join("");
-  const stab   = id.stability || 80;
-  const drift  = id.drift || 20;
-  return card("Identity", "👤", `
+// ─── IDENTITY ──────────────────────────────────────────────────────────────
+function buildIdentity(d){
+  const id=d.identity||{};
+  const traits=(id.core_traits||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+  const roles=(id.roles||[]).map(r=>`<span class="tag role">${esc(r)}</span>`).join("");
+  const stab=id.stability||80, drift=id.drift||20;
+  return card("Identity","👤",`
     <div class="identity-name">${esc(id.name||"ChetnaOS")}</div>
-    <div class="identity-level">${esc(id.level||"Level 6")}</div>
-    <div class="traits">${traits}</div>
-    <div class="roles">${roles}</div>
-    <div class="stability-row">
+    <div class="identity-level">${esc(id.level||"Level 6")} — ${esc(id.description||"Computational Developmental Organism")}</div>
+    <div class="tags">${traits}</div>
+    <div class="tags">${roles}</div>
+    <div class="stab-row">
       <span class="stab-label">Stability</span>
-      <div class="stab-bar"><div class="stab-fill" style="width:${stab}%"></div></div>
-      <span class="stab-val" style="color:var(--green)">${stab}%</span>
+      <div class="bar"><div class="fill" style="width:${stab}%;background:var(--green)"></div></div>
+      <span class="bar-val" style="color:var(--green)">${stab}%</span>
     </div>
-    <div class="stability-row">
+    <div class="stab-row">
       <span class="stab-label">Drift</span>
-      <div class="stab-bar"><div class="stab-fill drift" style="width:${drift}%"></div></div>
-      <span class="stab-val" style="color:var(--gold)">${drift}%</span>
+      <div class="bar"><div class="fill" style="width:${drift}%;background:var(--gold)"></div></div>
+      <span class="bar-val" style="color:var(--gold)">${drift}%</span>
     </div>
     <div class="id-meta">
-      <div class="id-meta-item">Cycles: <span>${id.cycle_count||0}</span></div>
-      <div class="id-meta-item">Updates: <span>${id.updates||0}</span></div>
-      <div class="id-meta-item">Values: <span style="color:var(--green)">${id.core_values_preserved?"✅":"—"}</span></div>
+      <div class="id-mi">Cycles: <span>${id.cycle_count||0}</span></div>
+      <div class="id-mi">Updates: <span>${id.updates||0}</span></div>
+      <div class="id-mi">Values: <span style="color:var(--green)">${id.core_values_preserved?"✅ Preserved":"⚠️ Drifting"}</span></div>
     </div>
   `);
 }
 
-function buildSkills(d) {
-  const sk = d.skills || {};
-  const ranked = sk.ranked || [];
-  const transfers = (sk.transfers||[]).slice(0,4);
-  const rows = ranked.map(s => `
-    <div class="skill-row">
+// ─── SKILLS ────────────────────────────────────────────────────────────────
+function buildSkills(d){
+  const sk=d.skills||{};
+  const ranked=sk.ranked||[];
+  const transfers=(sk.transfers||[]).slice(0,4);
+  const rows=ranked.map(s=>{
+    const delta=(s.last_delta||0)*100;
+    const deltaStr=delta>0?`<span class="skill-delta" style="color:var(--green)">+${delta.toFixed(1)}%</span>`:
+                   delta<0?`<span class="skill-delta" style="color:var(--red)">${delta.toFixed(1)}%</span>`:
+                   `<span class="skill-delta" style="color:var(--muted)">—</span>`;
+    return `<div class="skill-row">
       <span class="skill-name">${esc(s.name)}</span>
       <span class="skill-cat">${esc(s.category||"")}</span>
-      <div class="skill-bar"><div class="skill-fill" style="width:${pct(s.score)}%;background:${skillColor(s.score)}"></div></div>
-      <span class="skill-val">${(s.score*100).toFixed(0)}%</span>
-    </div>
-  `).join("");
-  const trRows = transfers.map(t=>
-    `<div class="transfer-row">🔗 ${esc(t.from)} <span class="transfer-arrow">→</span> ${esc(t.to)} <span style="color:var(--a2)">(${Math.round(t.strength*100)}%)</span></div>`
-  ).join("");
-  return card("Skill Tree", "🌲", `
+      <div class="bar"><div class="fill" style="width:${pct(s.score)}%;background:${skillColor(s.score)}"></div></div>
+      <span class="bar-val">${(s.score*100).toFixed(0)}%</span>
+      ${deltaStr}
+    </div>`;
+  }).join("");
+  const trRows=transfers.map(t=>`<div class="tr-row">🔗 ${esc(t.from)} <span class="tr-arr">→</span> ${esc(t.to)} <span style="color:var(--a2)">(${Math.round(t.strength*100)}%)</span></div>`).join("");
+  return card("Skill Tree","🌲",`
     ${rows}
-    ${trRows ? `<div class="transfers"><div class="transfer-title">Skill Transfer</div>${trRows}</div>` : ""}
+    ${trRows?`<div class="transfers"><div class="tr-title">Skill Transfer</div>${trRows}</div>`:""}
   `);
 }
 
-function buildWorkspace(d) {
-  const ws = d.workspace || {};
-  const artifacts = (ws.artifacts||[]).slice(0,4);
-  const questions = (ws.unsolved_questions||[]).slice(0,3);
-  const pri = ws.active_priority||70;
-  return card("Active Workspace", "🖥️", `
-    <div class="ws-row">
-      <div class="ws-label">Current Thought</div>
-      <div class="ws-val">${esc(ws.current_thought||"—")}</div>
-    </div>
-    <div class="ws-row">
-      <div class="ws-label">Current Goal</div>
-      <div class="ws-val">${esc(ws.current_goal||"—")}</div>
-    </div>
-    <div class="ws-row">
-      <div class="ws-label">Priority</div>
-      <div class="ws-priority">
-        <div class="ws-pbar"><div class="ws-pfill" style="width:${pri}%"></div></div>
-        <span class="ws-pval">${pri}</span>
+// ─── WORKSPACE ─────────────────────────────────────────────────────────────
+function buildWorkspace(d){
+  const ws=d.workspace||{};
+  const arts=(ws.artifacts||[]).slice(0,4);
+  const qs=(ws.unsolved_questions||[]).slice(0,3);
+  const pri=ws.active_priority||70;
+  return card("Active Workspace","🖥️",`
+    <div class="ws-row"><div class="ws-label">Current Thought</div><div class="ws-val">${esc(ws.current_thought||"—")}</div></div>
+    <div class="ws-row"><div class="ws-label">Current Goal</div><div class="ws-val">${esc(ws.current_goal||"—")}</div></div>
+    <div class="ws-row"><div class="ws-label">Priority</div>
+      <div style="display:flex;align-items:center;gap:7px;margin-top:2px">
+        <div class="bar"><div class="fill" style="width:${pri}%;background:var(--accent)"></div></div>
+        <span style="font-size:10px;color:var(--a2)">${pri}</span>
       </div>
     </div>
-    <div class="ws-row">
-      <div class="ws-label">Hypothesis</div>
-      <div class="ws-val">${esc(ws.current_hypothesis||"—")}</div>
-    </div>
-    ${ws.pending_contradictions>0?`<div class="ws-row"><div class="ws-label">⚠️ Pending Contradictions</div><div class="ws-val" style="color:var(--gold)">${ws.pending_contradictions}</div></div>`:""}
-    ${artifacts.length?`<div class="ws-row"><div class="ws-label">Artifacts Created</div><div class="artifact-list">${artifacts.map(a=>`<div class="artifact-item">📄 ${esc(a.name)}</div>`).join("")}</div></div>`:""}
-    ${questions.length?`<div class="ws-row"><div class="ws-label">Unsolved Questions</div><div class="q-list">${questions.map(q=>`<div class="q-item">? ${esc(q)}</div>`).join("")}</div></div>`:""}
+    <div class="ws-row"><div class="ws-label">Hypothesis</div><div class="ws-val">${esc(ws.current_hypothesis||"—")}</div></div>
+    ${ws.pending_contradictions>0?`<div class="ws-row"><div class="ws-label" style="color:var(--gold)">⚠️ Pending Contradictions</div><div class="ws-val" style="color:var(--gold)">${ws.pending_contradictions}</div></div>`:""}
+    ${arts.length?`<div class="ws-row"><div class="ws-label">Artifacts Created</div><div class="artifact-list">${arts.map(a=>`<div class="artifact-item">📄 ${esc(a.name)}</div>`).join("")}</div></div>`:""}
+    ${qs.length?`<div class="ws-row"><div class="ws-label">Unsolved Questions</div><div class="q-list">${qs.map(q=>`<div class="q-item">? ${esc(q)}</div>`).join("")}</div></div>`:""}
   `);
 }
 
-function buildMemory(d) {
-  const m = d.memory || {};
-  const maxCount = Math.max(m.long_term_count||1, 1);
-  const layers = [
-    {label:"Working Memory",  count:m.working_count||0,  color:"var(--cyan)",   max:5},
-    {label:"Long-Term",       count:m.long_term_count||0,color:"var(--accent)",  max:maxCount},
-    {label:"Semantic",        count:m.semantic_count||0, color:"var(--a3)",      max:30},
-    {label:"Episodic",        count:m.episodic_count||0, color:"var(--green)",   max:maxCount},
-    {label:"Forgotten",       count:m.forgotten_count||0,color:"var(--red)",     max:Math.max(m.forgotten_count||1,1)},
+// ─── MEMORY ────────────────────────────────────────────────────────────────
+function buildMemory(d){
+  const m=d.memory||{};
+  const maxLT=Math.max(m.long_term_count||1,1);
+  const layers=[
+    {label:"Working Memory", count:m.working_count||0, color:"var(--cyan)", max:5},
+    {label:"Long-Term",      count:m.long_term_count||0,color:"var(--accent)",max:maxLT},
+    {label:"Semantic",       count:m.semantic_count||0, color:"var(--a3)",   max:30},
+    {label:"Episodic",       count:m.episodic_count||0, color:"var(--green)",max:maxLT},
+    {label:"Forgotten",      count:m.forgotten_count||0,color:"var(--red)",  max:Math.max(m.forgotten_count||1,1)},
   ];
-  const rows = layers.map(l=>
-    `<div class="mem-layer">
-      <span class="mem-label">${l.label}</span>
-      <div class="mem-bar"><div class="mem-fill" style="width:${pct(l.count,l.max)}%;background:${l.color}"></div></div>
-      <span class="mem-count">${l.count}</span>
-    </div>`
-  ).join("");
-  const concepts = (m.semantic_concepts||[]).slice(0,10).map(c=>`<span class="mem-concept">${esc(c)}</span>`).join("");
-  const dq = (m.dream_queue||[]).slice(0,3).map(i=>`<div class="dq-item">💭 ${esc(i)}</div>`).join("");
-  return card("Memory Hierarchy", "💾", `
-    <div class="mem-layers">${rows}</div>
+  const rows=layers.map(l=>`<div class="mem-layer">
+    <span class="mem-label">${l.label}</span>
+    <div class="bar"><div class="fill" style="width:${pct(l.count,l.max)}%;background:${l.color}"></div></div>
+    <span class="mem-count">${l.count}</span>
+  </div>`).join("");
+  const concepts=(m.semantic_concepts||[]).slice(0,10).map(c=>`<span class="concept">${esc(c)}</span>`).join("");
+  const dq=(m.dream_queue||[]).slice(0,3).map(i=>`<div class="dq-item">💭 ${esc(i)}</div>`).join("");
+  return card("Memory Hierarchy","💾",`
+    ${rows}
     ${concepts?`<div class="mem-concepts">${concepts}</div>`:""}
     ${dq?`<div class="dream-queue"><div class="dq-title">Dream Queue</div>${dq}</div>`:""}
   `);
 }
 
-function buildRealityChecks(d) {
-  const checks = d.reality_checks || [];
-  if (!checks.length) return card("Reality Verification Log", "🔍",
-    `<div class="no-data">No reality checks yet. Send a message to start.</div>`);
-  const rows = checks.map(c=>{
-    const cc = confColor(c.level||"MEDIUM");
+// ─── REALITY CHECKS ────────────────────────────────────────────────────────
+function buildRealityChecks(d){
+  const checks=d.reality_checks||[];
+  if(!checks.length) return card("Reality Verification Log","🔍",`<div class="no-data">No reality checks yet. Send a message to start.</div>`);
+  const rows=checks.map(c=>{
+    const cc=confColor(c.level||"MEDIUM");
     return `<tr>
-      <td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.statement||"")}</td>
+      <td style="max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.statement||"")}</td>
       <td class="${cc}">${((c.confidence||0)*100).toFixed(0)}%</td>
       <td>${esc((c.truth||"").replace(/_/g," "))}</td>
-      <td class="${c.passed?"rc-pass":"rc-fail"}">${c.passed?"✅ Accept":"⚠️ Caution"}</td>
+      <td><span class="ev-src">internal</span></td>
+      <td class="${c.passed?"rc-pass":"rc-fail"}">${c.passed?"✅":"⚠️"}</td>
     </tr>`;
   }).join("");
-  return card("Reality Verification Log", "🔍", `
+  return card("Reality Verification Log","🔍",`
     <table class="rc-table">
-      <thead><tr><th>Statement</th><th>Conf</th><th>Truth</th><th>Status</th></tr></thead>
+      <thead><tr><th>Statement</th><th>Conf</th><th>Truth</th><th>Source</th><th>Status</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   `);
 }
 
-function buildContradictions(d) {
-  const contrs = d.contradictions || [];
-  if (!contrs.length) return card("Contradiction Tracker", "⚡",
-    `<div class="no-contr">✅ No contradictions detected in belief store.</div>`);
-  const items = contrs.slice(0,5).map(c=>`
-    <div class="contr-item">
+// ─── CONTRADICTIONS ────────────────────────────────────────────────────────
+function buildContradictions(d){
+  const cs=d.contradictions||[];
+  if(!cs.length) return card("Contradiction Tracker","⚡",`<div class="no-contr">✅ No contradictions detected in belief store.</div>`);
+  const typeLabel={
+    belief_vs_belief:"B vs B",
+    belief_vs_memory:"B vs Mem",
+    belief_vs_founder_mission:"B vs Mission",
+  };
+  const items=cs.slice(0,5).map(c=>{
+    const tl=typeLabel[c.type]||c.type||"conflict";
+    const isCrit=c.status==="critical";
+    return `<div class="contr-item">
       <div class="contr-header">
         <span class="contr-score">Conflict ${c.conflict_score||0}%</span>
-        <span class="contr-status">${esc(c.status||"needs_reflection")}</span>
+        <span class="contr-type ${isCrit?"critical":""}">${tl}</span>
       </div>
       <div class="contr-beliefs">
         <div class="contr-belief">"${esc(c.belief_a||"")}"</div>
@@ -404,210 +407,194 @@ function buildContradictions(d) {
         <div class="contr-belief">"${esc(c.belief_b||"")}"</div>
       </div>
       ${c.reason?`<div class="contr-reason">⚠️ ${esc(c.reason)}</div>`:""}
-    </div>
-  `).join("");
-  return card("Contradiction Tracker", "⚡", items);
+    </div>`;
+  }).join("");
+  return card("Contradiction Tracker","⚡",items);
 }
 
-function buildDevelopment(d) {
-  const dev = d.development || {};
-  const total = dev.total_cycles||0;
-  const good  = dev.good_cycles||0;
-  const poor  = dev.poor_cycles||0;
-  const avg   = ((dev.avg_confidence||0.5)*100).toFixed(0);
-  const gPct  = total ? pct(good,total) : 0;
-  const pPct  = total ? pct(poor,total) : 0;
-  return card("Development Timeline", "📈", `
+// ─── DEVELOPMENT ───────────────────────────────────────────────────────────
+function buildDevelopment(d){
+  const dev=d.development||{};
+  const total=dev.total_cycles||0, good=dev.good_cycles||0, poor=dev.poor_cycles||0;
+  const avg=((dev.avg_confidence||0.5)*100).toFixed(0);
+  return card("Development Timeline","📈",`
     <div class="dev-stats">
-      <div class="dev-stat"><div class="dev-stat-val">${total}</div><div class="dev-stat-label">Total Cycles</div></div>
-      <div class="dev-stat"><div class="dev-stat-val" style="color:var(--green)">${good}</div><div class="dev-stat-label">Good Cycles</div></div>
-      <div class="dev-stat"><div class="dev-stat-val" style="color:var(--red)">${poor}</div><div class="dev-stat-label">Poor Cycles</div></div>
+      <div class="dev-stat"><div class="dev-val">${total}</div><div class="dev-lbl">Total Cycles</div></div>
+      <div class="dev-stat"><div class="dev-val" style="color:var(--green)">${good}</div><div class="dev-lbl">Good Cycles</div></div>
+      <div class="dev-stat"><div class="dev-val" style="color:var(--red)">${poor}</div><div class="dev-lbl">Poor Cycles</div></div>
     </div>
-    <div class="dev-bar-row">
-      <span class="dev-bar-label">Good rate</span>
-      <div class="dev-bar"><div class="dev-bar-fill" style="width:${gPct}%;background:var(--green)"></div></div>
-      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--green)">${gPct}%</span>
-    </div>
-    <div class="dev-bar-row">
-      <span class="dev-bar-label">Poor rate</span>
-      <div class="dev-bar"><div class="dev-bar-fill" style="width:${pPct}%;background:var(--red)"></div></div>
-      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--red)">${pPct}%</span>
-    </div>
-    <div class="dev-bar-row">
-      <span class="dev-bar-label">Avg confidence</span>
-      <div class="dev-bar"><div class="dev-bar-fill" style="width:${avg}%;background:var(--accent)"></div></div>
-      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--a2)">${avg}%</span>
-    </div>
+    <div class="dev-bar-row"><span class="dev-bar-lbl">Good rate</span><div class="bar"><div class="fill" style="width:${total?pct(good,total):0}%;background:var(--green)"></div></div><span style="font-size:9.5px;min-width:30px;text-align:right;color:var(--green)">${total?pct(good,total):0}%</span></div>
+    <div class="dev-bar-row"><span class="dev-bar-lbl">Avg confidence</span><div class="bar"><div class="fill" style="width:${avg}%;background:var(--accent)"></div></div><span style="font-size:9.5px;min-width:30px;text-align:right;color:var(--a2)">${avg}%</span></div>
   `);
 }
 
-function buildSleep(d) {
-  const sl = d.sleep || {};
-  const mem = d.memory || {};
-  return card("Sleep Report", "🌙", `
-    <div class="sleep-meta">
-      <div class="sleep-item"><div class="sleep-val">${mem.forgotten_count||0}</div><div class="sleep-label">Total Forgotten</div></div>
-      <div class="sleep-item"><div class="sleep-val" style="color:var(--green)">${mem.long_term_count||0}</div><div class="sleep-label">Consolidated</div></div>
-      <div class="sleep-item"><div class="sleep-val" style="color:var(--a3)">${(d.beliefs||{}).count||0}</div><div class="sleep-label">Active Beliefs</div></div>
-      <div class="sleep-item"><div class="sleep-val" style="color:var(--gold)">${mem.dream_count||0}</div><div class="sleep-label">Dream Queue</div></div>
+// ─── SLEEP ──────────────────────────────────────────────────────────────────
+function buildSleep(d){
+  const sl=d.sleep||{};
+  const mem=d.memory||{};
+  const log=d.last_sleep_log||{};
+  const insights=log.dream_insights||d.last_sleep?.dream_insights||[];
+  const insightHtml=insights.length
+    ? insights.map(i=>`<div class="dream-item">${esc(i.insight||i)}</div>`).join("")
+    : `<div style="font-size:9.5px;color:var(--muted);font-style:italic">No dream consolidation yet — happens every ${sl.sleep_every||20} cycles.</div>`;
+  return card("Sleep & Dream Report","🌙",`
+    <div class="sleep-grid">
+      <div class="sleep-item"><div class="sleep-val">${mem.forgotten_count||0}</div><div class="sleep-lbl">Total Forgotten</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--green)">${mem.long_term_count||0}</div><div class="sleep-lbl">Consolidated</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--a3)">${(d.beliefs||{}).count||0}</div><div class="sleep-lbl">Active Beliefs</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--gold)">${log.dream_replayed||0}</div><div class="sleep-lbl">Replayed</div></div>
     </div>
-    <div class="sleep-next">Next sleep in <span>${sl.cycles_until_next||"—"}</span> cycles (every <span>${sl.sleep_every||20}</span> cycles)</div>
+    <div class="dream-insights">
+      <div class="dream-title">Dream Insights (Last Consolidation)</div>
+      ${insightHtml}
+    </div>
+    <div class="sleep-next" style="margin-top:7px">Next sleep in <span>${sl.cycles_until_next||"—"}</span> cycles (every <span>${sl.sleep_every||20}</span>)</div>
   `);
 }
 
-function buildThoughtBirth(d) {
-  const tb = d.thought_birth || {};
-  if (!tb.sense) return card("Thought Birth", "✨",
-    `<div class="no-data">No thought recorded yet. Send a message first.</div>`);
-  const memItems = (tb.memory||[]).map(m=>`<div style="font-size:10px;color:var(--muted)">• ${esc(m)}</div>`).join("");
-  const imagItems = (tb.imagination||[]).map((im,i)=>`<div style="font-size:10px;color:var(--muted)">${["A","B","C"][i]}) ${esc(im)}</div>`).join("");
-  return card("Thought Birth", "✨", `
+// ─── THOUGHT BIRTH ──────────────────────────────────────────────────────────
+function buildThoughtBirth(d){
+  const tb=d.thought_birth||{};
+  if(!tb.sense) return card("Thought Birth","✨",`<div class="no-data">No thought recorded yet. Send a message first.</div>`);
+  const memItems=(tb.memory||[]).map(m=>`<div style="font-size:9.5px;color:var(--muted)">• ${esc(m)}</div>`).join("");
+  const imagItems=(tb.imagination||[]).map((im,i)=>`<div style="font-size:9.5px;color:var(--muted)">${["A","B","C"][i]}) ${esc(im)}</div>`).join("");
+  return card("Thought Birth","✨",`
     <div class="tb-flow">
-      <div class="tb-node">
-        <div class="tb-node-icon">👁️</div>
-        <div class="tb-node-body">
-          <div class="tb-node-label">Sense (Input)</div>
-          <div class="tb-node-text">${esc(tb.sense||"")}</div>
-        </div>
-      </div>
-      <div class="tb-arrow">↓</div>
-      <div class="tb-node">
-        <div class="tb-node-icon">💾</div>
-        <div class="tb-node-body">
-          <div class="tb-node-label">Memory (Recalled)</div>
-          <div class="tb-node-text">${memItems||"<span style='color:var(--muted)'>No relevant memories recalled.</span>"}</div>
-        </div>
-      </div>
-      <div class="tb-arrow">↓</div>
-      <div class="tb-node">
-        <div class="tb-node-icon">🌈</div>
-        <div class="tb-node-body">
-          <div class="tb-node-label">Imagination (Possibilities)</div>
-          <div class="tb-node-text">${imagItems||"<span style='color:var(--muted)'>—</span>"}</div>
-        </div>
-      </div>
-      <div class="tb-arrow">↓</div>
-      <div class="tb-node">
-        <div class="tb-node-icon">⚡</div>
-        <div class="tb-node-body">
-          <div class="tb-node-label">Trigger (Intent)</div>
-          <div class="tb-node-text">${esc(tb.trigger||"")}</div>
-        </div>
-      </div>
-      <div class="tb-arrow">↓</div>
+      <div class="tb-node"><div class="tb-icon2">👁️</div><div class="tb-body"><div class="tb-lbl">Sense</div><div class="tb-txt">${esc(tb.sense||"")}</div></div></div>
+      <div class="tb-arr">↓</div>
+      <div class="tb-node"><div class="tb-icon2">💾</div><div class="tb-body"><div class="tb-lbl">Memory Recalled</div><div class="tb-txt">${memItems||"<span style='color:var(--muted)'>No relevant memories.</span>"}</div></div></div>
+      <div class="tb-arr">↓</div>
+      <div class="tb-node"><div class="tb-icon2">🌈</div><div class="tb-body"><div class="tb-lbl">Imagination</div><div class="tb-txt">${imagItems||"<span style='color:var(--muted)'>—</span>"}</div></div></div>
+      <div class="tb-arr">↓</div>
+      <div class="tb-node"><div class="tb-icon2">⚡</div><div class="tb-body"><div class="tb-lbl">Trigger (Intent)</div><div class="tb-txt">${esc(tb.trigger||"")}</div></div></div>
+      <div class="tb-arr">↓</div>
       <div class="tb-result">
-        <div class="tb-result-label">New Thought Born</div>
-        <div class="tb-result-text">${esc((tb.new_thought||"").slice(0,200))}${(tb.new_thought||"").length>200?"…":""}</div>
+        <div class="tb-result-lbl">New Thought Born</div>
+        <div class="tb-result-txt">${esc((tb.new_thought||"").slice(0,200))}${(tb.new_thought||"").length>200?"…":""}</div>
       </div>
     </div>
   `);
 }
 
-function buildSimulation(d) {
-  const sim = d.simulation || {};
-  const plans = sim.plans || [];
-  if (!plans.length) return card("Simulation — Possible Futures", "🔮",
-    `<div class="no-data">No simulation yet. Send a complex message to trigger Plan A/B/C.</div>`);
-  const items = plans.map((p,i)=>`
+// ─── SIMULATION ────────────────────────────────────────────────────────────
+function buildSimulation(d){
+  const sim=d.simulation||{};
+  const plans=sim.plans||[];
+  if(!plans.length) return card("Simulation — Possible Futures","🔮",`<div class="no-data">No simulation yet. Send a complex message to trigger Plan A/B/C.</div>`);
+  const items=plans.map((p,i)=>`
     <div class="sim-plan">
-      <div class="sim-plan-head"><span class="sim-plan-label">Plan ${["A","B","C"][i]||i}</span></div>
-      <div class="sim-plan-text">${esc(p.plan||"")}</div>
-      <div class="sim-outcome">→ Outcome: <span>${esc(p.outcome||"")}</span></div>
+      <div class="sim-plan-head"><span class="sim-label">Plan ${["A","B","C"][i]||i}</span></div>
+      <div class="sim-text">${esc(p.plan||"")}</div>
+      <div class="sim-outcome">→ <span>${esc(p.outcome||"")}</span></div>
     </div>
   `).join("");
-  return card("Simulation — Possible Futures", "🔮", `
+  return card("Simulation — Possible Futures","🔮",`
     <div class="sim-plans">${items}</div>
-    ${sim.selected?`<div style="margin-top:8px;font-size:10px;color:var(--muted)">Selected: <span style="color:var(--a2)">${esc(sim.selected)}</span></div>`:""}
+    ${sim.selected?`<div style="margin-top:7px;font-size:9.5px;color:var(--muted)">Selected: <span style="color:var(--a2)">${esc(sim.selected)}</span></div>`:""}
   `);
 }
 
-function buildMetaCognition(d) {
-  const mc = d.meta_cognition || {};
-  if (!mc.why) return card("Meta-Cognition", "🪞",
-    `<div class="no-data">No meta-cognition data yet.</div>`);
-  const correct = mc.was_correct;
-  const score   = ((mc.correctness||0)*100).toFixed(0);
-  const improvements = (mc.can_improve||[]).map(i=>`<div class="improve-item">• ${esc(i)}</div>`).join("");
-  return card("Meta-Cognition Self-Eval", "🪞", `
-    <div class="mc-row">
-      <span class="mc-icon">❓</span>
-      <div class="mc-body">
-        <div class="mc-label">Why did I answer this?</div>
-        <div class="mc-val">${esc(mc.why||"")}</div>
-      </div>
-    </div>
-    <div class="mc-row">
-      <span class="mc-icon">${correct?"✅":"⚠️"}</span>
-      <div class="mc-body">
-        <div class="mc-label">Was I correct?</div>
-        <div class="mc-val">
-          <span class="${correct?"mc-correct":"mc-incorrect"}">${correct?"Yes":"Needs review"}</span>
-          &nbsp;<span class="mc-score" style="color:var(--a2)">${score}%</span>
-        </div>
-      </div>
-    </div>
-    <div class="mc-row">
-      <span class="mc-icon">🔧</span>
-      <div class="mc-body">
-        <div class="mc-label">Can I improve?</div>
-        <div class="improve-list">${improvements||"<div class='improve-item'>✅ No improvements needed.</div>"}</div>
-      </div>
-    </div>
-    <div class="mc-row">
-      <span class="mc-icon">🎯</span>
-      <div class="mc-body">
-        <div class="mc-label">Self Verdict</div>
-        <div class="mc-val" style="color:${mc.self_verdict==='good'?'var(--green)':'var(--gold)'}">${esc(mc.self_verdict||"—")}</div>
-      </div>
-    </div>
+// ─── META COGNITION ────────────────────────────────────────────────────────
+function buildMetaCognition(d){
+  const mc=d.meta_cognition||{};
+  if(!mc.why) return card("Meta-Cognition Self-Eval","🪞",`<div class="no-data">No meta-cognition data yet.</div>`);
+  const score=((mc.correctness||0)*100).toFixed(0);
+  const improvements=(mc.can_improve||[]).map(i=>`<div style="font-size:9.5px;color:var(--muted)">• ${esc(i)}</div>`).join("");
+  return card("Meta-Cognition Self-Eval","🪞",`
+    <div class="mc-row"><span class="mc-icon">❓</span><div class="mc-body"><div class="mc-lbl">Why did I answer?</div><div class="mc-val">${esc(mc.why||"")}</div></div></div>
+    <div class="mc-row"><span class="mc-icon">${mc.was_correct?"✅":"⚠️"}</span><div class="mc-body"><div class="mc-lbl">Was I correct?</div><div class="mc-val"><span class="${mc.was_correct?"mc-correct":"mc-warn"}">${mc.was_correct?"Yes":"Needs review"}</span> &nbsp;<span style="font-size:13px;font-weight:800;color:var(--a2)">${score}%</span></div></div></div>
+    <div class="mc-row"><span class="mc-icon">🔧</span><div class="mc-body"><div class="mc-lbl">Can improve?</div>${improvements||"<div style='font-size:9.5px;color:var(--green)'>✅ No improvements needed.</div>"}</div></div>
+    <div class="mc-row"><span class="mc-icon">🎯</span><div class="mc-body"><div class="mc-lbl">Self Verdict</div><div class="mc-val" style="color:${mc.self_verdict==='good'?"var(--green)":"var(--gold)"}">${esc(mc.self_verdict||"—")}</div></div></div>
   `);
 }
 
-function buildBeliefs(d) {
-  const beliefs = (d.beliefs||{}).all||[];
-  if (!beliefs.length) return card("Belief Store", "💡",
-    `<div class="no-data">No beliefs yet.</div>`);
-  const items = beliefs.slice(0,6).map(b=>`
+// ─── FOUNDER DEEP MODEL ────────────────────────────────────────────────────
+function buildFounderDeep(d){
+  const fc=d.founder_context||{};
+  const goals=(fc.founder_goals||[]).map(g=>{
+    const sc=g.status||"planned";
+    return `<div class="fd-goal-item">
+      <span class="fd-goal-text">${esc(g.goal||"")}</span>
+      <span class="fd-goal-status ${sc}">${sc.replace("_"," ")}</span>
+    </div>`;
+  }).join("");
+  const habits=(fc.founder_habits||[]).slice(0,4).map(h=>`
+    <div class="fd-habit-row">
+      <span class="fd-habit-name">${esc(h.habit||"")}</span>
+      <span class="fd-habit-freq">${esc(h.frequency||"")}</span>
+      <div class="bar" style="max-width:60px"><div class="fill" style="width:${pct(h.strength||0)}%;background:var(--green)"></div></div>
+    </div>
+  `).join("");
+  const stress=fc.founder_stress||{};
+  const stressColor=stress.level>0.6?"var(--red)":stress.level>0.3?"var(--gold)":"var(--green)";
+  const stressSrcs=(stress.sources||[]).map(s=>`<span class="stress-source">${esc(s)}</span>`).join("");
+  const prefs=fc.founder_preferences||{};
+  const prefGrid=Object.entries(prefs).slice(0,4).map(([k,v])=>`<div class="pref-item"><div class="pref-key">${esc(k)}</div><div class="pref-val">${esc(v)}</div></div>`).join("");
+  const plans=(fc.long_term_plans||[]).slice(0,4).map(p=>`<div class="ltp-item">${esc(p)}</div>`).join("");
+
+  return card("Founder Deep Model","🎯",`
+    ${goals?`<div class="fd-section"><div class="fd-title">🎯 Goals</div>${goals}</div>`:""}
+    ${habits?`<div class="fd-section"><div class="fd-title">🔄 Habits</div>${habits}</div>`:""}
+    <div class="fd-section">
+      <div class="fd-title">⚡ Stress</div>
+      <div class="stress-row">
+        <span class="stress-label">${esc(stress.label||"unknown")}</span>
+        <div class="bar"><div class="fill" style="width:${pct(stress.level||0)}%;background:${stressColor}"></div></div>
+        <span style="font-size:10px;color:${stressColor};font-weight:600">${((stress.level||0)*100).toFixed(0)}%</span>
+      </div>
+      ${stressSrcs?`<div class="stress-sources">${stressSrcs}</div>`:""}
+    </div>
+    ${prefGrid?`<div class="fd-section"><div class="fd-title">⚙️ Preferences</div><div class="pref-grid">${prefGrid}</div></div>`:""}
+    ${plans?`<div class="fd-section"><div class="fd-title">🌅 Long-Term Plans</div>${plans}</div>`:""}
+  `);
+}
+
+// ─── SELF-TRAINER (Autonomous Goal Generation) ────────────────────────────
+function buildSelfTrainer(d){
+  const goals=d.training_goals||[];
+  if(!goals.length) return card("Self-Trainer","🤖",`<div class="no-data">Generating training recommendations…</div>`);
+  const items=goals.map(g=>`
+    <div class="st-item">
+      <div class="st-head">
+        <span class="st-skill">⚠️ ${esc(g.skill||"")}</span>
+        <span class="st-priority">Gap: ${esc(g.gap_pct||0)}%</span>
+      </div>
+      <div class="st-scores">
+        <div class="st-score-box"><div class="st-score-val" style="color:var(--gold)">${esc(g.current_pct||0)}%</div><div class="st-score-lbl">Current</div></div>
+        <span class="st-arrow">→</span>
+        <div class="st-score-box"><div class="st-score-val" style="color:var(--green)">${esc(g.target_pct||0)}%</div><div class="st-score-lbl">Target</div></div>
+      </div>
+      <div class="st-suggestion">📋 Suggested: ${esc(g.suggested_training||"")}</div>
+      <div class="st-improvement">Expected improvement: ${esc(g.expected_improvement||"")}</div>
+      <div class="st-topics">Topics: ${esc(g.practice_topics||"")}</div>
+    </div>
+  `).join("");
+  return card("Self-Trainer","🤖",`
+    <div style="font-size:9px;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.7px">Autonomous Training Recommendations</div>
+    ${items}
+  `);
+}
+
+// ─── BELIEFS ───────────────────────────────────────────────────────────────
+function buildBeliefs(d){
+  const beliefs=(d.beliefs||{}).all||[];
+  if(!beliefs.length) return card("Belief Store","💡",`<div class="no-data">No beliefs yet.</div>`);
+  const items=beliefs.slice(0,6).map(b=>`
     <div class="belief-item">
-      <div class="belief-text">"${esc(b.text||"")}"</div>
+      <div class="belief-txt">"${esc(b.text||"")}"</div>
       <div class="belief-meta">
-        <div class="belief-bar"><div class="belief-fill" style="width:${pct(b.confidence||0)}%"></div></div>
-        <span class="belief-conf">${((b.confidence||0)*100).toFixed(0)}%</span>
+        <div class="bar"><div class="fill" style="width:${pct(b.confidence||0)}%;background:var(--accent)"></div></div>
+        <span style="font-size:10px;font-weight:600;color:var(--a2)">${((b.confidence||0)*100).toFixed(0)}%</span>
         <span class="belief-src">${esc(b.source||"")}</span>
       </div>
     </div>
   `).join("");
-  return card("Belief Store", "💡", items);
+  return card("Belief Store","💡",items);
 }
 
-function buildFounderContext(d) {
-  const fc = d.founder_context || {};
-  const phases = (fc.known_phases||[]).map(p=>`<div class="fc-phase">→ ${esc(p)}</div>`).join("");
-  const constraints = (fc.founder_constraints||[]).map(c=>`<div class="fc-phase" style="color:var(--gold)">• ${esc(c)}</div>`).join("");
-  return card("Founder Context", "🎯", `
-    <div class="fc-row">
-      <div class="fc-item">
-        <div class="fc-label">Primary Mission</div>
-        <div class="fc-val">${esc(fc.primary_mission||"—")}</div>
-      </div>
-      <div class="fc-item">
-        <div class="fc-label">Current Milestone</div>
-        <div class="fc-val" style="color:var(--green)">${esc(fc.current_milestone||"—")}</div>
-      </div>
-      <div class="fc-item">
-        <div class="fc-label">Current Project</div>
-        <div class="fc-val">${esc(fc.current_project||"—")}</div>
-      </div>
-      ${constraints?`<div class="fc-item"><div class="fc-label">Constraints</div><div class="fc-phase-list">${constraints}</div></div>`:""}
-      ${phases?`<div class="fc-item"><div class="fc-label">Known Phases</div><div class="fc-phase-list">${phases}</div></div>`:""}
-    </div>
-  `);
-}
-
-// ── Render full dashboard ──────────────────────────────────────────────────
-function renderDashboard(d) {
-  const grid = $("dashboard-grid");
-  grid.innerHTML = [
+// ─── RENDER ────────────────────────────────────────────────────────────────
+function renderDashboard(d){
+  $("dashboard-grid").innerHTML = [
     buildIdentity(d),
     buildSkills(d),
     buildWorkspace(d),
@@ -616,36 +603,34 @@ function renderDashboard(d) {
     buildContradictions(d),
     buildDevelopment(d),
     buildSleep(d),
-    buildFounderContext(d),
+    buildFounderDeep(d),
     buildThoughtBirth(d),
     buildSimulation(d),
     buildMetaCognition(d),
+    buildSelfTrainer(d),
     buildBeliefs(d),
   ].join("");
 }
 
-// ── Fetch + refresh ─────────────────────────────────────────────────────────
-async function loadDashboard() {
-  try {
-    const d = await fetch("/api/dashboard").then(r => r.json());
-    if (d.available === false) {
-      $("dashboard-grid").innerHTML = `<div style="grid-column:span 3;text-align:center;padding:40px;color:var(--red)">
-        ⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}
-      </div>`;
+async function loadDashboard(){
+  try{
+    const d=await fetch("/api/dashboard").then(r=>r.json());
+    if(d.available===false){
+      $("dashboard-grid").innerHTML=`<div style="grid-column:span 3;text-align:center;padding:40px;color:var(--red)">⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}</div>`;
       return;
     }
     renderDashboard(d);
-    const badge = $("refresh-badge");
-    badge.innerHTML = `<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
-    badge.className = "refresh-badge live";
-  } catch(e) {
-    $("refresh-badge").textContent = "⚠️ Error";
-    $("refresh-badge").className = "refresh-badge";
+    const b=$("refresh-badge");
+    b.innerHTML=`<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
+    b.className="refresh-badge live";
+  }catch(e){
+    $("refresh-badge").textContent="⚠️ Error";
+    $("refresh-badge").className="refresh-badge";
   }
 }
 
 loadDashboard();
-setInterval(loadDashboard, 5000);
+setInterval(loadDashboard,5000);
 </script>
 </body>
 </html>

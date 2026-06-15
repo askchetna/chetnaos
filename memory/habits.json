@@ -1,6 +1,7 @@
 {
-  "question:general": 8,
+  "question:general": 12,
   "statement:general": 4,
   "question:science": 1,
-  "statement:technology": 2
+  "statement:technology": 2,
+  "question:technology": 1
 }
