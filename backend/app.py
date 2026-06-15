@@ -1,7 +1,6 @@
 """
-ChetnaOS Backend — FastAPI Application
-Powered by the Developmental Cognitive Architecture v2.0
-Run: python -m uvicorn backend.app:app --reload
+ChetnaOS Backend — FastAPI Application v2.0
+Developmental Cognitive Architecture — Level 6
 """
 import os
 from fastapi import FastAPI, HTTPException
@@ -9,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from typing import Optional, Any, Dict
+from typing import Any, Dict
 
 from .config import get_settings
 from .api import setup_kalpavriksha_routes
@@ -19,22 +18,18 @@ FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fronten
 
 app = FastAPI(
     title="ChetnaOS API",
-    description="Developmental Cognitive Architecture v2.0 — Level 6 Computational Developmental Organism",
-    version="2.0.0"
+    description="Developmental Cognitive Architecture v2.0 — Level 6",
+    version="2.0.0",
 )
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=["*"], allow_credentials=True,
+    allow_methods=["*"], allow_headers=["*"],
 )
 
 settings = get_settings()
-
-# ── Lazy-load the cognitive runtime (heavy, singleton) ──
 _runtime = None
+
 
 def get_runtime():
     global _runtime
@@ -51,48 +46,38 @@ def get_runtime():
 @app.on_event("startup")
 async def on_startup():
     app.state.settings = settings
-    print(
-        f"[ChetnaOS v2.0] Startup — LIGHT_MODE={settings.LIGHT_MODE}, "
-        f"GROQ_MODEL={settings.GROQ_MODEL}"
-    )
-    # Pre-warm the runtime
+    print(f"[ChetnaOS v2.0] Startup — GROQ_MODEL={settings.GROQ_MODEL}")
     rt = get_runtime()
     if rt:
         print(f"[ChetnaOS v2.0] Cognitive Runtime ready — "
-              f"LLM={'✓' if rt.llm_available else '✗ (GROQ_API_KEY missing)'}")
+              f"LLM={'✓' if rt.llm_available else '✗'}")
     else:
-        print("[ChetnaOS v2.0] Running in legacy mode (runtime unavailable).")
+        print("[ChetnaOS v2.0] Running in legacy mode.")
 
 
-# ── Request/Response models ──────────────────────────────────────────────────
-
+# ── Models ──────────────────────────────────────────────────────────────────
 class ChatRequest(BaseModel):
     text: str
 
 class GoalRequest(BaseModel):
     goal: str
-    context: Dict[str, Any] | None = None
+    context:     Dict[str, Any] | None = None
     constraints: Dict[str, Any] | None = None
 
 
-# ── Core endpoints ───────────────────────────────────────────────────────────
-
+# ── Chat endpoint ────────────────────────────────────────────────────────────
 @app.post("/api/chat")
 async def api_chat(payload: ChatRequest):
-    """Primary chat endpoint — runs the full 27-stage cognitive cycle."""
     text = (payload.text or "").strip()
     if not text:
-        raise HTTPException(status_code=400, detail="Text field is required")
-
+        raise HTTPException(400, "text field required")
     rt = get_runtime()
     if not rt:
-        raise HTTPException(status_code=503,
-                            detail="Cognitive runtime unavailable. Check server logs.")
-
+        raise HTTPException(503, "Cognitive runtime unavailable.")
     try:
         result = rt.process(text, mode="chat")
         return {
-            "reply":      result["reply"],
+            "reply": result["reply"],
             "meta": {
                 "cycle":            result.get("cycle"),
                 "quality":          result.get("quality"),
@@ -114,41 +99,38 @@ async def api_chat(payload: ChatRequest):
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(500, str(e))
 
 
+# ── Goal endpoint ─────────────────────────────────────────────────────────────
 @app.post("/api/goal")
 async def api_goal(payload: GoalRequest):
-    """Goal mode — runs cognitive cycle with goal framing."""
     text = (payload.goal or "").strip()
     if not text:
-        raise HTTPException(status_code=400, detail="Goal field is required")
-
+        raise HTTPException(400, "goal field required")
     rt = get_runtime()
     if not rt:
-        raise HTTPException(status_code=503,
-                            detail="Cognitive runtime unavailable.")
-
+        raise HTTPException(503, "Runtime unavailable.")
     try:
         result = rt.process(text, mode="goal")
         return {
-            "reply":            result["reply"],
-            "terminated_reason": "cognitive_cycle_complete",
-            "plan":             result.get("stage_trace", []),
-            "trace":            result.get("trace", []),
-            "world":            result.get("reality", {}),
-            "meta":             {k: result[k] for k in
-                                  ("cycle","quality","confidence","dharma_score","cycle_score","domain") if k in result},
+            "reply":  result["reply"],
+            "plan":   result.get("stage_trace", []),
+            "trace":  result.get("trace", []),
+            "world":  result.get("reality", {}),
+            "meta":   {k: result[k] for k in
+                       ("cycle","quality","confidence","dharma_score","cycle_score","domain")
+                       if k in result},
         }
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(500, str(e))
 
 
+# ── State endpoint ────────────────────────────────────────────────────────────
 @app.get("/api/state")
 async def api_state():
-    """Returns live cognitive state: identity, beliefs, world, development."""
     rt = get_runtime()
     if not rt:
         return {"error": "Runtime unavailable", "available": False}
@@ -162,8 +144,24 @@ async def api_state():
     }
 
 
+# ── Dashboard endpoint ────────────────────────────────────────────────────────
+@app.get("/api/dashboard")
+async def api_dashboard():
+    """Full cognitive dashboard snapshot — all modules."""
+    rt = get_runtime()
+    if not rt:
+        return {"available": False, "error": "Runtime unavailable."}
+    try:
+        snap = rt._cycle.dashboard_snapshot()
+        snap["available"] = True
+        return snap
+    except Exception as e:
+        return {"available": False, "error": str(e)}
+
+
+# ── Health endpoint ───────────────────────────────────────────────────────────
 @app.get("/health")
-async def health_check():
+async def health():
     rt = get_runtime()
     return {
         "ok":                True,
@@ -179,29 +177,32 @@ async def health_check():
     }
 
 
-# ── Legacy /chetna endpoint ──────────────────────────────────────────────────
-
+# ── Legacy /chetna ────────────────────────────────────────────────────────────
 @app.post("/chetna")
-async def chetna_route(payload: ChatRequest):
+async def chetna_legacy(payload: ChatRequest):
     text = (payload.text or "").strip()
     if not text:
-        raise HTTPException(status_code=400, detail="Text field is required")
+        raise HTTPException(400, "text required")
     rt = get_runtime()
     if not rt:
-        raise HTTPException(status_code=503, detail="Runtime unavailable.")
+        raise HTTPException(503, "Runtime unavailable.")
     try:
         return rt.process(text, mode="chat")
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(500, str(e))
 
 
-# ── Kalpavriksha + agent routes ──────────────────────────────────────────────
+# ── Kalpavriksha + agent ──────────────────────────────────────────────────────
 setup_kalpavriksha_routes(app)
 app.include_router(agent_router)
 
-# ── Static files + root ──────────────────────────────────────────────────────
+# ── Static files + root ───────────────────────────────────────────────────────
 @app.get("/")
-async def serve_index():
+async def root():
     return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
+@app.get("/dashboard")
+async def serve_dashboard():
+    return FileResponse(os.path.join(FRONTEND_DIR, "dashboard.html"))
 
 app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")

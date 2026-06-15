@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ChetnaOS — Cognitive Dashboard</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#060910;--s1:#0c0f1c;--s2:#111628;--s3:#172035;--border:#1e2848;
+      --accent:#6366f1;--a2:#818cf8;--a3:#a78bfa;
+      --green:#22c55e;--gold:#f59e0b;--red:#ef4444;--cyan:#06b6d4;--pink:#ec4899;
+      --text:#dde1f0;--muted:#4b5675;
+      --font:"Inter",system-ui,sans-serif;--r:10px;
+    }
+    html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font);}
+
+    /* ── Layout ── */
+    .shell{display:flex;height:100vh;flex-direction:column;}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:11px 20px;background:var(--s1);border-bottom:1px solid var(--border);
+      flex-shrink:0;
+    }
+    .tb-logo{display:flex;align-items:center;gap:9px;}
+    .tb-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#6366f1,#a78bfa,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:17px;}
+    .tb-name{font-size:14px;font-weight:800;letter-spacing:-.2px;}
+    .tb-sub{font-size:10px;color:var(--muted);}
+    .tb-right{display:flex;align-items:center;gap:10px;}
+    .refresh-badge{font-size:10px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:4px 10px;border-radius:99px;}
+    .refresh-badge.live{color:var(--green);border-color:rgba(34,197,94,.3);}
+    .back-btn{font-size:11px;color:var(--muted);background:var(--s2);border:1px solid var(--border);padding:5px 12px;border-radius:7px;cursor:pointer;text-decoration:none;transition:color .15s;}
+    .back-btn:hover{color:var(--text);}
+
+    /* ── Scrollable grid area ── */
+    .grid-area{flex:1;overflow-y:auto;overflow-x:hidden;padding:14px 16px;}
+    .grid-area::-webkit-scrollbar{width:4px;}
+    .grid-area::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+
+    @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:680px) {.grid{grid-template-columns:1fr;}}
+
+    /* ── Card ── */
+    .card{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;}
+    .card.span2{grid-column:span 2;}
+    .card.span3{grid-column:span 3;}
+    .ch{
+      padding:9px 12px;border-bottom:1px solid var(--border);
+      display:flex;align-items:center;gap:7px;
+      font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;
+      color:var(--a2);background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);
+      flex-shrink:0;
+    }
+    .ch-icon{font-size:14px;}
+    .cb{padding:11px 12px;flex:1;}
+
+    /* ── Identity ── */
+    .identity-name{font-size:18px;font-weight:800;letter-spacing:-.3px;margin-bottom:2px;}
+    .identity-level{font-size:10.5px;color:var(--a2);margin-bottom:9px;}
+    .traits{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+    .trait{font-size:9.5px;padding:2px 8px;border-radius:99px;background:rgba(99,102,241,.1);color:var(--a2);border:1px solid rgba(99,102,241,.2);}
+    .roles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+    .role{font-size:9px;padding:2px 7px;border-radius:4px;background:var(--s3);color:var(--muted);border:1px solid var(--border);}
+    .stability-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .stab-label{font-size:11px;color:var(--muted);min-width:60px;}
+    .stab-bar{flex:1;height:6px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .stab-fill{height:100%;border-radius:99px;background:var(--green);transition:width .6s;}
+    .stab-fill.drift{background:var(--gold);}
+    .stab-val{font-size:11px;font-weight:600;min-width:35px;text-align:right;}
+    .id-meta{display:flex;gap:10px;font-size:10.5px;margin-top:6px;}
+    .id-meta-item{color:var(--muted);}
+    .id-meta-item span{color:var(--text);font-weight:600;}
+
+    /* ── Skills ── */
+    .skill-row{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+    .skill-name{font-size:11px;min-width:90px;color:var(--text);}
+    .skill-cat{font-size:8.5px;padding:1px 5px;border-radius:3px;background:var(--s3);color:var(--muted);margin-right:3px;}
+    .skill-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .skill-fill{height:100%;border-radius:99px;transition:width .5s;}
+    .skill-val{font-size:11px;font-weight:600;min-width:35px;text-align:right;color:var(--text);}
+    .transfers{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+    .transfer-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+    .transfer-row{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-bottom:3px;}
+    .transfer-arrow{color:var(--a2);}
+
+    /* ── Workspace ── */
+    .ws-row{margin-bottom:8px;}
+    .ws-label{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:2px;}
+    .ws-val{font-size:12px;color:var(--text);line-height:1.4;}
+    .ws-priority{display:flex;align-items:center;gap:8px;margin-top:2px;}
+    .ws-pbar{flex:1;height:4px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .ws-pfill{height:100%;border-radius:99px;background:var(--accent);transition:width .4s;}
+    .ws-pval{font-size:10px;color:var(--a2);}
+    .artifact-list{display:flex;flex-direction:column;gap:3px;margin-top:5px;}
+    .artifact-item{font-size:10px;color:var(--muted);background:var(--s2);padding:3px 8px;border-radius:5px;border:1px solid var(--border);display:flex;align-items:center;gap:5px;}
+    .q-list{display:flex;flex-direction:column;gap:3px;margin-top:5px;}
+    .q-item{font-size:10px;color:var(--gold);padding:2px 0;}
+
+    /* ── Memory Hierarchy ── */
+    .mem-layers{display:flex;flex-direction:column;gap:5px;}
+    .mem-layer{display:flex;align-items:center;gap:8px;}
+    .mem-label{font-size:10.5px;min-width:110px;color:var(--text);}
+    .mem-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .mem-fill{height:100%;border-radius:99px;transition:width .5s;}
+    .mem-count{font-size:10px;font-weight:600;min-width:28px;text-align:right;color:var(--a2);}
+    .mem-concepts{display:flex;flex-wrap:wrap;gap:3px;margin-top:8px;}
+    .mem-concept{font-size:9px;padding:2px 6px;border-radius:3px;background:var(--s3);color:var(--muted);border:1px solid var(--border);}
+    .dream-queue{margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+    .dq-title{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
+    .dq-item{font-size:10px;color:var(--a3);margin-bottom:2px;}
+
+    /* ── Reality Checks ── */
+    .rc-table{width:100%;border-collapse:collapse;}
+    .rc-table th{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;padding:4px 6px;text-align:left;border-bottom:1px solid var(--border);}
+    .rc-table td{font-size:10.5px;padding:5px 6px;border-bottom:1px solid rgba(30,40,72,.5);}
+    .rc-table tr:last-child td{border-bottom:none;}
+    .rc-pass{color:var(--green);}
+    .rc-fail{color:var(--red);}
+    .conf-high{color:var(--green);}
+    .conf-med{color:var(--gold);}
+    .conf-low{color:var(--red);}
+
+    /* ── Contradictions ── */
+    .contr-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:8px 10px;margin-bottom:6px;}
+    .contr-item:last-child{margin-bottom:0;}
+    .contr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+    .contr-score{font-size:10px;font-weight:700;color:var(--red);}
+    .contr-status{font-size:9px;color:var(--gold);background:rgba(245,158,11,.1);padding:1px 6px;border-radius:99px;}
+    .contr-beliefs{display:flex;gap:5px;align-items:flex-start;}
+    .contr-belief{flex:1;font-size:10px;color:var(--muted);background:var(--s3);padding:4px 7px;border-radius:5px;line-height:1.4;}
+    .contr-vs{font-size:10px;color:var(--border);align-self:center;flex-shrink:0;}
+    .contr-reason{font-size:9px;color:var(--muted);margin-top:5px;font-style:italic;}
+    .no-contr{font-size:11px;color:var(--green);text-align:center;padding:12px 0;}
+
+    /* ── Development Timeline ── */
+    .dev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;}
+    .dev-stat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;text-align:center;}
+    .dev-stat-val{font-size:18px;font-weight:800;color:var(--a2);}
+    .dev-stat-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:1px;}
+    .dev-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+    .dev-bar-label{font-size:10px;color:var(--muted);min-width:70px;}
+    .dev-bar{flex:1;height:5px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .dev-bar-fill{height:100%;border-radius:99px;transition:width .5s;}
+
+    /* ── Sleep Report ── */
+    .sleep-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;}
+    .sleep-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;}
+    .sleep-val{font-size:17px;font-weight:800;color:var(--cyan);}
+    .sleep-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-top:1px;}
+    .sleep-next{margin-top:9px;font-size:11px;color:var(--muted);}
+    .sleep-next span{color:var(--a2);font-weight:600;}
+
+    /* ── Thought Birth ── */
+    .tb-flow{display:flex;flex-direction:column;gap:5px;}
+    .tb-node{display:flex;align-items:flex-start;gap:8px;}
+    .tb-node-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:var(--s3);border:1px solid var(--border);}
+    .tb-node-body{flex:1;}
+    .tb-node-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px;}
+    .tb-node-text{font-size:11px;color:var(--text);line-height:1.45;}
+    .tb-arrow{font-size:12px;color:var(--border);padding-left:9px;}
+    .tb-result{background:linear-gradient(90deg,rgba(99,102,241,.1),transparent);border:1px solid rgba(99,102,241,.2);border-radius:7px;padding:8px 10px;margin-top:4px;}
+    .tb-result-label{font-size:9px;color:var(--a2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;}
+    .tb-result-text{font-size:11.5px;color:var(--text);line-height:1.5;}
+
+    /* ── Simulation / Imagination ── */
+    .sim-plans{display:flex;flex-direction:column;gap:5px;}
+    .sim-plan{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;}
+    .sim-plan-head{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+    .sim-plan-label{font-size:10px;font-weight:700;color:var(--a2);background:rgba(99,102,241,.12);padding:1px 7px;border-radius:4px;}
+    .sim-plan-text{font-size:11px;color:var(--text);line-height:1.4;margin-bottom:3px;}
+    .sim-outcome{font-size:10px;color:var(--muted);}
+    .sim-outcome span{color:var(--green);}
+    .no-data{font-size:11px;color:var(--muted);text-align:center;padding:10px 0;font-style:italic;}
+
+    /* ── Meta Cognition ── */
+    .mc-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;}
+    .mc-icon{font-size:16px;flex-shrink:0;}
+    .mc-body{flex:1;}
+    .mc-label{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px;}
+    .mc-val{font-size:11.5px;color:var(--text);line-height:1.45;}
+    .mc-correct{color:var(--green);font-weight:600;}
+    .mc-incorrect{color:var(--gold);font-weight:600;}
+    .mc-score{font-size:13px;font-weight:800;}
+    .improve-list{display:flex;flex-direction:column;gap:3px;margin-top:3px;}
+    .improve-item{font-size:10px;color:var(--muted);}
+
+    /* ── Founder Context ── */
+    .fc-row{display:flex;flex-direction:column;gap:6px;}
+    .fc-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;}
+    .fc-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;}
+    .fc-val{font-size:11px;color:var(--text);line-height:1.4;}
+    .fc-phase-list{display:flex;flex-direction:column;gap:2px;margin-top:3px;}
+    .fc-phase{font-size:10px;color:var(--a2);}
+
+    /* ── Beliefs ── */
+    .belief-item{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:7px 10px;margin-bottom:5px;}
+    .belief-item:last-child{margin-bottom:0;}
+    .belief-text{font-size:11px;color:var(--text);line-height:1.4;margin-bottom:5px;}
+    .belief-meta{display:flex;align-items:center;gap:7px;}
+    .belief-bar{flex:1;height:4px;background:var(--s3);border-radius:99px;overflow:hidden;}
+    .belief-fill{height:100%;border-radius:99px;background:var(--accent);transition:width .5s;}
+    .belief-conf{font-size:10px;font-weight:600;color:var(--a2);}
+    .belief-src{font-size:9px;color:var(--muted);margin-left:auto;}
+
+    /* ── Pulsing dot ── */
+    .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:5px;animation:blink 1.5s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="tb-logo">
+      <div class="tb-icon">🧠</div>
+      <div>
+        <div class="tb-name">ChetnaOS Cognitive Dashboard</div>
+        <div class="tb-sub">Full internal state — refreshes every 5 seconds</div>
+      </div>
+    </div>
+    <div class="tb-right">
+      <span class="refresh-badge live" id="refresh-badge"><span class="live-dot"></span>Live</span>
+      <a class="back-btn" href="/">← Back to Chat</a>
+    </div>
+  </header>
+
+  <!-- Dashboard Grid -->
+  <div class="grid-area">
+    <div class="grid" id="dashboard-grid">
+      <!-- Rendered by JS -->
+      <div style="grid-column:span 3;text-align:center;padding:40px;color:var(--muted);font-size:13px;">
+        Loading cognitive state…
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Helpers ────────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const pct = (v,max=1) => Math.round(Math.min(100, Math.max(0, v/max*100)));
+const confColor = lvl => ({HIGH:"conf-high",MEDIUM:"conf-med",LOW:"conf-low",VERY_LOW:"conf-low"}[lvl]||"");
+
+function skillColor(score) {
+  if (score >= 0.8) return "var(--green)";
+  if (score >= 0.6) return "var(--cyan)";
+  if (score >= 0.4) return "var(--gold)";
+  return "var(--red)";
+}
+
+function card(title, icon, body, cls="") {
+  return `<div class="card ${cls}">
+    <div class="ch"><span class="ch-icon">${icon}</span>${title}</div>
+    <div class="cb">${body}</div>
+  </div>`;
+}
+
+// ── Panel builders ──────────────────────────────────────────────────────────
+function buildIdentity(d) {
+  const id = d.identity || {};
+  const traits = (id.core_traits||[]).map(t=>`<span class="trait">${esc(t)}</span>`).join("");
+  const roles  = (id.roles||[]).map(r=>`<span class="role">${esc(r)}</span>`).join("");
+  const stab   = id.stability || 80;
+  const drift  = id.drift || 20;
+  return card("Identity", "👤", `
+    <div class="identity-name">${esc(id.name||"ChetnaOS")}</div>
+    <div class="identity-level">${esc(id.level||"Level 6")}</div>
+    <div class="traits">${traits}</div>
+    <div class="roles">${roles}</div>
+    <div class="stability-row">
+      <span class="stab-label">Stability</span>
+      <div class="stab-bar"><div class="stab-fill" style="width:${stab}%"></div></div>
+      <span class="stab-val" style="color:var(--green)">${stab}%</span>
+    </div>
+    <div class="stability-row">
+      <span class="stab-label">Drift</span>
+      <div class="stab-bar"><div class="stab-fill drift" style="width:${drift}%"></div></div>
+      <span class="stab-val" style="color:var(--gold)">${drift}%</span>
+    </div>
+    <div class="id-meta">
+      <div class="id-meta-item">Cycles: <span>${id.cycle_count||0}</span></div>
+      <div class="id-meta-item">Updates: <span>${id.updates||0}</span></div>
+      <div class="id-meta-item">Values: <span style="color:var(--green)">${id.core_values_preserved?"✅":"—"}</span></div>
+    </div>
+  `);
+}
+
+function buildSkills(d) {
+  const sk = d.skills || {};
+  const ranked = sk.ranked || [];
+  const transfers = (sk.transfers||[]).slice(0,4);
+  const rows = ranked.map(s => `
+    <div class="skill-row">
+      <span class="skill-name">${esc(s.name)}</span>
+      <span class="skill-cat">${esc(s.category||"")}</span>
+      <div class="skill-bar"><div class="skill-fill" style="width:${pct(s.score)}%;background:${skillColor(s.score)}"></div></div>
+      <span class="skill-val">${(s.score*100).toFixed(0)}%</span>
+    </div>
+  `).join("");
+  const trRows = transfers.map(t=>
+    `<div class="transfer-row">🔗 ${esc(t.from)} <span class="transfer-arrow">→</span> ${esc(t.to)} <span style="color:var(--a2)">(${Math.round(t.strength*100)}%)</span></div>`
+  ).join("");
+  return card("Skill Tree", "🌲", `
+    ${rows}
+    ${trRows ? `<div class="transfers"><div class="transfer-title">Skill Transfer</div>${trRows}</div>` : ""}
+  `);
+}
+
+function buildWorkspace(d) {
+  const ws = d.workspace || {};
+  const artifacts = (ws.artifacts||[]).slice(0,4);
+  const questions = (ws.unsolved_questions||[]).slice(0,3);
+  const pri = ws.active_priority||70;
+  return card("Active Workspace", "🖥️", `
+    <div class="ws-row">
+      <div class="ws-label">Current Thought</div>
+      <div class="ws-val">${esc(ws.current_thought||"—")}</div>
+    </div>
+    <div class="ws-row">
+      <div class="ws-label">Current Goal</div>
+      <div class="ws-val">${esc(ws.current_goal||"—")}</div>
+    </div>
+    <div class="ws-row">
+      <div class="ws-label">Priority</div>
+      <div class="ws-priority">
+        <div class="ws-pbar"><div class="ws-pfill" style="width:${pri}%"></div></div>
+        <span class="ws-pval">${pri}</span>
+      </div>
+    </div>
+    <div class="ws-row">
+      <div class="ws-label">Hypothesis</div>
+      <div class="ws-val">${esc(ws.current_hypothesis||"—")}</div>
+    </div>
+    ${ws.pending_contradictions>0?`<div class="ws-row"><div class="ws-label">⚠️ Pending Contradictions</div><div class="ws-val" style="color:var(--gold)">${ws.pending_contradictions}</div></div>`:""}
+    ${artifacts.length?`<div class="ws-row"><div class="ws-label">Artifacts Created</div><div class="artifact-list">${artifacts.map(a=>`<div class="artifact-item">📄 ${esc(a.name)}</div>`).join("")}</div></div>`:""}
+    ${questions.length?`<div class="ws-row"><div class="ws-label">Unsolved Questions</div><div class="q-list">${questions.map(q=>`<div class="q-item">? ${esc(q)}</div>`).join("")}</div></div>`:""}
+  `);
+}
+
+function buildMemory(d) {
+  const m = d.memory || {};
+  const maxCount = Math.max(m.long_term_count||1, 1);
+  const layers = [
+    {label:"Working Memory",  count:m.working_count||0,  color:"var(--cyan)",   max:5},
+    {label:"Long-Term",       count:m.long_term_count||0,color:"var(--accent)",  max:maxCount},
+    {label:"Semantic",        count:m.semantic_count||0, color:"var(--a3)",      max:30},
+    {label:"Episodic",        count:m.episodic_count||0, color:"var(--green)",   max:maxCount},
+    {label:"Forgotten",       count:m.forgotten_count||0,color:"var(--red)",     max:Math.max(m.forgotten_count||1,1)},
+  ];
+  const rows = layers.map(l=>
+    `<div class="mem-layer">
+      <span class="mem-label">${l.label}</span>
+      <div class="mem-bar"><div class="mem-fill" style="width:${pct(l.count,l.max)}%;background:${l.color}"></div></div>
+      <span class="mem-count">${l.count}</span>
+    </div>`
+  ).join("");
+  const concepts = (m.semantic_concepts||[]).slice(0,10).map(c=>`<span class="mem-concept">${esc(c)}</span>`).join("");
+  const dq = (m.dream_queue||[]).slice(0,3).map(i=>`<div class="dq-item">💭 ${esc(i)}</div>`).join("");
+  return card("Memory Hierarchy", "💾", `
+    <div class="mem-layers">${rows}</div>
+    ${concepts?`<div class="mem-concepts">${concepts}</div>`:""}
+    ${dq?`<div class="dream-queue"><div class="dq-title">Dream Queue</div>${dq}</div>`:""}
+  `);
+}
+
+function buildRealityChecks(d) {
+  const checks = d.reality_checks || [];
+  if (!checks.length) return card("Reality Verification Log", "🔍",
+    `<div class="no-data">No reality checks yet. Send a message to start.</div>`);
+  const rows = checks.map(c=>{
+    const cc = confColor(c.level||"MEDIUM");
+    return `<tr>
+      <td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.statement||"")}</td>
+      <td class="${cc}">${((c.confidence||0)*100).toFixed(0)}%</td>
+      <td>${esc((c.truth||"").replace(/_/g," "))}</td>
+      <td class="${c.passed?"rc-pass":"rc-fail"}">${c.passed?"✅ Accept":"⚠️ Caution"}</td>
+    </tr>`;
+  }).join("");
+  return card("Reality Verification Log", "🔍", `
+    <table class="rc-table">
+      <thead><tr><th>Statement</th><th>Conf</th><th>Truth</th><th>Status</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `);
+}
+
+function buildContradictions(d) {
+  const contrs = d.contradictions || [];
+  if (!contrs.length) return card("Contradiction Tracker", "⚡",
+    `<div class="no-contr">✅ No contradictions detected in belief store.</div>`);
+  const items = contrs.slice(0,5).map(c=>`
+    <div class="contr-item">
+      <div class="contr-header">
+        <span class="contr-score">Conflict ${c.conflict_score||0}%</span>
+        <span class="contr-status">${esc(c.status||"needs_reflection")}</span>
+      </div>
+      <div class="contr-beliefs">
+        <div class="contr-belief">"${esc(c.belief_a||"")}"</div>
+        <span class="contr-vs">vs</span>
+        <div class="contr-belief">"${esc(c.belief_b||"")}"</div>
+      </div>
+      ${c.reason?`<div class="contr-reason">⚠️ ${esc(c.reason)}</div>`:""}
+    </div>
+  `).join("");
+  return card("Contradiction Tracker", "⚡", items);
+}
+
+function buildDevelopment(d) {
+  const dev = d.development || {};
+  const total = dev.total_cycles||0;
+  const good  = dev.good_cycles||0;
+  const poor  = dev.poor_cycles||0;
+  const avg   = ((dev.avg_confidence||0.5)*100).toFixed(0);
+  const gPct  = total ? pct(good,total) : 0;
+  const pPct  = total ? pct(poor,total) : 0;
+  return card("Development Timeline", "📈", `
+    <div class="dev-stats">
+      <div class="dev-stat"><div class="dev-stat-val">${total}</div><div class="dev-stat-label">Total Cycles</div></div>
+      <div class="dev-stat"><div class="dev-stat-val" style="color:var(--green)">${good}</div><div class="dev-stat-label">Good Cycles</div></div>
+      <div class="dev-stat"><div class="dev-stat-val" style="color:var(--red)">${poor}</div><div class="dev-stat-label">Poor Cycles</div></div>
+    </div>
+    <div class="dev-bar-row">
+      <span class="dev-bar-label">Good rate</span>
+      <div class="dev-bar"><div class="dev-bar-fill" style="width:${gPct}%;background:var(--green)"></div></div>
+      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--green)">${gPct}%</span>
+    </div>
+    <div class="dev-bar-row">
+      <span class="dev-bar-label">Poor rate</span>
+      <div class="dev-bar"><div class="dev-bar-fill" style="width:${pPct}%;background:var(--red)"></div></div>
+      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--red)">${pPct}%</span>
+    </div>
+    <div class="dev-bar-row">
+      <span class="dev-bar-label">Avg confidence</span>
+      <div class="dev-bar"><div class="dev-bar-fill" style="width:${avg}%;background:var(--accent)"></div></div>
+      <span style="font-size:10px;min-width:32px;text-align:right;color:var(--a2)">${avg}%</span>
+    </div>
+  `);
+}
+
+function buildSleep(d) {
+  const sl = d.sleep || {};
+  const mem = d.memory || {};
+  return card("Sleep Report", "🌙", `
+    <div class="sleep-meta">
+      <div class="sleep-item"><div class="sleep-val">${mem.forgotten_count||0}</div><div class="sleep-label">Total Forgotten</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--green)">${mem.long_term_count||0}</div><div class="sleep-label">Consolidated</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--a3)">${(d.beliefs||{}).count||0}</div><div class="sleep-label">Active Beliefs</div></div>
+      <div class="sleep-item"><div class="sleep-val" style="color:var(--gold)">${mem.dream_count||0}</div><div class="sleep-label">Dream Queue</div></div>
+    </div>
+    <div class="sleep-next">Next sleep in <span>${sl.cycles_until_next||"—"}</span> cycles (every <span>${sl.sleep_every||20}</span> cycles)</div>
+  `);
+}
+
+function buildThoughtBirth(d) {
+  const tb = d.thought_birth || {};
+  if (!tb.sense) return card("Thought Birth", "✨",
+    `<div class="no-data">No thought recorded yet. Send a message first.</div>`);
+  const memItems = (tb.memory||[]).map(m=>`<div style="font-size:10px;color:var(--muted)">• ${esc(m)}</div>`).join("");
+  const imagItems = (tb.imagination||[]).map((im,i)=>`<div style="font-size:10px;color:var(--muted)">${["A","B","C"][i]}) ${esc(im)}</div>`).join("");
+  return card("Thought Birth", "✨", `
+    <div class="tb-flow">
+      <div class="tb-node">
+        <div class="tb-node-icon">👁️</div>
+        <div class="tb-node-body">
+          <div class="tb-node-label">Sense (Input)</div>
+          <div class="tb-node-text">${esc(tb.sense||"")}</div>
+        </div>
+      </div>
+      <div class="tb-arrow">↓</div>
+      <div class="tb-node">
+        <div class="tb-node-icon">💾</div>
+        <div class="tb-node-body">
+          <div class="tb-node-label">Memory (Recalled)</div>
+          <div class="tb-node-text">${memItems||"<span style='color:var(--muted)'>No relevant memories recalled.</span>"}</div>
+        </div>
+      </div>
+      <div class="tb-arrow">↓</div>
+      <div class="tb-node">
+        <div class="tb-node-icon">🌈</div>
+        <div class="tb-node-body">
+          <div class="tb-node-label">Imagination (Possibilities)</div>
+          <div class="tb-node-text">${imagItems||"<span style='color:var(--muted)'>—</span>"}</div>
+        </div>
+      </div>
+      <div class="tb-arrow">↓</div>
+      <div class="tb-node">
+        <div class="tb-node-icon">⚡</div>
+        <div class="tb-node-body">
+          <div class="tb-node-label">Trigger (Intent)</div>
+          <div class="tb-node-text">${esc(tb.trigger||"")}</div>
+        </div>
+      </div>
+      <div class="tb-arrow">↓</div>
+      <div class="tb-result">
+        <div class="tb-result-label">New Thought Born</div>
+        <div class="tb-result-text">${esc((tb.new_thought||"").slice(0,200))}${(tb.new_thought||"").length>200?"…":""}</div>
+      </div>
+    </div>
+  `);
+}
+
+function buildSimulation(d) {
+  const sim = d.simulation || {};
+  const plans = sim.plans || [];
+  if (!plans.length) return card("Simulation — Possible Futures", "🔮",
+    `<div class="no-data">No simulation yet. Send a complex message to trigger Plan A/B/C.</div>`);
+  const items = plans.map((p,i)=>`
+    <div class="sim-plan">
+      <div class="sim-plan-head"><span class="sim-plan-label">Plan ${["A","B","C"][i]||i}</span></div>
+      <div class="sim-plan-text">${esc(p.plan||"")}</div>
+      <div class="sim-outcome">→ Outcome: <span>${esc(p.outcome||"")}</span></div>
+    </div>
+  `).join("");
+  return card("Simulation — Possible Futures", "🔮", `
+    <div class="sim-plans">${items}</div>
+    ${sim.selected?`<div style="margin-top:8px;font-size:10px;color:var(--muted)">Selected: <span style="color:var(--a2)">${esc(sim.selected)}</span></div>`:""}
+  `);
+}
+
+function buildMetaCognition(d) {
+  const mc = d.meta_cognition || {};
+  if (!mc.why) return card("Meta-Cognition", "🪞",
+    `<div class="no-data">No meta-cognition data yet.</div>`);
+  const correct = mc.was_correct;
+  const score   = ((mc.correctness||0)*100).toFixed(0);
+  const improvements = (mc.can_improve||[]).map(i=>`<div class="improve-item">• ${esc(i)}</div>`).join("");
+  return card("Meta-Cognition Self-Eval", "🪞", `
+    <div class="mc-row">
+      <span class="mc-icon">❓</span>
+      <div class="mc-body">
+        <div class="mc-label">Why did I answer this?</div>
+        <div class="mc-val">${esc(mc.why||"")}</div>
+      </div>
+    </div>
+    <div class="mc-row">
+      <span class="mc-icon">${correct?"✅":"⚠️"}</span>
+      <div class="mc-body">
+        <div class="mc-label">Was I correct?</div>
+        <div class="mc-val">
+          <span class="${correct?"mc-correct":"mc-incorrect"}">${correct?"Yes":"Needs review"}</span>
+          &nbsp;<span class="mc-score" style="color:var(--a2)">${score}%</span>
+        </div>
+      </div>
+    </div>
+    <div class="mc-row">
+      <span class="mc-icon">🔧</span>
+      <div class="mc-body">
+        <div class="mc-label">Can I improve?</div>
+        <div class="improve-list">${improvements||"<div class='improve-item'>✅ No improvements needed.</div>"}</div>
+      </div>
+    </div>
+    <div class="mc-row">
+      <span class="mc-icon">🎯</span>
+      <div class="mc-body">
+        <div class="mc-label">Self Verdict</div>
+        <div class="mc-val" style="color:${mc.self_verdict==='good'?'var(--green)':'var(--gold)'}">${esc(mc.self_verdict||"—")}</div>
+      </div>
+    </div>
+  `);
+}
+
+function buildBeliefs(d) {
+  const beliefs = (d.beliefs||{}).all||[];
+  if (!beliefs.length) return card("Belief Store", "💡",
+    `<div class="no-data">No beliefs yet.</div>`);
+  const items = beliefs.slice(0,6).map(b=>`
+    <div class="belief-item">
+      <div class="belief-text">"${esc(b.text||"")}"</div>
+      <div class="belief-meta">
+        <div class="belief-bar"><div class="belief-fill" style="width:${pct(b.confidence||0)}%"></div></div>
+        <span class="belief-conf">${((b.confidence||0)*100).toFixed(0)}%</span>
+        <span class="belief-src">${esc(b.source||"")}</span>
+      </div>
+    </div>
+  `).join("");
+  return card("Belief Store", "💡", items);
+}
+
+function buildFounderContext(d) {
+  const fc = d.founder_context || {};
+  const phases = (fc.known_phases||[]).map(p=>`<div class="fc-phase">→ ${esc(p)}</div>`).join("");
+  const constraints = (fc.founder_constraints||[]).map(c=>`<div class="fc-phase" style="color:var(--gold)">• ${esc(c)}</div>`).join("");
+  return card("Founder Context", "🎯", `
+    <div class="fc-row">
+      <div class="fc-item">
+        <div class="fc-label">Primary Mission</div>
+        <div class="fc-val">${esc(fc.primary_mission||"—")}</div>
+      </div>
+      <div class="fc-item">
+        <div class="fc-label">Current Milestone</div>
+        <div class="fc-val" style="color:var(--green)">${esc(fc.current_milestone||"—")}</div>
+      </div>
+      <div class="fc-item">
+        <div class="fc-label">Current Project</div>
+        <div class="fc-val">${esc(fc.current_project||"—")}</div>
+      </div>
+      ${constraints?`<div class="fc-item"><div class="fc-label">Constraints</div><div class="fc-phase-list">${constraints}</div></div>`:""}
+      ${phases?`<div class="fc-item"><div class="fc-label">Known Phases</div><div class="fc-phase-list">${phases}</div></div>`:""}
+    </div>
+  `);
+}
+
+// ── Render full dashboard ──────────────────────────────────────────────────
+function renderDashboard(d) {
+  const grid = $("dashboard-grid");
+  grid.innerHTML = [
+    buildIdentity(d),
+    buildSkills(d),
+    buildWorkspace(d),
+    buildMemory(d),
+    buildRealityChecks(d),
+    buildContradictions(d),
+    buildDevelopment(d),
+    buildSleep(d),
+    buildFounderContext(d),
+    buildThoughtBirth(d),
+    buildSimulation(d),
+    buildMetaCognition(d),
+    buildBeliefs(d),
+  ].join("");
+}
+
+// ── Fetch + refresh ─────────────────────────────────────────────────────────
+async function loadDashboard() {
+  try {
+    const d = await fetch("/api/dashboard").then(r => r.json());
+    if (d.available === false) {
+      $("dashboard-grid").innerHTML = `<div style="grid-column:span 3;text-align:center;padding:40px;color:var(--red)">
+        ⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}
+      </div>`;
+      return;
+    }
+    renderDashboard(d);
+    const badge = $("refresh-badge");
+    badge.innerHTML = `<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
+    badge.className = "refresh-badge live";
+  } catch(e) {
+    $("refresh-badge").textContent = "⚠️ Error";
+    $("refresh-badge").className = "refresh-badge";
+  }
+}
+
+loadDashboard();
+setInterval(loadDashboard, 5000);
+</script>
+</body>
+</html>
