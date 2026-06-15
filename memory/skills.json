@@ -15,16 +15,16 @@
     "category": "core"
   },
   "Coding": {
-    "score": 0.731,
-    "interactions": 2,
+    "score": 0.734,
+    "interactions": 3,
     "category": "technical",
-    "last_practiced": "2026-06-15T09:01:04.039627"
+    "last_practiced": "2026-06-15T09:24:38.078399"
   },
   "Communication": {
-    "score": 0.702,
-    "interactions": 4,
+    "score": 0.743,
+    "interactions": 11,
     "category": "social",
-    "last_practiced": "2026-06-15T08:24:41.970730"
+    "last_practiced": "2026-06-15T09:57:26.164287"
   },
   "Business": {
     "score": 0.61,
@@ -37,7 +37,7 @@
     "category": "applied"
   },
   "Sales": {
-    "score": 0.382,
+    "score": 0.386,
     "interactions": 0,
     "category": "applied"
   }

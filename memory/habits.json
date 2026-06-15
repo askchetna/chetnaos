@@ -1,7 +1,8 @@
 {
-  "question:general": 12,
-  "statement:general": 4,
+  "question:general": 14,
+  "statement:general": 7,
   "question:science": 1,
-  "statement:technology": 2,
-  "question:technology": 1
+  "statement:technology": 3,
+  "question:technology": 1,
+  "command:general": 2
 }
