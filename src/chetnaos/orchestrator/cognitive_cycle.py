@@ -50,6 +50,7 @@ from src.chetnaos.cognition.self_model import SelfModel
 from src.chetnaos.cognition.curiosity import CuriosityDrive
 from src.chetnaos.cognition.emotion import EmotionalState
 from src.chetnaos.cognition.goal_manager import GoalManager, GoalType
+from src.chetnaos.cognition.belief_revision import BeliefRevisionEngine
 from src.chetnaos.memory.working_memory import WorkingMemory
 
 
@@ -107,6 +108,7 @@ class CognitiveCycle:
         self.curiosity      = CuriosityDrive()
         self.emotion        = EmotionalState()
         self.goal_manager   = GoalManager()
+        self.belief_revision = BeliefRevisionEngine()
 
         # In-memory session state
         self._recent_reality_checks: deque = deque(maxlen=8)
@@ -292,6 +294,35 @@ class CognitiveCycle:
         )
         self.workspace.set_contradictions(self.contradictions.count())
 
+        # ── Cognitive organs: GoalManager + BeliefRevision (signal only) ──
+        self.goal_manager.ingest_signals(
+            purpose=purpose_r.get("statement"),
+            training_goals=self._training_goals,
+            curiosity_goals=self.curiosity.exploration_goals(
+                domain=abstr["domain"],
+                workspace_questions=self.workspace.get().get("unsolved_questions", []),
+                uncertainty=1.0 - reality_r["confidence"],
+                poor_quality=reflect_r["quality"] == "poor",
+            ),
+            self_model_limits=self.self_model.known_limits(),
+            founder_context=self.founder_ctx.get(),
+        )
+        if not self.goal_manager.active_goal():
+            self.goal_manager.next_goal()
+
+        self.belief_revision.observe(
+            beliefs=self.beliefs.get_all(),
+            reality=reality_r,
+            reflection=reflect_r,
+            learning=learn_r,
+            goal_manager=self.goal_manager.goal_status(),
+            self_model={"self_confidence": self.self_model.self_confidence()},
+            memory_recalled=len(recalled),
+            external_contradictions=self.contradictions.get(),
+        )
+        self.belief_revision.evaluate()
+        belief_rev_r = self.belief_revision.revise(self.beliefs)
+
         # ── UPDATE IDENTITY ────────────────────────────────────────────
         identity_r = self.identity.update(reflect_r, beliefs_r)
         self.identity.tick()
@@ -377,19 +408,11 @@ class CognitiveCycle:
                 reality_confidence=reality_r["confidence"],
             ),
         }
-        self.goal_manager.ingest_signals(
-            purpose=purpose_r.get("statement"),
-            training_goals=self._training_goals,
-            curiosity_goals=curiosity_goals,
-            self_model_limits=self.self_model.known_limits(),
-            founder_context=self.founder_ctx.get(),
-        )
-        if not self.goal_manager.active_goal():
-            self.goal_manager.next_goal()
         self._last_cognitive_signals["goal_manager"] = {
             **self.goal_manager.goal_status(),
             "statistics": self.goal_manager.goal_statistics(),
         }
+        self._last_cognitive_signals["belief_revision"] = self.belief_revision.snapshot()
 
         self.sm.complete_cycle()
 
@@ -487,6 +510,7 @@ class CognitiveCycle:
                     **self.goal_manager.goal_status(),
                     "statistics": self.goal_manager.goal_statistics(),
                 },
+                "belief_revision": self.belief_revision.snapshot(),
                 "last_signals":   self._last_cognitive_signals,
             },
         }

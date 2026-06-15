@@ -1,0 +1,16 @@
+{
+  "active_goal": null,
+  "goal_queue": [
+    {
+      "id": "d7bfeff0",
+      "text": "test",
+      "goal_type": "USER",
+      "goal_priority": 50.0,
+      "goal_origin": "manual",
+      "status": "queued",
+      "created_at": "2026-06-15T12:29:51.972198"
+    }
+  ],
+  "completed_goals": [],
+  "failed_goals": []
+}

@@ -63,3 +63,17 @@ class Beliefs:
             "count":  len(self._beliefs),
             "beliefs": self._beliefs[:5],
         }
+
+    def apply_confidence_deltas(self, deltas: dict[int, float]) -> int:
+        """Apply gradual confidence changes keyed by belief id."""
+        applied = 0
+        for b in self._beliefs:
+            bid = b.get("id")
+            if bid not in deltas:
+                continue
+            old = float(b.get("confidence", 0.5))
+            b["confidence"] = round(max(0.05, min(0.99, old + float(deltas[bid]))), 3)
+            applied += 1
+        if applied:
+            self._save()
+        return applied
