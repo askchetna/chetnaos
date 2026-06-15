@@ -1,7 +1,9 @@
 """
 Habit — Tracks repeated patterns and applies learned shortcuts.
 """
-import json, os
+import os
+
+from src.chetnaos.memory.json_loader import load_habits, save_json, memory_path
 
 HABIT_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "habits.json")
 
@@ -11,23 +13,10 @@ class Habit:
         self._habits = self._load()
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(HABIT_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {}
+        return load_habits({})
 
     def _save(self):
-        try:
-            p = os.path.abspath(HABIT_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._habits, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("habits.json"), self._habits)
 
     def record(self, intent: str, domain: str):
         key = f"{intent}:{domain}"

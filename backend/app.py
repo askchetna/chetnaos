@@ -50,7 +50,7 @@ async def on_startup():
     rt = get_runtime()
     if rt:
         print(f"[ChetnaOS v2.0] Cognitive Runtime ready — "
-              f"LLM={'✓' if rt.llm_available else '✗'}")
+              f"LLM={'yes' if rt.llm_available else 'no'}")
     else:
         print("[ChetnaOS v2.0] Running in legacy mode.")
 

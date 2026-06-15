@@ -7,6 +7,8 @@ Analyzes skill gaps and generates specific training suggestions.
 import os, json
 from datetime import datetime
 
+from src.chetnaos.memory.json_loader import load_training_goals, save_json, memory_path
+
 TRAINER_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "training_goals.json")
 
 # Target mastery levels for each skill
@@ -39,23 +41,10 @@ class SelfTrainer:
         self._goals = self._load()
 
     def _load(self) -> list:
-        try:
-            p = os.path.abspath(TRAINER_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return []
+        return load_training_goals([])
 
     def _save(self):
-        try:
-            p = os.path.abspath(TRAINER_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._goals, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("training_goals.json"), self._goals)
 
     def generate_goals(self, skills_all: dict) -> list:
         """

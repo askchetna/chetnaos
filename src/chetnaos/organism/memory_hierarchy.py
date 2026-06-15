@@ -11,8 +11,18 @@ Dream Queue:      Unresolved items awaiting consolidation
 import json, os
 from datetime import datetime
 
+from src.chetnaos.memory.json_loader import load_mem_hierarchy, save_json, memory_path
+
 MEM_STATE_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "mem_hierarchy.json")
 EXP_FILE       = os.path.join(os.path.dirname(__file__), "../../..", "memory", "experiences.jsonl")
+
+_MEM_H_DEFAULT = {
+    "semantic_concepts": [],
+    "forgotten_count":   0,
+    "dream_queue":       [],
+    "long_term_count":   0,
+    "episodic_count":    0,
+}
 
 
 class MemoryHierarchy:
@@ -21,29 +31,10 @@ class MemoryHierarchy:
         self._working = []  # in-process, not persisted
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(MEM_STATE_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {
-            "semantic_concepts": [],
-            "forgotten_count":   0,
-            "dream_queue":       [],
-            "long_term_count":   0,
-            "episodic_count":    0,
-        }
+        return load_mem_hierarchy(dict(_MEM_H_DEFAULT))
 
     def _save(self):
-        try:
-            p = os.path.abspath(MEM_STATE_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._state, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("mem_hierarchy.json"), self._state)
 
     def push_working(self, item: dict):
         """Add to working memory (volatile, max 5)."""

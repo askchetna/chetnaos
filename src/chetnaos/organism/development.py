@@ -1,9 +1,16 @@
 """
 Development — Tracks long-term growth of the organism across cycles.
 """
-import json, os
+import os
+
+from src.chetnaos.memory.json_loader import load_development, save_json, memory_path
 
 DEV_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "development.json")
+
+_DEV_DEFAULT = {
+    "total_cycles": 0, "good_cycles": 0, "poor_cycles": 0,
+    "avg_confidence": 0.5, "growth_events": [],
+}
 
 
 class Development:
@@ -11,23 +18,10 @@ class Development:
         self._data = self._load()
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(DEV_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {"total_cycles": 0, "good_cycles": 0, "poor_cycles": 0, "avg_confidence": 0.5, "growth_events": []}
+        return load_development(dict(_DEV_DEFAULT))
 
     def _save(self):
-        try:
-            p = os.path.abspath(DEV_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._data, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("development.json"), self._data)
 
     def record(self, reflection: dict, confidence: float) -> dict:
         self._data["total_cycles"] = self._data.get("total_cycles", 0) + 1

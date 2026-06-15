@@ -27,6 +27,7 @@ class RealityChecker:
         contr = self.contradiction.detect(output, context.get("beliefs", []))
         truth = self.truth.estimate(output, ev, conf)
         valid = self.validator.validate(output, context.get("beliefs", []))
+        source = self.ranker.rank_output(output)
 
         passed = conf["score"] >= 0.4 and not contr["critical_contradiction"]
         return {
@@ -37,6 +38,8 @@ class RealityChecker:
             "truth_estimate": truth["estimate"],
             "contradictions": contr["contradictions"],
             "belief_valid": valid["valid"],
+            "source_trust": source["trust_score"],
+            "source_reliable": source["reliable"],
             "flags": ev["flags"] + contr["flags"],
             "recommendation": truth["recommendation"],
         }

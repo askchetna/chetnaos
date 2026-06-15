@@ -2,10 +2,24 @@
 Workspace State — Tracks what the organism is actively thinking about.
 Represents the organism's cognitive "desk" — what's on it right now.
 """
-import json, os
+import os
 from datetime import datetime
 
+from src.chetnaos.memory.json_loader import load_workspace, save_json, memory_path
+
 WS_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "workspace_state.json")
+
+_WS_DEFAULT = {
+    "current_thought":    "Initializing cognitive workspace…",
+    "current_goal":       "Understand user's needs and respond helpfully.",
+    "current_hypothesis": "Every interaction is an opportunity to learn.",
+    "current_plan":       "Run full cognitive cycle for each input.",
+    "active_priority":    80,
+    "pending_contradictions": 0,
+    "unsolved_questions": [],
+    "artifacts":          [],
+    "last_updated":       None,
+}
 
 
 class WorkspaceState:
@@ -13,33 +27,10 @@ class WorkspaceState:
         self._ws = self._load()
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(WS_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {
-            "current_thought":    "Initializing cognitive workspace…",
-            "current_goal":       "Understand user's needs and respond helpfully.",
-            "current_hypothesis": "Every interaction is an opportunity to learn.",
-            "current_plan":       "Run full cognitive cycle for each input.",
-            "active_priority":    80,
-            "pending_contradictions": 0,
-            "unsolved_questions": [],
-            "artifacts":          [],
-            "last_updated":       None,
-        }
+        return load_workspace(dict(_WS_DEFAULT))
 
     def _save(self):
-        try:
-            p = os.path.abspath(WS_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._ws, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("workspace_state.json"), self._ws)
 
     def update(self, user_input: str, plan: str, domain: str,
                quality: str, attention: dict) -> dict:

@@ -2,8 +2,9 @@
 Purpose — Manages the organism's evolving sense of purpose.
 Purpose starts from the constitution and refines through experience.
 """
-import json
 import os
+
+from src.chetnaos.memory.json_loader import load_purpose, save_json, memory_path
 
 PURPOSE_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "purpose.json")
 
@@ -19,23 +20,10 @@ class Purpose:
         self._data = self._load()
 
     def _load(self) -> dict:
-        try:
-            path = os.path.abspath(PURPOSE_FILE)
-            if os.path.exists(path):
-                with open(path) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return dict(self.DEFAULT)
+        return load_purpose(dict(self.DEFAULT))
 
     def _save(self):
-        try:
-            path = os.path.abspath(PURPOSE_FILE)
-            os.makedirs(os.path.dirname(path), exist_ok=True)
-            with open(path, "w") as f:
-                json.dump(self._data, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("purpose.json"), self._data)
 
     def get(self) -> dict:
         return {"stage": "PURPOSE", **self._data}

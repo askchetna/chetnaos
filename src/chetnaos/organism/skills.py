@@ -3,8 +3,10 @@ Skills — Tracks accumulated competencies of the organism.
 Each skill has a confidence score (0.0–1.0) that evolves with experience.
 Skill Transfer: competence in one domain lifts adjacent domains.
 """
-import json, os
+import os
 from datetime import datetime
+
+from src.chetnaos.memory.json_loader import load_skills, save_json, memory_path
 
 SKILLS_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "skills.json")
 
@@ -47,23 +49,11 @@ class Skills:
         self._skills = self._load()
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(SKILLS_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {k: dict(v) for k, v in DEFAULT_SKILLS.items()}
+        default = {k: dict(v) for k, v in DEFAULT_SKILLS.items()}
+        return load_skills(default)
 
     def _save(self):
-        try:
-            p = os.path.abspath(SKILLS_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._skills, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("skills.json"), self._skills)
 
     def get_all(self) -> dict:
         return {k: dict(v) for k, v in self._skills.items()}

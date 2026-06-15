@@ -142,5 +142,62 @@ class MemoryDB:
         similarities.sort(key=lambda x: x['score'], reverse=True)
         return similarities[:k]
 
+    def recent(self, n: int = 10) -> List[Dict]:
+        """Return the most recent memory entries by timestamp (newest first)."""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute(
+                """
+                SELECT id, text, meta, created_at
+                FROM memories
+                ORDER BY datetime(created_at) DESC, id DESC
+                LIMIT ?
+                """,
+                (n,),
+            )
+            rows = cursor.fetchall()
+
+        results = []
+        for mem_id, text, meta_json, created_at in rows:
+            results.append({
+                "id": mem_id,
+                "text": text,
+                "meta": json.loads(meta_json) if meta_json else None,
+                "created_at": created_at,
+            })
+        return results
+
+    def delete(self, memory_id: int) -> bool:
+        """Delete a memory row by id. Returns True if a row was removed."""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute(
+                "DELETE FROM memories WHERE id = ?",
+                (memory_id,),
+            )
+            conn.commit()
+            return cursor.rowcount > 0
+
+    def statistics(self) -> Dict:
+        """Aggregate statistics for the memories table."""
+        with sqlite3.connect(self.db_path) as conn:
+            total = conn.execute("SELECT COUNT(*) FROM memories").fetchone()[0]
+            with_embedding = conn.execute(
+                "SELECT COUNT(*) FROM memories WHERE embedding IS NOT NULL"
+            ).fetchone()[0]
+            oldest = conn.execute(
+                "SELECT MIN(created_at) FROM memories"
+            ).fetchone()[0]
+            newest = conn.execute(
+                "SELECT MAX(created_at) FROM memories"
+            ).fetchone()[0]
+        return {
+            "total": total,
+            "with_embedding": with_embedding,
+            "without_embedding": total - with_embedding,
+            "oldest_created_at": oldest,
+            "newest_created_at": newest,
+            "db_path": self.db_path,
+        }
+
+
 # Global memory instance
 memory_db = MemoryDB()

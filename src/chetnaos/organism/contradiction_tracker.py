@@ -5,8 +5,10 @@ Contradiction Tracker (Enhanced) — Finds conflicts between:
   3. Beliefs vs Founder Context (mission/goal contradictions)
 Gap 2 from feedback.
 """
-import json, os
+import os
 from datetime import datetime
+
+from src.chetnaos.memory.json_loader import load_contradictions, save_json, memory_path
 
 CONTRA_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "contradictions.json")
 
@@ -31,23 +33,10 @@ class ContradictionTracker:
         self._contradictions = self._load()
 
     def _load(self) -> list:
-        try:
-            p = os.path.abspath(CONTRA_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return []
+        return load_contradictions([])
 
     def _save(self):
-        try:
-            p = os.path.abspath(CONTRA_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._contradictions, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("contradictions.json"), self._contradictions)
 
     def _add_if_new(self, item: dict):
         key = (item["belief_a"][:40], item["belief_b"][:40])

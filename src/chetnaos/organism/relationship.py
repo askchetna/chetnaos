@@ -1,7 +1,9 @@
 """
 Relationship — Tracks the organism's ongoing relationship with users/entities.
 """
-import json, os
+import os
+
+from src.chetnaos.memory.json_loader import load_relationships, save_json, memory_path
 
 REL_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "relationships.json")
 
@@ -11,23 +13,10 @@ class Relationship:
         self._rels = self._load()
 
     def _load(self) -> dict:
-        try:
-            p = os.path.abspath(REL_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return {}
+        return load_relationships({})
 
     def _save(self):
-        try:
-            p = os.path.abspath(REL_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._rels, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("relationships.json"), self._rels)
 
     def update(self, entity: str = "user") -> dict:
         rel = self._rels.get(entity, {"interactions": 0, "positive": 0})

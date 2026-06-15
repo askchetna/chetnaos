@@ -2,10 +2,18 @@
 Beliefs — Manages the organism's belief graph.
 Beliefs are updated based on experience and reflection.
 """
-import json, os
+import os
 from datetime import datetime
 
+from src.chetnaos.memory.json_loader import load_beliefs, save_json, memory_path
+
 BELIEF_FILE = os.path.join(os.path.dirname(__file__), "../../..", "memory", "beliefs.json")
+
+_DEFAULT_BELIEFS = [
+    {"id": 1, "text": "Truth is more valuable than comfort.", "confidence": 0.95, "source": "constitution"},
+    {"id": 2, "text": "Users deserve accurate and helpful information.", "confidence": 0.95, "source": "constitution"},
+    {"id": 3, "text": "Uncertainty should be acknowledged, not hidden.", "confidence": 0.90, "source": "constitution"},
+]
 
 
 class Beliefs:
@@ -13,27 +21,10 @@ class Beliefs:
         self._beliefs = self._load()
 
     def _load(self) -> list:
-        try:
-            p = os.path.abspath(BELIEF_FILE)
-            if os.path.exists(p):
-                with open(p) as f:
-                    return json.load(f)
-        except Exception:
-            pass
-        return [
-            {"id": 1, "text": "Truth is more valuable than comfort.", "confidence": 0.95, "source": "constitution"},
-            {"id": 2, "text": "Users deserve accurate and helpful information.", "confidence": 0.95, "source": "constitution"},
-            {"id": 3, "text": "Uncertainty should be acknowledged, not hidden.", "confidence": 0.90, "source": "constitution"},
-        ]
+        return load_beliefs(list(_DEFAULT_BELIEFS))
 
     def _save(self):
-        try:
-            p = os.path.abspath(BELIEF_FILE)
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w") as f:
-                json.dump(self._beliefs, f, indent=2)
-        except Exception:
-            pass
+        save_json(memory_path("beliefs.json"), self._beliefs)
 
     def get_all(self) -> list:
         return list(self._beliefs)

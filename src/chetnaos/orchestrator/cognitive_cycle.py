@@ -45,6 +45,12 @@ from src.chetnaos.organism.self_trainer       import SelfTrainer
 from .state_machine import StateMachine, CycleStage
 from .sleep_manager import SleepManager
 from .llm_router    import LLMRouter
+from src.chetnaos.cognition.executive import ExecutiveController
+from src.chetnaos.cognition.self_model import SelfModel
+from src.chetnaos.cognition.curiosity import CuriosityDrive
+from src.chetnaos.cognition.emotion import EmotionalState
+from src.chetnaos.cognition.goal_manager import GoalManager, GoalType
+from src.chetnaos.memory.working_memory import WorkingMemory
 
 
 class CognitiveCycle:
@@ -53,6 +59,7 @@ class CognitiveCycle:
         self.llm     = LLMRouter()
         self.sm      = StateMachine()
         self.sleeper = SleepManager()
+        self.executive = ExecutiveController(sleep_manager=self.sleeper)
 
         # Core organism modules
         self.existence   = Existence()
@@ -94,6 +101,13 @@ class CognitiveCycle:
         self.mem_hierarchy  = MemoryHierarchy()
         self.self_trainer   = SelfTrainer()
 
+        # Cognitive organs (Phase 3c — signal providers)
+        self.working_memory = WorkingMemory(hierarchy=self.mem_hierarchy)
+        self.self_model     = SelfModel()
+        self.curiosity      = CuriosityDrive()
+        self.emotion        = EmotionalState()
+        self.goal_manager   = GoalManager()
+
         # In-memory session state
         self._recent_reality_checks: deque = deque(maxlen=8)
         self._last_sim          = {}
@@ -101,23 +115,37 @@ class CognitiveCycle:
         self._last_thought_birth = {}
         self._last_sleep_data   = {}
         self._training_goals    = self.self_trainer.get()
+        self._last_cognitive_signals: dict = {}
 
     # ──────────────────────────────────────────────────────────────────────
     def run(self, user_input: str, mode: str = "chat") -> dict:
         trace: list[dict] = []
+        self.executive.reset_cycle_context(mode=mode, user_input=user_input)
 
         def step(stage: CycleStage, result: dict):
+            self.executive.before_stage(stage, self.executive.context)
+            if not self.executive.should_run(stage, self.executive.context):
+                return result
             self.sm.advance(stage)
             trace.append({"stage": stage.value,
                           **{k: v for k, v in result.items() if k != "stage"}})
+            self.executive.after_stage(stage, result, self.executive.context)
             return result
 
         # ── EXIST ──────────────────────────────────────────────────────
         exist_r = step(CycleStage.EXIST, self.existence.pulse())
         cycle_n = exist_r["cycle"]
+        self.executive.update_context(cycle_n=cycle_n)
 
         # ── PURPOSE ────────────────────────────────────────────────────
         purpose_r = step(CycleStage.PURPOSE, self.purpose.get())
+        if mode == "goal" and user_input.strip():
+            self.goal_manager.add_goal(
+                user_input.strip(),
+                goal_type=GoalType.USER,
+                priority=90.0,
+                origin="api_goal",
+            )
 
         # ── OBSERVE ────────────────────────────────────────────────────
         percept = self.perception.perceive(user_input)
@@ -126,10 +154,10 @@ class CognitiveCycle:
         # ── ATTEND ─────────────────────────────────────────────────────
         att = self.attention.attend(percept)
         step(CycleStage.ATTEND, att)
-        # Working memory: push current input
-        self.mem_hierarchy.push_working({
+        att_weight = {"HIGH": 1.0, "MEDIUM": 0.7, "NORMAL": 0.5}.get(att.get("priority"), 0.5)
+        self.working_memory.push({
             "input": user_input[:100], "intent": percept.get("intent"),
-        })
+        }, attention_weight=att_weight)
 
         # ── RECALL ─────────────────────────────────────────────────────
         recalled   = self.memory.recall(user_input, k=4)
@@ -142,11 +170,16 @@ class CognitiveCycle:
         # ── PREDICT ────────────────────────────────────────────────────
         abstr = self.abstraction.abstract(percept, att)
         step(CycleStage.PREDICT, {**abstr})
+        self.executive.update_context(
+            complexity=abstr.get("complexity", "simple"),
+            domain=abstr.get("domain", "general"),
+        )
         self.mem_hierarchy.add_semantic(abstr.get("domain", "general"))
 
         # ── IMAGINE ────────────────────────────────────────────────────
-        use_llm = abstr["complexity"] == "complex"
-        imag = self.imagination.imagine(att, self.llm if use_llm else None)
+        imag = self.imagination.imagine(
+            att, self.executive.llm_router_for(CycleStage.IMAGINE, self.llm),
+        )
         step(CycleStage.IMAGINE, imag)
 
         # ── PLAY ───────────────────────────────────────────────────────
@@ -154,9 +187,13 @@ class CognitiveCycle:
         step(CycleStage.PLAY, play_r)
 
         # ── PLAN + SIMULATION ──────────────────────────────────────────
-        plan_r = self.planning.plan(play_r, abstr, self.llm if use_llm else None)
-        sim_r  = self.simulation.simulate(plan_r["plan"], abstr,
-                                          self.llm if use_llm else None)
+        plan_r = self.planning.plan(
+            play_r, abstr, self.executive.llm_router_for(CycleStage.PLAN, self.llm),
+        )
+        sim_r  = self.simulation.simulate(
+            plan_r["plan"], abstr,
+            self.executive.llm_router_for(CycleStage.PLAN, self.llm),
+        )
         selected_plan = sim_r["selected"]
         step(CycleStage.PLAN, {**plan_r, "simulation": sim_r})
         self._last_sim = sim_r
@@ -213,9 +250,14 @@ class CognitiveCycle:
         dec_r = self.decision.decide(reason_r, reality_r)
         step(CycleStage.EVALUATE, dec_r)
 
-        # ── FAILURE RECOVERY ───────────────────────────────────────────
-        final_output = dec_r["final"]
-        step(CycleStage.FAILURE_RECOVERY, {"recovered": False, "output": final_output})
+        # ── FAILURE RECOVERY / ACTION (embodiment) ───────────────────────
+        emb_r = self.embodiment.act(dec_r, percept)
+        final_output = emb_r["output"]
+        step(CycleStage.FAILURE_RECOVERY, {
+            "recovered": False,
+            "output": final_output,
+            "executed": emb_r.get("executed", True),
+        })
 
         # ── REFLECT ────────────────────────────────────────────────────
         reflect_r = self.reflection.reflect(dec_r, reality_r, {
@@ -232,7 +274,7 @@ class CognitiveCycle:
         self._last_meta = meta_r
         step(CycleStage.SELF_QUESTION, {
             "question": f"Did I serve '{percept['intent']}' truthfully?",
-            "answer":   "yes" if reflect_r["quality"] in ("good","fair") else "needs_improvement",
+            "answer":   self.executive.self_question_answer(reflect_r["quality"]),
             "meta":     meta_r,
         })
 
@@ -256,7 +298,7 @@ class CognitiveCycle:
         step(CycleStage.UPDATE_IDENTITY, identity_r)
 
         # ── REFINE PURPOSE ─────────────────────────────────────────────
-        if reflect_r["quality"] == "good":
+        if self.executive.should_refine_purpose(reflect_r["quality"]):
             self.purpose.refine(
                 f"Handled {abstr['domain']} {percept['intent']} well "
                 f"(dharma={reflect_r['dharma_score']})."
@@ -266,19 +308,19 @@ class CognitiveCycle:
         # ── SLEEP / FORGET / CONSOLIDATE / WAKE ────────────────────────
         slept = False
         sleep_data = {}
-        if self.sleeper.should_sleep(cycle_n):
+        if self.executive.should_sleep_consolidation(cycle_n):
             sleep_r = self.sleep_mod.consolidate(self.beliefs, self.memory, cycle_n)
             step(CycleStage.SLEEP,       sleep_r)
             step(CycleStage.FORGET,      {"forgotten": sleep_r.get("forgotten", 0)})
             step(CycleStage.CONSOLIDATE, {"consolidated": sleep_r.get("consolidated", 0)})
             step(CycleStage.WAKE,        self.sleep_mod.wake())
-            self.sleeper.mark_slept(cycle_n)
+            self.executive.mark_slept(cycle_n)
             self.mem_hierarchy.record_forgetting(sleep_r.get("forgotten", 0))
             slept = True
             sleep_data = sleep_r
             self._last_sleep_data = sleep_r
         else:
-            next_in = self.sleeper.cycles_until_sleep(cycle_n)
+            next_in = self.executive.cycles_until_sleep(cycle_n)
             step(CycleStage.SLEEP,       {"slept": False, "next_in": next_in})
             step(CycleStage.FORGET,      {"forgotten": 0})
             step(CycleStage.CONSOLIDATE, {"consolidated": 0})
@@ -294,15 +336,60 @@ class CognitiveCycle:
         self.memory.store("interaction", f"Q: {user_input[:200]}\nA: {final_output[:300]}")
 
         # Workspace artifact
-        if len(final_output) > 150:
+        if self.executive.should_add_workspace_artifact(final_output):
             self.workspace.add_artifact(
                 f"{abstr['domain']}_response_{cycle_n}.txt", "response"
             )
 
         # Memory hierarchy: add unsolved question if quality was poor
-        if reflect_r["quality"] == "poor":
+        if self.executive.should_poor_quality_followup(reflect_r["quality"]):
             self.workspace.add_question(f"Why did cycle {cycle_n} score poorly?")
-            self.mem_hierarchy.add_dream(user_input[:80])
+            self.working_memory.add_dream(user_input[:80])
+
+        # ── Cognitive organ signals (no pipeline change) ─────────────────
+        ws = self.workspace.get()
+        curiosity_goals = self.curiosity.exploration_goals(
+            domain=abstr["domain"],
+            workspace_questions=ws.get("unsolved_questions", []),
+            uncertainty=1.0 - reality_r["confidence"],
+            poor_quality=reflect_r["quality"] == "poor",
+        )
+        self._last_cognitive_signals = {
+            "working_memory": self.working_memory.health(),
+            "self_model": self.self_model.update(
+                skills=self.skills.get_all(),
+                development=self.development._data,
+                meta_cognition=meta_r,
+                reality_confidence=reality_r["confidence"],
+            ),
+            "curiosity": {
+                **self.curiosity.snapshot(),
+                "exploration_goals": curiosity_goals,
+                "next_question": self.curiosity.next_question(
+                    ws.get("unsolved_questions", []),
+                ),
+            },
+            "emotion": self.emotion.update(
+                reflection_quality=reflect_r["quality"],
+                homeostasis_health=home_r["health"],
+                attention_priority=att.get("priority", "NORMAL"),
+                emotional_cue=att.get("emotional", False),
+                reality_confidence=reality_r["confidence"],
+            ),
+        }
+        self.goal_manager.ingest_signals(
+            purpose=purpose_r.get("statement"),
+            training_goals=self._training_goals,
+            curiosity_goals=curiosity_goals,
+            self_model_limits=self.self_model.known_limits(),
+            founder_context=self.founder_ctx.get(),
+        )
+        if not self.goal_manager.active_goal():
+            self.goal_manager.next_goal()
+        self._last_cognitive_signals["goal_manager"] = {
+            **self.goal_manager.goal_status(),
+            "statistics": self.goal_manager.goal_statistics(),
+        }
 
         self.sm.complete_cycle()
 
@@ -391,4 +478,15 @@ class CognitiveCycle:
             "training_goals":  self._training_goals,
             "last_sleep":      self._last_sleep_data,
             "last_sleep_log":  self.sleep_mod.get_last_sleep(),
+            "cognitive_organs": {
+                "working_memory": self.working_memory.health(),
+                "self_model":     self.self_model.snapshot(),
+                "curiosity":      self.curiosity.snapshot(),
+                "emotion":        self.emotion.snapshot(),
+                "goal_manager":   {
+                    **self.goal_manager.goal_status(),
+                    "statistics": self.goal_manager.goal_statistics(),
+                },
+                "last_signals":   self._last_cognitive_signals,
+            },
         }

@@ -16,14 +16,18 @@ try {
     Write-Host "❌ Health check failed: $($_.Exception.Message)" -ForegroundColor Red
 }
 
-# Test 2: Chat endpoint (should work without API key for empty messages)
+# Test 2: Chat endpoint (empty text should return 400)
 Write-Host "`n2. Testing /api/chat endpoint..." -ForegroundColor Yellow
 try {
-    $chatBody = @{ message = "" } | ConvertTo-Json
+    $chatBody = @{ text = "" } | ConvertTo-Json
     $chatResponse = Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/chat" -Method Post -ContentType "application/json" -Body $chatBody
     Write-Host "✅ Chat endpoint accessible: $($chatResponse | ConvertTo-Json)" -ForegroundColor Green
 } catch {
+  if ($_.Exception.Response.StatusCode.value__ -eq 400) {
+    Write-Host "✅ Chat endpoint validation OK (400 on empty text)" -ForegroundColor Green
+  } else {
     Write-Host "❌ Chat endpoint failed: $($_.Exception.Message)" -ForegroundColor Red
+  }
 }
 
 # Test 3: Agent endpoint (should work without API key for search messages)
@@ -36,21 +40,17 @@ try {
     Write-Host "❌ Agent endpoint failed: $($_.Exception.Message)" -ForegroundColor Red
 }
 
-# Test 4: Memory endpoints
-Write-Host "`n4. Testing memory endpoints..." -ForegroundColor Yellow
-
-# Add memory
+# Test 4: Memory persistence (organism MemoryStore via Python gate — no HTTP mem routes)
+Write-Host "`n4. Testing memory persistence (phase1 gate)..." -ForegroundColor Yellow
 try {
-    $addBody = @{ text = "ChetnaGPT is a FastAPI + vanilla JS chat app with Groq integration" } | ConvertTo-Json
-    $addResponse = Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/mem/add" -Method Post -ContentType "application/json" -Body $addBody
-    Write-Host "✅ Memory add successful: $($addResponse | ConvertTo-Json)" -ForegroundColor Green
-    
-    # Search memory
-    $searchBody = @{ query = "FastAPI chat app" } | ConvertTo-Json
-    $searchResponse = Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/mem/search" -Method Post -ContentType "application/json" -Body $searchBody
-    Write-Host "✅ Memory search successful: $($searchResponse | ConvertTo-Json)" -ForegroundColor Green
+    python scripts/phase1_gate.py 2>&1 | Out-Null
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "✅ Memory persistence gate passed" -ForegroundColor Green
+    } else {
+        Write-Host "❌ Memory persistence gate failed (exit $LASTEXITCODE)" -ForegroundColor Red
+    }
 } catch {
-    Write-Host "❌ Memory endpoints failed: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "❌ Memory gate failed: $($_.Exception.Message)" -ForegroundColor Red
 }
 
 Write-Host "`n🎉 Smoke tests completed!" -ForegroundColor Green

@@ -20,46 +20,43 @@ The focus is on architectural completeness and integration rather than brute-for
 
 ChetnaOS provides:
 
-- A persistent AGI loop for continuous cognition  
-- Multi-agent coordination (chat, scheduler, voice, messaging agents)  
-- A memory service for long-term semantic context  
-- A symbolic world model for structured reasoning  
-- Goal agents for task and objective management  
-- Real-world integrations (WhatsApp, email, CRM, notifications)  
-- Autonomous workflows for lead handling and follow-ups  
-- A deployable backend with live API and UI  
-
-Together, these components behave as a unified cognitive system rather than a set of disconnected scripts.
+- A **developmental cognitive cycle** (26 stages) via `src/chetnaos/orchestrator/`
+- Persistent memory (SQLite vector store + JSON state files)
+- Constitution-grounded reasoning with dharma reflection
+- Reality verification layer before decisions
+- Tool agent (calculator, web search, fetch) at `/api/agent`
+- Kalpavriksha domain plugin (land/crop/ROI)
+- Deployable FastAPI backend with dashboard UI
 
 ---
 
-## System Architecture
+## System Architecture (v2 — live)
 
-Key subsystems in this repository:
+| Layer | Path | Role |
+|-------|------|------|
+| HTTP shell | `backend/app.py` | FastAPI entry |
+| Runtime | `src/chetnaos/orchestrator/runtime.py` | Singleton `ChetnaRuntime` |
+| Cognitive cycle | `src/chetnaos/orchestrator/cognitive_cycle.py` | 26-stage organism loop |
+| Organism | `src/chetnaos/organism/` | Perception, memory, beliefs, sleep, etc. |
+| Constitution | `src/chetnaos/constitution/` | Mission, values, ethics |
+| Memory store | `memory/db.py` | SQLite + optional embeddings |
+| Reflection | `reflection/reflection_v2.py` | Dharma scoring |
 
-- `backend/agi/` — Core AGI loop, world model, memory service, goal agents  
-- `backend/agents/` — Chat, intent, scheduler, voice, and messaging agents  
-- `backend/integrations/` — WhatsApp, email, CRM, and notifier integrations  
-- `backend/workflows/` — Autonomous task and business process flows  
-- `memory/` — Persistent memory storage layer  
-- `frontend/` — Web UI for interacting with the system  
+Legacy v0.9 code (`backend/agi/`, `chetna_core`) is archived under `archive/v0.9_legacy/`.
 
-These subsystems are wired together to support continuous cognition, memory-driven behavior, and autonomous task execution.
+Architecture reports: `reports/01_repository_inventory.md` through `reports/10_build_order.md`.
 
 ---
 
 ## Demo Capabilities
 
-The hackathon demo showcases:
+The live demo showcases:
 
-- Continuous AGI loop execution  
-- Agent-based goal handling  
-- Memory-assisted reasoning  
-- World model state tracking  
-- Autonomous workflows (lead, follow-up, meeting flows)  
-- Real-world messaging and notification integrations  
-
-This demonstrates a cognitive operating system approach rather than a single-task agent.
+- Full cognitive cycle on `/api/chat` and `/api/goal`
+- Memory-assisted reasoning (vector recall when embeddings enabled)
+- Dashboard at `/dashboard` and `/api/dashboard`
+- Agent tools at `/api/agent`
+- Kalpavriksha calculators via `/api/kalpavriksha/*`
 
 ---
 
@@ -152,11 +149,18 @@ smoke.ps1
 
 ## Testing
 
-### Smoke Tests
-
-Run the PowerShell smoke test script:
+### Phase 1 Gate (required before Phase 2)
 
 ```powershell
+python scripts/phase1_gate.py
+```
+
+Runs: import test, memory persistence test, API health test (TestClient).
+
+### Smoke Tests (requires running server)
+
+```powershell
+python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000 --reload
 .\smoke.ps1
 ```
 
