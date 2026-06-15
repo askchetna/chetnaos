@@ -42,3 +42,7 @@ class ChetnaRuntime:
     @property
     def llm_available(self) -> bool:
         return self._cycle.llm.available
+
+    @property
+    def cognitive_organs(self) -> dict:
+        return self._cycle._runtime_inspection_snapshot()

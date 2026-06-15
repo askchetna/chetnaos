@@ -1,7 +1,7 @@
 {
-  "total_cycles": 28,
-  "good_cycles": 19,
+  "total_cycles": 76,
+  "good_cycles": 29,
   "poor_cycles": 0,
-  "avg_confidence": 0.646,
+  "avg_confidence": 0.554,
   "growth_events": []
 }

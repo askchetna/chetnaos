@@ -94,6 +94,8 @@ async def api_chat(payload: ChatRequest):
                 "reality":          result.get("reality", {}),
                 "simulation":       result.get("simulation", {}),
                 "meta_cognition":   result.get("meta_cognition", {}),
+                "cognitive_organs": result.get("cognitive_organs", {}),
+                "reasoning_integration": result.get("reasoning_integration", {}),
             },
         }
     except HTTPException:
@@ -118,9 +120,13 @@ async def api_goal(payload: GoalRequest):
             "plan":   result.get("stage_trace", []),
             "trace":  result.get("trace", []),
             "world":  result.get("reality", {}),
-            "meta":   {k: result[k] for k in
-                       ("cycle","quality","confidence","dharma_score","cycle_score","domain")
-                       if k in result},
+            "meta":   {
+                **{k: result[k] for k in
+                   ("cycle","quality","confidence","dharma_score","cycle_score","domain")
+                   if k in result},
+                "cognitive_organs": result.get("cognitive_organs", {}),
+                "reasoning_integration": result.get("reasoning_integration", {}),
+            },
         }
     except HTTPException:
         raise
@@ -141,6 +147,7 @@ async def api_state():
         "world":       rt.world,
         "development": rt.development,
         "llm":         rt.llm_available,
+        "cognitive_organs": rt.cognitive_organs,
     }
 
 

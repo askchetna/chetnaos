@@ -1,6 +1,105 @@
 {
-  "active_goal": null,
+  "active_goal": {
+    "id": "1adb2565",
+    "text": "Launch ChetnaOS publicly",
+    "goal_type": "MAINTENANCE",
+    "goal_priority": 95.0,
+    "goal_origin": "founder_model",
+    "status": "active",
+    "created_at": "2026-06-15T16:51:39.121039",
+    "activated_at": "2026-06-15T16:51:39.121039"
+  },
   "goal_queue": [
+    {
+      "id": "12dc9099",
+      "text": "Get first paying AI client",
+      "goal_type": "MAINTENANCE",
+      "goal_priority": 90.0,
+      "goal_origin": "founder_model",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.121039"
+    },
+    {
+      "id": "2eecb6fa",
+      "text": "explore_domain: business",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 90.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:40.378009"
+    },
+    {
+      "id": "21529102",
+      "text": "explore_domain: general",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 80.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "8dc28b87",
+      "text": "explore_domain: technology",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 80.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:39.508847"
+    },
+    {
+      "id": "889d73a0",
+      "text": "explore_domain: philosophy",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 80.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:39.924718"
+    },
+    {
+      "id": "9a2d48a9",
+      "text": "Help Founder build AGI \u2014 ChetnaOS.",
+      "goal_type": "MAINTENANCE",
+      "goal_priority": 70.0,
+      "goal_origin": "founder_model",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.121039"
+    },
+    {
+      "id": "0bb2be9f",
+      "text": "answer_question: CURIOSITY_MARKER_Q unsolved technology AI algorithm question",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 65.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:40.186108"
+    },
+    {
+      "id": "ae67710b",
+      "text": "test purpose",
+      "goal_type": "INTRINSIC",
+      "goal_priority": 60.0,
+      "goal_origin": "purpose",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.111765"
+    },
+    {
+      "id": "90b67ace",
+      "text": "Understand the user's need and respond with clarity, truth, and compassion.",
+      "goal_type": "INTRINSIC",
+      "goal_priority": 60.0,
+      "goal_origin": "purpose",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:39.508847"
+    },
+    {
+      "id": "f85766cf",
+      "text": "Improve capability: Sales",
+      "goal_type": "MAINTENANCE",
+      "goal_priority": 55.0,
+      "goal_origin": "self_model",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.121039"
+    },
     {
       "id": "d7bfeff0",
       "text": "test",
@@ -9,6 +108,105 @@
       "goal_origin": "manual",
       "status": "queued",
       "created_at": "2026-06-15T12:29:51.972198"
+    },
+    {
+      "id": "5252e40a",
+      "text": "reduce_uncertainty: verify claims about general",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 50.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "d270d825",
+      "text": "test",
+      "goal_type": "USER",
+      "goal_priority": 50.0,
+      "goal_origin": "manual",
+      "status": "queued",
+      "created_at": "2026-06-15T16:52:03.792960"
+    },
+    {
+      "id": "cc7cc0d0",
+      "text": "reduce_uncertainty: verify claims about technology",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 50.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:39.508847"
+    },
+    {
+      "id": "1c710b98",
+      "text": "reduce_uncertainty: verify claims about philosophy",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 50.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:39.930969"
+    },
+    {
+      "id": "38b87256",
+      "text": "reduce_uncertainty: verify claims about business",
+      "goal_type": "EXPLORATION",
+      "goal_priority": 50.0,
+      "goal_origin": "curiosity",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:40.384479"
+    },
+    {
+      "id": "ef2a3e4e",
+      "text": "Train Sales: 20 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 34.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:40.403620"
+    },
+    {
+      "id": "0022c87f",
+      "text": "Train Sales: 15 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 26.4,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.112924"
+    },
+    {
+      "id": "3e61e584",
+      "text": "Train Business: 9 business interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 15.0,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "ddc7c6b7",
+      "text": "Train Business: 8 business interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 14.7,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T17:08:40.406189"
+    },
+    {
+      "id": "204eb8c7",
+      "text": "Train Coding: 7 coding interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 12.6,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "c4fd6c11",
+      "text": "Train Coding: 6 coding interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 11.4,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T17:09:40.176329"
     }
   ],
   "completed_goals": [],

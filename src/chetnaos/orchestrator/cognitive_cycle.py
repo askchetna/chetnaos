@@ -45,6 +45,7 @@ from src.chetnaos.organism.self_trainer       import SelfTrainer
 from .state_machine import StateMachine, CycleStage
 from .sleep_manager import SleepManager
 from .llm_router    import LLMRouter
+from .agent_tools   import run_agent_tool
 from src.chetnaos.cognition.executive import ExecutiveController
 from src.chetnaos.cognition.self_model import SelfModel
 from src.chetnaos.cognition.curiosity import CuriosityDrive
@@ -118,6 +119,76 @@ class CognitiveCycle:
         self._last_sleep_data   = {}
         self._training_goals    = self.self_trainer.get()
         self._last_cognitive_signals: dict = {}
+        self._last_agent_tool: dict | None = None
+
+    def _build_reasoning_context(
+        self,
+        *,
+        abstr: dict,
+        att: dict,
+        purpose_r: dict,
+        mode: str,
+        agent_tool: dict | None = None,
+    ) -> dict:
+        """Assemble lightweight organ context for the reasoning prompt."""
+        ws = self.workspace.get()
+        self.self_model.update(
+            skills=self.skills.get_all(),
+            development=self.development._data,
+        )
+        curiosity_goals = self.curiosity.exploration_goals(
+            domain=abstr.get("domain", "general"),
+            workspace_questions=ws.get("unsolved_questions", []),
+            uncertainty=0.5,
+            poor_quality=False,
+        )
+        self.goal_manager.ingest_signals(
+            purpose=purpose_r.get("statement"),
+            training_goals=self._training_goals,
+            curiosity_goals=curiosity_goals,
+            self_model_limits=self.self_model.known_limits(),
+            founder_context=self.founder_ctx.get(),
+        )
+        if not self.goal_manager.active_goal():
+            self.goal_manager.next_goal()
+
+        pre_emotion = self.emotion.update(
+            reflection_quality="fair",
+            homeostasis_health=self.homeostasis.check(
+                {"stats": self.development._data}, {"quality": "fair"}
+            )["health"],
+            attention_priority=att.get("priority", "NORMAL"),
+            emotional_cue=att.get("emotional", False),
+            reality_confidence=0.5,
+        )
+
+        return {
+            "working_memory": self.working_memory.recall(),
+            "active_goal": self.goal_manager.active_goal(),
+            "beliefs": self.beliefs.get_all()[:5],
+            "self_model": self.self_model.snapshot(),
+            "curiosity": {
+                "novelty_score": self.curiosity.snapshot().get("novelty_score"),
+                "exploration_goals": curiosity_goals,
+            },
+            "emotion": pre_emotion,
+            "agent_tool": agent_tool,
+        }
+
+    def _runtime_inspection_snapshot(self) -> dict:
+        """Lightweight organ state for API meta (not full dashboard)."""
+        return {
+            "working_memory": self.working_memory.health(),
+            "self_model": self.self_model.snapshot(),
+            "curiosity": self.curiosity.snapshot(),
+            "emotion": self.emotion.snapshot(),
+            "goal_manager": {
+                **self.goal_manager.goal_status(),
+                "statistics": self.goal_manager.goal_statistics(),
+            },
+            "belief_revision": self.belief_revision.snapshot(),
+            "last_agent_tool": self._last_agent_tool,
+        }
 
     # ──────────────────────────────────────────────────────────────────────
     def run(self, user_input: str, mode: str = "chat") -> dict:
@@ -207,10 +278,28 @@ class CognitiveCycle:
         habit_r = self.habit.check(percept["intent"], abstr["domain"])
         step(CycleStage.HABIT, habit_r)
 
+        # ── Agent tools (organism path, not parallel LLM) ────────────────
+        agent_tool = None
+        if mode == "agent":
+            agent_tool = run_agent_tool(user_input, llm_router=self.llm)
+            self._last_agent_tool = agent_tool
+
+        cognitive_ctx = self._build_reasoning_context(
+            abstr=abstr,
+            att=att,
+            purpose_r=purpose_r,
+            mode=mode,
+            agent_tool=agent_tool,
+        )
+
         # ── ACT (primary LLM call) ─────────────────────────────────────
-        reason_r     = self.reasoning.reason(
-            user_input, recalled, selected_plan, self.llm,
+        reason_r = self.reasoning.reason(
+            user_input,
+            recalled,
+            selected_plan,
+            self.llm,
             founder_context=founder_ctx_str,
+            cognitive_context=cognitive_ctx,
         )
         raw_response = reason_r["response"]
         step(CycleStage.ACT, reason_r)
@@ -321,7 +410,7 @@ class CognitiveCycle:
             external_contradictions=self.contradictions.get(),
         )
         self.belief_revision.evaluate()
-        belief_rev_r = self.belief_revision.revise(self.beliefs)
+        self.belief_revision.revise(self.beliefs)
 
         # ── UPDATE IDENTITY ────────────────────────────────────────────
         identity_r = self.identity.update(reflect_r, beliefs_r)
@@ -447,6 +536,15 @@ class CognitiveCycle:
                 "self_verdict": meta_r["self_verdict"],
             },
             "trace": trace,
+            "cognitive_organs": self._runtime_inspection_snapshot(),
+            "agent_tool": self._last_agent_tool.get("tool") if self._last_agent_tool else None,
+            "reasoning_integration": {
+                "used_working_memory": reason_r.get("used_working_memory", False),
+                "used_active_goal": reason_r.get("used_active_goal", False),
+                "used_beliefs": reason_r.get("used_beliefs", False),
+                "used_cognitive_organs": reason_r.get("used_cognitive_organs", False),
+                "used_agent_tool": reason_r.get("used_agent_tool", False),
+            },
         }
 
     # ──────────────────────────────────────────────────────────────────────
