@@ -143,7 +143,9 @@
     .hamburger span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
 
     /* ── Chat ── */
-    .chat-wrap { flex: 1; overflow-y: auto; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+    .chat-wrap { flex: 1; overflow-y: auto; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; position: relative; }
+    .chat-messages { display: flex; flex-direction: column; gap: 12px; width: 100%; flex: 1; min-height: 0; }
+    .chat-wrap.has-messages .empty { display: none !important; }
     .chat-wrap::-webkit-scrollbar { width: 3px; }
     .chat-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
@@ -326,6 +328,7 @@
           <button class="suggestion" onclick="sendSuggestion('How should I build a business with near-zero budget?')">Business with zero budget?</button>
         </div>
       </div>
+      <div id="chat-messages" class="chat-messages"></div>
     </div>
 
     <div class="input-area">
@@ -424,7 +427,22 @@ msgEl.addEventListener("input", () => {
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 const timeNow  = () => new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
-function hideEmpty() { const e = document.getElementById("empty-state"); if(e) e.style.display = "none"; }
+// ── Helpers ──────────────────────────────────────────────────────────────────
+const chatWrapEl = document.getElementById("chat");
+const chatMessagesEl = document.getElementById("chat-messages");
+
+function hideEmpty() {
+  const e = document.getElementById("empty-state");
+  if (e) e.style.display = "none";
+  chatWrapEl?.classList.add("has-messages");
+}
+
+function showEmpty() {
+  const e = document.getElementById("empty-state");
+  if (e) e.style.display = "";
+  chatWrapEl?.classList.remove("has-messages");
+  chatMessagesEl?.replaceChildren();
+}
 
 function tag(parent, text, cls) {
   const t = document.createElement("span");
@@ -451,7 +469,7 @@ function expandable(parent, label, content) {
 // ── Render bubbles ─────────────────────────────────────────────────────────
 function addBubble(text, who, meta) {
   hideEmpty();
-  const chat = document.getElementById("chat");
+  const chat = chatMessagesEl || document.getElementById("chat");
   const row  = document.createElement("div");
   row.className = "msg-row" + (who==="user" ? " user" : "");
 
@@ -520,12 +538,13 @@ function addBubble(text, who, meta) {
   row.appendChild(av);
   row.appendChild(wrap);
   chat.appendChild(row);
-  chat.scrollTop = chat.scrollHeight;
+  const scrollEl = chatWrapEl || chat;
+  scrollEl.scrollTop = scrollEl.scrollHeight;
 }
 
 function addError(text) {
   hideEmpty();
-  const chat = document.getElementById("chat");
+  const chat = chatMessagesEl || document.getElementById("chat");
   const row  = document.createElement("div"); row.className = "msg-row";
   const av   = document.createElement("div"); av.className = "avatar ai"; av.textContent = "⚠️";
   const wrap = document.createElement("div"); wrap.className = "bubble-wrap";
@@ -533,13 +552,15 @@ function addError(text) {
   const bub  = document.createElement("div"); bub.className = "bubble error"; bub.textContent = text;
   wrap.appendChild(m); wrap.appendChild(bub);
   row.appendChild(av); row.appendChild(wrap);
-  chat.appendChild(row); chat.scrollTop = chat.scrollHeight;
+  chat.appendChild(row);
+  const scrollEl = chatWrapEl || chat;
+  scrollEl.scrollTop = scrollEl.scrollHeight;
 }
 
 function addTyping() {
   removeTyping();
   hideEmpty();
-  const chat = document.getElementById("chat");
+  const chat = chatMessagesEl || document.getElementById("chat");
   const row  = document.createElement("div"); row.id = "typing-row"; row.className = "msg-row";
   const av   = document.createElement("div"); av.className = "avatar ai"; av.textContent = "🧠";
   const wrap = document.createElement("div"); wrap.className = "bubble-wrap";
@@ -705,20 +726,63 @@ function escHtml(s) {
 }
 
 function renderConversationMessages(messages) {
-  const chat = document.getElementById("chat");
-  chat.querySelectorAll(".msg-row").forEach(el => el.remove());
-  if (!messages || !messages.length) {
-    document.getElementById("empty-state").style.display = "";
-    return;
-  }
-  hideEmpty();
-  messages.forEach(m => {
-    if (m.role === "user") addBubble(m.content, "user");
-    else if (m.role === "assistant") addBubble(m.content, "ai", m.meta || null);
+  console.log("RESTORE STEP 5 renderConversationMessages", {
+    count: messages?.length || 0,
+    sample: messages?.[0],
   });
+  const container = chatMessagesEl;
+  if (!container) {
+    console.error("RESTORE STEP 5 FAIL: #chat-messages missing");
+    return 0;
+  }
+  container.replaceChildren();
+  if (!messages || !messages.length) {
+    showEmpty();
+    return 0;
+  }
+  let rendered = 0;
+  messages.forEach((m, i) => {
+    const role = m?.role;
+    const content = m?.content ?? m?.text ?? "";
+    if (!content) {
+      console.warn("RESTORE STEP 5 skip empty message", i, m);
+      return;
+    }
+    try {
+      if (role === "user") {
+        addBubble(content, "user");
+        rendered++;
+      } else if (role === "assistant") {
+        addBubble(content, "ai", m.meta || null);
+        rendered++;
+      } else {
+        console.warn("RESTORE STEP 5 skip unknown role", role, m);
+      }
+    } catch (err) {
+      console.error("RESTORE STEP 5 render error at index", i, err, m);
+    }
+  });
+  console.log("RESTORE STEP 5 rendered", rendered, "DOM children", container.childElementCount);
+  if (rendered > 0) {
+    hideEmpty();
+    chatWrapEl?.scrollTo({ top: chatWrapEl.scrollHeight, behavior: "instant" });
+  } else {
+    showEmpty();
+  }
+  return rendered;
+}
+
+async function fetchConversationById(id) {
+  console.log("RESTORE STEP 4 GET /api/conversations/{id}", id);
+  const res = await fetch(`/api/conversations/${id}`);
+  const data = await res.json().catch(() => ({}));
+  console.log("RESTORE STEP 4", { status: res.status, messageCount: data?.conversation?.messages?.length || 0 });
+  if (!res.ok) throw new Error(data?.detail || `HTTP ${res.status}`);
+  return data.conversation;
 }
 
 async function switchConversation(id) {
+  if (!id) return;
   currentConversationId = id;
   localStorage.setItem("chetna_active_conv", id);
   try {
@@ -727,10 +791,11 @@ async function switchConversation(id) {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({conversation_id: id}),
     });
-    const d = await fetch(`/api/conversations/${id}`).then(r => r.json());
-    renderConversationMessages(d.conversation?.messages || []);
+    const conv = await fetchConversationById(id);
+    renderConversationMessages(conv?.messages || []);
     await loadConversationList();
   } catch (e) {
+    console.error("RESTORE switchConversation failed", e);
     addError(e?.message || String(e));
   }
 }
@@ -744,7 +809,7 @@ async function newConversation() {
     }).then(r => r.json());
     currentConversationId = d.conversation.id;
     localStorage.setItem("chetna_active_conv", currentConversationId);
-    renderConversationMessages([]);
+    showEmpty();
     await loadConversationList();
   } catch (e) {
     addError(e?.message || String(e));
@@ -762,7 +827,7 @@ async function deleteConversation() {
       await switchConversation(currentConversationId);
     } else {
       localStorage.removeItem("chetna_active_conv");
-      renderConversationMessages([]);
+      showEmpty();
       await newConversation();
     }
     await loadConversationList();
@@ -772,25 +837,36 @@ async function deleteConversation() {
 }
 
 async function restoreWorkspace() {
+  console.log("RESTORE STEP 1 restoreWorkspace() start");
   try {
     const d = await fetch("/api/workspace/session").then(r => r.json());
-    if (d.active_conversation_id) {
-      currentConversationId = d.active_conversation_id;
-      localStorage.setItem("chetna_active_conv", currentConversationId);
-    } else {
-      currentConversationId = localStorage.getItem("chetna_active_conv");
-    }
-    if (d.conversation?.messages?.length) {
-      renderConversationMessages(d.conversation.messages);
-    } else if (currentConversationId) {
-      await switchConversation(currentConversationId);
-    } else {
-      const active = await fetch("/api/conversations/active").then(r => r.json());
-      currentConversationId = active.conversation?.id;
-      if (currentConversationId) {
-        renderConversationMessages(active.conversation.messages || []);
+    console.log("RESTORE STEP 2 GET /api/workspace/session", {
+      active_conversation_id: d.active_conversation_id,
+      sessionMessageCount: d.conversation?.messages?.length || 0,
+      conversationId: d.conversation?.id,
+      mismatch: d.active_conversation_id && d.conversation?.id && d.active_conversation_id !== d.conversation.id,
+    });
+
+    const convId =
+      d.active_conversation_id ||
+      localStorage.getItem("chetna_active_conv") ||
+      d.conversation?.id ||
+      null;
+    console.log("RESTORE STEP 3 active_conversation_id resolved", convId);
+
+    if (convId) {
+      currentConversationId = convId;
+      localStorage.setItem("chetna_active_conv", convId);
+      const conv = await fetchConversationById(convId);
+      const rendered = renderConversationMessages(conv?.messages || []);
+      if (!rendered && (conv?.messages?.length || 0) > 0) {
+        console.error("RESTORE FAIL: messages existed but none rendered", conv.messages.length);
       }
+    } else {
+      console.warn("RESTORE STEP 3 no conversation id — showing empty state");
+      showEmpty();
     }
+
     if (d.active_goal?.text) {
       const el = document.getElementById("cg-domain");
       if (el) el.textContent = ("Goal: " + d.active_goal.text).slice(0, 40);
@@ -800,10 +876,20 @@ async function restoreWorkspace() {
       if (sub) sub.textContent = d.current_thought.new_thought.slice(0, 80) + "…";
     }
     await loadConversationList();
-  } catch {}
+    console.log("RESTORE STEP 6 complete", { currentConversationId, domMessages: chatMessagesEl?.childElementCount });
+  } catch (err) {
+    console.error("RESTORE FAILED", err);
+  }
 }
 
 restoreWorkspace();
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted || sessionStorage.getItem("chetna_restore")) {
+    console.log("RESTORE pageshow — re-running restoreWorkspace", { persisted: e.persisted });
+    sessionStorage.removeItem("chetna_restore");
+    restoreWorkspace();
+  }
+});
 try { msgEl.focus(); } catch {}
 </script>
 </body>

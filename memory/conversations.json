@@ -1,6 +1,744 @@
 {
-  "active_id": "11410214-5b9f-455c-81b8-0ae8f05f1456",
+  "active_id": "c4603c3d-9b03-41ff-80b0-55c93696ad6b",
   "conversations": [
+    {
+      "id": "c4603c3d-9b03-41ff-80b0-55c93696ad6b",
+      "title": "soak probe cycle 10",
+      "summary": "",
+      "created_at": "2026-06-16T11:16:04.848198+00:00",
+      "updated_at": "2026-06-16T11:17:15.908254+00:00",
+      "messages": [
+        {
+          "role": "user",
+          "content": "soak probe cycle 10",
+          "meta": {},
+          "ts": "2026-06-16T11:16:04.884561+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 10",
+          "meta": {},
+          "ts": "2026-06-16T11:16:04.918987+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 20",
+          "meta": {},
+          "ts": "2026-06-16T11:16:06.267803+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 20",
+          "meta": {},
+          "ts": "2026-06-16T11:16:06.303820+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 30",
+          "meta": {},
+          "ts": "2026-06-16T11:16:08.103248+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 30",
+          "meta": {},
+          "ts": "2026-06-16T11:16:08.137888+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 40",
+          "meta": {},
+          "ts": "2026-06-16T11:16:09.273684+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 40",
+          "meta": {},
+          "ts": "2026-06-16T11:16:09.334552+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 50",
+          "meta": {},
+          "ts": "2026-06-16T11:16:10.502055+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 50",
+          "meta": {},
+          "ts": "2026-06-16T11:16:10.554638+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 60",
+          "meta": {},
+          "ts": "2026-06-16T11:16:11.669855+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 60",
+          "meta": {},
+          "ts": "2026-06-16T11:16:11.701270+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 70",
+          "meta": {},
+          "ts": "2026-06-16T11:16:12.817742+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 70",
+          "meta": {},
+          "ts": "2026-06-16T11:16:12.865778+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 80",
+          "meta": {},
+          "ts": "2026-06-16T11:16:15.106548+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 80",
+          "meta": {},
+          "ts": "2026-06-16T11:16:15.165891+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 90",
+          "meta": {},
+          "ts": "2026-06-16T11:16:16.365953+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 90",
+          "meta": {},
+          "ts": "2026-06-16T11:16:16.401196+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 100",
+          "meta": {},
+          "ts": "2026-06-16T11:16:17.570072+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 100",
+          "meta": {},
+          "ts": "2026-06-16T11:16:17.603392+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 110",
+          "meta": {},
+          "ts": "2026-06-16T11:16:19.932689+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 110",
+          "meta": {},
+          "ts": "2026-06-16T11:16:19.984586+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 120",
+          "meta": {},
+          "ts": "2026-06-16T11:16:21.667931+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 120",
+          "meta": {},
+          "ts": "2026-06-16T11:16:21.699205+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 130",
+          "meta": {},
+          "ts": "2026-06-16T11:16:22.817955+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 130",
+          "meta": {},
+          "ts": "2026-06-16T11:16:22.865888+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 140",
+          "meta": {},
+          "ts": "2026-06-16T11:16:24.765958+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 140",
+          "meta": {},
+          "ts": "2026-06-16T11:16:24.799293+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 150",
+          "meta": {},
+          "ts": "2026-06-16T11:16:26.349759+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 150",
+          "meta": {},
+          "ts": "2026-06-16T11:16:26.395017+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 160",
+          "meta": {},
+          "ts": "2026-06-16T11:16:27.572005+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 160",
+          "meta": {},
+          "ts": "2026-06-16T11:16:27.599306+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 170",
+          "meta": {},
+          "ts": "2026-06-16T11:16:28.718178+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 170",
+          "meta": {},
+          "ts": "2026-06-16T11:16:28.764485+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 180",
+          "meta": {},
+          "ts": "2026-06-16T11:16:30.855409+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 180",
+          "meta": {},
+          "ts": "2026-06-16T11:16:30.884833+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 190",
+          "meta": {},
+          "ts": "2026-06-16T11:16:32.014449+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 190",
+          "meta": {},
+          "ts": "2026-06-16T11:16:32.049372+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 200",
+          "meta": {},
+          "ts": "2026-06-16T11:16:33.177358+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 200",
+          "meta": {},
+          "ts": "2026-06-16T11:16:33.218165+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 210",
+          "meta": {},
+          "ts": "2026-06-16T11:16:34.318156+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 210",
+          "meta": {},
+          "ts": "2026-06-16T11:16:34.351467+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 220",
+          "meta": {},
+          "ts": "2026-06-16T11:16:36.303465+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 220",
+          "meta": {},
+          "ts": "2026-06-16T11:16:36.336850+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 230",
+          "meta": {},
+          "ts": "2026-06-16T11:16:37.430253+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 230",
+          "meta": {},
+          "ts": "2026-06-16T11:16:37.470137+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 240",
+          "meta": {},
+          "ts": "2026-06-16T11:16:38.566216+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 240",
+          "meta": {},
+          "ts": "2026-06-16T11:16:38.618289+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 250",
+          "meta": {},
+          "ts": "2026-06-16T11:16:39.726765+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 250",
+          "meta": {},
+          "ts": "2026-06-16T11:16:39.768216+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 260",
+          "meta": {},
+          "ts": "2026-06-16T11:16:41.740908+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 260",
+          "meta": {},
+          "ts": "2026-06-16T11:16:41.776351+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 270",
+          "meta": {},
+          "ts": "2026-06-16T11:16:42.851553+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 270",
+          "meta": {},
+          "ts": "2026-06-16T11:16:42.888244+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 280",
+          "meta": {},
+          "ts": "2026-06-16T11:16:44.020336+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 280",
+          "meta": {},
+          "ts": "2026-06-16T11:16:44.051707+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 290",
+          "meta": {},
+          "ts": "2026-06-16T11:16:45.135121+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 290",
+          "meta": {},
+          "ts": "2026-06-16T11:16:45.203747+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 300",
+          "meta": {},
+          "ts": "2026-06-16T11:16:47.068473+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 300",
+          "meta": {},
+          "ts": "2026-06-16T11:16:47.120403+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 310",
+          "meta": {},
+          "ts": "2026-06-16T11:16:48.274418+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 310",
+          "meta": {},
+          "ts": "2026-06-16T11:16:48.311859+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 320",
+          "meta": {},
+          "ts": "2026-06-16T11:16:49.422859+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 320",
+          "meta": {},
+          "ts": "2026-06-16T11:16:49.455204+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 330",
+          "meta": {},
+          "ts": "2026-06-16T11:16:50.549739+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 330",
+          "meta": {},
+          "ts": "2026-06-16T11:16:50.601739+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 340",
+          "meta": {},
+          "ts": "2026-06-16T11:16:52.571882+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 340",
+          "meta": {},
+          "ts": "2026-06-16T11:16:52.602912+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 350",
+          "meta": {},
+          "ts": "2026-06-16T11:16:53.790543+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 350",
+          "meta": {},
+          "ts": "2026-06-16T11:16:53.838434+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 360",
+          "meta": {},
+          "ts": "2026-06-16T11:16:54.959601+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 360",
+          "meta": {},
+          "ts": "2026-06-16T11:16:54.983283+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 370",
+          "meta": {},
+          "ts": "2026-06-16T11:16:56.687200+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 370",
+          "meta": {},
+          "ts": "2026-06-16T11:16:56.720508+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 380",
+          "meta": {},
+          "ts": "2026-06-16T11:16:57.990226+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 380",
+          "meta": {},
+          "ts": "2026-06-16T11:16:58.027534+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 390",
+          "meta": {},
+          "ts": "2026-06-16T11:16:59.185214+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 390",
+          "meta": {},
+          "ts": "2026-06-16T11:16:59.224621+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 400",
+          "meta": {},
+          "ts": "2026-06-16T11:17:00.487327+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 400",
+          "meta": {},
+          "ts": "2026-06-16T11:17:00.537316+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 410",
+          "meta": {},
+          "ts": "2026-06-16T11:17:01.965874+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 410",
+          "meta": {},
+          "ts": "2026-06-16T11:17:02.020673+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 420",
+          "meta": {},
+          "ts": "2026-06-16T11:17:04.186057+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 420",
+          "meta": {},
+          "ts": "2026-06-16T11:17:04.230186+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 430",
+          "meta": {},
+          "ts": "2026-06-16T11:17:05.319446+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 430",
+          "meta": {},
+          "ts": "2026-06-16T11:17:05.362435+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 440",
+          "meta": {},
+          "ts": "2026-06-16T11:17:06.613419+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 440",
+          "meta": {},
+          "ts": "2026-06-16T11:17:06.671975+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 450",
+          "meta": {},
+          "ts": "2026-06-16T11:17:08.169279+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 450",
+          "meta": {},
+          "ts": "2026-06-16T11:17:08.202071+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 460",
+          "meta": {},
+          "ts": "2026-06-16T11:17:10.133710+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 460",
+          "meta": {},
+          "ts": "2026-06-16T11:17:10.185712+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 470",
+          "meta": {},
+          "ts": "2026-06-16T11:17:11.360848+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 470",
+          "meta": {},
+          "ts": "2026-06-16T11:17:11.398778+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 480",
+          "meta": {},
+          "ts": "2026-06-16T11:17:12.533508+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 480",
+          "meta": {},
+          "ts": "2026-06-16T11:17:12.578687+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 490",
+          "meta": {},
+          "ts": "2026-06-16T11:17:14.697718+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 490",
+          "meta": {},
+          "ts": "2026-06-16T11:17:14.738107+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 500",
+          "meta": {},
+          "ts": "2026-06-16T11:17:15.852233+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 500",
+          "meta": {},
+          "ts": "2026-06-16T11:17:15.908254+00:00"
+        }
+      ]
+    },
+    {
+      "id": "9bfdc963-cce3-4b93-bb42-77e003912336",
+      "title": "soak probe cycle 10",
+      "summary": "",
+      "created_at": "2026-06-16T11:15:19.333559+00:00",
+      "updated_at": "2026-06-16T11:15:33.335712+00:00",
+      "messages": [
+        {
+          "role": "user",
+          "content": "soak probe cycle 10",
+          "meta": {},
+          "ts": "2026-06-16T11:15:19.385542+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 10",
+          "meta": {},
+          "ts": "2026-06-16T11:15:19.505858+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 20",
+          "meta": {},
+          "ts": "2026-06-16T11:15:20.958275+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 20",
+          "meta": {},
+          "ts": "2026-06-16T11:15:21.010462+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 30",
+          "meta": {},
+          "ts": "2026-06-16T11:15:22.198209+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 30",
+          "meta": {},
+          "ts": "2026-06-16T11:15:22.233520+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 40",
+          "meta": {},
+          "ts": "2026-06-16T11:15:23.833533+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 40",
+          "meta": {},
+          "ts": "2026-06-16T11:15:23.868974+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 50",
+          "meta": {},
+          "ts": "2026-06-16T11:15:25.148272+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 50",
+          "meta": {},
+          "ts": "2026-06-16T11:15:25.183539+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 60",
+          "meta": {},
+          "ts": "2026-06-16T11:15:26.571937+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 60",
+          "meta": {},
+          "ts": "2026-06-16T11:15:26.600592+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 70",
+          "meta": {},
+          "ts": "2026-06-16T11:15:28.828253+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 70",
+          "meta": {},
+          "ts": "2026-06-16T11:15:28.868275+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 80",
+          "meta": {},
+          "ts": "2026-06-16T11:15:30.141806+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 80",
+          "meta": {},
+          "ts": "2026-06-16T11:15:30.191809+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 90",
+          "meta": {},
+          "ts": "2026-06-16T11:15:31.381638+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 90",
+          "meta": {},
+          "ts": "2026-06-16T11:15:31.416957+00:00"
+        },
+        {
+          "role": "user",
+          "content": "soak probe cycle 100",
+          "meta": {},
+          "ts": "2026-06-16T11:15:33.300305+00:00"
+        },
+        {
+          "role": "assistant",
+          "content": "stub reply 100",
+          "meta": {},
+          "ts": "2026-06-16T11:15:33.335712+00:00"
+        }
+      ]
+    },
     {
       "id": "11410214-5b9f-455c-81b8-0ae8f05f1456",
       "title": "audit unique 991122",

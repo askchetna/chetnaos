@@ -1,3 +1,7 @@
 {
-  "statement:general": 4
+  "statement:general": 4,
+  "command:technology": 76,
+  "question:general": 374,
+  "calculation:philosophy": 76,
+  "calculation:general": 74
 }

@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "type": "belief_vs_belief",
+    "belief_a": "Soak validation is easy to verify",
+    "belief_b": "Soak validation is hard to verify",
+    "conflict_score": 60,
+    "reason": "'easy' vs 'hard'",
+    "status": "resolved",
+    "detected_at": "2026-06-16T11:15:17.587687"
+  },
+  {
+    "type": "belief_vs_belief",
+    "belief_a": "Growth is hard with focus",
+    "belief_b": "Soak validation is easy to verify",
+    "conflict_score": 60,
+    "reason": "'easy' vs 'hard'",
+    "status": "resolved",
+    "detected_at": "2026-06-16T11:15:17.587687"
+  },
+  {
+    "type": "belief_vs_belief",
+    "belief_a": "Growth is easy with focus",
+    "belief_b": "Soak validation is hard to verify",
+    "conflict_score": 60,
+    "reason": "'easy' vs 'hard'",
+    "status": "resolved",
+    "detected_at": "2026-06-16T11:15:17.587687"
+  },
+  {
+    "type": "belief_vs_belief",
+    "belief_a": "Growth is easy with focus",
+    "belief_b": "Growth is hard with focus",
+    "conflict_score": 60,
+    "reason": "'easy' vs 'hard'",
+    "status": "resolved",
+    "detected_at": "2026-06-16T11:15:17.587687"
+  }
+]

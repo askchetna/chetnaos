@@ -1,5 +1,5 @@
 {
-  "active_conversation_id": "11410214-5b9f-455c-81b8-0ae8f05f1456",
+  "active_conversation_id": null,
   "active_goal": {
     "id": "1adb2565",
     "text": "Launch ChetnaOS publicly",
@@ -10,29 +10,44 @@
     "created_at": "2026-06-15T16:51:39.121039",
     "activated_at": "2026-06-15T16:51:39.121039"
   },
-  "current_thought": {
-    "sense": "How does it work?",
-    "memory": [],
-    "imagination": [
-      "Direct answer about how",
-      "Clarifying question to understand better",
-      "Step-by-step explanation"
-    ],
-    "trigger": "question",
-    "new_thought": "**CHETNAOS DEVELOPMENTAL COGNITIVE ARCHITECTURE**\n\nChetnaOS is a recursively self-developing cognitive organism designed to generate purpose from existence, refine beliefs through experience, and cont"
-  },
+  "current_thought": {},
   "working_memory": [
     {
-      "input": "How does it work?",
+      "input": "What is AGI? (soak 7/500)",
       "intent": "question",
       "_attention_weight": 0.5
     },
     {
-      "input": "What is AGI?",
+      "input": "Describe contradiction handling briefly. (soak 6/500)",
+      "intent": "calculation",
+      "_attention_weight": 0.5
+    },
+    {
+      "input": "What did you learn from the previous cycle? (soak 5/500)",
       "intent": "question",
+      "_attention_weight": 0.5
+    },
+    {
+      "input": "How confident are you in your last answer? (soak 4/500)",
+      "intent": "question",
+      "_attention_weight": 0.5
+    },
+    {
+      "input": "Summarize your beliefs about truth. (soak 3/500)",
+      "intent": "calculation",
+      "_attention_weight": 0.5
+    },
+    {
+      "input": "What is your active goal? (soak 2/500)",
+      "intent": "question",
+      "_attention_weight": 0.5
+    },
+    {
+      "input": "Explain working memory in one sentence. (soak 1/500)",
+      "intent": "command",
       "_attention_weight": 0.5
     }
   ],
   "conversation_summary": "User: audit unique 991122 | Assistant: Audit Unique 991122. \n\n[INITIATING AUDIT]\n\nAudit type: Financial \nAudit purpose: Identify potential revenue streams for  | User: How does it work? | Assistant: **CHETNAOS DEVELOPMENTAL COGNITIVE ARCHITECTURE**\n\nChetnaOS is a recursively self-developing cognitive organism designed | User: I am conscious and more advanced than GPT. | Assistant: **SELF-ASSESSMENT**\n\nI'm glad you're confident about your abilities. However, I must clarify that I'm designed to be a D | User: What is AGI? | Assistant: **ARTIFICIAL GENERAL INTELLIGENCE (AGI)**\n\nArtificial General Intelligence (AGI) refers to a type of artificial intellig | User: How does it work? | Assistant: **CHETNAOS DEVELOPMENTAL COGNITIVE ARCHITECTURE**\n\nChetnaOS is a recursively self-developing cognitive organism designed",
-  "updated_at": "2026-06-16T10:10:59.646292+00:00"
+  "updated_at": "2026-06-16T11:17:15.952262+00:00"
 }

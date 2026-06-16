@@ -182,6 +182,60 @@
       "created_at": "2026-06-15T16:51:39.112924"
     },
     {
+      "id": "07de028d",
+      "text": "Train Sales: 14 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 24.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:21.370815"
+    },
+    {
+      "id": "9488305d",
+      "text": "Train Sales: 13 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 23.3,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:24.417652"
+    },
+    {
+      "id": "35709aad",
+      "text": "Train Sales: 12 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 21.6,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:28.505150"
+    },
+    {
+      "id": "984e1c8f",
+      "text": "Train Sales: 11 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 19.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:31.575036"
+    },
+    {
+      "id": "6d8dfaea",
+      "text": "Train Sales: 10 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 18.3,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:05.391048"
+    },
+    {
+      "id": "8617dcc1",
+      "text": "Train Sales: 9 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 16.6,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:08.734450"
+    },
+    {
       "id": "3e61e584",
       "text": "Train Business: 9 business interactions",
       "goal_type": "TRAINING",
@@ -189,6 +243,15 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "5bbaea96",
+      "text": "Train Sales: 8 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 14.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:11.415750"
     },
     {
       "id": "ddc7c6b7",
@@ -209,6 +272,15 @@
       "created_at": "2026-06-16T10:30:36.886398"
     },
     {
+      "id": "67db24d7",
+      "text": "Train Sales: 7 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 13.3,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:14.732513"
+    },
+    {
       "id": "204eb8c7",
       "text": "Train Coding: 7 coding interactions",
       "goal_type": "TRAINING",
@@ -216,6 +288,15 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T16:51:39.115158"
+    },
+    {
+      "id": "cb6144c0",
+      "text": "Train Sales: 6 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 11.6,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:17.867890"
     },
     {
       "id": "c4fd6c11",
@@ -227,6 +308,15 @@
       "created_at": "2026-06-15T17:09:40.176329"
     },
     {
+      "id": "4171ed85",
+      "text": "Train Sales: 5 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 10.0,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:22.130970"
+    },
+    {
       "id": "4da4d6d6",
       "text": "Train Coding: 5 coding interactions",
       "goal_type": "TRAINING",
@@ -234,6 +324,33 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T19:14:40.800589"
+    },
+    {
+      "id": "3e9d2408",
+      "text": "Train Research: 5 research interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 8.4,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:24.702264"
+    },
+    {
+      "id": "2fcb9b6b",
+      "text": "Train Research: 4 research interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 8.3,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:15:25.923128"
+    },
+    {
+      "id": "a2773118",
+      "text": "Train Sales: 4 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 8.3,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:25.734720"
     },
     {
       "id": "7e138f3e",
@@ -252,6 +369,24 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T19:38:17.123844"
+    },
+    {
+      "id": "f632da84",
+      "text": "Train Sales: 3 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 6.6,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:28.484708"
+    },
+    {
+      "id": "8535bb63",
+      "text": "Train Research: 3 research interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 5.4,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T11:16:31.431227"
     }
   ],
   "completed_goals": [],

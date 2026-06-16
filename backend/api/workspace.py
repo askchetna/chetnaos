@@ -14,12 +14,15 @@ router = APIRouter()
 async def get_workspace_session():
     persisted = workspace_store.load_session()
     conv_store = get_conversation_store()
-    active_conv = conv_store.get_active()
+    conv_id = persisted.get("active_conversation_id")
+    active_conv = conv_store.get(conv_id) if conv_id else conv_store.get_active()
+    if not active_conv:
+        active_conv = conv_store.get_active()
     rt = get_runtime()
     live = rt.session_snapshot() if rt else {}
     return {
         "active_conversation_id": (
-            persisted.get("active_conversation_id")
+            conv_id
             or (active_conv["id"] if active_conv else None)
         ),
         "active_goal": live.get("active_goal") or persisted.get("active_goal"),

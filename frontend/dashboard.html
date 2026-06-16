@@ -239,7 +239,7 @@
     </div>
     <div class="tb-right">
       <span class="refresh-badge live" id="refresh-badge"><span class="live-dot"></span>Live</span>
-      <a class="back-btn" href="/">← Back to Chat</a>
+      <a class="back-btn" href="/" onclick="sessionStorage.setItem('chetna_restore','1')">← Back to Chat</a>
     </div>
   </header>
 
@@ -592,12 +592,23 @@ function buildBeliefs(d){
   return card("Belief Store","💡",items);
 }
 
+function collectInfluence(d) {
+  let mem = Array.isArray(d.memory_influence) ? d.memory_influence : [];
+  let bel = Array.isArray(d.belief_influence) ? d.belief_influence : [];
+  const ri = d.reasoning_integration || d.cognitive_organs?.reasoning_integration;
+  if (ri && typeof ri === "object") {
+    if (!mem.length && Array.isArray(ri.memory_influence)) mem = ri.memory_influence;
+    if (!bel.length && Array.isArray(ri.belief_influence)) bel = ri.belief_influence;
+  }
+  return { mem, bel };
+}
+
 function buildMemoryInfluence(d){
-  const mem=d.memory_influence||[];
-  const bel=d.belief_influence||[];
+  const { mem, bel } = collectInfluence(d);
+  console.log("DASHBOARD influence", { mem: mem.length, bel: bel.length, keys: Object.keys(d).filter(k => k.includes("influence")) });
   if(!mem.length&&!bel.length) return card("Answer Influence","🔗",`<div class="no-data">No influence logged yet — send a chat message.</div>`);
-  const mrows=mem.map(m=>`<div class="dq-item"><b>Memory</b> ${esc(m.text||"")} <span style="color:var(--muted)">${esc(m.source||"")}</span></div>`).join("");
-  const brows=bel.map(b=>`<div class="dq-item"><b>Belief #${b.id}</b> (${((b.confidence||0)*100).toFixed(0)}%) ${esc(b.text||"")}</div>`).join("");
+  const mrows=mem.map(m=>`<div class="dq-item"><b>Memory</b> ${esc(m.text||String(m))} <span style="color:var(--muted)">${esc(m.source||"")}</span></div>`).join("");
+  const brows=bel.map(b=>`<div class="dq-item"><b>Belief #${b.id ?? b.belief_id ?? "?"}</b> (${((b.confidence||0)*100).toFixed(0)}%) ${esc(b.text||"")}</div>`).join("");
   return card("Answer Influence","🔗",mrows+brows);
 }
 
@@ -675,10 +686,19 @@ function renderDashboard(d){
 
 async function loadDashboard(){
   try{
-    const d=await fetch("/api/dashboard").then(r=>r.json());
+    const [d, ws] = await Promise.all([
+      fetch("/api/dashboard").then(r=>r.json()),
+      fetch("/api/workspace/session").then(r=>r.json()).catch(()=>({})),
+    ]);
     if(d.available===false){
       $("dashboard-grid").innerHTML=`<div style="grid-column:span 3;text-align:center;padding:40px;color:var(--red)">⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}</div>`;
       return;
+    }
+    if (!Array.isArray(d.memory_influence) || !d.memory_influence.length) {
+      d.memory_influence = ws.memory_influence || d.memory_influence || [];
+    }
+    if (!Array.isArray(d.belief_influence) || !d.belief_influence.length) {
+      d.belief_influence = ws.belief_influence || d.belief_influence || [];
     }
     renderDashboard(d);
     const b=$("refresh-badge");

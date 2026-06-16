@@ -292,3 +292,603 @@
 {"timestamp": "2026-06-16T10:32:08.814100", "input": "tell me about yourself", "output": "Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.", "confidence": 0.6, "domain": "general", "cycle": 3}
 {"timestamp": "2026-06-16T10:32:09.471796", "input": "What is AGI?", "output": "STABILITY_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
 {"timestamp": "2026-06-16T10:32:09.640626", "input": "workspace restore probe", "output": "Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.", "confidence": 0.6, "domain": "general", "cycle": 4}
+{"timestamp": "2026-06-16T11:15:17.571715", "input": "Explain working memory in one sentence. (soak 1/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-16T11:15:17.772395", "input": "What is your active goal? (soak 2/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-16T11:15:17.860682", "input": "Summarize your beliefs about truth. (soak 3/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 3}
+{"timestamp": "2026-06-16T11:15:17.957478", "input": "How confident are you in your last answer? (soak 4/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 4}
+{"timestamp": "2026-06-16T11:15:18.072260", "input": "What did you learn from the previous cycle? (soak 5/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 5}
+{"timestamp": "2026-06-16T11:15:18.257690", "input": "Describe contradiction handling briefly. (soak 6/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 6}
+{"timestamp": "2026-06-16T11:15:18.441107", "input": "What is AGI? (soak 7/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 7}
+{"timestamp": "2026-06-16T11:15:18.604663", "input": "How does memory influence your answers? (soak 8/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 8}
+{"timestamp": "2026-06-16T11:15:18.802529", "input": "Explain working memory in one sentence. (soak 9/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 9}
+{"timestamp": "2026-06-16T11:15:18.939635", "input": "What is your active goal? (soak 10/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 10}
+{"timestamp": "2026-06-16T11:15:19.626240", "input": "Summarize your beliefs about truth. (soak 11/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 11}
+{"timestamp": "2026-06-16T11:15:19.735557", "input": "How confident are you in your last answer? (soak 12/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 12}
+{"timestamp": "2026-06-16T11:15:19.835477", "input": "What did you learn from the previous cycle? (soak 13/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 13}
+{"timestamp": "2026-06-16T11:15:19.948301", "input": "Describe contradiction handling briefly. (soak 14/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 14}
+{"timestamp": "2026-06-16T11:15:20.091681", "input": "What is AGI? (soak 15/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 15}
+{"timestamp": "2026-06-16T11:15:20.183514", "input": "How does memory influence your answers? (soak 16/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 16}
+{"timestamp": "2026-06-16T11:15:20.266882", "input": "Explain working memory in one sentence. (soak 17/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 17}
+{"timestamp": "2026-06-16T11:15:20.363044", "input": "What is your active goal? (soak 18/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 18}
+{"timestamp": "2026-06-16T11:15:20.450213", "input": "Summarize your beliefs about truth. (soak 19/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 19}
+{"timestamp": "2026-06-16T11:15:20.580700", "input": "How confident are you in your last answer? (soak 20/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 20}
+{"timestamp": "2026-06-16T11:15:21.066843", "input": "What did you learn from the previous cycle? (soak 21/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 21}
+{"timestamp": "2026-06-16T11:15:21.150165", "input": "Describe contradiction handling briefly. (soak 22/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 22}
+{"timestamp": "2026-06-16T11:15:21.268817", "input": "What is AGI? (soak 23/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 23}
+{"timestamp": "2026-06-16T11:15:21.350163", "input": "How does memory influence your answers? (soak 24/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 24}
+{"timestamp": "2026-06-16T11:15:21.441559", "input": "Explain working memory in one sentence. (soak 25/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 25}
+{"timestamp": "2026-06-16T11:15:21.564498", "input": "What is your active goal? (soak 26/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 26}
+{"timestamp": "2026-06-16T11:15:21.650242", "input": "Summarize your beliefs about truth. (soak 27/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 27}
+{"timestamp": "2026-06-16T11:15:21.750126", "input": "How confident are you in your last answer? (soak 28/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 28}
+{"timestamp": "2026-06-16T11:15:21.831403", "input": "What did you learn from the previous cycle? (soak 29/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 29}
+{"timestamp": "2026-06-16T11:15:21.921939", "input": "Describe contradiction handling briefly. (soak 30/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 30}
+{"timestamp": "2026-06-16T11:15:22.550296", "input": "What is AGI? (soak 31/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 31}
+{"timestamp": "2026-06-16T11:15:22.829051", "input": "How does memory influence your answers? (soak 32/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 32}
+{"timestamp": "2026-06-16T11:15:22.916935", "input": "Explain working memory in one sentence. (soak 33/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 33}
+{"timestamp": "2026-06-16T11:15:23.016900", "input": "What is your active goal? (soak 34/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 34}
+{"timestamp": "2026-06-16T11:15:23.102209", "input": "Summarize your beliefs about truth. (soak 35/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 35}
+{"timestamp": "2026-06-16T11:15:23.183506", "input": "How confident are you in your last answer? (soak 36/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 36}
+{"timestamp": "2026-06-16T11:15:23.283798", "input": "What did you learn from the previous cycle? (soak 37/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 37}
+{"timestamp": "2026-06-16T11:15:23.366914", "input": "Describe contradiction handling briefly. (soak 38/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 38}
+{"timestamp": "2026-06-16T11:15:23.450221", "input": "What is AGI? (soak 39/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 39}
+{"timestamp": "2026-06-16T11:15:23.583590", "input": "How does memory influence your answers? (soak 40/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 40}
+{"timestamp": "2026-06-16T11:15:23.933584", "input": "Explain working memory in one sentence. (soak 41/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 41}
+{"timestamp": "2026-06-16T11:15:24.033604", "input": "What is your active goal? (soak 42/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 42}
+{"timestamp": "2026-06-16T11:15:24.150231", "input": "Summarize your beliefs about truth. (soak 43/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 43}
+{"timestamp": "2026-06-16T11:15:24.229923", "input": "How confident are you in your last answer? (soak 44/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 44}
+{"timestamp": "2026-06-16T11:15:24.306350", "input": "What did you learn from the previous cycle? (soak 45/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 45}
+{"timestamp": "2026-06-16T11:15:24.396051", "input": "Describe contradiction handling briefly. (soak 46/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 46}
+{"timestamp": "2026-06-16T11:15:24.504219", "input": "What is AGI? (soak 47/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 47}
+{"timestamp": "2026-06-16T11:15:24.602235", "input": "How does memory influence your answers? (soak 48/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 48}
+{"timestamp": "2026-06-16T11:15:24.683628", "input": "Explain working memory in one sentence. (soak 49/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 49}
+{"timestamp": "2026-06-16T11:15:24.766912", "input": "What is your active goal? (soak 50/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 50}
+{"timestamp": "2026-06-16T11:15:25.248230", "input": "Summarize your beliefs about truth. (soak 51/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 51}
+{"timestamp": "2026-06-16T11:15:25.350298", "input": "How confident are you in your last answer? (soak 52/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 52}
+{"timestamp": "2026-06-16T11:15:25.439285", "input": "What did you learn from the previous cycle? (soak 53/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 53}
+{"timestamp": "2026-06-16T11:15:25.565090", "input": "Describe contradiction handling briefly. (soak 54/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 54}
+{"timestamp": "2026-06-16T11:15:25.652214", "input": "What is AGI? (soak 55/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 55}
+{"timestamp": "2026-06-16T11:15:25.767192", "input": "How does memory influence your answers? (soak 56/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 56}
+{"timestamp": "2026-06-16T11:15:25.903811", "input": "Explain working memory in one sentence. (soak 57/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 57}
+{"timestamp": "2026-06-16T11:15:26.016286", "input": "What is your active goal? (soak 58/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 58}
+{"timestamp": "2026-06-16T11:15:26.148528", "input": "Summarize your beliefs about truth. (soak 59/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 59}
+{"timestamp": "2026-06-16T11:15:26.243892", "input": "How confident are you in your last answer? (soak 60/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 60}
+{"timestamp": "2026-06-16T11:15:26.667616", "input": "What did you learn from the previous cycle? (soak 61/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 61}
+{"timestamp": "2026-06-16T11:15:26.753200", "input": "Describe contradiction handling briefly. (soak 62/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 62}
+{"timestamp": "2026-06-16T11:15:26.864645", "input": "What is AGI? (soak 63/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 63}
+{"timestamp": "2026-06-16T11:15:26.955111", "input": "How does memory influence your answers? (soak 64/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 64}
+{"timestamp": "2026-06-16T11:15:27.077378", "input": "Explain working memory in one sentence. (soak 65/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 65}
+{"timestamp": "2026-06-16T11:15:27.153044", "input": "What is your active goal? (soak 66/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 66}
+{"timestamp": "2026-06-16T11:15:27.234435", "input": "Summarize your beliefs about truth. (soak 67/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 67}
+{"timestamp": "2026-06-16T11:15:28.386861", "input": "How confident are you in your last answer? (soak 68/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 68}
+{"timestamp": "2026-06-16T11:15:28.483017", "input": "What did you learn from the previous cycle? (soak 69/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 69}
+{"timestamp": "2026-06-16T11:15:28.604463", "input": "Describe contradiction handling briefly. (soak 70/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 70}
+{"timestamp": "2026-06-16T11:15:28.929254", "input": "What is AGI? (soak 71/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 71}
+{"timestamp": "2026-06-16T11:15:29.075553", "input": "How does memory influence your answers? (soak 72/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 72}
+{"timestamp": "2026-06-16T11:15:29.196526", "input": "Explain working memory in one sentence. (soak 73/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 73}
+{"timestamp": "2026-06-16T11:15:29.302371", "input": "What is your active goal? (soak 74/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 74}
+{"timestamp": "2026-06-16T11:15:29.385726", "input": "Summarize your beliefs about truth. (soak 75/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 75}
+{"timestamp": "2026-06-16T11:15:29.467035", "input": "How confident are you in your last answer? (soak 76/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 76}
+{"timestamp": "2026-06-16T11:15:29.583872", "input": "What did you learn from the previous cycle? (soak 77/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 77}
+{"timestamp": "2026-06-16T11:15:29.695104", "input": "Describe contradiction handling briefly. (soak 78/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 78}
+{"timestamp": "2026-06-16T11:15:29.780168", "input": "What is AGI? (soak 79/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 79}
+{"timestamp": "2026-06-16T11:15:29.869128", "input": "How does memory influence your answers? (soak 80/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 80}
+{"timestamp": "2026-06-16T11:15:30.252317", "input": "Explain working memory in one sentence. (soak 81/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 81}
+{"timestamp": "2026-06-16T11:15:30.336624", "input": "What is your active goal? (soak 82/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 82}
+{"timestamp": "2026-06-16T11:15:30.430897", "input": "Summarize your beliefs about truth. (soak 83/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 83}
+{"timestamp": "2026-06-16T11:15:30.519066", "input": "How confident are you in your last answer? (soak 84/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 84}
+{"timestamp": "2026-06-16T11:15:30.621056", "input": "What did you learn from the previous cycle? (soak 85/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 85}
+{"timestamp": "2026-06-16T11:15:30.719045", "input": "Describe contradiction handling briefly. (soak 86/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 86}
+{"timestamp": "2026-06-16T11:15:30.808551", "input": "What is AGI? (soak 87/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 87}
+{"timestamp": "2026-06-16T11:15:30.904329", "input": "How does memory influence your answers? (soak 88/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 88}
+{"timestamp": "2026-06-16T11:15:30.983894", "input": "Explain working memory in one sentence. (soak 89/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 89}
+{"timestamp": "2026-06-16T11:15:31.067183", "input": "What is your active goal? (soak 90/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 90}
+{"timestamp": "2026-06-16T11:15:31.464993", "input": "Summarize your beliefs about truth. (soak 91/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 91}
+{"timestamp": "2026-06-16T11:15:31.560418", "input": "How confident are you in your last answer? (soak 92/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 92}
+{"timestamp": "2026-06-16T11:15:31.678604", "input": "What did you learn from the previous cycle? (soak 93/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 93}
+{"timestamp": "2026-06-16T11:15:31.788720", "input": "Describe contradiction handling briefly. (soak 94/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 94}
+{"timestamp": "2026-06-16T11:15:31.875618", "input": "What is AGI? (soak 95/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 95}
+{"timestamp": "2026-06-16T11:15:31.950387", "input": "How does memory influence your answers? (soak 96/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 96}
+{"timestamp": "2026-06-16T11:15:32.035766", "input": "Explain working memory in one sentence. (soak 97/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 97}
+{"timestamp": "2026-06-16T11:15:32.143041", "input": "What is your active goal? (soak 98/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 98}
+{"timestamp": "2026-06-16T11:15:32.255853", "input": "Summarize your beliefs about truth. (soak 99/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 99}
+{"timestamp": "2026-06-16T11:15:32.886560", "input": "How confident are you in your last answer? (soak 100/100)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 100}
+{"timestamp": "2026-06-16T11:16:03.837519", "input": "Explain working memory in one sentence. (soak 1/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-16T11:16:03.936172", "input": "What is your active goal? (soak 2/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-16T11:16:04.024526", "input": "Summarize your beliefs about truth. (soak 3/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 3}
+{"timestamp": "2026-06-16T11:16:04.105097", "input": "How confident are you in your last answer? (soak 4/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 4}
+{"timestamp": "2026-06-16T11:16:04.194930", "input": "What did you learn from the previous cycle? (soak 5/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 5}
+{"timestamp": "2026-06-16T11:16:04.282480", "input": "Describe contradiction handling briefly. (soak 6/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 6}
+{"timestamp": "2026-06-16T11:16:04.365708", "input": "What is AGI? (soak 7/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 7}
+{"timestamp": "2026-06-16T11:16:04.453477", "input": "How does memory influence your answers? (soak 8/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 8}
+{"timestamp": "2026-06-16T11:16:04.535492", "input": "Explain working memory in one sentence. (soak 9/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 9}
+{"timestamp": "2026-06-16T11:16:04.613301", "input": "What is your active goal? (soak 10/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 10}
+{"timestamp": "2026-06-16T11:16:05.039373", "input": "Summarize your beliefs about truth. (soak 11/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 11}
+{"timestamp": "2026-06-16T11:16:05.166527", "input": "How confident are you in your last answer? (soak 12/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 12}
+{"timestamp": "2026-06-16T11:16:05.282523", "input": "What did you learn from the previous cycle? (soak 13/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 13}
+{"timestamp": "2026-06-16T11:16:05.371461", "input": "Describe contradiction handling briefly. (soak 14/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 14}
+{"timestamp": "2026-06-16T11:16:05.471966", "input": "What is AGI? (soak 15/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 15}
+{"timestamp": "2026-06-16T11:16:05.568997", "input": "How does memory influence your answers? (soak 16/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 16}
+{"timestamp": "2026-06-16T11:16:05.651209", "input": "Explain working memory in one sentence. (soak 17/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 17}
+{"timestamp": "2026-06-16T11:16:05.729653", "input": "What is your active goal? (soak 18/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 18}
+{"timestamp": "2026-06-16T11:16:05.806726", "input": "Summarize your beliefs about truth. (soak 19/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 19}
+{"timestamp": "2026-06-16T11:16:05.890078", "input": "How confident are you in your last answer? (soak 20/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 20}
+{"timestamp": "2026-06-16T11:16:06.365794", "input": "What did you learn from the previous cycle? (soak 21/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 21}
+{"timestamp": "2026-06-16T11:16:06.477815", "input": "Describe contradiction handling briefly. (soak 22/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 22}
+{"timestamp": "2026-06-16T11:16:06.582394", "input": "What is AGI? (soak 23/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 23}
+{"timestamp": "2026-06-16T11:16:06.675197", "input": "How does memory influence your answers? (soak 24/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 24}
+{"timestamp": "2026-06-16T11:16:06.761399", "input": "Explain working memory in one sentence. (soak 25/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 25}
+{"timestamp": "2026-06-16T11:16:06.851022", "input": "What is your active goal? (soak 26/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 26}
+{"timestamp": "2026-06-16T11:16:06.937839", "input": "Summarize your beliefs about truth. (soak 27/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 27}
+{"timestamp": "2026-06-16T11:16:07.111211", "input": "How confident are you in your last answer? (soak 28/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 28}
+{"timestamp": "2026-06-16T11:16:07.203181", "input": "What did you learn from the previous cycle? (soak 29/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 29}
+{"timestamp": "2026-06-16T11:16:07.288544", "input": "Describe contradiction handling briefly. (soak 30/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 30}
+{"timestamp": "2026-06-16T11:16:08.193918", "input": "What is AGI? (soak 31/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 31}
+{"timestamp": "2026-06-16T11:16:08.267991", "input": "How does memory influence your answers? (soak 32/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 32}
+{"timestamp": "2026-06-16T11:16:08.366189", "input": "Explain working memory in one sentence. (soak 33/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 33}
+{"timestamp": "2026-06-16T11:16:08.453450", "input": "What is your active goal? (soak 34/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 34}
+{"timestamp": "2026-06-16T11:16:08.557844", "input": "Summarize your beliefs about truth. (soak 35/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 35}
+{"timestamp": "2026-06-16T11:16:08.649030", "input": "How confident are you in your last answer? (soak 36/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 36}
+{"timestamp": "2026-06-16T11:16:08.717720", "input": "What did you learn from the previous cycle? (soak 37/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 37}
+{"timestamp": "2026-06-16T11:16:08.805048", "input": "Describe contradiction handling briefly. (soak 38/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 38}
+{"timestamp": "2026-06-16T11:16:08.897327", "input": "What is AGI? (soak 39/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 39}
+{"timestamp": "2026-06-16T11:16:08.993004", "input": "How does memory influence your answers? (soak 40/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 40}
+{"timestamp": "2026-06-16T11:16:09.403073", "input": "Explain working memory in one sentence. (soak 41/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 41}
+{"timestamp": "2026-06-16T11:16:09.493056", "input": "What is your active goal? (soak 42/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 42}
+{"timestamp": "2026-06-16T11:16:09.612195", "input": "Summarize your beliefs about truth. (soak 43/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 43}
+{"timestamp": "2026-06-16T11:16:09.686540", "input": "How confident are you in your last answer? (soak 44/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 44}
+{"timestamp": "2026-06-16T11:16:09.782540", "input": "What did you learn from the previous cycle? (soak 45/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 45}
+{"timestamp": "2026-06-16T11:16:09.867745", "input": "Describe contradiction handling briefly. (soak 46/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 46}
+{"timestamp": "2026-06-16T11:16:09.951159", "input": "What is AGI? (soak 47/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 47}
+{"timestamp": "2026-06-16T11:16:10.109731", "input": "How does memory influence your answers? (soak 48/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 48}
+{"timestamp": "2026-06-16T11:16:10.186511", "input": "Explain working memory in one sentence. (soak 49/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 49}
+{"timestamp": "2026-06-16T11:16:10.276847", "input": "What is your active goal? (soak 50/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 50}
+{"timestamp": "2026-06-16T11:16:10.615877", "input": "Summarize your beliefs about truth. (soak 51/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 51}
+{"timestamp": "2026-06-16T11:16:10.695771", "input": "How confident are you in your last answer? (soak 52/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 52}
+{"timestamp": "2026-06-16T11:16:10.776407", "input": "What did you learn from the previous cycle? (soak 53/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 53}
+{"timestamp": "2026-06-16T11:16:10.861287", "input": "Describe contradiction handling briefly. (soak 54/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 54}
+{"timestamp": "2026-06-16T11:16:10.949090", "input": "What is AGI? (soak 55/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 55}
+{"timestamp": "2026-06-16T11:16:11.060399", "input": "How does memory influence your answers? (soak 56/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 56}
+{"timestamp": "2026-06-16T11:16:11.149085", "input": "Explain working memory in one sentence. (soak 57/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 57}
+{"timestamp": "2026-06-16T11:16:11.232381", "input": "What is your active goal? (soak 58/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 58}
+{"timestamp": "2026-06-16T11:16:11.317749", "input": "Summarize your beliefs about truth. (soak 59/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 59}
+{"timestamp": "2026-06-16T11:16:11.401120", "input": "How confident are you in your last answer? (soak 60/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 60}
+{"timestamp": "2026-06-16T11:16:11.767815", "input": "What did you learn from the previous cycle? (soak 61/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 61}
+{"timestamp": "2026-06-16T11:16:11.851107", "input": "Describe contradiction handling briefly. (soak 62/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 62}
+{"timestamp": "2026-06-16T11:16:11.949224", "input": "What is AGI? (soak 63/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 63}
+{"timestamp": "2026-06-16T11:16:12.065990", "input": "How does memory influence your answers? (soak 64/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 64}
+{"timestamp": "2026-06-16T11:16:12.151178", "input": "Explain working memory in one sentence. (soak 65/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 65}
+{"timestamp": "2026-06-16T11:16:12.234421", "input": "What is your active goal? (soak 66/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 66}
+{"timestamp": "2026-06-16T11:16:12.315761", "input": "Summarize your beliefs about truth. (soak 67/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 67}
+{"timestamp": "2026-06-16T11:16:12.387812", "input": "How confident are you in your last answer? (soak 68/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 68}
+{"timestamp": "2026-06-16T11:16:12.526149", "input": "What did you learn from the previous cycle? (soak 69/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 69}
+{"timestamp": "2026-06-16T11:16:12.601083", "input": "Describe contradiction handling briefly. (soak 70/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 70}
+{"timestamp": "2026-06-16T11:16:12.926208", "input": "What is AGI? (soak 71/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 71}
+{"timestamp": "2026-06-16T11:16:13.586621", "input": "How does memory influence your answers? (soak 72/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 72}
+{"timestamp": "2026-06-16T11:16:13.951694", "input": "Explain working memory in one sentence. (soak 73/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 73}
+{"timestamp": "2026-06-16T11:16:14.070035", "input": "What is your active goal? (soak 74/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 74}
+{"timestamp": "2026-06-16T11:16:14.163977", "input": "Summarize your beliefs about truth. (soak 75/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 75}
+{"timestamp": "2026-06-16T11:16:14.247002", "input": "How confident are you in your last answer? (soak 76/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 76}
+{"timestamp": "2026-06-16T11:16:14.317776", "input": "What did you learn from the previous cycle? (soak 77/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 77}
+{"timestamp": "2026-06-16T11:16:14.419854", "input": "Describe contradiction handling briefly. (soak 78/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 78}
+{"timestamp": "2026-06-16T11:16:14.627936", "input": "What is AGI? (soak 79/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 79}
+{"timestamp": "2026-06-16T11:16:14.717816", "input": "How does memory influence your answers? (soak 80/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 80}
+{"timestamp": "2026-06-16T11:16:15.225200", "input": "Explain working memory in one sentence. (soak 81/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 81}
+{"timestamp": "2026-06-16T11:16:15.317827", "input": "What is your active goal? (soak 82/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 82}
+{"timestamp": "2026-06-16T11:16:15.384562", "input": "Summarize your beliefs about truth. (soak 83/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 83}
+{"timestamp": "2026-06-16T11:16:15.484509", "input": "How confident are you in your last answer? (soak 84/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 84}
+{"timestamp": "2026-06-16T11:16:15.584486", "input": "What did you learn from the previous cycle? (soak 85/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 85}
+{"timestamp": "2026-06-16T11:16:15.676987", "input": "Describe contradiction handling briefly. (soak 86/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 86}
+{"timestamp": "2026-06-16T11:16:15.764009", "input": "What is AGI? (soak 87/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 87}
+{"timestamp": "2026-06-16T11:16:15.853167", "input": "How does memory influence your answers? (soak 88/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 88}
+{"timestamp": "2026-06-16T11:16:16.000403", "input": "Explain working memory in one sentence. (soak 89/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 89}
+{"timestamp": "2026-06-16T11:16:16.135655", "input": "What is your active goal? (soak 90/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 90}
+{"timestamp": "2026-06-16T11:16:16.459995", "input": "Summarize your beliefs about truth. (soak 91/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 91}
+{"timestamp": "2026-06-16T11:16:16.584635", "input": "How confident are you in your last answer? (soak 92/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 92}
+{"timestamp": "2026-06-16T11:16:16.667833", "input": "What did you learn from the previous cycle? (soak 93/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 93}
+{"timestamp": "2026-06-16T11:16:16.751196", "input": "Describe contradiction handling briefly. (soak 94/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 94}
+{"timestamp": "2026-06-16T11:16:16.834533", "input": "What is AGI? (soak 95/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 95}
+{"timestamp": "2026-06-16T11:16:16.923819", "input": "How does memory influence your answers? (soak 96/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 96}
+{"timestamp": "2026-06-16T11:16:17.021976", "input": "Explain working memory in one sentence. (soak 97/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 97}
+{"timestamp": "2026-06-16T11:16:17.122034", "input": "What is your active goal? (soak 98/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 98}
+{"timestamp": "2026-06-16T11:16:17.203300", "input": "Summarize your beliefs about truth. (soak 99/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 99}
+{"timestamp": "2026-06-16T11:16:17.286628", "input": "How confident are you in your last answer? (soak 100/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 100}
+{"timestamp": "2026-06-16T11:16:17.665894", "input": "What did you learn from the previous cycle? (soak 101/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 101}
+{"timestamp": "2026-06-16T11:16:17.753355", "input": "Describe contradiction handling briefly. (soak 102/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 102}
+{"timestamp": "2026-06-16T11:16:17.853228", "input": "What is AGI? (soak 103/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 103}
+{"timestamp": "2026-06-16T11:16:18.573411", "input": "How does memory influence your answers? (soak 104/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 104}
+{"timestamp": "2026-06-16T11:16:18.667925", "input": "Explain working memory in one sentence. (soak 105/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 105}
+{"timestamp": "2026-06-16T11:16:18.764205", "input": "What is your active goal? (soak 106/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 106}
+{"timestamp": "2026-06-16T11:16:18.867968", "input": "Summarize your beliefs about truth. (soak 107/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 107}
+{"timestamp": "2026-06-16T11:16:18.969862", "input": "How confident are you in your last answer? (soak 108/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 108}
+{"timestamp": "2026-06-16T11:16:19.240737", "input": "What did you learn from the previous cycle? (soak 109/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 109}
+{"timestamp": "2026-06-16T11:16:19.422120", "input": "Describe contradiction handling briefly. (soak 110/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 110}
+{"timestamp": "2026-06-16T11:16:20.076010", "input": "What is AGI? (soak 111/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 111}
+{"timestamp": "2026-06-16T11:16:20.318094", "input": "How does memory influence your answers? (soak 112/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 112}
+{"timestamp": "2026-06-16T11:16:20.539217", "input": "Explain working memory in one sentence. (soak 113/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 113}
+{"timestamp": "2026-06-16T11:16:20.816236", "input": "What is your active goal? (soak 114/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 114}
+{"timestamp": "2026-06-16T11:16:20.916106", "input": "Summarize your beliefs about truth. (soak 115/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 115}
+{"timestamp": "2026-06-16T11:16:21.002030", "input": "How confident are you in your last answer? (soak 116/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 116}
+{"timestamp": "2026-06-16T11:16:21.104278", "input": "What did you learn from the previous cycle? (soak 117/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 117}
+{"timestamp": "2026-06-16T11:16:21.217915", "input": "Describe contradiction handling briefly. (soak 118/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 118}
+{"timestamp": "2026-06-16T11:16:21.305316", "input": "What is AGI? (soak 119/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 119}
+{"timestamp": "2026-06-16T11:16:21.401317", "input": "How does memory influence your answers? (soak 120/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 120}
+{"timestamp": "2026-06-16T11:16:21.754305", "input": "Explain working memory in one sentence. (soak 121/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 121}
+{"timestamp": "2026-06-16T11:16:21.834581", "input": "What is your active goal? (soak 122/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 122}
+{"timestamp": "2026-06-16T11:16:21.928625", "input": "Summarize your beliefs about truth. (soak 123/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 123}
+{"timestamp": "2026-06-16T11:16:22.017995", "input": "How confident are you in your last answer? (soak 124/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 124}
+{"timestamp": "2026-06-16T11:16:22.109829", "input": "What did you learn from the previous cycle? (soak 125/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 125}
+{"timestamp": "2026-06-16T11:16:22.228003", "input": "Describe contradiction handling briefly. (soak 126/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 126}
+{"timestamp": "2026-06-16T11:16:22.301235", "input": "What is AGI? (soak 127/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 127}
+{"timestamp": "2026-06-16T11:16:22.384561", "input": "How does memory influence your answers? (soak 128/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 128}
+{"timestamp": "2026-06-16T11:16:22.470018", "input": "Explain working memory in one sentence. (soak 129/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 129}
+{"timestamp": "2026-06-16T11:16:22.553324", "input": "What is your active goal? (soak 130/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 130}
+{"timestamp": "2026-06-16T11:16:22.917917", "input": "Summarize your beliefs about truth. (soak 131/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 131}
+{"timestamp": "2026-06-16T11:16:23.005304", "input": "How confident are you in your last answer? (soak 132/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 132}
+{"timestamp": "2026-06-16T11:16:23.084687", "input": "What did you learn from the previous cycle? (soak 133/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 133}
+{"timestamp": "2026-06-16T11:16:23.203419", "input": "Describe contradiction handling briefly. (soak 134/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 134}
+{"timestamp": "2026-06-16T11:16:23.282601", "input": "What is AGI? (soak 135/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 135}
+{"timestamp": "2026-06-16T11:16:23.369139", "input": "How does memory influence your answers? (soak 136/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 136}
+{"timestamp": "2026-06-16T11:16:23.459281", "input": "Explain working memory in one sentence. (soak 137/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 137}
+{"timestamp": "2026-06-16T11:16:24.343059", "input": "What is your active goal? (soak 138/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 138}
+{"timestamp": "2026-06-16T11:16:24.435056", "input": "Summarize your beliefs about truth. (soak 139/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 139}
+{"timestamp": "2026-06-16T11:16:24.517951", "input": "How confident are you in your last answer? (soak 140/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 140}
+{"timestamp": "2026-06-16T11:16:24.864294", "input": "What did you learn from the previous cycle? (soak 141/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 141}
+{"timestamp": "2026-06-16T11:16:24.949323", "input": "Describe contradiction handling briefly. (soak 142/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 142}
+{"timestamp": "2026-06-16T11:16:25.051393", "input": "What is AGI? (soak 143/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 143}
+{"timestamp": "2026-06-16T11:16:25.330336", "input": "How does memory influence your answers? (soak 144/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 144}
+{"timestamp": "2026-06-16T11:16:25.434688", "input": "Explain working memory in one sentence. (soak 145/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 145}
+{"timestamp": "2026-06-16T11:16:25.518038", "input": "What is your active goal? (soak 146/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 146}
+{"timestamp": "2026-06-16T11:16:25.609335", "input": "Summarize your beliefs about truth. (soak 147/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 147}
+{"timestamp": "2026-06-16T11:16:25.719993", "input": "How confident are you in your last answer? (soak 148/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 148}
+{"timestamp": "2026-06-16T11:16:25.851895", "input": "What did you learn from the previous cycle? (soak 149/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 149}
+{"timestamp": "2026-06-16T11:16:25.940605", "input": "Describe contradiction handling briefly. (soak 150/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 150}
+{"timestamp": "2026-06-16T11:16:26.462483", "input": "What is AGI? (soak 151/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 151}
+{"timestamp": "2026-06-16T11:16:26.618059", "input": "How does memory influence your answers? (soak 152/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 152}
+{"timestamp": "2026-06-16T11:16:26.734733", "input": "Explain working memory in one sentence. (soak 153/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 153}
+{"timestamp": "2026-06-16T11:16:26.818024", "input": "What is your active goal? (soak 154/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 154}
+{"timestamp": "2026-06-16T11:16:26.884714", "input": "Summarize your beliefs about truth. (soak 155/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 155}
+{"timestamp": "2026-06-16T11:16:26.984688", "input": "How confident are you in your last answer? (soak 156/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 156}
+{"timestamp": "2026-06-16T11:16:27.053037", "input": "What did you learn from the previous cycle? (soak 157/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 157}
+{"timestamp": "2026-06-16T11:16:27.151854", "input": "Describe contradiction handling briefly. (soak 158/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 158}
+{"timestamp": "2026-06-16T11:16:27.257373", "input": "What is AGI? (soak 159/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 159}
+{"timestamp": "2026-06-16T11:16:27.332658", "input": "How does memory influence your answers? (soak 160/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 160}
+{"timestamp": "2026-06-16T11:16:27.686690", "input": "Explain working memory in one sentence. (soak 161/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 161}
+{"timestamp": "2026-06-16T11:16:27.768004", "input": "What is your active goal? (soak 162/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 162}
+{"timestamp": "2026-06-16T11:16:27.861424", "input": "Summarize your beliefs about truth. (soak 163/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 163}
+{"timestamp": "2026-06-16T11:16:27.936754", "input": "How confident are you in your last answer? (soak 164/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 164}
+{"timestamp": "2026-06-16T11:16:28.018052", "input": "What did you learn from the previous cycle? (soak 165/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 165}
+{"timestamp": "2026-06-16T11:16:28.116033", "input": "Describe contradiction handling briefly. (soak 166/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 166}
+{"timestamp": "2026-06-16T11:16:28.226081", "input": "What is AGI? (soak 167/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 167}
+{"timestamp": "2026-06-16T11:16:28.301356", "input": "How does memory influence your answers? (soak 168/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 168}
+{"timestamp": "2026-06-16T11:16:28.388756", "input": "Explain working memory in one sentence. (soak 169/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 169}
+{"timestamp": "2026-06-16T11:16:28.475648", "input": "What is your active goal? (soak 170/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 170}
+{"timestamp": "2026-06-16T11:16:28.816306", "input": "Summarize your beliefs about truth. (soak 171/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 171}
+{"timestamp": "2026-06-16T11:16:28.909927", "input": "How confident are you in your last answer? (soak 172/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 172}
+{"timestamp": "2026-06-16T11:16:28.988683", "input": "What did you learn from the previous cycle? (soak 173/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 173}
+{"timestamp": "2026-06-16T11:16:29.072117", "input": "Describe contradiction handling briefly. (soak 174/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 174}
+{"timestamp": "2026-06-16T11:16:29.859537", "input": "What is AGI? (soak 175/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 175}
+{"timestamp": "2026-06-16T11:16:30.273214", "input": "How does memory influence your answers? (soak 176/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 176}
+{"timestamp": "2026-06-16T11:16:30.355250", "input": "Explain working memory in one sentence. (soak 177/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 177}
+{"timestamp": "2026-06-16T11:16:30.435044", "input": "What is your active goal? (soak 178/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 178}
+{"timestamp": "2026-06-16T11:16:30.518080", "input": "Summarize your beliefs about truth. (soak 179/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 179}
+{"timestamp": "2026-06-16T11:16:30.598631", "input": "How confident are you in your last answer? (soak 180/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 180}
+{"timestamp": "2026-06-16T11:16:30.951385", "input": "What did you learn from the previous cycle? (soak 181/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 181}
+{"timestamp": "2026-06-16T11:16:31.032740", "input": "Describe contradiction handling briefly. (soak 182/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 182}
+{"timestamp": "2026-06-16T11:16:31.118130", "input": "What is AGI? (soak 183/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 183}
+{"timestamp": "2026-06-16T11:16:31.249494", "input": "How does memory influence your answers? (soak 184/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 184}
+{"timestamp": "2026-06-16T11:16:31.331969", "input": "Explain working memory in one sentence. (soak 185/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 185}
+{"timestamp": "2026-06-16T11:16:31.416154", "input": "What is your active goal? (soak 186/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 186}
+{"timestamp": "2026-06-16T11:16:31.497827", "input": "Summarize your beliefs about truth. (soak 187/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 187}
+{"timestamp": "2026-06-16T11:16:31.576642", "input": "How confident are you in your last answer? (soak 188/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 188}
+{"timestamp": "2026-06-16T11:16:31.693371", "input": "What did you learn from the previous cycle? (soak 189/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 189}
+{"timestamp": "2026-06-16T11:16:31.782655", "input": "Describe contradiction handling briefly. (soak 190/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 190}
+{"timestamp": "2026-06-16T11:16:32.101445", "input": "What is AGI? (soak 191/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 191}
+{"timestamp": "2026-06-16T11:16:32.203508", "input": "How does memory influence your answers? (soak 192/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 192}
+{"timestamp": "2026-06-16T11:16:32.301450", "input": "Explain working memory in one sentence. (soak 193/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 193}
+{"timestamp": "2026-06-16T11:16:32.382739", "input": "What is your active goal? (soak 194/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 194}
+{"timestamp": "2026-06-16T11:16:32.461456", "input": "Summarize your beliefs about truth. (soak 195/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 195}
+{"timestamp": "2026-06-16T11:16:32.536805", "input": "How confident are you in your last answer? (soak 196/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 196}
+{"timestamp": "2026-06-16T11:16:32.618071", "input": "What did you learn from the previous cycle? (soak 197/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 197}
+{"timestamp": "2026-06-16T11:16:32.732787", "input": "Describe contradiction handling briefly. (soak 198/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 198}
+{"timestamp": "2026-06-16T11:16:32.851496", "input": "What is AGI? (soak 199/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 199}
+{"timestamp": "2026-06-16T11:16:32.938278", "input": "How does memory influence your answers? (soak 200/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 200}
+{"timestamp": "2026-06-16T11:16:33.284771", "input": "Explain working memory in one sentence. (soak 201/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 201}
+{"timestamp": "2026-06-16T11:16:33.368192", "input": "What is your active goal? (soak 202/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 202}
+{"timestamp": "2026-06-16T11:16:33.453549", "input": "Summarize your beliefs about truth. (soak 203/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 203}
+{"timestamp": "2026-06-16T11:16:33.545376", "input": "How confident are you in your last answer? (soak 204/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 204}
+{"timestamp": "2026-06-16T11:16:33.620322", "input": "What did you learn from the previous cycle? (soak 205/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 205}
+{"timestamp": "2026-06-16T11:16:33.749470", "input": "Describe contradiction handling briefly. (soak 206/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 206}
+{"timestamp": "2026-06-16T11:16:33.831993", "input": "What is AGI? (soak 207/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 207}
+{"timestamp": "2026-06-16T11:16:33.903601", "input": "How does memory influence your answers? (soak 208/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 208}
+{"timestamp": "2026-06-16T11:16:33.987043", "input": "Explain working memory in one sentence. (soak 209/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 209}
+{"timestamp": "2026-06-16T11:16:34.068203", "input": "What is your active goal? (soak 210/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 210}
+{"timestamp": "2026-06-16T11:16:34.401471", "input": "Summarize your beliefs about truth. (soak 211/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 211}
+{"timestamp": "2026-06-16T11:16:34.484933", "input": "How confident are you in your last answer? (soak 212/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 212}
+{"timestamp": "2026-06-16T11:16:34.568207", "input": "What did you learn from the previous cycle? (soak 213/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 213}
+{"timestamp": "2026-06-16T11:16:34.677840", "input": "Describe contradiction handling briefly. (soak 214/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 214}
+{"timestamp": "2026-06-16T11:16:35.532874", "input": "What is AGI? (soak 215/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 215}
+{"timestamp": "2026-06-16T11:16:35.690905", "input": "How does memory influence your answers? (soak 216/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 216}
+{"timestamp": "2026-06-16T11:16:35.784958", "input": "Explain working memory in one sentence. (soak 217/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 217}
+{"timestamp": "2026-06-16T11:16:35.876388", "input": "What is your active goal? (soak 218/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 218}
+{"timestamp": "2026-06-16T11:16:35.955668", "input": "Summarize your beliefs about truth. (soak 219/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 219}
+{"timestamp": "2026-06-16T11:16:36.044063", "input": "How confident are you in your last answer? (soak 220/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 220}
+{"timestamp": "2026-06-16T11:16:36.386837", "input": "What did you learn from the previous cycle? (soak 221/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 221}
+{"timestamp": "2026-06-16T11:16:36.482897", "input": "Describe contradiction handling briefly. (soak 222/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 222}
+{"timestamp": "2026-06-16T11:16:36.572392", "input": "What is AGI? (soak 223/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 223}
+{"timestamp": "2026-06-16T11:16:36.672272", "input": "How does memory influence your answers? (soak 224/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 224}
+{"timestamp": "2026-06-16T11:16:36.766185", "input": "Explain working memory in one sentence. (soak 225/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 225}
+{"timestamp": "2026-06-16T11:16:36.852260", "input": "What is your active goal? (soak 226/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 226}
+{"timestamp": "2026-06-16T11:16:36.933030", "input": "Summarize your beliefs about truth. (soak 227/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 227}
+{"timestamp": "2026-06-16T11:16:37.022243", "input": "How confident are you in your last answer? (soak 228/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 228}
+{"timestamp": "2026-06-16T11:16:37.101854", "input": "What did you learn from the previous cycle? (soak 229/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 229}
+{"timestamp": "2026-06-16T11:16:37.203580", "input": "Describe contradiction handling briefly. (soak 230/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 230}
+{"timestamp": "2026-06-16T11:16:37.520148", "input": "What is AGI? (soak 231/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 231}
+{"timestamp": "2026-06-16T11:16:37.611539", "input": "How does memory influence your answers? (soak 232/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 232}
+{"timestamp": "2026-06-16T11:16:37.718232", "input": "Explain working memory in one sentence. (soak 233/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 233}
+{"timestamp": "2026-06-16T11:16:37.803547", "input": "What is your active goal? (soak 234/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 234}
+{"timestamp": "2026-06-16T11:16:37.884885", "input": "Summarize your beliefs about truth. (soak 235/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 235}
+{"timestamp": "2026-06-16T11:16:37.970222", "input": "How confident are you in your last answer? (soak 236/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 236}
+{"timestamp": "2026-06-16T11:16:38.061617", "input": "What did you learn from the previous cycle? (soak 237/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 237}
+{"timestamp": "2026-06-16T11:16:38.134930", "input": "Describe contradiction handling briefly. (soak 238/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 238}
+{"timestamp": "2026-06-16T11:16:38.257565", "input": "What is AGI? (soak 239/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 239}
+{"timestamp": "2026-06-16T11:16:38.332865", "input": "How does memory influence your answers? (soak 240/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 240}
+{"timestamp": "2026-06-16T11:16:38.688935", "input": "Explain working memory in one sentence. (soak 241/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 241}
+{"timestamp": "2026-06-16T11:16:38.797830", "input": "What is your active goal? (soak 242/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 242}
+{"timestamp": "2026-06-16T11:16:38.899550", "input": "Summarize your beliefs about truth. (soak 243/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 243}
+{"timestamp": "2026-06-16T11:16:38.984868", "input": "How confident are you in your last answer? (soak 244/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 244}
+{"timestamp": "2026-06-16T11:16:39.066238", "input": "What did you learn from the previous cycle? (soak 245/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 245}
+{"timestamp": "2026-06-16T11:16:39.138942", "input": "Describe contradiction handling briefly. (soak 246/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 246}
+{"timestamp": "2026-06-16T11:16:39.251590", "input": "What is AGI? (soak 247/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 247}
+{"timestamp": "2026-06-16T11:16:39.332892", "input": "How does memory influence your answers? (soak 248/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 248}
+{"timestamp": "2026-06-16T11:16:39.418275", "input": "Explain working memory in one sentence. (soak 249/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 249}
+{"timestamp": "2026-06-16T11:16:39.482927", "input": "What is your active goal? (soak 250/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 250}
+{"timestamp": "2026-06-16T11:16:39.816232", "input": "Summarize your beliefs about truth. (soak 251/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 251}
+{"timestamp": "2026-06-16T11:16:39.907560", "input": "How confident are you in your last answer? (soak 252/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 252}
+{"timestamp": "2026-06-16T11:16:39.986951", "input": "What did you learn from the previous cycle? (soak 253/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 253}
+{"timestamp": "2026-06-16T11:16:40.084922", "input": "Describe contradiction handling briefly. (soak 254/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 254}
+{"timestamp": "2026-06-16T11:16:40.177332", "input": "What is AGI? (soak 255/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 255}
+{"timestamp": "2026-06-16T11:16:40.284891", "input": "How does memory influence your answers? (soak 256/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 256}
+{"timestamp": "2026-06-16T11:16:41.068761", "input": "Explain working memory in one sentence. (soak 257/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 257}
+{"timestamp": "2026-06-16T11:16:41.320460", "input": "What is your active goal? (soak 258/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 258}
+{"timestamp": "2026-06-16T11:16:41.399560", "input": "Summarize your beliefs about truth. (soak 259/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 259}
+{"timestamp": "2026-06-16T11:16:41.482982", "input": "How confident are you in your last answer? (soak 260/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 260}
+{"timestamp": "2026-06-16T11:16:41.834960", "input": "What did you learn from the previous cycle? (soak 261/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 261}
+{"timestamp": "2026-06-16T11:16:41.916354", "input": "Describe contradiction handling briefly. (soak 262/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 262}
+{"timestamp": "2026-06-16T11:16:42.001626", "input": "What is AGI? (soak 263/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 263}
+{"timestamp": "2026-06-16T11:16:42.082977", "input": "How does memory influence your answers? (soak 264/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 264}
+{"timestamp": "2026-06-16T11:16:42.170841", "input": "Explain working memory in one sentence. (soak 265/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 265}
+{"timestamp": "2026-06-16T11:16:42.282164", "input": "What is your active goal? (soak 266/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 266}
+{"timestamp": "2026-06-16T11:16:42.357562", "input": "Summarize your beliefs about truth. (soak 267/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 267}
+{"timestamp": "2026-06-16T11:16:42.440975", "input": "How confident are you in your last answer? (soak 268/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 268}
+{"timestamp": "2026-06-16T11:16:42.532182", "input": "What did you learn from the previous cycle? (soak 269/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 269}
+{"timestamp": "2026-06-16T11:16:42.614750", "input": "Describe contradiction handling briefly. (soak 270/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 270}
+{"timestamp": "2026-06-16T11:16:42.934915", "input": "What is AGI? (soak 271/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 271}
+{"timestamp": "2026-06-16T11:16:43.020318", "input": "How does memory influence your answers? (soak 272/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 272}
+{"timestamp": "2026-06-16T11:16:43.107692", "input": "Explain working memory in one sentence. (soak 273/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 273}
+{"timestamp": "2026-06-16T11:16:43.218340", "input": "What is your active goal? (soak 274/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 274}
+{"timestamp": "2026-06-16T11:16:43.307665", "input": "Summarize your beliefs about truth. (soak 275/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 275}
+{"timestamp": "2026-06-16T11:16:43.386999", "input": "How confident are you in your last answer? (soak 276/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 276}
+{"timestamp": "2026-06-16T11:16:43.499556", "input": "What did you learn from the previous cycle? (soak 277/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 277}
+{"timestamp": "2026-06-16T11:16:43.584971", "input": "Describe contradiction handling briefly. (soak 278/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 278}
+{"timestamp": "2026-06-16T11:16:43.680508", "input": "What is AGI? (soak 279/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 279}
+{"timestamp": "2026-06-16T11:16:43.768314", "input": "How does memory influence your answers? (soak 280/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 280}
+{"timestamp": "2026-06-16T11:16:44.111871", "input": "Explain working memory in one sentence. (soak 281/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 281}
+{"timestamp": "2026-06-16T11:16:44.217553", "input": "What is your active goal? (soak 282/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 282}
+{"timestamp": "2026-06-16T11:16:44.310257", "input": "Summarize your beliefs about truth. (soak 283/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 283}
+{"timestamp": "2026-06-16T11:16:44.399681", "input": "How confident are you in your last answer? (soak 284/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 284}
+{"timestamp": "2026-06-16T11:16:44.484987", "input": "What did you learn from the previous cycle? (soak 285/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 285}
+{"timestamp": "2026-06-16T11:16:44.568389", "input": "Describe contradiction handling briefly. (soak 286/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 286}
+{"timestamp": "2026-06-16T11:16:44.664042", "input": "What is AGI? (soak 287/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 287}
+{"timestamp": "2026-06-16T11:16:44.768342", "input": "How does memory influence your answers? (soak 288/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 288}
+{"timestamp": "2026-06-16T11:16:44.851781", "input": "Explain working memory in one sentence. (soak 289/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 289}
+{"timestamp": "2026-06-16T11:16:44.935019", "input": "What is your active goal? (soak 290/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 290}
+{"timestamp": "2026-06-16T11:16:45.268375", "input": "Summarize your beliefs about truth. (soak 291/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 291}
+{"timestamp": "2026-06-16T11:16:45.349824", "input": "How confident are you in your last answer? (soak 292/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 292}
+{"timestamp": "2026-06-16T11:16:45.435055", "input": "What did you learn from the previous cycle? (soak 293/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 293}
+{"timestamp": "2026-06-16T11:16:45.518514", "input": "Describe contradiction handling briefly. (soak 294/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 294}
+{"timestamp": "2026-06-16T11:16:45.599763", "input": "What is AGI? (soak 295/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 295}
+{"timestamp": "2026-06-16T11:16:45.705733", "input": "How does memory influence your answers? (soak 296/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 296}
+{"timestamp": "2026-06-16T11:16:45.787068", "input": "Explain working memory in one sentence. (soak 297/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 297}
+{"timestamp": "2026-06-16T11:16:45.868441", "input": "What is your active goal? (soak 298/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 298}
+{"timestamp": "2026-06-16T11:16:45.951849", "input": "Summarize your beliefs about truth. (soak 299/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 299}
+{"timestamp": "2026-06-16T11:16:46.743197", "input": "How confident are you in your last answer? (soak 300/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 300}
+{"timestamp": "2026-06-16T11:16:47.187832", "input": "What did you learn from the previous cycle? (soak 301/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 301}
+{"timestamp": "2026-06-16T11:16:47.287114", "input": "Describe contradiction handling briefly. (soak 302/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 302}
+{"timestamp": "2026-06-16T11:16:47.385075", "input": "What is AGI? (soak 303/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 303}
+{"timestamp": "2026-06-16T11:16:47.461855", "input": "How does memory influence your answers? (soak 304/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 304}
+{"timestamp": "2026-06-16T11:16:47.551661", "input": "Explain working memory in one sentence. (soak 305/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 305}
+{"timestamp": "2026-06-16T11:16:47.640651", "input": "What is your active goal? (soak 306/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 306}
+{"timestamp": "2026-06-16T11:16:47.751805", "input": "Summarize your beliefs about truth. (soak 307/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 307}
+{"timestamp": "2026-06-16T11:16:47.835094", "input": "How confident are you in your last answer? (soak 308/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 308}
+{"timestamp": "2026-06-16T11:16:47.951819", "input": "What did you learn from the previous cycle? (soak 309/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 309}
+{"timestamp": "2026-06-16T11:16:48.039101", "input": "Describe contradiction handling briefly. (soak 310/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 310}
+{"timestamp": "2026-06-16T11:16:48.368425", "input": "What is AGI? (soak 311/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 311}
+{"timestamp": "2026-06-16T11:16:48.453845", "input": "How does memory influence your answers? (soak 312/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 312}
+{"timestamp": "2026-06-16T11:16:48.535125", "input": "Explain working memory in one sentence. (soak 313/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 313}
+{"timestamp": "2026-06-16T11:16:48.620443", "input": "What is your active goal? (soak 314/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 314}
+{"timestamp": "2026-06-16T11:16:48.718410", "input": "Summarize your beliefs about truth. (soak 315/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 315}
+{"timestamp": "2026-06-16T11:16:48.814896", "input": "How confident are you in your last answer? (soak 316/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 316}
+{"timestamp": "2026-06-16T11:16:48.886380", "input": "What did you learn from the previous cycle? (soak 317/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 317}
+{"timestamp": "2026-06-16T11:16:48.968423", "input": "Describe contradiction handling briefly. (soak 318/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 318}
+{"timestamp": "2026-06-16T11:16:49.064698", "input": "What is AGI? (soak 319/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 319}
+{"timestamp": "2026-06-16T11:16:49.137124", "input": "How does memory influence your answers? (soak 320/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 320}
+{"timestamp": "2026-06-16T11:16:49.516466", "input": "Explain working memory in one sentence. (soak 321/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 321}
+{"timestamp": "2026-06-16T11:16:49.597037", "input": "What is your active goal? (soak 322/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 322}
+{"timestamp": "2026-06-16T11:16:49.686410", "input": "Summarize your beliefs about truth. (soak 323/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 323}
+{"timestamp": "2026-06-16T11:16:49.801765", "input": "How confident are you in your last answer? (soak 324/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 324}
+{"timestamp": "2026-06-16T11:16:49.868423", "input": "What did you learn from the previous cycle? (soak 325/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 325}
+{"timestamp": "2026-06-16T11:16:49.968493", "input": "Describe contradiction handling briefly. (soak 326/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 326}
+{"timestamp": "2026-06-16T11:16:50.057612", "input": "What is AGI? (soak 327/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 327}
+{"timestamp": "2026-06-16T11:16:50.139096", "input": "How does memory influence your answers? (soak 328/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 328}
+{"timestamp": "2026-06-16T11:16:50.251859", "input": "Explain working memory in one sentence. (soak 329/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 329}
+{"timestamp": "2026-06-16T11:16:50.337165", "input": "What is your active goal? (soak 330/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 330}
+{"timestamp": "2026-06-16T11:16:50.649779", "input": "Summarize your beliefs about truth. (soak 331/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 331}
+{"timestamp": "2026-06-16T11:16:50.772466", "input": "How confident are you in your last answer? (soak 332/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 332}
+{"timestamp": "2026-06-16T11:16:50.858593", "input": "What did you learn from the previous cycle? (soak 333/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 333}
+{"timestamp": "2026-06-16T11:16:50.947183", "input": "Describe contradiction handling briefly. (soak 334/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 334}
+{"timestamp": "2026-06-16T11:16:51.024518", "input": "What is AGI? (soak 335/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 335}
+{"timestamp": "2026-06-16T11:16:51.103811", "input": "How does memory influence your answers? (soak 336/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 336}
+{"timestamp": "2026-06-16T11:16:51.211049", "input": "Explain working memory in one sentence. (soak 337/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 337}
+{"timestamp": "2026-06-16T11:16:51.305217", "input": "What is your active goal? (soak 338/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 338}
+{"timestamp": "2026-06-16T11:16:51.385119", "input": "Summarize your beliefs about truth. (soak 339/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 339}
+{"timestamp": "2026-06-16T11:16:51.474503", "input": "How confident are you in your last answer? (soak 340/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 340}
+{"timestamp": "2026-06-16T11:16:52.653069", "input": "What did you learn from the previous cycle? (soak 341/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 341}
+{"timestamp": "2026-06-16T11:16:52.739091", "input": "Describe contradiction handling briefly. (soak 342/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 342}
+{"timestamp": "2026-06-16T11:16:52.822123", "input": "What is AGI? (soak 343/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 343}
+{"timestamp": "2026-06-16T11:16:52.909831", "input": "How does memory influence your answers? (soak 344/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 344}
+{"timestamp": "2026-06-16T11:16:52.986541", "input": "Explain working memory in one sentence. (soak 345/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 345}
+{"timestamp": "2026-06-16T11:16:53.074385", "input": "What is your active goal? (soak 346/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 346}
+{"timestamp": "2026-06-16T11:16:53.168699", "input": "Summarize your beliefs about truth. (soak 347/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 347}
+{"timestamp": "2026-06-16T11:16:53.266705", "input": "How confident are you in your last answer? (soak 348/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 348}
+{"timestamp": "2026-06-16T11:16:53.394929", "input": "What did you learn from the previous cycle? (soak 349/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 349}
+{"timestamp": "2026-06-16T11:16:53.487529", "input": "Describe contradiction handling briefly. (soak 350/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 350}
+{"timestamp": "2026-06-16T11:16:53.885899", "input": "What is AGI? (soak 351/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 351}
+{"timestamp": "2026-06-16T11:16:53.986474", "input": "How does memory influence your answers? (soak 352/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 352}
+{"timestamp": "2026-06-16T11:16:54.069460", "input": "Explain working memory in one sentence. (soak 353/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 353}
+{"timestamp": "2026-06-16T11:16:54.150470", "input": "What is your active goal? (soak 354/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 354}
+{"timestamp": "2026-06-16T11:16:54.230319", "input": "Summarize your beliefs about truth. (soak 355/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 355}
+{"timestamp": "2026-06-16T11:16:54.347890", "input": "How confident are you in your last answer? (soak 356/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 356}
+{"timestamp": "2026-06-16T11:16:54.436720", "input": "What did you learn from the previous cycle? (soak 357/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 357}
+{"timestamp": "2026-06-16T11:16:54.516245", "input": "Describe contradiction handling briefly. (soak 358/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 358}
+{"timestamp": "2026-06-16T11:16:54.601540", "input": "What is AGI? (soak 359/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 359}
+{"timestamp": "2026-06-16T11:16:54.672112", "input": "How does memory influence your answers? (soak 360/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 360}
+{"timestamp": "2026-06-16T11:16:55.055808", "input": "Explain working memory in one sentence. (soak 361/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 361}
+{"timestamp": "2026-06-16T11:16:55.135265", "input": "What is your active goal? (soak 362/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 362}
+{"timestamp": "2026-06-16T11:16:55.227710", "input": "Summarize your beliefs about truth. (soak 363/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 363}
+{"timestamp": "2026-06-16T11:16:55.339343", "input": "How confident are you in your last answer? (soak 364/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 364}
+{"timestamp": "2026-06-16T11:16:55.418532", "input": "What did you learn from the previous cycle? (soak 365/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 365}
+{"timestamp": "2026-06-16T11:16:55.501902", "input": "Describe contradiction handling briefly. (soak 366/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 366}
+{"timestamp": "2026-06-16T11:16:56.185223", "input": "What is AGI? (soak 367/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 367}
+{"timestamp": "2026-06-16T11:16:56.268527", "input": "How does memory influence your answers? (soak 368/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 368}
+{"timestamp": "2026-06-16T11:16:56.385328", "input": "Explain working memory in one sentence. (soak 369/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 369}
+{"timestamp": "2026-06-16T11:16:56.472503", "input": "What is your active goal? (soak 370/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 370}
+{"timestamp": "2026-06-16T11:16:56.772567", "input": "Summarize your beliefs about truth. (soak 371/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 371}
+{"timestamp": "2026-06-16T11:16:56.885262", "input": "How confident are you in your last answer? (soak 372/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 372}
+{"timestamp": "2026-06-16T11:16:56.986346", "input": "What did you learn from the previous cycle? (soak 373/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 373}
+{"timestamp": "2026-06-16T11:16:57.064782", "input": "Describe contradiction handling briefly. (soak 374/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 374}
+{"timestamp": "2026-06-16T11:16:57.137291", "input": "What is AGI? (soak 375/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 375}
+{"timestamp": "2026-06-16T11:16:57.360210", "input": "How does memory influence your answers? (soak 376/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 376}
+{"timestamp": "2026-06-16T11:16:57.471014", "input": "Explain working memory in one sentence. (soak 377/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 377}
+{"timestamp": "2026-06-16T11:16:57.549847", "input": "What is your active goal? (soak 378/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 378}
+{"timestamp": "2026-06-16T11:16:57.633246", "input": "Summarize your beliefs about truth. (soak 379/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 379}
+{"timestamp": "2026-06-16T11:16:57.718565", "input": "How confident are you in your last answer? (soak 380/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 380}
+{"timestamp": "2026-06-16T11:16:58.083221", "input": "What did you learn from the previous cycle? (soak 381/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 381}
+{"timestamp": "2026-06-16T11:16:58.168616", "input": "Describe contradiction handling briefly. (soak 382/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 382}
+{"timestamp": "2026-06-16T11:16:58.253979", "input": "What is AGI? (soak 383/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 383}
+{"timestamp": "2026-06-16T11:16:58.333288", "input": "How does memory influence your answers? (soak 384/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 384}
+{"timestamp": "2026-06-16T11:16:58.435286", "input": "Explain working memory in one sentence. (soak 385/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 385}
+{"timestamp": "2026-06-16T11:16:58.597493", "input": "What is your active goal? (soak 386/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 386}
+{"timestamp": "2026-06-16T11:16:58.685303", "input": "Summarize your beliefs about truth. (soak 387/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 387}
+{"timestamp": "2026-06-16T11:16:58.766654", "input": "How confident are you in your last answer? (soak 388/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 388}
+{"timestamp": "2026-06-16T11:16:58.851974", "input": "What did you learn from the previous cycle? (soak 389/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 389}
+{"timestamp": "2026-06-16T11:16:58.970608", "input": "Describe contradiction handling briefly. (soak 390/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 390}
+{"timestamp": "2026-06-16T11:16:59.287357", "input": "What is AGI? (soak 391/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 391}
+{"timestamp": "2026-06-16T11:16:59.385316", "input": "How does memory influence your answers? (soak 392/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 392}
+{"timestamp": "2026-06-16T11:16:59.528731", "input": "Explain working memory in one sentence. (soak 393/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 393}
+{"timestamp": "2026-06-16T11:16:59.608017", "input": "What is your active goal? (soak 394/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 394}
+{"timestamp": "2026-06-16T11:16:59.694720", "input": "Summarize your beliefs about truth. (soak 395/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 395}
+{"timestamp": "2026-06-16T11:16:59.768641", "input": "How confident are you in your last answer? (soak 396/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 396}
+{"timestamp": "2026-06-16T11:16:59.860631", "input": "What did you learn from the previous cycle? (soak 397/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 397}
+{"timestamp": "2026-06-16T11:17:00.060167", "input": "Describe contradiction handling briefly. (soak 398/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 398}
+{"timestamp": "2026-06-16T11:17:00.153980", "input": "What is AGI? (soak 399/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 399}
+{"timestamp": "2026-06-16T11:17:00.249984", "input": "How does memory influence your answers? (soak 400/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 400}
+{"timestamp": "2026-06-16T11:17:00.599185", "input": "Explain working memory in one sentence. (soak 401/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 401}
+{"timestamp": "2026-06-16T11:17:00.699989", "input": "What is your active goal? (soak 402/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 402}
+{"timestamp": "2026-06-16T11:17:00.789220", "input": "Summarize your beliefs about truth. (soak 403/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 403}
+{"timestamp": "2026-06-16T11:17:00.866611", "input": "How confident are you in your last answer? (soak 404/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 404}
+{"timestamp": "2026-06-16T11:17:00.980087", "input": "What did you learn from the previous cycle? (soak 405/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 405}
+{"timestamp": "2026-06-16T11:17:01.224935", "input": "Describe contradiction handling briefly. (soak 406/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 406}
+{"timestamp": "2026-06-16T11:17:01.343906", "input": "What is AGI? (soak 407/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 407}
+{"timestamp": "2026-06-16T11:17:01.471487", "input": "How does memory influence your answers? (soak 408/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 408}
+{"timestamp": "2026-06-16T11:17:01.635401", "input": "Explain working memory in one sentence. (soak 409/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 409}
+{"timestamp": "2026-06-16T11:17:01.720682", "input": "What is your active goal? (soak 410/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 410}
+{"timestamp": "2026-06-16T11:17:02.083288", "input": "Summarize your beliefs about truth. (soak 411/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 411}
+{"timestamp": "2026-06-16T11:17:02.174797", "input": "How confident are you in your last answer? (soak 412/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 412}
+{"timestamp": "2026-06-16T11:17:02.262296", "input": "What did you learn from the previous cycle? (soak 413/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 413}
+{"timestamp": "2026-06-16T11:17:02.339760", "input": "Describe contradiction handling briefly. (soak 414/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 414}
+{"timestamp": "2026-06-16T11:17:02.429091", "input": "What is AGI? (soak 415/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 415}
+{"timestamp": "2026-06-16T11:17:02.541478", "input": "How does memory influence your answers? (soak 416/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 416}
+{"timestamp": "2026-06-16T11:17:02.630286", "input": "Explain working memory in one sentence. (soak 417/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 417}
+{"timestamp": "2026-06-16T11:17:02.704065", "input": "What is your active goal? (soak 418/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 418}
+{"timestamp": "2026-06-16T11:17:02.799993", "input": "Summarize your beliefs about truth. (soak 419/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 419}
+{"timestamp": "2026-06-16T11:17:03.777909", "input": "How confident are you in your last answer? (soak 420/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 420}
+{"timestamp": "2026-06-16T11:17:04.286358", "input": "What did you learn from the previous cycle? (soak 421/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 421}
+{"timestamp": "2026-06-16T11:17:04.402694", "input": "Describe contradiction handling briefly. (soak 422/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 422}
+{"timestamp": "2026-06-16T11:17:04.486379", "input": "What is AGI? (soak 423/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 423}
+{"timestamp": "2026-06-16T11:17:04.586377", "input": "How does memory influence your answers? (soak 424/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 424}
+{"timestamp": "2026-06-16T11:17:04.678189", "input": "Explain working memory in one sentence. (soak 425/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 425}
+{"timestamp": "2026-06-16T11:17:04.753189", "input": "What is your active goal? (soak 426/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 426}
+{"timestamp": "2026-06-16T11:17:04.840594", "input": "Summarize your beliefs about truth. (soak 427/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 427}
+{"timestamp": "2026-06-16T11:17:04.926689", "input": "How confident are you in your last answer? (soak 428/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 428}
+{"timestamp": "2026-06-16T11:17:05.011743", "input": "What did you learn from the previous cycle? (soak 429/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 429}
+{"timestamp": "2026-06-16T11:17:05.119334", "input": "Describe contradiction handling briefly. (soak 430/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 430}
+{"timestamp": "2026-06-16T11:17:05.419633", "input": "What is AGI? (soak 431/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 431}
+{"timestamp": "2026-06-16T11:17:05.508131", "input": "How does memory influence your answers? (soak 432/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 432}
+{"timestamp": "2026-06-16T11:17:05.653180", "input": "Explain working memory in one sentence. (soak 433/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 433}
+{"timestamp": "2026-06-16T11:17:05.735961", "input": "What is your active goal? (soak 434/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 434}
+{"timestamp": "2026-06-16T11:17:05.824702", "input": "Summarize your beliefs about truth. (soak 435/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 435}
+{"timestamp": "2026-06-16T11:17:05.909906", "input": "How confident are you in your last answer? (soak 436/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 436}
+{"timestamp": "2026-06-16T11:17:06.019498", "input": "What did you learn from the previous cycle? (soak 437/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 437}
+{"timestamp": "2026-06-16T11:17:06.143183", "input": "Describe contradiction handling briefly. (soak 438/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 438}
+{"timestamp": "2026-06-16T11:17:06.246385", "input": "What is AGI? (soak 439/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 439}
+{"timestamp": "2026-06-16T11:17:06.352990", "input": "How does memory influence your answers? (soak 440/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 440}
+{"timestamp": "2026-06-16T11:17:06.740184", "input": "Explain working memory in one sentence. (soak 441/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 441}
+{"timestamp": "2026-06-16T11:17:06.835841", "input": "What is your active goal? (soak 442/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 442}
+{"timestamp": "2026-06-16T11:17:06.935099", "input": "Summarize your beliefs about truth. (soak 443/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 443}
+{"timestamp": "2026-06-16T11:17:07.038840", "input": "How confident are you in your last answer? (soak 444/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 444}
+{"timestamp": "2026-06-16T11:17:07.155462", "input": "What did you learn from the previous cycle? (soak 445/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 445}
+{"timestamp": "2026-06-16T11:17:07.259519", "input": "Describe contradiction handling briefly. (soak 446/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 446}
+{"timestamp": "2026-06-16T11:17:07.358493", "input": "What is AGI? (soak 447/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 447}
+{"timestamp": "2026-06-16T11:17:07.453404", "input": "How does memory influence your answers? (soak 448/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 448}
+{"timestamp": "2026-06-16T11:17:07.546968", "input": "Explain working memory in one sentence. (soak 449/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 449}
+{"timestamp": "2026-06-16T11:17:07.683532", "input": "What is your active goal? (soak 450/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 450}
+{"timestamp": "2026-06-16T11:17:08.411184", "input": "Summarize your beliefs about truth. (soak 451/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 451}
+{"timestamp": "2026-06-16T11:17:09.074161", "input": "How confident are you in your last answer? (soak 452/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 452}
+{"timestamp": "2026-06-16T11:17:09.200332", "input": "What did you learn from the previous cycle? (soak 453/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 453}
+{"timestamp": "2026-06-16T11:17:09.287676", "input": "Describe contradiction handling briefly. (soak 454/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 454}
+{"timestamp": "2026-06-16T11:17:09.404277", "input": "What is AGI? (soak 455/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 455}
+{"timestamp": "2026-06-16T11:17:09.520803", "input": "How does memory influence your answers? (soak 456/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 456}
+{"timestamp": "2026-06-16T11:17:09.602298", "input": "Explain working memory in one sentence. (soak 457/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 457}
+{"timestamp": "2026-06-16T11:17:09.719618", "input": "What is your active goal? (soak 458/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 458}
+{"timestamp": "2026-06-16T11:17:09.800077", "input": "Summarize your beliefs about truth. (soak 459/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 459}
+{"timestamp": "2026-06-16T11:17:09.885602", "input": "How confident are you in your last answer? (soak 460/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 460}
+{"timestamp": "2026-06-16T11:17:10.252161", "input": "What did you learn from the previous cycle? (soak 461/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 461}
+{"timestamp": "2026-06-16T11:17:10.335488", "input": "Describe contradiction handling briefly. (soak 462/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 462}
+{"timestamp": "2026-06-16T11:17:10.420856", "input": "What is AGI? (soak 463/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 463}
+{"timestamp": "2026-06-16T11:17:10.527974", "input": "How does memory influence your answers? (soak 464/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 464}
+{"timestamp": "2026-06-16T11:17:10.621233", "input": "Explain working memory in one sentence. (soak 465/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 465}
+{"timestamp": "2026-06-16T11:17:10.731577", "input": "What is your active goal? (soak 466/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 466}
+{"timestamp": "2026-06-16T11:17:10.803279", "input": "Summarize your beliefs about truth. (soak 467/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 467}
+{"timestamp": "2026-06-16T11:17:10.895991", "input": "How confident are you in your last answer? (soak 468/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 468}
+{"timestamp": "2026-06-16T11:17:10.983437", "input": "What did you learn from the previous cycle? (soak 469/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 469}
+{"timestamp": "2026-06-16T11:17:11.066857", "input": "Describe contradiction handling briefly. (soak 470/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 470}
+{"timestamp": "2026-06-16T11:17:11.459374", "input": "What is AGI? (soak 471/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 471}
+{"timestamp": "2026-06-16T11:17:11.538888", "input": "How does memory influence your answers? (soak 472/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 472}
+{"timestamp": "2026-06-16T11:17:11.654251", "input": "Explain working memory in one sentence. (soak 473/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 473}
+{"timestamp": "2026-06-16T11:17:11.746836", "input": "What is your active goal? (soak 474/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 474}
+{"timestamp": "2026-06-16T11:17:11.830379", "input": "Summarize your beliefs about truth. (soak 475/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 475}
+{"timestamp": "2026-06-16T11:17:11.904108", "input": "How confident are you in your last answer? (soak 476/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 476}
+{"timestamp": "2026-06-16T11:17:11.985516", "input": "What did you learn from the previous cycle? (soak 477/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 477}
+{"timestamp": "2026-06-16T11:17:12.078337", "input": "Describe contradiction handling briefly. (soak 478/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 478}
+{"timestamp": "2026-06-16T11:17:12.200205", "input": "What is AGI? (soak 479/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 479}
+{"timestamp": "2026-06-16T11:17:12.285576", "input": "How does memory influence your answers? (soak 480/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 480}
+{"timestamp": "2026-06-16T11:17:12.656232", "input": "Explain working memory in one sentence. (soak 481/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 481}
+{"timestamp": "2026-06-16T11:17:12.737609", "input": "What is your active goal? (soak 482/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 482}
+{"timestamp": "2026-06-16T11:17:12.820931", "input": "Summarize your beliefs about truth. (soak 483/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 483}
+{"timestamp": "2026-06-16T11:17:12.918865", "input": "How confident are you in your last answer? (soak 484/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 484}
+{"timestamp": "2026-06-16T11:17:13.000177", "input": "What did you learn from the previous cycle? (soak 485/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 485}
+{"timestamp": "2026-06-16T11:17:13.085481", "input": "Describe contradiction handling briefly. (soak 486/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 486}
+{"timestamp": "2026-06-16T11:17:13.204286", "input": "What is AGI? (soak 487/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 487}
+{"timestamp": "2026-06-16T11:17:13.296872", "input": "How does memory influence your answers? (soak 488/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 488}
+{"timestamp": "2026-06-16T11:17:13.382083", "input": "Explain working memory in one sentence. (soak 489/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 489}
+{"timestamp": "2026-06-16T11:17:14.189072", "input": "What is your active goal? (soak 490/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 490}
+{"timestamp": "2026-06-16T11:17:14.783491", "input": "Summarize your beliefs about truth. (soak 491/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 491}
+{"timestamp": "2026-06-16T11:17:14.875899", "input": "How confident are you in your last answer? (soak 492/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 492}
+{"timestamp": "2026-06-16T11:17:14.968973", "input": "What did you learn from the previous cycle? (soak 493/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 493}
+{"timestamp": "2026-06-16T11:17:15.054259", "input": "Describe contradiction handling briefly. (soak 494/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 494}
+{"timestamp": "2026-06-16T11:17:15.156604", "input": "What is AGI? (soak 495/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 495}
+{"timestamp": "2026-06-16T11:17:15.263404", "input": "How does memory influence your answers? (soak 496/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 496}
+{"timestamp": "2026-06-16T11:17:15.337604", "input": "Explain working memory in one sentence. (soak 497/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 497}
+{"timestamp": "2026-06-16T11:17:15.418864", "input": "What is your active goal? (soak 498/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 498}
+{"timestamp": "2026-06-16T11:17:15.512281", "input": "Summarize your beliefs about truth. (soak 499/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 499}
+{"timestamp": "2026-06-16T11:17:15.587600", "input": "How confident are you in your last answer? (soak 500/500)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 500}

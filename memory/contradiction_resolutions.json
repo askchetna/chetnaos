@@ -1,0 +1,48 @@
+{
+  "resolutions": [
+    {
+      "type": "belief_vs_belief",
+      "weaker_belief": "Growth is easy with focus",
+      "stronger_belief": "Growth is hard with focus",
+      "weaker_confidence": 0.13,
+      "stronger_confidence": 0.79,
+      "conflict_score": 60,
+      "action": "weaken_weaker",
+      "reason": "Weaker confidence (0.13 vs 0.79); evidence favors stronger claim",
+      "resolved_at": "2026-06-16T11:15:17.669653"
+    },
+    {
+      "type": "belief_vs_belief",
+      "weaker_belief": "Growth is easy with focus",
+      "stronger_belief": "Soak validation is hard to verify",
+      "weaker_confidence": 0.13,
+      "stronger_confidence": 0.8,
+      "conflict_score": 60,
+      "action": "weaken_weaker",
+      "reason": "Weaker confidence (0.13 vs 0.80); evidence favors stronger claim",
+      "resolved_at": "2026-06-16T11:15:17.650912"
+    },
+    {
+      "type": "belief_vs_belief",
+      "weaker_belief": "Soak validation is easy to verify",
+      "stronger_belief": "Growth is hard with focus",
+      "weaker_confidence": 0.4,
+      "stronger_confidence": 0.79,
+      "conflict_score": 60,
+      "action": "weaken_weaker",
+      "reason": "Weaker confidence (0.40 vs 0.79); evidence favors stronger claim",
+      "resolved_at": "2026-06-16T11:15:17.593443"
+    },
+    {
+      "type": "belief_vs_belief",
+      "weaker_belief": "Soak validation is easy to verify",
+      "stronger_belief": "Soak validation is hard to verify",
+      "weaker_confidence": 0.4,
+      "stronger_confidence": 0.8,
+      "conflict_score": 60,
+      "action": "weaken_weaker",
+      "reason": "Weaker confidence (0.40 vs 0.80); evidence favors stronger claim",
+      "resolved_at": "2026-06-16T11:15:17.591700"
+    }
+  ]
+}

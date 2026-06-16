@@ -1,16 +1,5 @@
 [
   {
-    "skill": "Sales",
-    "current_pct": 38.0,
-    "target_pct": 65.0,
-    "gap_pct": 27.0,
-    "priority": 27.0,
-    "suggested_training": "16 sales interactions",
-    "practice_topics": "sales, clients, pitch, persuasion, revenue",
-    "expected_improvement": "+9.4%",
-    "category": "applied"
-  },
-  {
     "skill": "Business",
     "current_pct": 61.0,
     "target_pct": 76.0,
@@ -22,14 +11,14 @@
     "category": "applied"
   },
   {
-    "skill": "Coding",
-    "current_pct": 72.6,
-    "target_pct": 86.0,
-    "gap_pct": 13.4,
-    "priority": 13.4,
-    "suggested_training": "8 coding interactions",
-    "practice_topics": "programming, debugging, code, algorithm",
-    "expected_improvement": "+4.7%",
-    "category": "technical"
+    "skill": "Agriculture",
+    "current_pct": 62.0,
+    "target_pct": 70.0,
+    "gap_pct": 8.0,
+    "priority": 8.0,
+    "suggested_training": "4 agriculture interactions",
+    "practice_topics": "farming, crops, soil, harvest, seeds",
+    "expected_improvement": "+2.8%",
+    "category": "applied"
   }
 ]
