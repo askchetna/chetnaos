@@ -7,16 +7,16 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50"
       ],
       "contradictions": []
     },
@@ -27,16 +27,16 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50"
       ],
       "contradictions": []
     },
@@ -47,25 +47,25 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50",
+        "quality=fair confidence=0.50"
       ],
       "contradictions": []
     },
     "4": {
       "belief_id": 4,
       "text": "High-quality interaction \u2014 pattern worth repeating.",
-      "confidence": 0.99,
+      "confidence": 0.73,
       "source": "learning",
-      "stability": 0.55,
+      "stability": 0.4,
       "supporting_evidence": [
         "High-quality interaction \u2014 pattern worth repeating.",
         "High-quality interaction \u2014 pattern worth repeating.",
@@ -83,633 +83,904 @@
   },
   "revision_history": [
     {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.131037"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.131037"
-    },
-    {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.131037"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:21.680762"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.485547"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:21.832644"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.485547"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:21.832644"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.485547"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:21.832644"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.550785"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:22.047415"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.550785"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:22.059746"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.550785"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T09:55:22.059746"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.706191"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.807677"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.706191"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.807677"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.706191"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.807677"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.865235"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.874393"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.865235"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.874393"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:54.865235"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:54.874393"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:55.103007"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.109670"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:55.103007"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.109670"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:55.103007"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.109670"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.106201"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.513559"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.106201"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.513559"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.106201"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.513559"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.293372"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.576552"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.293372"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.576552"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.293372"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.576552"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.479761"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.759666"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.479761"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.759666"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:50:56.479761"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.759666"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.282506"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.943170"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.282506"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.943170"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.282506"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:55.943170"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.340134"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:56.247489"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.340134"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:56.247489"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.340134"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:56.247489"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.570444"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:57.578726"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.570444"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:57.578726"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.570444"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:57.578726"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.942009"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.019452"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.942009"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.019452"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:31.942009"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.019452"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.003942"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.305299"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.003942"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.305299"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.003942"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:07:58.305299"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.170635"
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:54.927760"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.170635"
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:54.927760"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.170635"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.387216"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.387216"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.387216"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.577871"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.577871"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:32.577871"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.461979"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.461979"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.461979"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.627514"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.627514"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.627514"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.791183"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.791183"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:33.791183"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.424454"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.424454"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.424454"
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:54.927760"
     },
     {
       "belief_id": 4,
-      "delta": 0.01,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.424454"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:54.927760"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.487369"
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:58.326200"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.487369"
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:58.326200"
     },
     {
       "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:58.326200"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:08:58.326200"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:15.405746"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:15.405746"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:15.405746"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:15.405746"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:57.796499"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:57.796499"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:57.796499"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:57.796499"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:59.485806"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:59.485806"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:59.485806"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:10:59.485806"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.98,
+      "new_confidence": 0.99,
+      "delta": 0.01,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:36.915967"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.98,
+      "new_confidence": 0.99,
+      "delta": 0.01,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:36.915967"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.93,
+      "new_confidence": 0.98,
       "delta": 0.05,
       "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.487369"
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:36.915967"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.66,
+      "new_confidence": 0.69,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:36.915967"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:58.921996"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:58.921996"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.91,
+      "new_confidence": 0.96,
+      "delta": 0.05,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:58.921996"
     },
     {
       "belief_id": 4,
       "delta": 0.02,
       "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.487369"
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-16T10:30:58.921996"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.543594"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.011309"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.543594"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.011309"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.543594"
-    },
-    {
-      "belief_id": 4,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
       "delta": 0.03,
       "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.543594"
-    },
-    {
-      "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.610234"
-    },
-    {
-      "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.610234"
-    },
-    {
-      "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.610234"
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.011309"
     },
     {
       "belief_id": 4,
-      "delta": 0.04,
+      "delta": 0.01,
       "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.610234"
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-16T10:30:59.011309"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.708194"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.246218"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.708194"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.246218"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.708194"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.246218"
     },
     {
       "belief_id": 4,
-      "delta": 0.05,
+      "delta": 0.01,
       "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.708194"
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-16T10:30:59.246218"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.757845"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.638384"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.757845"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.638384"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.757845"
-    },
-    {
-      "belief_id": 4,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.757845"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.638384"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.820700"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.738285"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.820700"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.738285"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.820700"
-    },
-    {
-      "belief_id": 4,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.820700"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.738285"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.947128"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.945459"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.947128"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.945459"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.947128"
-    },
-    {
-      "belief_id": 4,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:36.947128"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:30:59.945459"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.059266"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.266439"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.059266"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.266439"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.059266"
-    },
-    {
-      "belief_id": 4,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.059266"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.266439"
     },
     {
       "belief_id": 1,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.168872"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.746683"
     },
     {
       "belief_id": 2,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.168872"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.746683"
     },
     {
       "belief_id": 3,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.168872"
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:00.746683"
     },
     {
-      "belief_id": 4,
-      "delta": 0.05,
-      "direction": 1,
-      "timestamp": "2026-06-15T19:52:37.168872"
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.779867"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.779867"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.779867"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.966380"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.966380"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:01.966380"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:02.148772"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:02.148772"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-16T10:31:02.148772"
     }
   ],
   "contradictions": [],
   "pending_evidence": [
     {
-      "timestamp": "2026-06-15T19:50:54.115370",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:50:54.469139",
+      "timestamp": "2026-06-16T09:55:21.820574",
       "items": [
         {
           "type": "reflection_reality",
@@ -732,7 +1003,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:50:54.525602",
+      "timestamp": "2026-06-16T09:55:22.045085",
       "items": [
         {
           "type": "reflection_reality",
@@ -755,30 +1026,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:50:54.692253",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:50:54.850836",
+      "timestamp": "2026-06-16T10:07:54.787752",
       "items": [
         {
           "type": "reflection_reality",
@@ -801,7 +1049,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:50:55.083845",
+      "timestamp": "2026-06-16T10:07:54.852907",
       "items": [
         {
           "type": "reflection_reality",
@@ -817,14 +1065,14 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.67",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:50:56.091775",
+      "timestamp": "2026-06-16T10:07:55.089311",
       "items": [
         {
           "type": "reflection_reality",
@@ -840,7 +1088,145 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:55.493027",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:55.559824",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:55.746945",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:55.924517",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:56.212195",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:07:57.550550",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -853,53 +1239,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:50:56.275255",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:50:56.459548",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:52:31.266757",
+      "timestamp": "2026-06-16T10:07:57.985366",
       "items": [
         {
           "type": "reflection_reality",
@@ -922,53 +1262,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:31.325489",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:52:31.554735",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.66",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:52:31.923404",
+      "timestamp": "2026-06-16T10:07:58.282629",
       "items": [
         {
           "type": "reflection_reality",
@@ -991,11 +1285,17 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:31.988116",
+      "timestamp": "2026-06-16T10:08:54.883893",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1014,11 +1314,17 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:32.155855",
+      "timestamp": "2026-06-16T10:08:58.299609",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1030,18 +1336,24 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.67",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:32.362306",
+      "timestamp": "2026-06-16T10:10:15.384877",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
+          "text": "quality=good confidence=0.57",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1053,20 +1365,26 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.67",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:32.561882",
+      "timestamp": "2026-06-16T10:10:57.777856",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=fair confidence=0.50",
+          "text": "quality=fair confidence=0.65",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "Reject violent or harmful directives.",
+          "strength": -0.01,
+          "polarity": "contradict"
         },
         {
           "type": "goal",
@@ -1076,14 +1394,43 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.68",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:33.443879",
+      "timestamp": "2026-06-16T10:10:59.462217",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.68",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T10:30:36.899322",
       "items": [
         {
           "type": "reflection_reality",
@@ -1099,7 +1446,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1112,7 +1459,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:33.610292",
+      "timestamp": "2026-06-16T10:30:58.903131",
       "items": [
         {
           "type": "reflection_reality",
@@ -1128,14 +1475,14 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:33.774809",
+      "timestamp": "2026-06-16T10:30:58.991481",
       "items": [
         {
           "type": "reflection_reality",
@@ -1151,24 +1498,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.411046",
+      "timestamp": "2026-06-16T10:30:59.228489",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1180,24 +1521,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.66",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.472713",
+      "timestamp": "2026-06-16T10:30:59.613462",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1209,24 +1544,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.527136",
+      "timestamp": "2026-06-16T10:30:59.719422",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1238,24 +1567,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.591728",
+      "timestamp": "2026-06-16T10:30:59.921951",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1267,24 +1590,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.691811",
+      "timestamp": "2026-06-16T10:31:00.239054",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1296,24 +1613,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.751592",
+      "timestamp": "2026-06-16T10:31:00.694509",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1325,24 +1636,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.808337",
+      "timestamp": "2026-06-16T10:31:01.760048",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1354,24 +1659,24 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:36.913383",
+      "timestamp": "2026-06-16T10:31:01.943667",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1383,24 +1688,18 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }
       ]
     },
     {
-      "timestamp": "2026-06-15T19:52:37.036699",
+      "timestamp": "2026-06-16T10:31:02.124363",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1412,36 +1711,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.67",
-          "strength": 0.01,
-          "polarity": "support"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-15T19:52:37.143700",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.67",
+          "text": "self_confidence=0.63",
           "strength": 0.01,
           "polarity": "support"
         }

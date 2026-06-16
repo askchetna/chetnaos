@@ -15,16 +15,18 @@ class _FakeBeliefs:
     def __init__(self, beliefs):
         self._beliefs = beliefs
 
-    def apply_confidence_deltas(self, deltas):
+    def apply_confidence_deltas(self, deltas, reason="evidence_revision"):
         applied = 0
+        changes = []
         for b in self._beliefs:
             bid = b.get("id")
             if bid not in deltas:
                 continue
             old = float(b.get("confidence", 0.5))
             b["confidence"] = round(max(0.05, min(0.99, old + float(deltas[bid]))), 3)
+            changes.append({"belief_id": bid, "old_confidence": old, "new_confidence": b["confidence"], "delta": deltas[bid]})
             applied += 1
-        return applied
+        return changes
 
 
 class TestBeliefRevisionEngine(unittest.TestCase):

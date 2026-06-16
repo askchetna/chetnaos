@@ -592,6 +592,29 @@ function buildBeliefs(d){
   return card("Belief Store","💡",items);
 }
 
+function buildMemoryInfluence(d){
+  const mem=d.memory_influence||[];
+  const bel=d.belief_influence||[];
+  if(!mem.length&&!bel.length) return card("Answer Influence","🔗",`<div class="no-data">No influence logged yet — send a chat message.</div>`);
+  const mrows=mem.map(m=>`<div class="dq-item"><b>Memory</b> ${esc(m.text||"")} <span style="color:var(--muted)">${esc(m.source||"")}</span></div>`).join("");
+  const brows=bel.map(b=>`<div class="dq-item"><b>Belief #${b.id}</b> (${((b.confidence||0)*100).toFixed(0)}%) ${esc(b.text||"")}</div>`).join("");
+  return card("Answer Influence","🔗",mrows+brows);
+}
+
+function buildBeliefChanges(d){
+  const changes=[...(d.belief_changes||[]),...(d.cognitive_organs?.belief_revision?.recent_history||[])].slice(0,8);
+  if(!changes.length) return card("Belief Updates","📈",`<div class="no-data">No confidence changes this session.</div>`);
+  const rows=changes.map(c=>`<div class="dq-item"><b>#${c.belief_id}</b> ${c.old_confidence!=null?((c.old_confidence*100).toFixed(0)+"%→"+(c.new_confidence*100).toFixed(0)+"%"):(c.delta||"")} — ${esc(c.reason_for_change||c.reason||"revision")}</div>`).join("");
+  return card("Belief Updates","📈",rows);
+}
+
+function buildResolutions(d){
+  const res=d.contradiction_resolutions||[];
+  if(!res.length) return card("Contradiction Resolutions","⚖️",`<div class="no-data">No resolutions logged yet.</div>`);
+  const rows=res.map(r=>`<div class="dq-item"><b>${esc(r.type||"")}</b> weakened: "${esc((r.weaker_belief||"").slice(0,50))}" — ${esc(r.reason||"")}</div>`).join("");
+  return card("Contradiction Resolutions","⚖️",rows);
+}
+
 // ─── CYCLE TRACE (v3) ──────────────────────────────────────────────────────
 function buildCycleTrace(d){
   const organs=d.cognitive_organs||{};
@@ -630,6 +653,9 @@ function renderDashboard(d){
   $("dashboard-grid").innerHTML = [
     buildCognitiveOrgans(d),
     buildCycleTrace(d),
+    buildMemoryInfluence(d),
+    buildBeliefChanges(d),
+    buildResolutions(d),
     buildIdentity(d),
     buildSkills(d),
     buildWorkspace(d),

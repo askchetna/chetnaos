@@ -122,3 +122,82 @@ class ContradictionTracker:
 
     def count(self) -> int:
         return len(self._contradictions)
+
+    def _resolution_history(self) -> list:
+        path = memory_path("contradiction_resolutions.json")
+        try:
+            if path.exists():
+                import json
+                with open(path, encoding="utf-8") as f:
+                    data = json.load(f)
+                return list(data.get("resolutions", []))
+        except Exception:
+            pass
+        return []
+
+    def _save_resolution(self, item: dict) -> None:
+        history = self._resolution_history()
+        history.insert(0, item)
+        save_json(memory_path("contradiction_resolutions.json"), {
+            "resolutions": history[:50],
+        })
+
+    def resolution_history(self) -> list:
+        return self._resolution_history()
+
+    def resolve(self, beliefs: list) -> list:
+        """
+        Compare evidence/confidence and weaken the weaker belief.
+        Returns list of resolution records for dashboard logging.
+        """
+        resolutions: list = []
+        belief_map = {
+            (b.get("text") or "")[:80]: b for b in beliefs if b.get("text")
+        }
+
+        for c in list(self._contradictions):
+            if c.get("status") == "resolved":
+                continue
+            text_a = (c.get("belief_a") or "")[:80]
+            text_b = (c.get("belief_b") or "")[:80]
+            ba = belief_map.get(text_a) or next(
+                (b for t, b in belief_map.items() if text_a[:40] in t), None
+            )
+            bb = belief_map.get(text_b) or next(
+                (b for t, b in belief_map.items() if text_b[:40] in t), None
+            )
+            conf_a = float(ba.get("confidence", 0.5)) if ba else 0.4
+            conf_b = float(bb.get("confidence", 0.5)) if bb else 0.4
+            score = int(c.get("conflict_score", 50))
+
+            if conf_a <= conf_b:
+                weaker, stronger = text_a, text_b
+                weaker_conf, stronger_conf = conf_a, conf_b
+                weaker_belief = ba
+            else:
+                weaker, stronger = text_b, text_a
+                weaker_conf, stronger_conf = conf_b, conf_a
+                weaker_belief = bb
+
+            record = {
+                "type": c.get("type"),
+                "weaker_belief": weaker,
+                "stronger_belief": stronger,
+                "weaker_confidence": weaker_conf,
+                "stronger_confidence": stronger_conf,
+                "conflict_score": score,
+                "action": "weaken_weaker",
+                "reason": (
+                    f"Weaker confidence ({weaker_conf:.2f} vs {stronger_conf:.2f}); "
+                    f"evidence favors stronger claim"
+                ),
+                "resolved_at": datetime.utcnow().isoformat(),
+            }
+            resolutions.append(record)
+            self._save_resolution(record)
+            c["status"] = "resolved"
+            c["resolution"] = record
+
+        if resolutions:
+            self._save()
+        return resolutions

@@ -71,6 +71,26 @@
     .nav-link  { display: flex; align-items: center; gap: 8px; padding: 8px 10px; margin: 1px 6px; border-radius: 7px; font-size: 12.5px; color: var(--muted); transition: background .12s, color .12s; text-decoration: none; }
     .nav-link:hover { background: var(--surface2); color: var(--text); }
 
+    /* ── Conversation history ── */
+    .conv-toolbar { display: flex; gap: 6px; padding: 4px 10px 8px; }
+    .conv-btn {
+      flex: 1; padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface2); color: var(--text);
+      cursor: pointer;
+    }
+    .conv-btn:hover { border-color: var(--accent); color: var(--accent2); }
+    .conv-btn.danger:hover { border-color: var(--red); color: var(--red); }
+    .conv-list { flex: 1; overflow-y: auto; padding: 0 6px 8px; min-height: 80px; }
+    .conv-item {
+      display: block; width: 100%; text-align: left; padding: 7px 9px; margin-bottom: 3px;
+      border-radius: 7px; border: none; background: none; color: var(--muted);
+      font-size: 11.5px; cursor: pointer;
+    }
+    .conv-item:hover { background: var(--surface2); color: var(--text); }
+    .conv-item.active { background: rgba(99,102,241,.15); color: var(--accent2); }
+    .conv-item-title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .conv-item-meta { font-size: 9px; opacity: .7; margin-top: 2px; }
+
     /* ── Cognitive State ── */
     .cog-panel { margin: 8px 8px 4px; background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; overflow: hidden; flex-shrink: 0; }
     .cog-head  { padding: 8px 10px; background: linear-gradient(90deg,rgba(99,102,241,.12),transparent); border-bottom: 1px solid var(--border); font-size: 9.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent2); display: flex; align-items: center; gap: 5px; }
@@ -214,7 +234,7 @@
         <div class="logo-icon">🧠</div>
         <div>
           <div class="logo-name">ChetnaOS</div>
-          <div class="logo-ver">v2.0 · Cognitive Architecture</div>
+          <div class="logo-ver">v3 · Developmental Organism</div>
           <div class="logo-level" id="sb-level">Level 6 — Developmental Organism</div>
         </div>
       </a>
@@ -232,6 +252,13 @@
     <button class="nav-item" id="nav-goal"  onclick="setMode('goal')">
       <span class="nav-icon">🎯</span> Goal (AGI Loop)
     </button>
+
+    <div class="sec-label">Conversations</div>
+    <div class="conv-toolbar">
+      <button class="conv-btn" onclick="newConversation()">+ New Chat</button>
+      <button class="conv-btn danger" onclick="deleteConversation()">Delete</button>
+    </div>
+    <div class="conv-list" id="conv-list"></div>
 
     <!-- Cognitive State Panel -->
     <div class="cog-panel">
@@ -332,6 +359,7 @@ const MODE_CFG = {
 // ── State ──────────────────────────────────────────────────────────────────
 let currentMode = "chat";
 let _cycleAnim  = null;
+let currentConversationId = null;
 
 // ── Build cycle stage dots ─────────────────────────────────────────────────
 (function() {
@@ -601,9 +629,14 @@ async function sendMessage() {
       reply = data.reply;
       meta  = data.meta || null;
     } else {
-      data  = await fetchJson("/api/chat",  {text});
+      data  = await fetchJson("/api/chat",  {text, conversation_id: currentConversationId});
       reply = data.reply;
       meta  = data.meta || null;
+      if (data.conversation_id) {
+        currentConversationId = data.conversation_id;
+        localStorage.setItem("chetna_active_conv", currentConversationId);
+      }
+      await loadConversationList();
     }
 
     removeTyping();
@@ -648,6 +681,129 @@ async function fetchHealth() {
 }
 
 fetchHealth();
+
+// ── Conversation persistence ───────────────────────────────────────────────
+async function loadConversationList() {
+  try {
+    const d = await fetch("/api/conversations").then(r => r.json());
+    const list = document.getElementById("conv-list");
+    if (!list) return;
+    list.innerHTML = "";
+    (d.conversations || []).forEach(c => {
+      const btn = document.createElement("button");
+      btn.className = "conv-item" + (c.id === currentConversationId ? " active" : "");
+      btn.onclick = () => switchConversation(c.id);
+      btn.innerHTML = `<div class="conv-item-title">${escHtml(c.title || "Untitled")}</div><div class="conv-item-meta">${c.message_count || 0} msgs</div>`;
+      list.appendChild(btn);
+    });
+    if (d.active_id && !currentConversationId) currentConversationId = d.active_id;
+  } catch {}
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function renderConversationMessages(messages) {
+  const chat = document.getElementById("chat");
+  chat.querySelectorAll(".msg-row").forEach(el => el.remove());
+  if (!messages || !messages.length) {
+    document.getElementById("empty-state").style.display = "";
+    return;
+  }
+  hideEmpty();
+  messages.forEach(m => {
+    if (m.role === "user") addBubble(m.content, "user");
+    else if (m.role === "assistant") addBubble(m.content, "ai", m.meta || null);
+  });
+}
+
+async function switchConversation(id) {
+  currentConversationId = id;
+  localStorage.setItem("chetna_active_conv", id);
+  try {
+    await fetch("/api/conversations/active", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({conversation_id: id}),
+    });
+    const d = await fetch(`/api/conversations/${id}`).then(r => r.json());
+    renderConversationMessages(d.conversation?.messages || []);
+    await loadConversationList();
+  } catch (e) {
+    addError(e?.message || String(e));
+  }
+}
+
+async function newConversation() {
+  try {
+    const d = await fetch("/api/conversations", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({title: "New conversation"}),
+    }).then(r => r.json());
+    currentConversationId = d.conversation.id;
+    localStorage.setItem("chetna_active_conv", currentConversationId);
+    renderConversationMessages([]);
+    await loadConversationList();
+  } catch (e) {
+    addError(e?.message || String(e));
+  }
+}
+
+async function deleteConversation() {
+  if (!currentConversationId) return;
+  if (!confirm("Delete this conversation?")) return;
+  try {
+    const d = await fetch(`/api/conversations/${currentConversationId}`, {method: "DELETE"}).then(r => r.json());
+    currentConversationId = d.active_id || null;
+    if (currentConversationId) {
+      localStorage.setItem("chetna_active_conv", currentConversationId);
+      await switchConversation(currentConversationId);
+    } else {
+      localStorage.removeItem("chetna_active_conv");
+      renderConversationMessages([]);
+      await newConversation();
+    }
+    await loadConversationList();
+  } catch (e) {
+    addError(e?.message || String(e));
+  }
+}
+
+async function restoreWorkspace() {
+  try {
+    const d = await fetch("/api/workspace/session").then(r => r.json());
+    if (d.active_conversation_id) {
+      currentConversationId = d.active_conversation_id;
+      localStorage.setItem("chetna_active_conv", currentConversationId);
+    } else {
+      currentConversationId = localStorage.getItem("chetna_active_conv");
+    }
+    if (d.conversation?.messages?.length) {
+      renderConversationMessages(d.conversation.messages);
+    } else if (currentConversationId) {
+      await switchConversation(currentConversationId);
+    } else {
+      const active = await fetch("/api/conversations/active").then(r => r.json());
+      currentConversationId = active.conversation?.id;
+      if (currentConversationId) {
+        renderConversationMessages(active.conversation.messages || []);
+      }
+    }
+    if (d.active_goal?.text) {
+      const el = document.getElementById("cg-domain");
+      if (el) el.textContent = ("Goal: " + d.active_goal.text).slice(0, 40);
+    }
+    if (d.current_thought?.new_thought) {
+      const sub = document.getElementById("tb-sub");
+      if (sub) sub.textContent = d.current_thought.new_thought.slice(0, 80) + "…";
+    }
+    await loadConversationList();
+  } catch {}
+}
+
+restoreWorkspace();
 try { msgEl.focus(); } catch {}
 </script>
 </body>

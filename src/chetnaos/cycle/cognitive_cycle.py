@@ -126,6 +126,11 @@ class CognitiveCycle:
         self._last_cognitive_signals: dict = {}
         self._last_agent_tool: dict | None = None
         self._last_cycle_trace: list = []
+        self._last_belief_changes: list = []
+        self._last_contradiction_resolutions: list = []
+        self._last_resolution_belief_changes: list = []
+        self._last_memory_influence: list = []
+        self._last_belief_influence: list = []
 
     def _build_reasoning_context(
         self,
@@ -198,7 +203,7 @@ class CognitiveCycle:
         }
 
     # ──────────────────────────────────────────────────────────────────────
-    def run(self, user_input: str, mode: str = "chat") -> dict:
+    def run(self, user_input: str, mode: str = "chat", conversation_context: dict | None = None) -> dict:
         trace: list[dict] = []
         cycle_trace = CycleTrace()
         self.executive.reset_cycle_context(mode=mode, user_input=user_input)
@@ -331,8 +336,11 @@ class CognitiveCycle:
             self.llm,
             founder_context=founder_ctx_str,
             cognitive_context=cognitive_ctx,
+            conversation_context=conversation_context,
         )
         raw_response = reason_r["response"]
+        self._last_memory_influence = reason_r.get("memory_influence", [])
+        self._last_belief_influence = reason_r.get("belief_influence", [])
         step(
             CycleStage.ACT,
             reason_r,
@@ -438,6 +446,16 @@ class CognitiveCycle:
         self.contradictions.scan_founder(
             self.beliefs.get_all(), self.founder_ctx.get().get("primary_mission", "")
         )
+        contradiction_resolutions = self.contradictions.resolve(self.beliefs.get_all())
+        resolution_belief_changes: list = []
+        for res in contradiction_resolutions:
+            change = self.beliefs.weaken_by_text(
+                res.get("weaker_belief", ""),
+                delta=-0.06,
+                reason=res.get("reason", "contradiction_resolution"),
+            )
+            if change:
+                resolution_belief_changes.append(change)
         self.workspace.set_contradictions(self.contradictions.count())
 
         # ── Cognitive organs: GoalManager + BeliefRevision (signal only) ──
@@ -467,7 +485,10 @@ class CognitiveCycle:
             external_contradictions=self.contradictions.get(),
         )
         self.belief_revision.evaluate()
-        self.belief_revision.revise(self.beliefs)
+        revise_r = self.belief_revision.revise(self.beliefs)
+        self._last_belief_changes = revise_r.get("belief_changes", [])
+        self._last_contradiction_resolutions = contradiction_resolutions
+        self._last_resolution_belief_changes = resolution_belief_changes
 
         # ── UPDATE IDENTITY ────────────────────────────────────────────
         identity_r = self.identity.update(reflect_r, beliefs_r)
@@ -602,9 +623,15 @@ class CognitiveCycle:
                 "used_working_memory": reason_r.get("used_working_memory", False),
                 "used_active_goal": reason_r.get("used_active_goal", False),
                 "used_beliefs": reason_r.get("used_beliefs", False),
+                "used_conversation_context": reason_r.get("used_conversation_context", False),
                 "used_cognitive_organs": reason_r.get("used_cognitive_organs", False),
                 "used_agent_tool": reason_r.get("used_agent_tool", False),
+                "memory_influence": self._last_memory_influence,
+                "belief_influence": self._last_belief_influence,
             },
+            "belief_changes": self._last_belief_changes,
+            "contradiction_resolutions": self._last_contradiction_resolutions,
+            "resolution_belief_changes": self._last_resolution_belief_changes,
         }
 
     # ──────────────────────────────────────────────────────────────────────
@@ -651,6 +678,10 @@ class CognitiveCycle:
             "simulation":      self._last_sim,
             "meta_cognition":  self._last_meta,
             "thought_birth":   self._last_thought_birth,
+            "memory_influence": self._last_memory_influence,
+            "belief_influence": self._last_belief_influence,
+            "belief_changes": self._last_belief_changes,
+            "contradiction_resolutions": self.contradictions.resolution_history()[:10],
             "health":          self.homeostasis.check(
                 {"stats": dev_data}, {"quality": "fair"}
             ),

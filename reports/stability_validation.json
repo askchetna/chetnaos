@@ -1,0 +1,25 @@
+{
+  "gate": "stability_validation",
+  "tests": {
+    "test_deterministic_contradiction_resolution_pipeline": "PASS",
+    "test_full_cycle_dashboard_exposes_resolution": "PASS",
+    "test_message_refresh_simulation_restore": "PASS",
+    "test_agi_follow_up_passes_prior_messages": "PASS",
+    "test_seeded_memory_in_prompt_and_influence": "PASS",
+    "test_cycle_memory_influence_non_empty_when_recalled": "PASS",
+    "test_forbidden_self_claims_replaced": "PASS",
+    "test_api_exposes_honesty_guard_changes": "PASS",
+    "test_workspace_survives_restart_simulation": "PASS"
+  },
+  "priorities": {
+    "P1 Contradiction Resolution": "PASS",
+    "P2 Chat Persistence": "PASS",
+    "P3 Follow-up Context": "PASS",
+    "P4 Memory Influence": "PASS",
+    "P5 Honesty Guard": "PASS",
+    "P6 Workspace Restore": "PASS"
+  },
+  "passed": 6,
+  "total": 6,
+  "exit_code": 0
+}

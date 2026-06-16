@@ -164,6 +164,15 @@
       "created_at": "2026-06-15T17:08:40.403620"
     },
     {
+      "id": "a82e7274",
+      "text": "Train Sales: 16 sales interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 26.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T10:30:36.886398"
+    },
+    {
       "id": "0022c87f",
       "text": "Train Sales: 15 sales interactions",
       "goal_type": "TRAINING",
@@ -189,6 +198,15 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T17:08:40.406189"
+    },
+    {
+      "id": "164aba7e",
+      "text": "Train Coding: 8 coding interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 14.0,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-16T10:30:36.886398"
     },
     {
       "id": "204eb8c7",

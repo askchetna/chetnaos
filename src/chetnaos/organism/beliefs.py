@@ -64,16 +64,48 @@ class Beliefs:
             "beliefs": self._beliefs[:5],
         }
 
-    def apply_confidence_deltas(self, deltas: dict[int, float]) -> int:
-        """Apply gradual confidence changes keyed by belief id."""
+    def apply_confidence_deltas(
+        self, deltas: dict[int, float], *, reason: str = "belief_revision"
+    ) -> list[dict]:
+        """Apply gradual confidence changes keyed by belief id. Returns change log."""
+        changes: list[dict] = []
         applied = 0
         for b in self._beliefs:
             bid = b.get("id")
             if bid not in deltas:
                 continue
             old = float(b.get("confidence", 0.5))
-            b["confidence"] = round(max(0.05, min(0.99, old + float(deltas[bid]))), 3)
+            new = round(max(0.05, min(0.99, old + float(deltas[bid]))), 3)
+            b["confidence"] = new
+            changes.append({
+                "belief_id": bid,
+                "text": (b.get("text") or "")[:120],
+                "old_confidence": old,
+                "new_confidence": new,
+                "delta": round(new - old, 4),
+                "reason_for_change": reason,
+            })
             applied += 1
         if applied:
             self._save()
-        return applied
+        return changes
+
+    def weaken_by_text(self, text: str, delta: float = -0.08, reason: str = "") -> dict | None:
+        """Lower confidence on belief matching text prefix (contradiction resolution)."""
+        needle = (text or "").strip().lower()[:60]
+        if not needle:
+            return None
+        for b in self._beliefs:
+            if needle in (b.get("text") or "").lower():
+                old = float(b.get("confidence", 0.5))
+                new = round(max(0.05, old + delta), 3)
+                b["confidence"] = new
+                self._save()
+                return {
+                    "belief_id": b.get("id"),
+                    "text": b.get("text", "")[:120],
+                    "old_confidence": old,
+                    "new_confidence": new,
+                    "reason_for_change": reason or "contradiction_resolution",
+                }
+        return None

@@ -9,6 +9,7 @@ from typing import Any, Dict, List, Optional
 
 from src.chetnaos.constitution import CONSTITUTION
 from src.chetnaos.memory_kernel.source_ranks import COGNITIVE_SOURCE_RANKS
+from src.chetnaos.reasoning.honesty_guard import honesty_system_addon
 
 
 class PromptBuilder:
@@ -54,6 +55,32 @@ class PromptBuilder:
         block = self.format_cognitive_context(cognitive_context or {})
         return system + block if block else system
 
+    def with_conversation(
+        self, system: str, conversation_context: Optional[Dict[str, Any]]
+    ) -> str:
+        if not conversation_context:
+            return system
+        parts: List[str] = []
+        topic = conversation_context.get("active_topic")
+        if topic:
+            parts.append(f"Active topic: {topic}")
+        summary = conversation_context.get("conversation_summary")
+        if summary:
+            parts.append(f"Conversation summary: {summary[:800]}")
+        goal = conversation_context.get("current_goal")
+        if goal and isinstance(goal, dict):
+            parts.append(f"Current goal: {goal.get('text', '')[:200]}")
+        rel = conversation_context.get("relevant_memory") or []
+        if rel:
+            mlines = [
+                f"- {(m.get('text') or str(m))[:120]}"
+                for m in rel[:3]
+            ]
+            parts.append("Relevant memory for this thread:\n" + "\n".join(mlines))
+        if not parts:
+            return system
+        return system + "\n\n[CONVERSATION CONTEXT]\n" + "\n".join(parts)
+
     def with_plan(self, system: str, plan: str) -> str:
         return system + (f"\n\nApproach to use: {plan}" if plan else "")
 
@@ -63,6 +90,7 @@ class PromptBuilder:
         founder_context: str = "",
         recalled: Optional[List[dict]] = None,
         cognitive_context: Optional[Dict[str, Any]] = None,
+        conversation_context: Optional[Dict[str, Any]] = None,
         plan: str = "",
     ) -> str:
         """Single entry: everything the LLM sees in the system role."""
@@ -70,7 +98,9 @@ class PromptBuilder:
         system = self.with_founder(founder_context)
         system = self.with_memory(system, recalled or [])
         system = self.with_cognitive_context(system, cognitive_context)
-        return self.with_plan(system, plan)
+        system = self.with_conversation(system, conversation_context)
+        system = self.with_plan(system, plan)
+        return system + honesty_system_addon()
 
     def format_cognitive_context(self, ctx: Dict[str, Any]) -> str:
         parts: List[str] = []

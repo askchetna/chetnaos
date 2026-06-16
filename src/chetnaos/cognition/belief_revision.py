@@ -298,9 +298,13 @@ class BeliefRevisionEngine:
     def revise(self, beliefs_store: Optional["Beliefs"] = None) -> Dict[str, Any]:
         """Apply evaluated deltas — never instant flip."""
         deltas = self._last_evaluation.get("deltas", {})
+        belief_changes: List[Dict[str, Any]] = []
         applied = 0
         if beliefs_store and deltas:
-            applied = beliefs_store.apply_confidence_deltas(deltas)
+            belief_changes = beliefs_store.apply_confidence_deltas(
+                deltas, reason="evidence_revision",
+            )
+            applied = len(belief_changes)
             for bid, node in self._belief_graph.items():
                 belief_id = node.get("belief_id")
                 if belief_id in deltas:
@@ -309,11 +313,25 @@ class BeliefRevisionEngine:
                         3,
                     )
 
+        for change in belief_changes:
+            self._revision_history.append({
+                "belief_id": change["belief_id"],
+                "old_confidence": change["old_confidence"],
+                "new_confidence": change["new_confidence"],
+                "delta": change["delta"],
+                "direction": 1 if change["delta"] > 0 else -1,
+                "reason_for_change": change.get("reason_for_change", "evidence_revision"),
+                "timestamp": datetime.utcnow().isoformat(),
+            })
+
         for belief_id, delta in deltas.items():
+            if any(h.get("belief_id") == belief_id for h in belief_changes):
+                continue
             self._revision_history.append({
                 "belief_id": belief_id,
                 "delta": delta,
                 "direction": 1 if delta > 0 else -1,
+                "reason_for_change": "evaluated_no_store",
                 "timestamp": datetime.utcnow().isoformat(),
             })
         self._revision_history = self._revision_history[-_MAX_HISTORY:]
@@ -322,6 +340,7 @@ class BeliefRevisionEngine:
         return {
             "revisions_applied": applied,
             "deltas": deltas,
+            "belief_changes": belief_changes,
             "identity_signal": dict(self._identity_signal),
         }
 
