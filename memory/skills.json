@@ -1,33 +1,33 @@
 {
   "Architecture": {
-    "score": 0.911,
+    "score": 0.913,
     "interactions": 0,
     "category": "core",
     "last_practiced": null
   },
   "Research": {
-    "score": 0.84,
+    "score": 0.87,
     "interactions": 0,
     "category": "core",
     "last_practiced": null
   },
   "Philosophy": {
-    "score": 0.842,
-    "interactions": 14,
+    "score": 0.99,
+    "interactions": 44,
     "category": "core",
-    "last_practiced": "2026-06-15T17:10:39.079001"
+    "last_practiced": "2026-06-15T19:52:36.883326"
   },
   "Coding": {
-    "score": 0.752,
-    "interactions": 9,
+    "score": 0.81,
+    "interactions": 25,
     "category": "technical",
-    "last_practiced": "2026-06-15T17:10:37.159505"
+    "last_practiced": "2026-06-15T19:52:36.737366"
   },
   "Communication": {
-    "score": 0.832,
-    "interactions": 36,
+    "score": 0.99,
+    "interactions": 98,
     "category": "social",
-    "last_practiced": "2026-06-15T17:10:38.823549"
+    "last_practiced": "2026-06-15T19:52:37.121778"
   },
   "Business": {
     "score": 0.61,
@@ -42,7 +42,7 @@
     "last_practiced": null
   },
   "Sales": {
-    "score": 0.386,
+    "score": 0.392,
     "interactions": 0,
     "category": "applied",
     "last_practiced": null

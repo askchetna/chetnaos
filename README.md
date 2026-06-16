@@ -20,31 +20,39 @@ The focus is on architectural completeness and integration rather than brute-for
 
 ChetnaOS provides:
 
-- A **developmental cognitive cycle** (26 stages) via `src/chetnaos/orchestrator/`
-- Persistent memory (SQLite vector store + JSON state files)
-- Constitution-grounded reasoning with dharma reflection
-- Reality verification layer before decisions
-- Tool agent (calculator, web search, fetch) at `/api/agent`
-- Kalpavriksha domain plugin (land/crop/ROI)
-- Deployable FastAPI backend with dashboard UI
+- A **developmental cognitive cycle** (26 stages, including DECIDE) via `src/chetnaos/cycle/`
+- Single runtime entry via `src/chetnaos/runtime/` and `backend/runtime.py`
+- Persistent memory through `MemoryStore` with unified item schema (confidence, source, decay)
+- Constitution-grounded reasoning via `PromptBuilder` (`src/chetnaos/reasoning/`)
+- Reality verification → **DECIDE** → Embodiment output path
+- Mandatory `CycleTrace` per cycle (cycle_id, stage timing, context flags)
+- Tool agent (calculator, web search, fetch) at `/api/agent` through organism
+- Kalpavriksha domain plugin at `backend/plugins/kalpavriksha/` (`/evaluate`, `/roi`, `/crop`)
+- Deployable FastAPI v3 backend with dashboard UI
 
 ---
 
-## System Architecture (v2 — live)
+## System Architecture (v3 — live)
 
 | Layer | Path | Role |
 |-------|------|------|
-| HTTP shell | `backend/app.py` | FastAPI entry |
-| Runtime | `src/chetnaos/orchestrator/runtime.py` | Singleton `ChetnaRuntime` |
-| Cognitive cycle | `src/chetnaos/orchestrator/cognitive_cycle.py` | 26-stage organism loop |
-| Organism | `src/chetnaos/organism/` | Perception, memory, beliefs, sleep, etc. |
+| HTTP shell | `backend/app.py` | FastAPI v3 entry |
+| Runtime singleton | `backend/runtime.py` | One `ChetnaRuntime` per process |
+| Cognitive cycle | `src/chetnaos/cycle/cognitive_cycle.py` | 26-stage organism loop |
+| Runtime core | `src/chetnaos/runtime/` | State machine, sleep manager |
+| Reasoning | `src/chetnaos/reasoning/` | PromptBuilder, LLM router |
+| Memory kernel | `src/chetnaos/memory_kernel/` | Schema + MemoryStore facade |
+| Organs | `src/chetnaos/organs/` | 25 cognitive organ shims → implementations |
+| Compat shims | `src/chetnaos/orchestrator/` | 7D1 — removed in 7D2 when green |
+| Plugins | `backend/plugins/kalpavriksha/` | Land/crop/ROI domain tools |
 | Constitution | `src/chetnaos/constitution/` | Mission, values, ethics |
-| Memory store | `memory/db.py` | SQLite + optional embeddings |
-| Reflection | `reflection/reflection_v2.py` | Dharma scoring |
 
-Legacy v0.9 code (`backend/agi/`, `chetna_core`) is archived under `archive/v0.9_legacy/`.
+**Validation:**
+```powershell
+python scripts/phase7_gate.py
+```
 
-Architecture reports: `reports/01_repository_inventory.md` through `reports/10_build_order.md`.
+See `PHASE7_RULES.md` and `report.md` for migration status.
 
 ---
 
@@ -56,7 +64,7 @@ The live demo showcases:
 - Memory-assisted reasoning (vector recall when embeddings enabled)
 - Dashboard at `/dashboard` and `/api/dashboard`
 - Agent tools at `/api/agent`
-- Kalpavriksha calculators via `/api/kalpavriksha/*`
+- Kalpavriksha calculators via `/evaluate`, `/roi`, `/crop`
 
 ---
 

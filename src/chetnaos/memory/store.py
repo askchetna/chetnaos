@@ -12,6 +12,8 @@ import logging
 import sqlite3
 from typing import Any, Dict, List, Optional
 
+from src.chetnaos.memory_kernel.memory_item import enrich_search_result, normalize_memory_item
+
 logger = logging.getLogger(__name__)
 
 _store_instance: "MemoryStore | None" = None
@@ -33,8 +35,16 @@ class MemoryStore:
 
     def upsert(self, text: str, meta: Optional[Dict[str, Any]] = None) -> int:
         try:
-            row_id = self._db.upsert(text, meta=meta)
-            logger.debug("MemoryStore.upsert id=%s category=%s", row_id, (meta or {}).get("category"))
+            category = (meta or {}).get("category", "long_term_memory")
+            normalized = normalize_memory_item(
+                text,
+                source=category if category in (
+                    "founder_context", "working_memory", "long_term_memory", "general_knowledge"
+                ) else "long_term_memory",
+                extra=meta,
+            )
+            row_id = self._db.upsert(text, meta=normalized)
+            logger.debug("MemoryStore.upsert id=%s source=%s", row_id, normalized.get("source"))
             return row_id
         except Exception as exc:
             logger.error("MemoryStore.upsert failed: %s", exc)
@@ -42,7 +52,8 @@ class MemoryStore:
 
     def search(self, query: str, k: int = 5) -> List[Dict[str, Any]]:
         try:
-            return self._db.search(query, k=k) or []
+            rows = self._db.search(query, k=k) or []
+            return [enrich_search_result(r) for r in rows]
         except Exception as exc:
             logger.error("MemoryStore.search failed: %s", exc)
             raise
@@ -50,7 +61,8 @@ class MemoryStore:
     def recent(self, n: int = 10) -> List[Dict[str, Any]]:
         """Return entries ordered by created_at timestamp (newest first)."""
         try:
-            return self._db.recent(n) or []
+            rows = self._db.recent(n) or []
+            return [enrich_search_result(r) for r in rows]
         except Exception as exc:
             logger.error("MemoryStore.recent failed: %s", exc)
             raise

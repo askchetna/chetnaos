@@ -61,7 +61,7 @@ class PromptCapture:
 
 
 def fresh_cycle():
-    from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+    from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
     return CognitiveCycle()
 
 
@@ -339,7 +339,7 @@ class RuntimeValidationSuite(unittest.TestCase):
                 "reasoning_integration": {},
             }
 
-        with patch("src.chetnaos.orchestrator.cognitive_cycle.CognitiveCycle.run", fake_run):
+        with patch("src.chetnaos.cycle.cognitive_cycle.CognitiveCycle.run", fake_run):
             client = TestClient(app)
             resp = client.post("/api/agent", json={"text": "agent validation ping"})
 
@@ -390,7 +390,7 @@ class RuntimeValidationSuite(unittest.TestCase):
 
         with patch("memory.db.memory_db.search", boom_search):
             with patch(
-                "src.chetnaos.orchestrator.cognitive_cycle.CognitiveCycle.run",
+                "src.chetnaos.cycle.cognitive_cycle.CognitiveCycle.run",
                 lambda self, ui, mode="chat": stub_result,
             ):
                 client = TestClient(app)

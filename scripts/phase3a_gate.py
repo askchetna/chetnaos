@@ -19,7 +19,7 @@ class TestPhase3aImports(unittest.TestCase):
         self.assertEqual(len(EXECUTION_PIPELINE), 25)
 
     def test_cognitive_cycle_imports(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
         cycle = CognitiveCycle()
         self.assertIsNotNone(cycle.executive)
 

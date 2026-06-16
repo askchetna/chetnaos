@@ -72,7 +72,7 @@ class TestPhase25WiredValidation(unittest.TestCase):
         self.assertIn("semantic_concepts", MemoryHierarchy()._state)
 
     def test_cognitive_cycle_still_instantiates(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
         cycle = CognitiveCycle()
         self.assertIsNotNone(cycle.memory)
         self.assertIsNotNone(cycle.beliefs)

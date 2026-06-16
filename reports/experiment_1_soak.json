@@ -1,0 +1,210 @@
+{
+  "experiment": "phase8_experiment_1_soak",
+  "cycles": 10,
+  "elapsed_seconds": 0.81,
+  "architecture_frozen": true,
+  "records": [
+    {
+      "cycle_id": "ef42426d-4444-4e34-a5d0-67222635905f",
+      "cycle_number": 1,
+      "identity_hash": "66f5458c279d66c3",
+      "belief_hash": "32f2cfcdbb9de3db",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 1,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.47,
+      "timestamp": "2026-06-15T19:52:36.449905+00:00"
+    },
+    {
+      "cycle_id": "79ac4c87-0c2b-46bd-b2e3-d0d35c51ec78",
+      "cycle_number": 2,
+      "identity_hash": "0818c3ac743e6249",
+      "belief_hash": "f67534585f6a13d4",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 2,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.42,
+      "timestamp": "2026-06-15T19:52:36.508153+00:00"
+    },
+    {
+      "cycle_id": "3fcae4fc-245c-44ea-940b-7c9e9eda2133",
+      "cycle_number": 3,
+      "identity_hash": "fe50861d0af6b4af",
+      "belief_hash": "60b827f087d621e4",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 3,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.44,
+      "timestamp": "2026-06-15T19:52:36.577804+00:00"
+    },
+    {
+      "cycle_id": "be703f8c-0a87-41a7-a892-cdcc0769bbca",
+      "cycle_number": 4,
+      "identity_hash": "d8a05505153a2b6e",
+      "belief_hash": "4cea9bac50fc7bf6",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 4,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.41,
+      "timestamp": "2026-06-15T19:52:36.668242+00:00"
+    },
+    {
+      "cycle_id": "cac8a041-69bc-43de-b060-cc25792421a9",
+      "cycle_number": 5,
+      "identity_hash": "717502fbdfcfeb1d",
+      "belief_hash": "6290732c5f19ef83",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 5,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.42,
+      "timestamp": "2026-06-15T19:52:36.727130+00:00"
+    },
+    {
+      "cycle_id": "f90fe218-b13b-4447-b5ff-4e3053239090",
+      "cycle_number": 6,
+      "identity_hash": "1c3bad7e4d0a0547",
+      "belief_hash": "6fd82b312eb01174",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 6,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.43,
+      "timestamp": "2026-06-15T19:52:36.787374+00:00"
+    },
+    {
+      "cycle_id": "72d7fc45-dfbb-421d-b72b-2f2129b6cc2c",
+      "cycle_number": 7,
+      "identity_hash": "3fa308e6782a7e03",
+      "belief_hash": "45ae1bed974339d0",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 7,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.42,
+      "timestamp": "2026-06-15T19:52:36.872860+00:00"
+    },
+    {
+      "cycle_id": "12633904-cb84-4736-b5f9-91cbaa97aebc",
+      "cycle_number": 8,
+      "identity_hash": "27d3f2fbbdf180b4",
+      "belief_hash": "55cb3175deda38a0",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 7,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.83,
+      "timestamp": "2026-06-15T19:52:37.006162+00:00"
+    },
+    {
+      "cycle_id": "1ee143ae-a85c-4407-a327-28eda1e403a9",
+      "cycle_number": 9,
+      "identity_hash": "33231e176ddaff73",
+      "belief_hash": "bd4615b9c0703ded",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 7,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.74,
+      "timestamp": "2026-06-15T19:52:37.093831+00:00"
+    },
+    {
+      "cycle_id": "e866eb4c-b82b-4f72-af25-a97cd1ba314b",
+      "cycle_number": 10,
+      "identity_hash": "8ae3b467cb52ec7a",
+      "belief_hash": "bd4615b9c0703ded",
+      "goal_hash": "c3e66c51acce80f4",
+      "memory_count": 4,
+      "working_memory_count": 7,
+      "contradictions": 0,
+      "sleep_triggered": false,
+      "forget_count": 0,
+      "reflection_quality": "good",
+      "decision_confidence": 0.5,
+      "execution_time_ms": 0.64,
+      "timestamp": "2026-06-15T19:52:37.195733+00:00"
+    }
+  ],
+  "comparison_cycle_1_vs_N": {
+    "identity_hash": {
+      "cycle_1": "66f5458c279d66c3",
+      "cycle_N": "8ae3b467cb52ec7a",
+      "changed": true
+    },
+    "belief_hash": {
+      "cycle_1": "32f2cfcdbb9de3db",
+      "cycle_N": "bd4615b9c0703ded",
+      "changed": true
+    },
+    "goal_hash": {
+      "cycle_1": "c3e66c51acce80f4",
+      "cycle_N": "c3e66c51acce80f4",
+      "changed": false
+    },
+    "memory_count": {
+      "cycle_1": 4,
+      "cycle_N": 4,
+      "changed": false
+    },
+    "working_memory_count": {
+      "cycle_1": 1,
+      "cycle_N": 7,
+      "changed": true
+    },
+    "contradictions": {
+      "cycle_1": 0,
+      "cycle_N": 0,
+      "changed": false
+    },
+    "decision_confidence": {
+      "cycle_1": 0.5,
+      "cycle_N": 0.5,
+      "changed": false
+    }
+  },
+  "summary": {
+    "any_hash_changed": true,
+    "total_sleep_events": 0,
+    "avg_execution_ms": 0.52
+  }
+}

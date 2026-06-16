@@ -592,9 +592,44 @@ function buildBeliefs(d){
   return card("Belief Store","💡",items);
 }
 
+// ─── CYCLE TRACE (v3) ──────────────────────────────────────────────────────
+function buildCycleTrace(d){
+  const organs=d.cognitive_organs||{};
+  const last=organs.last_cycle_trace;
+  if(!last||!last.length) return card("Cycle Trace","📋",`<div class="no-data">Run a chat to populate cycle trace.</div>`);
+  const rows=last.slice(-8).map(t=>`<div class="dq-item"><b>${esc(t.stage||"")}</b> ${t.duration_ms!=null?t.duration_ms+"ms":""} conf=${t.confidence!=null?(t.confidence*100).toFixed(0)+"%":"—"} mem=${t.memory_used?"Y":"N"} goal=${t.goal_used?"Y":"N"}</div>`).join("");
+  return card("Cycle Trace","📋",`<div style="font-size:10px;margin-bottom:6px;color:var(--text2)">cycle_id: ${esc((last[0]&&last[0].cycle_id)||"—")}</div>${rows}`);
+}
+
+// ─── COGNITIVE ORGANS (v3) ─────────────────────────────────────────────────
+function buildCognitiveOrgans(d){
+  const o=d.cognitive_organs||{};
+  if(!Object.keys(o).length) return card("Cognitive Organs","🧠",`<div class="no-data">No organ telemetry yet.</div>`);
+  const wm=o.working_memory||{};
+  const gm=o.goal_manager||{};
+  const sm=o.self_model||{};
+  const cur=o.curiosity||{};
+  const em=o.emotion||{};
+  const br=o.belief_revision||{};
+  const active=gm.active_goal;
+  const rows=[
+    ["Working Memory",`${wm.count??0} items · cap ${wm.capacity??"—"}`],
+    ["Active Goal",active?`"${esc((active.text||"").slice(0,60))}"`:"none"],
+    ["Goal Queue",`${gm.queue_size??0} queued`],
+    ["Self-Confidence",sm.self_confidence!=null?`${(sm.self_confidence*100).toFixed(0)}%`:"—"],
+    ["Known Limits",(sm.known_limits||[]).slice(0,3).join(", ")||"none"],
+    ["Curiosity Novelty",cur.novelty_score!=null?cur.novelty_score:"—"],
+    ["Emotion Tone",em.interaction_tone||em.state||"—"],
+    ["Belief Revisions",br.revision_count??br.history_len??"—"],
+  ].map(([k,v])=>`<div class="dev-bar-row"><span class="dev-bar-lbl">${k}</span><span style="font-size:10px;color:var(--text2);flex:1;text-align:right">${v}</span></div>`).join("");
+  return card("Cognitive Organs","🧠",rows);
+}
+
 // ─── RENDER ────────────────────────────────────────────────────────────────
 function renderDashboard(d){
   $("dashboard-grid").innerHTML = [
+    buildCognitiveOrgans(d),
+    buildCycleTrace(d),
     buildIdentity(d),
     buildSkills(d),
     buildWorkspace(d),

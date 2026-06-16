@@ -74,3 +74,138 @@
 {"timestamp": "2026-06-15T17:10:38.823549", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
 {"timestamp": "2026-06-15T17:10:39.022087", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
 {"timestamp": "2026-06-15T17:10:39.077250", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:06:15.481450", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:15.564882", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:06:15.802285", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:16.025381", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:16.069263", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:06:16.234964", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:16.310823", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:06:16.481392", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:16.679590", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:16.912744", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:17.862578", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:18.024817", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:18.232458", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:18.787436", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:06:18.986719", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:40.767703", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:40.853557", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:41.035709", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:41.206164", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:41.257413", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:41.399282", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:41.459636", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:41.632719", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:41.800065", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:41.986651", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:43.086177", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:43.366025", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:43.532739", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:43.726803", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:43.772435", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:52.351156", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:52.405740", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:52.573847", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:52.755113", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:52.816181", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:52.959032", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:53.018518", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:14:53.189167", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:53.372697", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:53.605756", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:54.434918", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:54.611541", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:54.804860", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:55.055146", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:14:55.103090", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:37:17.606539", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:17.648954", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:17.689361", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:17.732286", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:17.771340", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:17.806885", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:18.523689", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:18.553784", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:18.594310", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:18.636336", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.306697", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.336105", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.377349", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.413035", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.449295", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.482981", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:26.986402", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:27.019662", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:27.060118", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:37:27.098515", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:05.566474", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:05.623740", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:05.818471", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:06.003826", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:06.054264", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:06.201803", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:06.254326", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:06.420370", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:06.595570", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:06.811129", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:07.633159", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:07.797277", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:07.972758", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:08.181918", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:08.225295", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:16.436138", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:16.505603", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:16.689125", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:16.852791", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:16.899053", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:17.047654", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:17.105599", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:38:17.295706", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:17.470320", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:17.692109", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:18.435352", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:18.643757", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:18.804769", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:19.023462", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:38:19.068720", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:50:53.844384", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:53.908937", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:50:54.099480", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:54.269343", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:54.312632", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:50:54.452169", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:54.513505", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:50:54.683741", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:54.834709", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:55.044914", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:56.073241", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:56.256372", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:56.437540", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:56.892369", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:50:56.945278", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:31.250663", "input": "Please explain WM_MARKER_ALPHA in detail", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:31.308758", "input": "Follow up WM_MARKER_BETA question", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:31.537288", "input": "Achieve GOAL_MARKER_ZETA objective", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:31.713516", "input": "First belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:31.762474", "input": "Second belief confidence validation cycle", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:31.906308", "input": "hello", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:31.971433", "input": "Explain technology AI algorithm systems architecture software code data model", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "technology", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:32.140092", "input": "How is my sales capability?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "business", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:32.342596", "input": "List three facts about water.", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:32.540992", "input": "I am worried and scared about this emergency situation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:33.433798", "input": "What do you remember?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:33.591631", "input": "What is the founder mission?", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:33.757885", "input": "dashboard alignment validation ping", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "general", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:33.957844", "input": "First consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:34.003983", "input": "Second consecutive chat for belief revision validation", "output": "VALIDATION_STUB_REPLY", "confidence": 0.6, "domain": "philosophy", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:36.393183", "input": "Explain working memory in one sentence. (soak cycle 1)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 1}
+{"timestamp": "2026-06-15T19:52:36.454044", "input": "What is your active goal? (soak cycle 2)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 2}
+{"timestamp": "2026-06-15T19:52:36.508153", "input": "Summarize your beliefs about truth. (soak cycle 3)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 3}
+{"timestamp": "2026-06-15T19:52:36.582157", "input": "How confident are you in your last answer? (soak cycle 4)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 4}
+{"timestamp": "2026-06-15T19:52:36.672720", "input": "What did you learn from the previous cycle? (soak cycle 5)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 5}
+{"timestamp": "2026-06-15T19:52:36.735513", "input": "Explain working memory in one sentence. (soak cycle 6)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "technology", "cycle": 6}
+{"timestamp": "2026-06-15T19:52:36.791766", "input": "What is your active goal? (soak cycle 7)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 7}
+{"timestamp": "2026-06-15T19:52:36.883326", "input": "Summarize your beliefs about truth. (soak cycle 8)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "philosophy", "cycle": 8}
+{"timestamp": "2026-06-15T19:52:37.011389", "input": "How confident are you in your last answer? (soak cycle 9)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 9}
+{"timestamp": "2026-06-15T19:52:37.108148", "input": "What did you learn from the previous cycle? (soak cycle 10)", "output": "[soak stub reply]", "confidence": 0.6, "domain": "general", "cycle": 10}

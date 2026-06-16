@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 class TestPhase3cCognitiveOrgans(unittest.TestCase):
     def test_cycle_has_four_organs(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
 
         cycle = CognitiveCycle()
         self.assertIsNotNone(cycle.working_memory)

@@ -207,6 +207,33 @@
       "goal_origin": "self_trainer",
       "status": "queued",
       "created_at": "2026-06-15T17:09:40.176329"
+    },
+    {
+      "id": "4da4d6d6",
+      "text": "Train Coding: 5 coding interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 9.9,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T19:14:40.800589"
+    },
+    {
+      "id": "7e138f3e",
+      "text": "Train Coding: 4 coding interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 8.1,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T19:38:16.454810"
+    },
+    {
+      "id": "2162e063",
+      "text": "Train Agriculture: 4 agriculture interactions",
+      "goal_type": "TRAINING",
+      "goal_priority": 8.0,
+      "goal_origin": "self_trainer",
+      "status": "queued",
+      "created_at": "2026-06-15T19:38:17.123844"
     }
   ],
   "completed_goals": [],

@@ -1,12 +1,12 @@
 {
-  "question:general": 21,
-  "statement:general": 19,
+  "question:general": 41,
+  "statement:general": 47,
   "question:science": 1,
-  "statement:technology": 6,
+  "statement:technology": 13,
   "question:technology": 1,
-  "command:general": 5,
-  "statement:philosophy": 14,
-  "command:technology": 3,
-  "question:business": 3,
-  "goal:general": 3
+  "command:general": 12,
+  "statement:philosophy": 44,
+  "command:technology": 12,
+  "question:business": 10,
+  "goal:general": 10
 }

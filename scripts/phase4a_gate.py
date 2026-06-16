@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 class TestPhase4aGoalManager(unittest.TestCase):
     def test_cycle_has_goal_manager(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
 
         cycle = CognitiveCycle()
         self.assertIsNotNone(cycle.goal_manager)
@@ -60,7 +60,7 @@ class TestPhase4aGoalManager(unittest.TestCase):
         self.assertEqual(MEMORY_ARCHITECTURE_VERSION, "2.5")
 
     def test_dashboard_exposes_goal_manager(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
 
         snap = CognitiveCycle().dashboard_snapshot()
         organs = snap.get("cognitive_organs", {})

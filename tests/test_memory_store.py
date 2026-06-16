@@ -226,7 +226,7 @@ class TestMemoryFacades(unittest.TestCase):
 
 class TestCognitiveFlow(unittest.TestCase):
     def test_cognitive_cycle_instantiates_with_memory(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
 
         cycle = CognitiveCycle()
         self.assertIsNotNone(cycle.memory)

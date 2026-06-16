@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 class TestReasoningIntegration(unittest.TestCase):
     def test_reasoning_includes_working_memory_and_goal(self):
-        from src.chetnaos.organism.reasoning import Reasoning
+        from src.chetnaos.reasoning.reasoning import Reasoning
 
         reasoning = Reasoning()
         mock_llm = MagicMock()
@@ -52,7 +52,7 @@ class TestReasoningIntegration(unittest.TestCase):
         self.assertIn("[SELF MODEL]", system_content)
 
     def test_build_reasoning_context_wires_working_memory_recall(self):
-        from src.chetnaos.orchestrator.cognitive_cycle import CognitiveCycle
+        from src.chetnaos.cycle.cognitive_cycle import CognitiveCycle
 
         cycle = CognitiveCycle()
         cycle.working_memory.push({"input": "context item"}, attention_weight=0.8)

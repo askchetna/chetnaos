@@ -25,8 +25,15 @@ jobs:
     
     - name: Test backend imports
       run: |
-        python -c "from backend.app import app; print('✅ Backend imports successful')"
-        python -c "from backend.agent import router; print('✅ Agent router imports successful')"
+        python -c "from backend.app import app; print('Backend imports successful')"
+        python -c "from backend.api.agent import router; print('Agent router imports successful')"
+        python -c "from src.chetnaos.runtime import ChetnaRuntime; print('v3 runtime shim OK')"
+    
+    - name: Phase 7 gate
+      run: python scripts/phase7_gate.py
+
+    - name: Pytest suite
+      run: python -m pytest tests/ -q --tb=no
     
     - name: Test health endpoint (if server starts)
       run: |

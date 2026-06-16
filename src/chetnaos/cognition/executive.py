@@ -4,7 +4,7 @@ Executive Controller — orchestration policy for the cognitive cycle.
 Purpose: Own stage scheduling, LLM gating, sleep policy, and execution decisions.
 Inputs:  CycleStage, runtime context dict, SleepManager
 Outputs: should_run, use_llm, skip_reason, health_state
-Dependencies: orchestrator.state_machine.CycleStage, orchestrator.sleep_manager.SleepManager
+Dependencies: runtime.state_machine.CycleStage, runtime.sleep_manager.SleepManager
 
 Does NOT execute organism modules — CognitiveCycle remains the dispatcher.
 """
@@ -13,8 +13,8 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, List, Optional
 
-from src.chetnaos.orchestrator.state_machine import CycleStage
-from src.chetnaos.orchestrator.sleep_manager import SleepManager
+from src.chetnaos.runtime.state_machine import CycleStage
+from src.chetnaos.runtime.sleep_manager import SleepManager
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +34,7 @@ EXECUTION_PIPELINE: List[CycleStage] = [
     CycleStage.WORLD_UPDATE,
     CycleStage.EXPERIENCE,
     CycleStage.REALITY_CHECK,
+    CycleStage.DECIDE,
     CycleStage.EVALUATE,
     CycleStage.FAILURE_RECOVERY,
     CycleStage.REFLECT,
@@ -42,8 +43,8 @@ EXECUTION_PIPELINE: List[CycleStage] = [
     CycleStage.UPDATE_IDENTITY,
     CycleStage.REFINE_PURPOSE,
     CycleStage.SLEEP,
-    CycleStage.FORGET,
     CycleStage.CONSOLIDATE,
+    CycleStage.FORGET,
     CycleStage.WAKE,
 ]
 
@@ -119,10 +120,6 @@ class ExecutiveController:
             return False
         if stage in self._disabled_stages:
             self._last_skip_reason = f"stage_disabled:{stage.value}"
-            return False
-        # DECIDE is defined in enum but never emitted — executive never schedules it.
-        if stage == CycleStage.DECIDE:
-            self._last_skip_reason = "stage_not_in_pipeline:DECIDE"
             return False
         self._last_skip_reason = None
         return True
