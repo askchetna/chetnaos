@@ -11,3 +11,4 @@ numpy==1.24.3
 # sentence-transformers required when EMBEDDINGS_ENABLED=true (vector memory)
 # sentence-transformers>=2.2.0
 # chroma optional for advanced vector search
+pytest>=8.0
