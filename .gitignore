@@ -50,3 +50,10 @@ logs/
 # Coverage
 .coverage
 htmlcov/
+
+# Runtime memory state (keep memory/ folder and Python modules)
+mem.db
+memory/*.json
+memory/*.jsonl
+memory/.validation_backups/*
+!memory/.gitkeep
