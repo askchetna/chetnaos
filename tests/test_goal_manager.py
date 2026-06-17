@@ -121,6 +121,80 @@ class TestGoalManager(unittest.TestCase):
             self.assertIsNotNone(gm2.active_goal())
             self.assertEqual(gm2.active_goal()["text"], "Persist me")
 
+    def test_prediction_error_loop_updates_progress(self):
+        with self._patch_path():
+            gm = self._manager()
+            gm.add_goal("Launch ChetnaOS publicly", priority=95.0)
+            gm.next_goal()
+            result = gm.update_prediction_error_loop(
+                cycle_id="test-cycle",
+                cycle_n=1,
+                reality={"confidence": 0.65, "passed": True},
+                reflection={"quality": "good"},
+                evaluation={"passed": True},
+                decision={"confidence": 0.65},
+                goal_used=True,
+                user_input="progress check",
+                plan="Prepare public demo",
+            )
+            self.assertTrue(result["active"])
+            active = gm.active_goal()
+            self.assertIn("expected_progress", active)
+            self.assertIn("actual_progress", active)
+            self.assertIn("prediction_error", active)
+            self.assertIn("confidence", active)
+            self.assertIn("next_action", active)
+            self.assertIn("milestones", active)
+            self.assertGreaterEqual(len(active["milestones"]), 3)
+            self.assertIn(active["health"], ("healthy", "warning", "stalled", "completed"))
+            self.assertEqual(
+                active["prediction_error"],
+                round(active["actual_progress"] - active["expected_progress"], 1),
+            )
+            self.assertGreaterEqual(active["confidence"], 0.05)
+            self.assertLessEqual(active["confidence"], 0.99)
+
+    def test_milestone_closure_by_criteria(self):
+        with self._patch_path():
+            gm = self._manager()
+            gm.add_goal("Launch ChetnaOS publicly", priority=95.0)
+            gm.next_goal()
+            # Satisfy first milestone criteria with concrete signal in current cycle
+            result = gm.update_prediction_error_loop(
+                cycle_id="milestone-close",
+                cycle_n=2,
+                reflection={"quality": "good"},
+                reality={"confidence": 0.8, "passed": True},
+                goal_used=True,
+                user_input="Demo script created and landing page URL exists https://example.com",
+                plan="Create launch landing page and publish announcement",
+            )
+            ms = result["milestones"]
+            self.assertTrue(any(m["status"] == "completed" for m in ms))
+            self.assertGreater(result["actual_progress"], 0)
+
+    def test_stalled_state_generates_correction(self):
+        with self._patch_path():
+            gm = self._manager()
+            gm.add_goal("Stalled goal", priority=80.0)
+            gm.next_goal()
+            ag = gm._active_goal
+            ag["expected_progress"] = 70.0
+            ag["actual_progress"] = 40.0
+            ag["prediction_error"] = -30.0
+            ag["negative_error_streak"] = 2
+            result = gm.update_prediction_error_loop(
+                cycle_id="stall-cycle",
+                reflection={"quality": "poor"},
+                goal_used=False,
+            )
+            self.assertEqual(result["health"], "stalled")
+            self.assertIn("stalled_correction", result)
+            self.assertIn("diagnosis", result["stalled_correction"])
+            self.assertIn("recommendation", result["stalled_correction"])
+            self.assertTrue(result.get("blocked_reason"))
+            self.assertTrue(result.get("recommended_next_step"))
+
 
 if __name__ == "__main__":
     unittest.main()

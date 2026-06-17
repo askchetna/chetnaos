@@ -7,7 +7,223 @@
     "goal_origin": "founder_model",
     "status": "active",
     "created_at": "2026-06-15T16:51:39.121039",
-    "activated_at": "2026-06-15T16:51:39.121039"
+    "activated_at": "2026-06-15T16:51:39.121039",
+    "expected_progress": 40.8,
+    "actual_progress": 20.0,
+    "prediction_error": -20.8,
+    "confidence": 0.05,
+    "next_action": "Unblock milestone: Prepare public demo",
+    "health": "stalled",
+    "negative_error_streak": 26,
+    "outcome_attribution": [
+      {
+        "timestamp": "2026-06-17T09:38:09.615940",
+        "cycle_id": "65742fe4-8a6a-467b-95ec-ac8c1dfe2c05",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 0.2,
+        "delta_actual": 1.0
+      },
+      {
+        "timestamp": "2026-06-17T09:38:10.492510",
+        "cycle_id": "e6f24edd-5206-4069-842d-2a9bb3ecf5de",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 0.2,
+        "delta_actual": 1.0
+      },
+      {
+        "timestamp": "2026-06-17T09:38:10.865026",
+        "cycle_id": "a82cc996-92dc-4711-aa14-18af3a312572",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 0.2,
+        "delta_actual": 1.0
+      },
+      {
+        "timestamp": "2026-06-17T09:38:12.483902",
+        "cycle_id": "02e6fb9c-db9c-4cb6-81b1-ef594493b47e",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 0.2,
+        "delta_actual": 1.0
+      },
+      {
+        "timestamp": "2026-06-17T09:38:12.850869",
+        "cycle_id": "a3ad5fec-733c-4084-82db-d6be51a4b82f",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 0.2,
+        "delta_actual": 1.0
+      },
+      {
+        "timestamp": "2026-06-17T09:38:13.688337",
+        "cycle_id": "bd2d9f9b-87ad-49f9-974f-3a232af920a8",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 1.0,
+        "delta_actual": 1.8
+      },
+      {
+        "timestamp": "2026-06-17T09:38:13.835223",
+        "cycle_id": "e25aac78-d21d-43de-9e17-ee7a89b57cfb",
+        "action": "Unblock progress on: Launch ChetnaOS publicly",
+        "outcome": "improved",
+        "delta_error": 1.0,
+        "delta_actual": 1.8
+      },
+      {
+        "timestamp": "2026-06-17T09:47:51.388324",
+        "cycle_id": "81e81d0e-b647-42c8-b715-403e1a72a4a4",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "worsened",
+        "delta_error": -15.0,
+        "delta_actual": -14.2
+      },
+      {
+        "timestamp": "2026-06-17T09:47:51.529313",
+        "cycle_id": "403382f8-5bac-41ac-927c-ccc1bc69ad21",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 1.2,
+        "delta_actual": 2.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:52.233604",
+        "cycle_id": "f1c293ef-2e1d-4490-b2e8-faf955eceb06",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 2.4,
+        "delta_actual": 3.2
+      },
+      {
+        "timestamp": "2026-06-17T09:47:52.352479",
+        "cycle_id": "edfb9337-a086-44e6-86bc-a35698b03d9f",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 2.4,
+        "delta_actual": 3.2
+      },
+      {
+        "timestamp": "2026-06-17T09:47:52.751294",
+        "cycle_id": "8e54790d-01ce-4aa8-80ed-39253fa95b51",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 1.2,
+        "delta_actual": 2.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:53.041249",
+        "cycle_id": "5982f500-6f2d-418f-a500-3cb0ed723735",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 1.2,
+        "delta_actual": 2.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:53.870303",
+        "cycle_id": "720c929f-9d97-4aa7-95ff-cba0ad9ce11d",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 1.2,
+        "delta_actual": 2.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:54.210065",
+        "cycle_id": "26cfc544-dd8b-46b0-84b2-de57d0b32958",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 1.2,
+        "delta_actual": 2.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:54.602789",
+        "cycle_id": "04868982-a6b2-4308-a113-6f03472b6462",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "improved",
+        "delta_error": 0.8,
+        "delta_actual": 1.6
+      },
+      {
+        "timestamp": "2026-06-17T09:47:55.905163",
+        "cycle_id": "bb58f193-8d0e-4aa5-b559-7d0e243643f1",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": -0.8,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:56.414540",
+        "cycle_id": "b6519db0-56b0-4531-ba3d-7978ca9d9441",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": -0.8,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:57.599403",
+        "cycle_id": "6e9e004f-af10-4fa6-bed4-8757f8ecd32b",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": -0.8,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-17T09:47:57.750849",
+        "cycle_id": "3293e148-ece9-4421-b76d-99df4c186f9e",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": -0.8,
+        "delta_actual": 0.0
+      }
+    ],
+    "progress_cycles": 26,
+    "stalled_diagnosis": "What is preventing progress? progress is far below expectation; milestone 'Prepare public demo' is blocked.",
+    "corrective_recommendation": "Focus next cycle on 'Prepare public demo' and produce one concrete artifact that satisfies its completion criteria.",
+    "milestones": [
+      {
+        "title": "Prepare public demo",
+        "status": "active",
+        "progress": 100.0,
+        "confidence": 0.63,
+        "completion_criteria": "Demo script or run output exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Create launch landing page",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Landing page URL exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Record demo video",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Demo video file or link exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Publish launch announcement",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Announcement post is published",
+        "created_cycle": 13
+      },
+      {
+        "title": "Collect first feedback",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "At least one external feedback note exists",
+        "created_cycle": 13
+      }
+    ],
+    "blocked_reason": "progress is far below expectation; milestone 'Prepare public demo' is blocked",
+    "recommended_next_step": "Focus next cycle on 'Prepare public demo' and produce one concrete artifact that satisfies its completion criteria."
   },
   "goal_queue": [
     {
@@ -390,5 +606,377 @@
     }
   ],
   "completed_goals": [],
-  "failed_goals": []
+  "failed_goals": [],
+  "learning_events": [
+    {
+      "timestamp": "2026-06-17T09:38:07.371437",
+      "cycle_id": "3d2be258-4c16-4ef7-9f1c-7e34e07a7b44",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 20.8,
+      "actual_progress": 1.0,
+      "prediction_error": -19.8,
+      "confidence": 0.46,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:07.543764",
+      "cycle_id": "950dddcf-8946-43c5-b91b-9e8535a88018",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 21.6,
+      "actual_progress": 2.0,
+      "prediction_error": -19.6,
+      "confidence": 0.44,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:08.239340",
+      "cycle_id": "a7804f83-8e86-42ac-9dd8-782e067a7633",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 22.4,
+      "actual_progress": 3.8,
+      "prediction_error": -18.6,
+      "confidence": 0.42,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:38:08.364310",
+      "cycle_id": "7dc87114-04ce-4caa-808f-20eb3fd47136",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 23.2,
+      "actual_progress": 5.6,
+      "prediction_error": -17.6,
+      "confidence": 0.4,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:38:08.849296",
+      "cycle_id": "ba1eb2b9-060c-470a-92f8-615bee546985",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 24.0,
+      "actual_progress": 6.6,
+      "prediction_error": -17.4,
+      "confidence": 0.38,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:09.091789",
+      "cycle_id": "526a58ea-6483-4a7d-b5e7-c32bfa447bab",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 24.8,
+      "actual_progress": 7.6,
+      "prediction_error": -17.2,
+      "confidence": 0.36,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:09.615940",
+      "cycle_id": "65742fe4-8a6a-467b-95ec-ac8c1dfe2c05",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 25.6,
+      "actual_progress": 8.6,
+      "prediction_error": -17.0,
+      "confidence": 0.34,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:10.492510",
+      "cycle_id": "e6f24edd-5206-4069-842d-2a9bb3ecf5de",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 26.4,
+      "actual_progress": 9.6,
+      "prediction_error": -16.8,
+      "confidence": 0.32,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:10.865026",
+      "cycle_id": "a82cc996-92dc-4711-aa14-18af3a312572",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 27.2,
+      "actual_progress": 10.6,
+      "prediction_error": -16.6,
+      "confidence": 0.3,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:12.483902",
+      "cycle_id": "02e6fb9c-db9c-4cb6-81b1-ef594493b47e",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 28.0,
+      "actual_progress": 11.6,
+      "prediction_error": -16.4,
+      "confidence": 0.28,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:12.850869",
+      "cycle_id": "a3ad5fec-733c-4084-82db-d6be51a4b82f",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 28.8,
+      "actual_progress": 12.6,
+      "prediction_error": -16.2,
+      "confidence": 0.26,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:38:13.688337",
+      "cycle_id": "bd2d9f9b-87ad-49f9-974f-3a232af920a8",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 29.6,
+      "actual_progress": 14.4,
+      "prediction_error": -15.2,
+      "confidence": 0.24,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:38:13.835223",
+      "cycle_id": "e25aac78-d21d-43de-9e17-ee7a89b57cfb",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 30.4,
+      "actual_progress": 16.2,
+      "prediction_error": -14.2,
+      "confidence": 0.24,
+      "health": "stalled",
+      "next_action": "Unblock progress on: Launch ChetnaOS publicly",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:47:51.388324",
+      "cycle_id": "81e81d0e-b647-42c8-b715-403e1a72a4a4",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 31.2,
+      "actual_progress": 2.0,
+      "prediction_error": -29.2,
+      "confidence": 0.2,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:51.529313",
+      "cycle_id": "403382f8-5bac-41ac-927c-ccc1bc69ad21",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 32.0,
+      "actual_progress": 4.0,
+      "prediction_error": -28.0,
+      "confidence": 0.18,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:52.233604",
+      "cycle_id": "f1c293ef-2e1d-4490-b2e8-faf955eceb06",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 32.8,
+      "actual_progress": 7.2,
+      "prediction_error": -25.6,
+      "confidence": 0.16,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:47:52.352479",
+      "cycle_id": "edfb9337-a086-44e6-86bc-a35698b03d9f",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 33.6,
+      "actual_progress": 10.4,
+      "prediction_error": -23.2,
+      "confidence": 0.14,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:47:52.751294",
+      "cycle_id": "8e54790d-01ce-4aa8-80ed-39253fa95b51",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 34.4,
+      "actual_progress": 12.4,
+      "prediction_error": -22.0,
+      "confidence": 0.12,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:53.041249",
+      "cycle_id": "5982f500-6f2d-418f-a500-3cb0ed723735",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 35.2,
+      "actual_progress": 14.4,
+      "prediction_error": -20.8,
+      "confidence": 0.1,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:53.870303",
+      "cycle_id": "720c929f-9d97-4aa7-95ff-cba0ad9ce11d",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 36.0,
+      "actual_progress": 16.4,
+      "prediction_error": -19.6,
+      "confidence": 0.08,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:54.210065",
+      "cycle_id": "26cfc544-dd8b-46b0-84b2-de57d0b32958",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 36.8,
+      "actual_progress": 18.4,
+      "prediction_error": -18.4,
+      "confidence": 0.06,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:54.602789",
+      "cycle_id": "04868982-a6b2-4308-a113-6f03472b6462",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 37.6,
+      "actual_progress": 20.0,
+      "prediction_error": -17.6,
+      "confidence": 0.05,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:55.905163",
+      "cycle_id": "bb58f193-8d0e-4aa5-b559-7d0e243643f1",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 38.4,
+      "actual_progress": 20.0,
+      "prediction_error": -18.4,
+      "confidence": 0.05,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:56.414540",
+      "cycle_id": "b6519db0-56b0-4531-ba3d-7978ca9d9441",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 39.2,
+      "actual_progress": 20.0,
+      "prediction_error": -19.2,
+      "confidence": 0.05,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.0
+    },
+    {
+      "timestamp": "2026-06-17T09:47:57.599403",
+      "cycle_id": "6e9e004f-af10-4fa6-bed4-8757f8ecd32b",
+      "cycle_n": 1,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 40.0,
+      "actual_progress": 20.0,
+      "prediction_error": -20.0,
+      "confidence": 0.05,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.8
+    },
+    {
+      "timestamp": "2026-06-17T09:47:57.750849",
+      "cycle_id": "3293e148-ece9-4421-b76d-99df4c186f9e",
+      "cycle_n": 2,
+      "goal_id": "1adb2565",
+      "goal_text": "Launch ChetnaOS publicly",
+      "expected_progress": 40.8,
+      "actual_progress": 20.0,
+      "prediction_error": -20.8,
+      "confidence": 0.05,
+      "health": "stalled",
+      "next_action": "Unblock milestone: Prepare public demo",
+      "actual_delta": 1.8
+    }
+  ],
+  "milestone_pattern_stats": {
+    "demo": {
+      "completed": 0,
+      "stalled": 13
+    }
+  }
 }

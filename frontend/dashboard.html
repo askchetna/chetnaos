@@ -185,6 +185,10 @@
     .fd-goal-status.in_progress{background:rgba(99,102,241,.15);color:var(--a2);}
     .fd-goal-status.completed{background:rgba(34,197,94,.15);color:var(--green);}
     .fd-goal-status.planned{background:rgba(75,86,117,.2);color:var(--muted);}
+    .gp-healthy{color:var(--green);}
+    .gp-warning{color:var(--amber);}
+    .gp-stalled{color:var(--red);}
+    .gp-completed{color:var(--a2);}
     .fd-habit-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
     .fd-habit-name{font-size:10px;flex:1;color:var(--text);}
     .fd-habit-freq{font-size:8px;color:var(--muted);background:var(--s3);padding:1px 4px;border-radius:3px;}
@@ -630,6 +634,45 @@ function buildMemoryRecallTrace(d){
   return card("Memory Recall Trace","🧠",body);
 }
 
+function buildGoalProgress(d){
+  const gp=d.goal_progress||{};
+  const ag=(d.cognitive_organs||{}).goal_manager?.active_goal||{};
+  const goal=gp.goal||ag.text||"—";
+  const expected=gp.expected_progress??ag.expected_progress;
+  const actual=gp.actual_progress??ag.actual_progress;
+  const error=gp.prediction_error??ag.prediction_error;
+  const status=gp.health||ag.health||"—";
+  const conf=gp.confidence??ag.confidence;
+  const next=gp.next_action||ag.next_action||"—";
+  if(!gp.active&&!ag.id) return card("Goal Progress","🎯",`<div class="no-data">No active goal — progress loop idle.</div>`);
+  const statusCls=status==="healthy"?"gp-healthy":status==="warning"?"gp-warning":status==="stalled"?"gp-stalled":status==="completed"?"gp-completed":"";
+  const errSign=error>0?"+":"";
+  const milestones=(gp.milestones||ag.milestones||[]);
+  const msRows=milestones.slice(0,5).map(m=>{
+    const st=m.status||"pending";
+    const stColor=st==="completed"?"var(--green)":st==="active"?"var(--a2)":st==="pending"?"var(--muted)":"var(--gold)";
+    const p=m.progress!=null?`${Number(m.progress).toFixed(0)}%`:"—";
+    return `<div class="dq-item" style="display:flex;justify-content:space-between;gap:8px">
+      <span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(m.title||"")}</span>
+      <span style="color:${stColor};font-size:9px">${esc(st)}</span>
+      <span style="color:var(--a2);font-size:9px">${p}</span>
+    </div>`;
+  }).join("");
+  const blocked=gp.blocked_reason?`<div class="dq-item"><b>Blocked reason</b> ${esc(gp.blocked_reason)}</div>`:"";
+  const rec=gp.recommended_next_step?`<div class="dq-item"><b>Recommended next step</b> ${esc(gp.recommended_next_step)}</div>`:"";
+  const stalled=status==="stalled"&&gp.corrective_recommendation?`<div class="dq-item" style="margin-top:6px"><b>Self-correction</b> ${esc(gp.stalled_diagnosis||"")}<br><span style="color:var(--a2)">${esc(gp.corrective_recommendation||"")}</span></div>`:"";
+  const body=`
+    <div class="dq-item"><b>Goal</b> ${esc(String(goal).slice(0,100))}</div>
+    <div class="dq-item"><b>Expected</b> ${expected!=null?expected+"%":"—"} · <b>Actual</b> ${actual!=null?actual+"%":"—"} · <b>Error</b> <span class="${statusCls}">${error!=null?errSign+error+"%":"—"}</span></div>
+    <div class="dq-item"><b>Status</b> <span class="${statusCls}">${esc(status)}</span> · <b>Confidence</b> ${conf!=null?(conf*100).toFixed(0)+"%":"—"}</div>
+    <div class="dq-item"><b>Next action</b> ${esc(String(next).slice(0,120))}</div>
+    ${milestones.length?`<div style="margin-top:8px"><div style="font-size:10px;color:var(--muted);margin-bottom:4px">Milestones</div>${msRows}</div>`:""}
+    ${blocked}
+    ${rec}
+    ${stalled}`;
+  return card("Goal Progress","🎯",body);
+}
+
 function buildBeliefChanges(d){
   const changes=[...(d.belief_changes||[]),...(d.cognitive_organs?.belief_revision?.recent_history||[])].slice(0,8);
   if(!changes.length) return card("Belief Updates","📈",`<div class="no-data">No confidence changes this session.</div>`);
@@ -682,6 +725,7 @@ function renderDashboard(d){
   $("dashboard-grid").innerHTML = [
     buildCognitiveOrgans(d),
     buildCycleTrace(d),
+    buildGoalProgress(d),
     buildMemoryInfluence(d),
     buildMemoryRecallTrace(d),
     buildBeliefChanges(d),

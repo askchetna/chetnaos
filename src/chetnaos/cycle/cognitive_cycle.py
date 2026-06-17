@@ -132,6 +132,7 @@ class CognitiveCycle:
         self._last_memory_influence: list = []
         self._last_belief_influence: list = []
         self._last_memory_trace: dict = {}
+        self._last_goal_progress: dict = {}
 
     def _build_reasoning_context(
         self,
@@ -446,6 +447,20 @@ class CognitiveCycle:
         })
         step(CycleStage.REFLECT, reflect_r)
 
+        # ── Goal progress: prediction error ↔ corrective action loop ─────
+        progress_r = self.goal_manager.update_prediction_error_loop(
+            cycle_id=cycle_trace.cycle_id,
+            cycle_n=cycle_n,
+            reality=reality_r,
+            reflection=reflect_r,
+            evaluation=eval_r,
+            decision=dec_r,
+            goal_used=reason_r.get("used_active_goal", False),
+            user_input=user_input,
+            plan=selected_plan,
+        )
+        self._last_goal_progress = progress_r
+
         # Skills: practice based on domain and quality, then refresh training goals
         self.skills.practice(abstr["domain"], reflect_r["quality"])
         self._training_goals = self.self_trainer.generate_goals(self.skills.get_all())
@@ -657,6 +672,7 @@ class CognitiveCycle:
             "belief_changes": self._last_belief_changes,
             "contradiction_resolutions": self._last_contradiction_resolutions,
             "resolution_belief_changes": self._last_resolution_belief_changes,
+            "goal_progress": self._last_goal_progress,
         }
 
     # ──────────────────────────────────────────────────────────────────────
@@ -706,6 +722,7 @@ class CognitiveCycle:
             "memory_influence": self._last_memory_influence,
             "belief_influence": self._last_belief_influence,
             "memory_trace": self._last_memory_trace,
+            "goal_progress": self._last_goal_progress or self.goal_manager.goal_progress_summary(),
             "belief_changes": self._last_belief_changes,
             "contradiction_resolutions": self.contradictions.resolution_history()[:10],
             "health":          self.homeostasis.check(
