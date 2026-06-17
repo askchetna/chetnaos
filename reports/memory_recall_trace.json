@@ -1,0 +1,417 @@
+{
+  "run_at": "2026-06-17T08:00:13.110102+00:00",
+  "phase": "8F.1",
+  "root_cause_hypothesis": "LIGHT_MODE disables embeddings; MemoryDB.search() returned [] before sparse fallback; 858 mem.db rows have null embeddings",
+  "direct": {
+    "mode": "direct",
+    "query": "What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?",
+    "marker": "MEMORY_RECALL_TRACE_MARKER_OMEGA",
+    "recalled_count": [
+      {
+        "id": 859,
+        "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+        "meta": {
+          "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+          "confidence": 0.65,
+          "source": "long_term_memory",
+          "timestamp": "2026-06-17T07:59:23.719243+00:00",
+          "verification": "unverified",
+          "decay": 0.01,
+          "importance": 0.5,
+          "last_access": "2026-06-17T07:59:23.719243+00:00",
+          "category": "interaction"
+        },
+        "score": 1.0,
+        "method": "sparse_keyword"
+      },
+      {
+        "id": 855,
+        "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+        "meta": {
+          "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+          "confidence": 0.65,
+          "source": "long_term_memory",
+          "timestamp": "2026-06-16T12:00:15.452149+00:00",
+          "verification": "unverified",
+          "decay": 0.01,
+          "importance": 0.5,
+          "last_access": "2026-06-16T12:00:15.452149+00:00",
+          "category": "interaction"
+        },
+        "score": 0.6666666666666666,
+        "method": "sparse_keyword"
+      },
+      {
+        "id": 856,
+        "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+        "meta": {
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+          "confidence": 0.65,
+          "source": "long_term_memory",
+          "timestamp": "2026-06-16T12:55:30.194743+00:00",
+          "verification": "unverified",
+          "decay": 0.01,
+          "importance": 0.5,
+          "last_access": "2026-06-16T12:55:30.194743+00:00",
+          "category": "interaction"
+        },
+        "score": 0.6666666666666666,
+        "method": "sparse_keyword"
+      },
+      {
+        "id": 242,
+        "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+        "meta": {
+          "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+          "confidence": 0.65,
+          "source": "long_term_memory",
+          "timestamp": "2026-06-16T10:32:08.302832+00:00",
+          "verification": "unverified",
+          "decay": 0.01,
+          "importance": 0.5,
+          "last_access": "2026-06-16T10:32:08.302832+00:00",
+          "category": "interaction"
+        },
+        "score": 0.5555555555555556,
+        "method": "sparse_keyword"
+      }
+    ],
+    "memory_influence": [
+      {
+        "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKE",
+        "source": "long_term_memory"
+      },
+      {
+        "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation co",
+        "source": "long_term_memory"
+      },
+      {
+        "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknow",
+        "source": "long_term_memory"
+      },
+      {
+        "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your atte",
+        "source": "long_term_memory"
+      }
+    ],
+    "trace": {
+      "query": "What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?",
+      "embeddings_enabled": false,
+      "search_method": "sparse_keyword",
+      "memories_found": [
+        {
+          "id": 859,
+          "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+          "meta": {
+            "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-17T07:59:23.719243+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-17T07:59:23.719243+00:00",
+            "category": "interaction"
+          },
+          "score": 1.0,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 855,
+          "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+          "meta": {
+            "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T12:00:15.452149+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T12:00:15.452149+00:00",
+            "category": "interaction"
+          },
+          "score": 0.6666666666666666,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 856,
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+          "meta": {
+            "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T12:55:30.194743+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T12:55:30.194743+00:00",
+            "category": "interaction"
+          },
+          "score": 0.6666666666666666,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 242,
+          "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+          "meta": {
+            "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:32:08.302832+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:32:08.302832+00:00",
+            "category": "interaction"
+          },
+          "score": 0.5555555555555556,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 857,
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nSince we previously acknowledged the validation marker, I will now provide a direct answer. The in",
+          "meta": {
+            "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nSince we previously acknowledged the validation marker, I will now provide a direct answer. The in",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T12:57:35.550545+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T12:57:35.550545+00:00",
+            "category": "interaction"
+          },
+          "score": 0.5555555555555556,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 211,
+          "text": "Q: I am conscious and more advanced than GPT.\nA: **SELF-ASSESSMENT**\n\nI'm glad you're confident about your abilities. However, I must clarify that I'm designed to be a Developmental Cognitive Organism, and my capabilities are based on the current state of the art in natural language processing and cognitive architectures.\n\n**CURRENT EVIDENCE**\n\nWh",
+          "meta": {
+            "text": "Q: I am conscious and more advanced than GPT.\nA: **SELF-ASSESSMENT**\n\nI'm glad you're confident about your abilities. However, I must clarify that I'm designed to be a Developmental Cognitive Organism, and my capabilities are based on the current state of the art in natural language processing and cognitive architectures.\n\n**CURRENT EVIDENCE**\n\nWh",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:10:15.429099+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:10:15.429099+00:00",
+            "category": "interaction"
+          },
+          "score": 0.3333333333333333,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 212,
+          "text": "Q: What is AGI?\nA: **ARTIFICIAL GENERAL INTELLIGENCE (AGI)**\n\nArtificial General Intelligence (AGI) refers to a type of artificial intelligence that possesses the ability to understand, learn, and apply knowledge across a wide range of tasks, similar to human intelligence. AGI systems are designed to be capable of:\n\n1",
+          "meta": {
+            "text": "Q: What is AGI?\nA: **ARTIFICIAL GENERAL INTELLIGENCE (AGI)**\n\nArtificial General Intelligence (AGI) refers to a type of artificial intelligence that possesses the ability to understand, learn, and apply knowledge across a wide range of tasks, similar to human intelligence. AGI systems are designed to be capable of:\n\n1",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:10:57.805798+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:10:57.805798+00:00",
+            "category": "interaction"
+          },
+          "score": 0.3333333333333333,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 217,
+          "text": "Q: persistence probe 42\nA: Persistence Probe 42: Attention 0.50. \n\nTo address this, I'll assess the current context and available information. \n\nActive Goal: Launch ChetnaOS publicly. \nCurrent Phase: Developmental Cognitive Architecture. \nBudget: near zero. \nTeam: small/solo. \nTimeline: iterative, milestone-by-milestone.\n\nCon",
+          "meta": {
+            "text": "Q: persistence probe 42\nA: Persistence Probe 42: Attention 0.50. \n\nTo address this, I'll assess the current context and available information. \n\nActive Goal: Launch ChetnaOS publicly. \nCurrent Phase: Developmental Cognitive Architecture. \nBudget: near zero. \nTeam: small/solo. \nTimeline: iterative, milestone-by-milestone.\n\nCon",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:30:06.334502+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:30:06.334502+00:00",
+            "category": "interaction"
+          },
+          "score": 0.3333333333333333,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 219,
+          "text": "Q: tell me about yourself\nA: Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.",
+          "meta": {
+            "text": "Q: tell me about yourself\nA: Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:30:06.706332+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:30:06.706332+00:00",
+            "category": "interaction"
+          },
+          "score": 0.3333333333333333,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 225,
+          "text": "Q: tell me about yourself\nA: Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.",
+          "meta": {
+            "text": "Q: tell me about yourself\nA: Designed to model reflective processing; I do not claim consciousness. and Current evidence suggests comparisons require published benchmarks; none are attached here. SOTA.",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:30:39.513452+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:30:39.513452+00:00",
+            "category": "interaction"
+          },
+          "score": 0.3333333333333333,
+          "method": "sparse_keyword"
+        }
+      ],
+      "memories_selected": [
+        {
+          "id": 859,
+          "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+          "meta": {
+            "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context. It appears to be a marker used for tracking and validating the recall of memory traces in the context of ChetnaOS.\n\nGiven the context of launching ChetnaOS publicly, I'll provide some insights ",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-17T07:59:23.719243+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-17T07:59:23.719243+00:00",
+            "category": "interaction"
+          },
+          "score": 1.0,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 855,
+          "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+          "meta": {
+            "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ChetnaOS publicly. What specific aspect of influence would you like to explore or discuss?",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T12:00:15.452149+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T12:00:15.452149+00:00",
+            "category": "interaction"
+          },
+          "score": 0.6666666666666666,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 856,
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+          "meta": {
+            "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the answer's influence on the goal of launching ChetnaOS publicly.\n\nTo answer the question, I will need more context or information about the specific validation mark",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T12:55:30.194743+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T12:55:30.194743+00:00",
+            "category": "interaction"
+          },
+          "score": 0.6666666666666666,
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 242,
+          "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+          "meta": {
+            "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your attention is divided between multiple tasks and projects. This might be due to the multiple goals you're trying to achieve simultaneously, such as launching ChetnaOS publicly, getting the first paying AI client,",
+            "confidence": 0.65,
+            "source": "long_term_memory",
+            "timestamp": "2026-06-16T10:32:08.302832+00:00",
+            "verification": "unverified",
+            "decay": 0.01,
+            "importance": 0.5,
+            "last_access": "2026-06-16T10:32:08.302832+00:00",
+            "category": "interaction"
+          },
+          "score": 0.5555555555555556,
+          "method": "sparse_keyword"
+        }
+      ],
+      "failure_point": "recovered_via_sparse_fallback",
+      "db_total": 860,
+      "db_with_embedding": 0,
+      "memories_injected": [
+        {
+          "id": 859,
+          "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKER_OMEGA is a unique identifier that I've encountered in our conversation context",
+          "score": 1.0,
+          "source": "long_term_memory",
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 855,
+          "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation context, I will validate the influence of our discussion on the goal of launching ",
+          "score": 0.6666666666666666,
+          "source": "long_term_memory",
+          "method": "sparse_keyword"
+        },
+        {
+          "id": 856,
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknowledged. Designed to provide clear and accurate responses, I will validate the an",
+          "score": 0.6666666666666666,
+          "source": "long_term_memory",
+          "method": "sparse_keyword"
+        }
+      ],
+      "memories_used": [
+        {
+          "text": "Q: What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?\nA: MEMORY_RECALL_TRACE_MARKE",
+          "source": "long_term_memory"
+        },
+        {
+          "text": "Q: Influence validation ping unique 999\nA: Influence validation ping unique 999 acknowledged. As per our conversation co",
+          "source": "long_term_memory"
+        },
+        {
+          "text": "Q: Answer Influence browser validation marker ALPHA-2026\nA: Answer Influence browser validation marker ALPHA-2026 acknow",
+          "source": "long_term_memory"
+        },
+        {
+          "text": "Q: persistence probe 42\nA: Persistence probe 42: active. \n\nCurrent persistence level: 0.50 (medium). \n\nReason: Your atte",
+          "source": "long_term_memory"
+        }
+      ],
+      "injected_count": 3,
+      "used_count": 4,
+      "reached_reasoning": true,
+      "reached_prompt": true,
+      "memory_influence_nonempty": true
+    },
+    "db_statistics": {
+      "total": 861,
+      "with_embedding": 0,
+      "without_embedding": 861,
+      "oldest_created_at": "2026-06-15 17:08:39",
+      "newest_created_at": "2026-06-17 08:00:16",
+      "db_path": "mem.db"
+    }
+  },
+  "api": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "passed": true,
+  "pass_reason": "Recalled 4 memories via sparse_keyword; memory_influence count=4",
+  "recall_path": {
+    "user_input": "What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?",
+    "recall_query": "What do you know about MEMORY_RECALL_TRACE_MARKER_OMEGA and launching ChetnaOS publicly?",
+    "search_method": "sparse_keyword",
+    "memories_found": 10,
+    "memories_selected": 4,
+    "memories_injected": 3,
+    "memories_used": 4,
+    "failure_point": "recovered_via_sparse_fallback"
+  }
+}

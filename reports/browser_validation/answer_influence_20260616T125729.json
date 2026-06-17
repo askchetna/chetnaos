@@ -1,0 +1,83 @@
+{
+  "run_id": "20260616T125729",
+  "test": "answer_influence",
+  "chat_message": "Answer Influence browser validation marker ALPHA-2026",
+  "api_payloads": {
+    "GET /api/dashboard": {
+      "memory_influence_count": 0,
+      "belief_influence_count": 4,
+      "memory_influence": [],
+      "belief_influence": [
+        {
+          "id": 1,
+          "text": "Truth is more valuable than comfort.",
+          "confidence": 0.99
+        },
+        {
+          "id": 2,
+          "text": "Users deserve accurate and helpful information.",
+          "confidence": 0.99
+        },
+        {
+          "id": 3,
+          "text": "Uncertainty should be acknowledged, not hidden.",
+          "confidence": 0.99
+        },
+        {
+          "id": 4,
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "confidence": 0.15
+        }
+      ]
+    },
+    "GET /api/workspace/session": {
+      "memory_influence_count": 0,
+      "belief_influence_count": 4,
+      "memory_influence": [],
+      "belief_influence": [
+        {
+          "id": 1,
+          "text": "Truth is more valuable than comfort.",
+          "confidence": 0.99
+        },
+        {
+          "id": 2,
+          "text": "Users deserve accurate and helpful information.",
+          "confidence": 0.99
+        },
+        {
+          "id": 3,
+          "text": "Uncertainty should be acknowledged, not hidden.",
+          "confidence": 0.99
+        },
+        {
+          "id": 4,
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "confidence": 0.15
+        }
+      ],
+      "active_conversation_id": "67a2687f-b92f-45bb-8bab-b33e43809749"
+    }
+  },
+  "ui": {
+    "chat_sent": true,
+    "panel_text": "\ud83d\udd17\nANSWER INFLUENCE\nBelief #1 (99%) Truth is more valuable than comfort.\nBelief #2 (99%) Users deserve accurate and helpful information.\nBelief #3 (99%) Uncertainty should be acknowledged, not hidden.\nBelief #4 (15%) High-quality interaction \u2014 pattern worth repeating.",
+    "memory_influence_count": 0,
+    "belief_influence_count": 4,
+    "no_data_shown": false,
+    "panel_populated": true
+  },
+  "console_logs": [
+    {
+      "type": "log",
+      "text": "DASHBOARD influence {mem: 0, bel: 4, keys: Array(2)}"
+    }
+  ],
+  "screenshots": {
+    "after_chat": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T125729\\01_after_chat.png",
+    "dashboard_full": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T125729\\02_dashboard_full.png",
+    "answer_influence_panel": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T125729\\03_answer_influence_panel.png"
+  },
+  "passed": true,
+  "pass_reason": "UI shows 0 memory + 4 belief rows (API: 0 memory, 4 belief)"
+}

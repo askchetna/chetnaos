@@ -612,6 +612,24 @@ function buildMemoryInfluence(d){
   return card("Answer Influence","🔗",mrows+brows);
 }
 
+function buildMemoryRecallTrace(d){
+  const t=d.memory_trace||{};
+  if(!t||!Object.keys(t).length) return card("Memory Recall Trace","🧠",`<div class="no-data">No recall trace yet — send a chat message.</div>`);
+  const method=t.search_method||"—";
+  const fail=t.failure_point?`<div class="dq-item" style="color:var(--amber)"><b>Failure point</b> ${esc(t.failure_point)}</div>`:"";
+  const row=(label,items)=>`<div style="margin-bottom:8px"><div style="font-size:10px;color:var(--muted);margin-bottom:4px">${label} (${(items||[]).length})</div>${(items||[]).slice(0,5).map(m=>`<div class="dq-item"><span style="color:var(--accent)">${m.score!=null?(m.score*100).toFixed(0)+"%":"—"}</span> ${esc((m.text||"").slice(0,120))}</div>`).join("")||`<div class="no-data">none</div>`}</div>`;
+  const body=`
+    <div class="dq-item"><b>Query</b> ${esc((t.query||"").slice(0,100))}</div>
+    <div class="dq-item"><b>Method</b> ${esc(method)} · embeddings ${t.embeddings_enabled?"on":"off"} · db ${t.db_total??"—"} rows</div>
+    ${fail}
+    ${row("Retrieved",t.memories_found)}
+    ${row("Selected",t.memories_selected)}
+    ${row("Injected",t.memories_injected)}
+    ${row("Used",t.memories_used)}
+    <div class="dq-item"><b>Reached reasoning</b> ${t.reached_reasoning?"yes":"no"} · <b>Prompt injected</b> ${t.reached_prompt?"yes":"no"} · <b>Influence non-empty</b> ${t.memory_influence_nonempty?"yes":"no"}</div>`;
+  return card("Memory Recall Trace","🧠",body);
+}
+
 function buildBeliefChanges(d){
   const changes=[...(d.belief_changes||[]),...(d.cognitive_organs?.belief_revision?.recent_history||[])].slice(0,8);
   if(!changes.length) return card("Belief Updates","📈",`<div class="no-data">No confidence changes this session.</div>`);
@@ -665,6 +683,7 @@ function renderDashboard(d){
     buildCognitiveOrgans(d),
     buildCycleTrace(d),
     buildMemoryInfluence(d),
+    buildMemoryRecallTrace(d),
     buildBeliefChanges(d),
     buildResolutions(d),
     buildIdentity(d),

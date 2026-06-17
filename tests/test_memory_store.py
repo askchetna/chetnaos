@@ -38,8 +38,10 @@ class TestMemoryStore(unittest.TestCase):
             self.assertEqual(stats["total"], 1)
             self.assertEqual(stats["with_embedding"], 0)
 
-            # search returns empty without embeddings — must not break
-            self.assertEqual(store.search("hello"), [])
+            # search uses sparse fallback when embeddings disabled
+            hits = store.search("hello organism")
+            self.assertGreaterEqual(len(hits), 1)
+            self.assertIn("hello", hits[0]["text"].lower())
 
             self.assertTrue(store.delete(row_id))
             self.assertEqual(store.statistics()["total"], 0)

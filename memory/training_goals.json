@@ -1,13 +1,13 @@
 [
   {
     "skill": "Business",
-    "current_pct": 61.0,
+    "current_pct": 61.8,
     "target_pct": 76.0,
-    "gap_pct": 15.0,
-    "priority": 15.0,
-    "suggested_training": "9 business interactions",
+    "gap_pct": 14.2,
+    "priority": 14.2,
+    "suggested_training": "8 business interactions",
     "practice_topics": "business, strategy, planning, revenue",
-    "expected_improvement": "+5.3%",
+    "expected_improvement": "+5.0%",
     "category": "applied"
   },
   {

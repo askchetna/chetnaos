@@ -1,7 +1,13 @@
 {
-  "statement:general": 4,
-  "command:technology": 76,
-  "question:general": 374,
+  "statement:general": 19,
+  "command:technology": 77,
+  "question:general": 383,
   "calculation:philosophy": 76,
-  "calculation:general": 74
+  "calculation:general": 74,
+  "statement:business": 1,
+  "statement:technology": 1,
+  "goal:general": 1,
+  "statement:philosophy": 4,
+  "question:business": 1,
+  "command:general": 1
 }

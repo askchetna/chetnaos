@@ -31,3 +31,8 @@ def reset_runtime() -> None:
     """Clear singleton (tests only)."""
     global _runtime
     _runtime = None
+    try:
+        import src.chetnaos.runtime.runtime as sr
+        sr._instance = None
+    except Exception:
+        pass

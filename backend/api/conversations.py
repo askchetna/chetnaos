@@ -5,6 +5,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from backend.conversation_store import get_conversation_store
+from backend import workspace_store
 
 router = APIRouter()
 _store = get_conversation_store()
@@ -55,6 +56,7 @@ async def set_active_conversation(payload: ActiveConversationRequest):
     conv = _store.set_active(payload.conversation_id)
     if not conv:
         raise HTTPException(404, "Conversation not found")
+    workspace_store.save_session({"active_conversation_id": conv["id"]})
     return {"conversation": conv}
 
 

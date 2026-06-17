@@ -131,6 +131,7 @@ class CognitiveCycle:
         self._last_resolution_belief_changes: list = []
         self._last_memory_influence: list = []
         self._last_belief_influence: list = []
+        self._last_memory_trace: dict = {}
 
     def _build_reasoning_context(
         self,
@@ -270,10 +271,13 @@ class CognitiveCycle:
 
         # ── RECALL ─────────────────────────────────────────────────────
         recalled   = self.memory.recall(user_input, k=4)
+        search_trace = self.memory.last_trace()
         founder_ctx_str = self.founder_ctx.get_system_context()
         step(CycleStage.RECALL, {
             "recalled_count": len(recalled),
             "founder_context_loaded": True,
+            "search_method": search_trace.get("search_method"),
+            "failure_point": search_trace.get("failure_point"),
         })
 
         # ── PREDICT ────────────────────────────────────────────────────
@@ -341,6 +345,27 @@ class CognitiveCycle:
         raw_response = reason_r["response"]
         self._last_memory_influence = reason_r.get("memory_influence", [])
         self._last_belief_influence = reason_r.get("belief_influence", [])
+
+        def _trace_row(m: dict) -> dict:
+            return {
+                "id": m.get("id"),
+                "text": (m.get("text") or str(m))[:200],
+                "score": m.get("score"),
+                "source": m.get("source", "recall"),
+                "method": m.get("method"),
+            }
+
+        injected = recalled[:3]
+        self._last_memory_trace = {
+            **search_trace,
+            "memories_injected": [_trace_row(m) for m in injected],
+            "memories_used": list(self._last_memory_influence),
+            "injected_count": len(injected),
+            "used_count": len(self._last_memory_influence),
+            "reached_reasoning": len(recalled) > 0,
+            "reached_prompt": len(injected) > 0,
+            "memory_influence_nonempty": len(self._last_memory_influence) > 0,
+        }
         step(
             CycleStage.ACT,
             reason_r,
@@ -680,6 +705,7 @@ class CognitiveCycle:
             "thought_birth":   self._last_thought_birth,
             "memory_influence": self._last_memory_influence,
             "belief_influence": self._last_belief_influence,
+            "memory_trace": self._last_memory_trace,
             "belief_changes": self._last_belief_changes,
             "contradiction_resolutions": self.contradictions.resolution_history()[:10],
             "health":          self.homeostasis.check(

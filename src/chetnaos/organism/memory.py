@@ -25,6 +25,11 @@ class Memory:
             logger.error("Memory recall failed: %s", exc)
             return []
 
+    def last_trace(self) -> dict:
+        if _store is None:
+            return {}
+        return _store.last_trace
+
     def store(self, category: str, text: str, metadata: dict = None) -> int | None:
         if _store is None:
             return None

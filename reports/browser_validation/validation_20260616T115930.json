@@ -1,0 +1,428 @@
+{
+  "run_id": "20260616T115930",
+  "base_url": "http://127.0.0.1:8000",
+  "checks": {
+    "before_refresh_visible": 12,
+    "before_refresh_sidebar": "12 msgs",
+    "after_refresh_visible": 12,
+    "after_refresh_sidebar": "12 msgs",
+    "refresh_persisted": true,
+    "influence_panel": {
+      "belief_rows_visible": 0,
+      "memory_rows_visible": 3,
+      "panel_text_sample": "\ud83d\udd17\nANSWER INFLUENCE\nNo influence logged yet \u2014 send a chat message.",
+      "no_data_shown": true
+    },
+    "after_back_visible": 12,
+    "after_back_sidebar": "12 msgs",
+    "back_to_chat_persisted": true,
+    "tab_reopen_visible": 12,
+    "tab_reopen_sidebar": "12 msgs",
+    "tab_reopen_persisted": true,
+    "conv2_messages": 2,
+    "switch_to_conv1_visible": 12,
+    "switch_to_conv2_visible": 2,
+    "conv2_after_refresh_visible": 2,
+    "conv2_marker_visible_after_refresh": true,
+    "influence_after_chat_panel": {
+      "belief_rows_visible": 4,
+      "memory_rows_visible": 0,
+      "panel_text_sample": "\ud83d\udd17\nANSWER INFLUENCE\nBelief #1 (99%) Truth is more valuable than comfort.\nBelief #2 (99%) Users deserve accurate and helpful information.\nBelief #3 (99%) Uncertainty should be acknowledged, not hidden.\nBelief #4 (25%) High-quality interaction \u2014 pattern worth repeating.",
+      "no_data_shown": false
+    },
+    "all_restore_steps_logged": true
+  },
+  "console_logs": [
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    {
+      "type": "log",
+      "text": "DASHBOARD influence {mem: 0, bel: 0, keys: Array(2)}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 12}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 12 DOM children 12"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 67a2687f-b92f-45bb-8bab-b33e43809749"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 2}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 2, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 2 DOM children 2"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 67a2687f-b92f-45bb-8bab-b33e43809749, sessionMessageCount: 2, conversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 67a2687f-b92f-45bb-8bab-b33e43809749"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 67a2687f-b92f-45bb-8bab-b33e43809749"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 2}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 2, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 2 DOM children 2"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, domMessages: 2}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 1 restoreWorkspace() start"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 67a2687f-b92f-45bb-8bab-b33e43809749, sessionMessageCount: 2, conversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, mismatch: false}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 3 active_conversation_id resolved 67a2687f-b92f-45bb-8bab-b33e43809749"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 GET /api/conversations/{id} 67a2687f-b92f-45bb-8bab-b33e43809749"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 4 {status: 200, messageCount: 2}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 renderConversationMessages {count: 2, sample: Object}"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 5 rendered 2 DOM children 2"
+    },
+    {
+      "type": "log",
+      "text": "RESTORE STEP 6 complete {currentConversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, domMessages: 2}"
+    }
+  ],
+  "restore_steps_by_phase": {
+    "initial_load": {
+      "1": "RESTORE STEP 1 restoreWorkspace() start",
+      "2": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}",
+      "3": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4_get": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4": "RESTORE STEP 4 {status: 200, messageCount: 12}",
+      "5_start": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}",
+      "5_done": "RESTORE STEP 5 rendered 12 DOM children 12",
+      "6": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    "after_refresh": {
+      "1": "RESTORE STEP 1 restoreWorkspace() start",
+      "2": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}",
+      "3": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4_get": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4": "RESTORE STEP 4 {status: 200, messageCount: 12}",
+      "5_start": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}",
+      "5_done": "RESTORE STEP 5 rendered 12 DOM children 12",
+      "6": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    "after_back_to_chat": {
+      "1": "RESTORE STEP 1 restoreWorkspace() start",
+      "2": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}",
+      "3": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4_get": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4": "RESTORE STEP 4 {status: 200, messageCount: 12}",
+      "5_start": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}",
+      "5_done": "RESTORE STEP 5 rendered 12 DOM children 12",
+      "6": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    "tab_reopen": {
+      "1": "RESTORE STEP 1 restoreWorkspace() start",
+      "2": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 760619d6-c0a4-4160-860a-f0deb2565349, sessionMessageCount: 12, conversationId: 760619d6-c0a4-4160-860a-f0deb2565349, mismatch: false}",
+      "3": "RESTORE STEP 3 active_conversation_id resolved 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4_get": "RESTORE STEP 4 GET /api/conversations/{id} 760619d6-c0a4-4160-860a-f0deb2565349",
+      "4": "RESTORE STEP 4 {status: 200, messageCount: 12}",
+      "5_start": "RESTORE STEP 5 renderConversationMessages {count: 12, sample: Object}",
+      "5_done": "RESTORE STEP 5 rendered 12 DOM children 12",
+      "6": "RESTORE STEP 6 complete {currentConversationId: 760619d6-c0a4-4160-860a-f0deb2565349, domMessages: 12}"
+    },
+    "conv2_refresh": {
+      "1": "RESTORE STEP 1 restoreWorkspace() start",
+      "2": "RESTORE STEP 2 GET /api/workspace/session {active_conversation_id: 67a2687f-b92f-45bb-8bab-b33e43809749, sessionMessageCount: 2, conversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, mismatch: false}",
+      "3": "RESTORE STEP 3 active_conversation_id resolved 67a2687f-b92f-45bb-8bab-b33e43809749",
+      "4_get": "RESTORE STEP 4 GET /api/conversations/{id} 67a2687f-b92f-45bb-8bab-b33e43809749",
+      "4": "RESTORE STEP 4 {status: 200, messageCount: 2}",
+      "5_start": "RESTORE STEP 5 renderConversationMessages {count: 2, sample: Object}",
+      "5_done": "RESTORE STEP 5 rendered 2 DOM children 2",
+      "6": "RESTORE STEP 6 complete {currentConversationId: 67a2687f-b92f-45bb-8bab-b33e43809749, domMessages: 2}"
+    }
+  },
+  "api_payloads": {
+    "conv1_after_seed": {
+      "message_count": 12,
+      "title": "Validation user message 1 for browser soak test"
+    },
+    "dashboard": {
+      "memory_influence": [],
+      "belief_influence": []
+    },
+    "workspace_session": {
+      "memory_influence": [],
+      "belief_influence": [],
+      "active_conversation_id": "760619d6-c0a4-4160-860a-f0deb2565349"
+    },
+    "influence_after_chat_dashboard": {
+      "memory_influence": [],
+      "belief_influence": [
+        {
+          "id": 1,
+          "text": "Truth is more valuable than comfort.",
+          "confidence": 0.99
+        },
+        {
+          "id": 2,
+          "text": "Users deserve accurate and helpful information.",
+          "confidence": 0.99
+        },
+        {
+          "id": 3,
+          "text": "Uncertainty should be acknowledged, not hidden.",
+          "confidence": 0.99
+        },
+        {
+          "id": 4,
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "confidence": 0.25
+        }
+      ]
+    },
+    "influence_after_chat_workspace": {
+      "memory_influence": [],
+      "belief_influence": [
+        {
+          "id": 1,
+          "text": "Truth is more valuable than comfort.",
+          "confidence": 0.99
+        },
+        {
+          "id": 2,
+          "text": "Users deserve accurate and helpful information.",
+          "confidence": 0.99
+        },
+        {
+          "id": 3,
+          "text": "Uncertainty should be acknowledged, not hidden.",
+          "confidence": 0.99
+        },
+        {
+          "id": 4,
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "confidence": 0.25
+        }
+      ]
+    }
+  },
+  "screenshots": {
+    "before_refresh": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\01_before_refresh.png",
+    "after_refresh": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\02_after_refresh.png",
+    "dashboard": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\03_dashboard.png",
+    "after_back_to_chat": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\04_after_back_to_chat.png",
+    "after_tab_reopen": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\05_after_tab_reopen.png",
+    "conversation_2": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\06_conversation_2.png",
+    "switched_to_conv1": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\07_switched_to_conv1.png",
+    "switched_to_conv2": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\08_switched_to_conv2.png",
+    "conv2_after_refresh": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\09_conv2_after_refresh.png",
+    "answer_influence": "C:\\Users\\mangl\\OneDrive\\Desktop\\ChetnaOS.v1\\reports\\browser_validation\\20260616T115930\\10_answer_influence_panel.png"
+  },
+  "passed": true,
+  "conv1_id": "760619d6-c0a4-4160-860a-f0deb2565349"
+}

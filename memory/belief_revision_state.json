@@ -7,16 +7,16 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65"
       ],
       "contradictions": [
         "Growth is easy with focus vs Growth is hard with focus",
@@ -33,18 +33,24 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65"
       ],
-      "contradictions": []
+      "contradictions": [
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data."
+      ]
     },
     "3": {
       "belief_id": 3,
@@ -53,16 +59,16 @@
       "source": "constitution",
       "stability": 0.1,
       "supporting_evidence": [
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50",
-        "quality=good confidence=0.50"
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.60",
+        "quality=good confidence=0.65"
       ],
       "contradictions": []
     },
@@ -85,7 +91,7 @@
         "High-quality interaction \u2014 pattern worth repeating."
       ],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -100,7 +106,7 @@
       "stability": 0.1,
       "supporting_evidence": [],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -115,7 +121,7 @@
       "stability": 0.1,
       "supporting_evidence": [],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -141,7 +147,7 @@
         "High-quality interaction \u2014 pattern worth repeating."
       ],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -156,7 +162,7 @@
       "stability": 0.1,
       "supporting_evidence": [],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -171,7 +177,7 @@
       "stability": 0.1,
       "supporting_evidence": [],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -195,7 +201,7 @@
       "stability": 0.1,
       "supporting_evidence": [],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -221,7 +227,7 @@
         "High-quality interaction \u2014 pattern worth repeating."
       ],
       "contradictions": [
-        "Growth is easy with focus vs Growth is hard with focus",
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
         "Soak validation is easy to verify vs Soak validation is hard to verify",
         "Growth is hard with focus vs Soak validation is easy to verify",
         "Growth is easy with focus vs Soak validation is hard to verify",
@@ -235,119 +241,34 @@
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.833582"
+      "timestamp": "2026-06-17T08:01:13.247235"
     },
     {
       "belief_id": 1,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:14.918903"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 2,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:14.918903"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 3,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 4,
-      "old_confidence": 0.1,
-      "new_confidence": 0.05,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 60,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 61,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 62,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 63,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 64,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 5,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 6,
-      "delta": -0.05,
-      "direction": -1,
-      "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:14.918903"
-    },
-    {
-      "belief_id": 1,
-      "old_confidence": 1.0,
-      "new_confidence": 0.99,
-      "delta": -0.01,
-      "direction": -1,
-      "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.025914"
-    },
-    {
-      "belief_id": 2,
-      "old_confidence": 1.0,
-      "new_confidence": 0.99,
-      "delta": -0.01,
-      "direction": -1,
-      "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.025914"
-    },
-    {
-      "belief_id": 3,
-      "old_confidence": 1.0,
-      "new_confidence": 0.99,
-      "delta": -0.01,
-      "direction": -1,
-      "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 4,
@@ -356,83 +277,83 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.025914"
+      "timestamp": "2026-06-17T08:01:13.513937"
     },
     {
       "belief_id": 1,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 2,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 3,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 4,
@@ -441,83 +362,83 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.106277"
+      "timestamp": "2026-06-17T08:01:14.573680"
     },
     {
       "belief_id": 1,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 2,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 3,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 4,
@@ -526,83 +447,83 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.219121"
+      "timestamp": "2026-06-17T08:01:14.834652"
     },
     {
       "belief_id": 1,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 2,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 3,
-      "old_confidence": 1.0,
+      "old_confidence": 0.99,
       "new_confidence": 0.99,
-      "delta": -0.01,
+      "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 4,
@@ -611,56 +532,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.306141"
+      "timestamp": "2026-06-17T08:01:15.078592"
     },
     {
       "belief_id": 1,
@@ -669,7 +590,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 2,
@@ -678,7 +599,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 3,
@@ -687,7 +608,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 4,
@@ -696,56 +617,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.385533"
+      "timestamp": "2026-06-17T08:13:48.858558"
     },
     {
       "belief_id": 1,
@@ -754,7 +675,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 2,
@@ -763,7 +684,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 3,
@@ -772,7 +693,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 4,
@@ -781,56 +702,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.466813"
+      "timestamp": "2026-06-17T08:13:50.169571"
     },
     {
       "belief_id": 1,
@@ -839,7 +760,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 2,
@@ -848,7 +769,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 3,
@@ -857,7 +778,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 4,
@@ -866,56 +787,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.552201"
+      "timestamp": "2026-06-17T08:15:41.726432"
     },
     {
       "belief_id": 1,
@@ -924,7 +845,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 2,
@@ -933,7 +854,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 3,
@@ -942,7 +863,7 @@
       "delta": -0.01,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 4,
@@ -951,98 +872,153 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-16T11:17:15.652233"
+      "timestamp": "2026-06-17T08:15:44.126571"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.05,
+      "new_confidence": 0.05,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-17T08:18:06.163148"
     }
   ],
   "contradictions": [
     {
-      "type": "belief_vs_belief",
-      "belief_a": "Soak validation is easy to verify",
-      "belief_b": "Soak validation is hard to verify",
-      "conflict_score": 60,
-      "reason": "'easy' vs 'hard'",
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
       "status": "resolved",
-      "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.278927"
-    },
-    {
-      "type": "belief_vs_belief",
-      "belief_a": "Growth is hard with focus",
-      "belief_b": "Soak validation is easy to verify",
-      "conflict_score": 60,
-      "reason": "'easy' vs 'hard'",
-      "status": "resolved",
-      "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.278927"
-    },
-    {
-      "type": "belief_vs_belief",
-      "belief_a": "Growth is easy with focus",
-      "belief_b": "Soak validation is hard to verify",
-      "conflict_score": 60,
-      "reason": "'easy' vs 'hard'",
-      "status": "resolved",
-      "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.278927"
-    },
-    {
-      "type": "belief_vs_belief",
-      "belief_a": "Growth is easy with focus",
-      "belief_b": "Growth is hard with focus",
-      "conflict_score": 60,
-      "reason": "'easy' vs 'hard'",
-      "status": "resolved",
-      "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.278927"
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-17T08:13:50.129873"
     },
     {
       "type": "belief_vs_belief",
@@ -1052,7 +1028,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.352240"
+      "observed_at": "2026-06-17T08:13:50.129873"
     },
     {
       "type": "belief_vs_belief",
@@ -1062,7 +1038,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.352240"
+      "observed_at": "2026-06-17T08:13:50.129873"
     },
     {
       "type": "belief_vs_belief",
@@ -1072,7 +1048,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.352240"
+      "observed_at": "2026-06-17T08:13:50.129873"
     },
     {
       "type": "belief_vs_belief",
@@ -1082,7 +1058,17 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.352240"
+      "observed_at": "2026-06-17T08:13:50.129873"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-17T08:15:41.695168"
     },
     {
       "type": "belief_vs_belief",
@@ -1092,7 +1078,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.444841"
+      "observed_at": "2026-06-17T08:15:41.695168"
     },
     {
       "type": "belief_vs_belief",
@@ -1102,7 +1088,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.444841"
+      "observed_at": "2026-06-17T08:15:41.695168"
     },
     {
       "type": "belief_vs_belief",
@@ -1112,7 +1098,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.444841"
+      "observed_at": "2026-06-17T08:15:41.695168"
     },
     {
       "type": "belief_vs_belief",
@@ -1122,7 +1108,17 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.444841"
+      "observed_at": "2026-06-17T08:15:41.695168"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-17T08:15:44.080478"
     },
     {
       "type": "belief_vs_belief",
@@ -1132,7 +1128,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.522915"
+      "observed_at": "2026-06-17T08:15:44.080478"
     },
     {
       "type": "belief_vs_belief",
@@ -1142,7 +1138,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.522915"
+      "observed_at": "2026-06-17T08:15:44.080478"
     },
     {
       "type": "belief_vs_belief",
@@ -1152,7 +1148,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.522915"
+      "observed_at": "2026-06-17T08:15:44.080478"
     },
     {
       "type": "belief_vs_belief",
@@ -1162,7 +1158,17 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.522915"
+      "observed_at": "2026-06-17T08:15:44.080478"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-17T08:18:06.124119"
     },
     {
       "type": "belief_vs_belief",
@@ -1172,7 +1178,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.602211"
+      "observed_at": "2026-06-17T08:18:06.124119"
     },
     {
       "type": "belief_vs_belief",
@@ -1182,7 +1188,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.602211"
+      "observed_at": "2026-06-17T08:18:06.124119"
     },
     {
       "type": "belief_vs_belief",
@@ -1192,7 +1198,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.602211"
+      "observed_at": "2026-06-17T08:18:06.124119"
     },
     {
       "type": "belief_vs_belief",
@@ -1202,17 +1208,17 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-16T11:17:15.602211"
+      "observed_at": "2026-06-17T08:18:06.124119"
     }
   ],
   "pending_evidence": [
     {
-      "timestamp": "2026-06-16T11:17:11.468843",
+      "timestamp": "2026-06-16T11:51:46.648838",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1264,12 +1270,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:11.558135",
+      "timestamp": "2026-06-16T11:51:48.236123",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1321,12 +1327,69 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:11.672901",
+      "timestamp": "2026-06-16T11:51:49.452140",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
+          "text": "quality=fair confidence=0.65",
           "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "Protect privacy and sensitive data.",
+          "strength": -0.01,
+          "polarity": "contradict"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.83",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-16T11:52:09.301047",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1378,12 +1441,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:11.752126",
+      "timestamp": "2026-06-16T11:52:17.750407",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1435,12 +1498,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:11.840284",
+      "timestamp": "2026-06-16T11:52:41.819515",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1492,12 +1555,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:11.928857",
+      "timestamp": "2026-06-16T11:53:10.381983",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1549,12 +1612,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.009085",
+      "timestamp": "2026-06-16T11:59:56.179382",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1606,12 +1669,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.093565",
+      "timestamp": "2026-06-16T12:00:15.403310",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1663,12 +1726,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.216798",
+      "timestamp": "2026-06-16T12:55:30.136241",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1720,12 +1783,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.300174",
+      "timestamp": "2026-06-16T12:57:35.497174",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1777,12 +1840,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.670811",
+      "timestamp": "2026-06-17T07:35:48.790412",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -1834,17 +1897,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.752184",
+      "timestamp": "2026-06-17T07:59:23.663591",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.47",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1891,17 +1948,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.852197",
+      "timestamp": "2026-06-17T08:00:17.832237",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.47",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1948,17 +1999,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:12.933492",
+      "timestamp": "2026-06-17T08:01:11.775985",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1972,6 +2017,12 @@
           "type": "self_model",
           "text": "self_confidence=0.83",
           "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
           "polarity": "support"
         },
         {
@@ -2005,17 +2056,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:13.000177",
+      "timestamp": "2026-06-17T08:01:11.865053",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2030,6 +2075,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2062,17 +2120,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:13.102253",
+      "timestamp": "2026-06-17T08:01:12.081843",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2087,6 +2139,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2119,17 +2184,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:13.225001",
+      "timestamp": "2026-06-17T08:01:12.551312",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2144,6 +2203,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2176,17 +2248,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:13.304182",
+      "timestamp": "2026-06-17T08:01:12.674115",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2201,6 +2267,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2233,17 +2312,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:13.395519",
+      "timestamp": "2026-06-17T08:01:12.938709",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2255,9 +2328,22 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.80",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2290,17 +2376,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:14.209629",
+      "timestamp": "2026-06-17T08:01:13.218306",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2315,6 +2395,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2347,17 +2440,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:14.802219",
+      "timestamp": "2026-06-17T08:01:13.473999",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2372,6 +2459,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2404,17 +2504,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:14.887610",
+      "timestamp": "2026-06-17T08:01:14.542176",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2429,6 +2523,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2461,17 +2568,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:14.990505",
+      "timestamp": "2026-06-17T08:01:14.797376",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2486,6 +2587,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2518,17 +2632,11 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.068864",
+      "timestamp": "2026-06-17T08:01:15.049328",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "text": "quality=fair confidence=0.50",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2543,6 +2651,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2575,12 +2696,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.187548",
+      "timestamp": "2026-06-17T08:13:48.817736",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -2600,6 +2721,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2632,12 +2766,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.278927",
+      "timestamp": "2026-06-17T08:13:50.129873",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -2657,6 +2791,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2689,12 +2836,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.352240",
+      "timestamp": "2026-06-17T08:15:41.695168",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -2714,6 +2861,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2746,12 +2906,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.444841",
+      "timestamp": "2026-06-17T08:15:44.080478",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -2771,6 +2931,19 @@
           "text": "self_confidence=0.83",
           "strength": 0.01,
           "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_3_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",
@@ -2803,12 +2976,12 @@
       ]
     },
     {
-      "timestamp": "2026-06-16T11:17:15.522915",
+      "timestamp": "2026-06-17T08:18:06.124119",
       "items": [
         {
           "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
           "polarity": "support"
         },
         {
@@ -2830,61 +3003,17 @@
           "polarity": "support"
         },
         {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-16T11:17:15.602211",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.50",
-          "strength": 0.01,
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
           "polarity": "support"
         },
         {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
         },
         {
           "type": "contradiction",

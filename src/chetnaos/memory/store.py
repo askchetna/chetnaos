@@ -28,6 +28,11 @@ class MemoryStore:
             self._db = memory_db
         else:
             self._db = db
+        self._last_trace: Dict[str, Any] = {}
+
+    @property
+    def last_trace(self) -> Dict[str, Any]:
+        return dict(self._last_trace)
 
     @property
     def db_path(self) -> str:
@@ -52,7 +57,12 @@ class MemoryStore:
 
     def search(self, query: str, k: int = 5) -> List[Dict[str, Any]]:
         try:
-            rows = self._db.search(query, k=k) or []
+            if hasattr(self._db, "search_with_trace"):
+                rows, trace = self._db.search_with_trace(query, k=k)
+                self._last_trace = trace
+            else:
+                rows = self._db.search(query, k=k) or []
+                self._last_trace = {"query": query, "memories_selected": rows}
             return [enrich_search_result(r) for r in rows]
         except Exception as exc:
             logger.error("MemoryStore.search failed: %s", exc)

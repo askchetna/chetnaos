@@ -79,6 +79,32 @@ def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
     """Calculate cosine similarity between two vectors"""
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
+
+def _query_terms(query: str) -> List[str]:
+    """Tokenize query for sparse recall; drop high-frequency question words."""
+    import re
+    stop = frozenset({
+        "what", "you", "know", "about", "your", "my", "the", "this", "that",
+        "how", "when", "where", "who", "why", "can", "could", "would", "should",
+        "tell", "give", "have", "has", "had", "are", "was", "were", "will",
+        "like", "want", "need", "please", "any", "some", "all", "our", "not",
+        "don", "does", "did", "just", "also", "very", "much", "more", "most",
+    })
+    terms = [t.lower() for t in re.findall(r"\w+", query) if len(t) > 2]
+    terms = [t for t in terms if t not in stop]
+    return terms or [query.lower().strip()[:80]]
+
+
+def _sparse_score(text: str, terms: List[str]) -> float:
+    """Keyword overlap score in [0, 1] with bonus for distinctive long tokens."""
+    if not text or not terms:
+        return 0.0
+    lower = text.lower()
+    hits = sum(1 for t in terms if t in lower)
+    base = hits / len(terms)
+    bonus = sum(0.12 for t in terms if len(t) >= 5 and t in lower)
+    return min(1.0, base + bonus)
+
 class MemoryDB:
     def __init__(self, db_path: str = 'mem.db'):
         self.db_path = db_path
@@ -110,37 +136,104 @@ class MemoryDB:
             ''', (text, meta_json, embedding.tobytes() if embedding is not None else None))
             return cursor.lastrowid
     
-    def search(self, query: str, k: int = 5) -> List[Dict]:
-        """Search memories by similarity"""
+    def _sparse_search(self, query: str, k: int = 5) -> List[Dict]:
+        """Keyword overlap recall when embeddings are unavailable or empty."""
+        terms = _query_terms(query)
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.execute("SELECT id, text, meta FROM memories")
+            memories = cursor.fetchall()
+
+        scored: List[Dict] = []
+        for mem_id, text, meta_json in memories:
+            score = _sparse_score(text or "", terms)
+            if score <= 0:
+                continue
+            scored.append({
+                "id": mem_id,
+                "text": text,
+                "meta": json.loads(meta_json) if meta_json else None,
+                "score": float(score),
+                "method": "sparse_keyword",
+            })
+
+        scored.sort(key=lambda x: x["score"], reverse=True)
+        return scored[:k]
+
+    def _vector_search(self, query: str, k: int = 5) -> List[Dict]:
+        """Embedding cosine search over rows that have vectors."""
         query_embedding = get_embedding(query)
         if query_embedding is None:
             return []
-        
+
         with sqlite3.connect(self.db_path) as conn:
-            cursor = conn.execute('SELECT id, text, meta, embedding FROM memories')
+            cursor = conn.execute(
+                "SELECT id, text, meta, embedding FROM memories WHERE embedding IS NOT NULL"
+            )
             memories = cursor.fetchall()
-        
-        similarities = []
+
+        similarities: List[Dict] = []
         for mem_id, text, meta_json, embedding_bytes in memories:
-            if embedding_bytes is None:
+            if not embedding_bytes:
                 continue
-            
             try:
                 embedding = np.frombuffer(embedding_bytes, dtype=np.float32)
                 similarity = cosine_similarity(query_embedding, embedding)
                 similarities.append({
-                    'id': mem_id,
-                    'text': text,
-                    'meta': json.loads(meta_json) if meta_json else None,
-                    'score': float(similarity)
+                    "id": mem_id,
+                    "text": text,
+                    "meta": json.loads(meta_json) if meta_json else None,
+                    "score": float(similarity),
+                    "method": "vector_cosine",
                 })
             except Exception as e:
                 print(f"Error processing memory {mem_id}: {e}")
                 continue
-        
-        # Sort by similarity and return top k
-        similarities.sort(key=lambda x: x['score'], reverse=True)
+
+        similarities.sort(key=lambda x: x["score"], reverse=True)
         return similarities[:k]
+
+    def search_with_trace(self, query: str, k: int = 5) -> Tuple[List[Dict], Dict]:
+        """Search with diagnostic trace for Phase 8F.1 recall investigation."""
+        stats = self.statistics()
+        trace: Dict = {
+            "query": query,
+            "embeddings_enabled": _EMBEDDINGS_ENABLED,
+            "search_method": None,
+            "memories_found": [],
+            "memories_selected": [],
+            "failure_point": None,
+            "db_total": stats.get("total", 0),
+            "db_with_embedding": stats.get("with_embedding", 0),
+        }
+
+        vector_results = self._vector_search(query, k=k)
+        if vector_results:
+            trace["search_method"] = "vector_cosine"
+            trace["memories_found"] = vector_results
+            trace["memories_selected"] = vector_results
+            return vector_results, trace
+
+        sparse_results = self._sparse_search(query, k=max(k, 10))
+        trace["search_method"] = "sparse_keyword"
+        trace["memories_found"] = sparse_results
+        selected = sparse_results[:k]
+        trace["memories_selected"] = selected
+
+        if not selected:
+            if not _EMBEDDINGS_ENABLED:
+                trace["failure_point"] = "embeddings_disabled_and_no_keyword_overlap"
+            elif stats.get("with_embedding", 0) == 0:
+                trace["failure_point"] = "no_embeddings_in_db_and_no_keyword_overlap"
+            else:
+                trace["failure_point"] = "no_vector_or_keyword_matches"
+        elif not _EMBEDDINGS_ENABLED or stats.get("with_embedding", 0) == 0:
+            trace["failure_point"] = "recovered_via_sparse_fallback"
+        return selected, trace
+
+    def search(self, query: str, k: int = 5) -> List[Dict]:
+        """Search memories by vector similarity, falling back to sparse keyword recall."""
+        results, _ = self.search_with_trace(query, k=k)
+        return results
 
     def recent(self, n: int = 10) -> List[Dict]:
         """Return the most recent memory entries by timestamp (newest first)."""

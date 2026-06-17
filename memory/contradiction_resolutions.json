@@ -1,6 +1,17 @@
 {
   "resolutions": [
     {
+      "type": "belief_vs_memory",
+      "weaker_belief": "High-quality interaction \u2014 pattern worth repeating.",
+      "stronger_belief": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "weaker_confidence": 0.05,
+      "stronger_confidence": 0.4,
+      "conflict_score": 45,
+      "action": "weaken_weaker",
+      "reason": "Weaker confidence (0.05 vs 0.40); evidence favors stronger claim",
+      "resolved_at": "2026-06-17T08:01:11.865053"
+    },
+    {
       "type": "belief_vs_belief",
       "weaker_belief": "Growth is easy with focus",
       "stronger_belief": "Growth is hard with focus",
