@@ -241,7 +241,7 @@
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:51.592680"
+      "timestamp": "2026-06-17T14:04:58.206901"
     },
     {
       "belief_id": 1,
@@ -250,7 +250,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 2,
@@ -259,7 +259,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 3,
@@ -268,7 +268,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 4,
@@ -277,56 +277,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.024504"
+      "timestamp": "2026-06-17T14:04:58.463448"
     },
     {
       "belief_id": 1,
@@ -335,7 +335,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 2,
@@ -344,7 +344,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 3,
@@ -353,7 +353,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 4,
@@ -362,56 +362,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:52.949747"
+      "timestamp": "2026-06-17T14:04:59.001783"
     },
     {
       "belief_id": 1,
@@ -420,7 +420,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 2,
@@ -429,7 +429,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 3,
@@ -438,7 +438,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 4,
@@ -447,56 +447,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.245394"
+      "timestamp": "2026-06-17T14:04:59.113187"
     },
     {
       "belief_id": 1,
@@ -505,7 +505,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 2,
@@ -514,7 +514,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 3,
@@ -523,7 +523,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 4,
@@ -532,56 +532,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:53.959958"
+      "timestamp": "2026-06-17T14:04:59.426563"
     },
     {
       "belief_id": 1,
@@ -590,7 +590,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 2,
@@ -599,7 +599,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 3,
@@ -608,7 +608,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 4,
@@ -617,56 +617,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.322731"
+      "timestamp": "2026-06-17T14:04:59.768386"
     },
     {
       "belief_id": 1,
@@ -675,7 +675,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 2,
@@ -684,7 +684,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 3,
@@ -693,7 +693,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 4,
@@ -702,56 +702,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:54.720101"
+      "timestamp": "2026-06-17T14:05:00.041983"
     },
     {
       "belief_id": 1,
@@ -760,7 +760,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 2,
@@ -769,7 +769,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 3,
@@ -778,7 +778,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 4,
@@ -787,56 +787,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:55.997762"
+      "timestamp": "2026-06-17T14:05:00.891196"
     },
     {
       "belief_id": 1,
@@ -845,7 +845,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 2,
@@ -854,7 +854,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 3,
@@ -863,7 +863,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 4,
@@ -872,56 +872,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:56.510432"
+      "timestamp": "2026-06-17T14:05:01.146843"
     },
     {
       "belief_id": 1,
@@ -930,7 +930,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 2,
@@ -939,7 +939,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 3,
@@ -948,7 +948,7 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 4,
@@ -957,56 +957,56 @@
       "delta": 0.0,
       "direction": -1,
       "reason_for_change": "evidence_revision",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 60,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 61,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 62,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 63,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 64,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 5,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     },
     {
       "belief_id": 6,
       "delta": -0.05,
       "direction": -1,
       "reason_for_change": "evaluated_no_store",
-      "timestamp": "2026-06-17T09:47:57.286728"
+      "timestamp": "2026-06-17T14:05:01.382996"
     }
   ],
   "contradictions": [
@@ -1018,7 +1018,7 @@
       "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
       "status": "resolved",
       "detected_at": "2026-06-17T08:01:11.861160",
-      "observed_at": "2026-06-17T09:47:54.669139"
+      "observed_at": "2026-06-17T14:05:00.008261"
     },
     {
       "type": "belief_vs_belief",
@@ -1028,7 +1028,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:54.669139"
+      "observed_at": "2026-06-17T14:05:00.008261"
     },
     {
       "type": "belief_vs_belief",
@@ -1038,7 +1038,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:54.669139"
+      "observed_at": "2026-06-17T14:05:00.008261"
     },
     {
       "type": "belief_vs_belief",
@@ -1048,7 +1048,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:54.669139"
+      "observed_at": "2026-06-17T14:05:00.008261"
     },
     {
       "type": "belief_vs_belief",
@@ -1058,7 +1058,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:54.669139"
+      "observed_at": "2026-06-17T14:05:00.008261"
     },
     {
       "type": "belief_vs_memory",
@@ -1068,7 +1068,7 @@
       "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
       "status": "resolved",
       "detected_at": "2026-06-17T08:01:11.861160",
-      "observed_at": "2026-06-17T09:47:55.940464"
+      "observed_at": "2026-06-17T14:05:00.858987"
     },
     {
       "type": "belief_vs_belief",
@@ -1078,7 +1078,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:55.940464"
+      "observed_at": "2026-06-17T14:05:00.858987"
     },
     {
       "type": "belief_vs_belief",
@@ -1088,7 +1088,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:55.940464"
+      "observed_at": "2026-06-17T14:05:00.858987"
     },
     {
       "type": "belief_vs_belief",
@@ -1098,7 +1098,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:55.940464"
+      "observed_at": "2026-06-17T14:05:00.858987"
     },
     {
       "type": "belief_vs_belief",
@@ -1108,7 +1108,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:55.940464"
+      "observed_at": "2026-06-17T14:05:00.858987"
     },
     {
       "type": "belief_vs_memory",
@@ -1118,7 +1118,7 @@
       "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
       "status": "resolved",
       "detected_at": "2026-06-17T08:01:11.861160",
-      "observed_at": "2026-06-17T09:47:56.466034"
+      "observed_at": "2026-06-17T14:05:01.116366"
     },
     {
       "type": "belief_vs_belief",
@@ -1128,7 +1128,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:56.466034"
+      "observed_at": "2026-06-17T14:05:01.116366"
     },
     {
       "type": "belief_vs_belief",
@@ -1138,7 +1138,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:56.466034"
+      "observed_at": "2026-06-17T14:05:01.116366"
     },
     {
       "type": "belief_vs_belief",
@@ -1148,7 +1148,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:56.466034"
+      "observed_at": "2026-06-17T14:05:01.116366"
     },
     {
       "type": "belief_vs_belief",
@@ -1158,7 +1158,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:56.466034"
+      "observed_at": "2026-06-17T14:05:01.116366"
     },
     {
       "type": "belief_vs_memory",
@@ -1168,7 +1168,7 @@
       "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
       "status": "resolved",
       "detected_at": "2026-06-17T08:01:11.861160",
-      "observed_at": "2026-06-17T09:47:57.237820"
+      "observed_at": "2026-06-17T14:05:01.349442"
     },
     {
       "type": "belief_vs_belief",
@@ -1178,7 +1178,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:57.237820"
+      "observed_at": "2026-06-17T14:05:01.349442"
     },
     {
       "type": "belief_vs_belief",
@@ -1188,7 +1188,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:57.237820"
+      "observed_at": "2026-06-17T14:05:01.349442"
     },
     {
       "type": "belief_vs_belief",
@@ -1198,7 +1198,7 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:57.237820"
+      "observed_at": "2026-06-17T14:05:01.349442"
     },
     {
       "type": "belief_vs_belief",
@@ -1208,12 +1208,332 @@
       "reason": "'easy' vs 'hard'",
       "status": "resolved",
       "detected_at": "2026-06-16T11:15:17.587687",
-      "observed_at": "2026-06-17T09:47:57.237820"
+      "observed_at": "2026-06-17T14:05:01.349442"
     }
   ],
   "pending_evidence": [
     {
-      "timestamp": "2026-06-17T08:01:14.542176",
+      "timestamp": "2026-06-17T11:26:57.831206",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.83",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-17T11:26:57.985385",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.83",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-17T11:26:58.244939",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.79",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-17T11:26:58.483543",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.83",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-17T11:26:58.792313",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.83",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-17T11:26:59.723626",
       "items": [
         {
           "type": "reflection_reality",
@@ -1277,7 +1597,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T08:01:14.797376",
+      "timestamp": "2026-06-17T11:27:00.048031",
       "items": [
         {
           "type": "reflection_reality",
@@ -1341,7 +1661,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T08:01:15.049328",
+      "timestamp": "2026-06-17T11:27:00.333907",
       "items": [
         {
           "type": "reflection_reality",
@@ -1405,357 +1725,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T08:13:48.817736",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.65",
-          "strength": 0.02,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "memory",
-          "text": "recalled_4_memories",
-          "strength": 0.005,
-          "polarity": "support"
-        },
-        {
-          "type": "contradiction",
-          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 45
-        },
-        {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-17T08:13:50.129873",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.60",
-          "strength": 0.02,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "memory",
-          "text": "recalled_4_memories",
-          "strength": 0.005,
-          "polarity": "support"
-        },
-        {
-          "type": "contradiction",
-          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 45
-        },
-        {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-17T08:15:41.695168",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.60",
-          "strength": 0.02,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "memory",
-          "text": "recalled_4_memories",
-          "strength": 0.005,
-          "polarity": "support"
-        },
-        {
-          "type": "contradiction",
-          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 45
-        },
-        {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-17T08:15:44.080478",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.60",
-          "strength": 0.02,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "memory",
-          "text": "recalled_3_memories",
-          "strength": 0.005,
-          "polarity": "support"
-        },
-        {
-          "type": "contradiction",
-          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 45
-        },
-        {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-17T08:18:06.124119",
-      "items": [
-        {
-          "type": "reflection_reality",
-          "text": "quality=good confidence=0.65",
-          "strength": 0.02,
-          "polarity": "support"
-        },
-        {
-          "type": "learning",
-          "text": "High-quality interaction \u2014 pattern worth repeating.",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "goal",
-          "text": "Launch ChetnaOS publicly",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "self_model",
-          "text": "self_confidence=0.83",
-          "strength": 0.01,
-          "polarity": "support"
-        },
-        {
-          "type": "memory",
-          "text": "recalled_4_memories",
-          "strength": 0.005,
-          "polarity": "support"
-        },
-        {
-          "type": "contradiction",
-          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 45
-        },
-        {
-          "type": "contradiction",
-          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is hard with focus vs Soak validation is easy to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Soak validation is hard to verify",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        },
-        {
-          "type": "contradiction",
-          "text": "Growth is easy with focus vs Growth is hard with focus",
-          "strength": -0.02,
-          "polarity": "contradict",
-          "conflict_score": 60
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-17T09:38:07.400610",
+      "timestamp": "2026-06-17T13:58:13.801836",
       "items": [
         {
           "type": "reflection_reality",
@@ -1819,7 +1789,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:07.589761",
+      "timestamp": "2026-06-17T13:58:13.943787",
       "items": [
         {
           "type": "reflection_reality",
@@ -1835,7 +1805,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1883,7 +1853,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:07.984433",
+      "timestamp": "2026-06-17T13:58:14.302794",
       "items": [
         {
           "type": "reflection_reality",
@@ -1899,7 +1869,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -1947,7 +1917,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:08.894689",
+      "timestamp": "2026-06-17T13:58:15.010535",
       "items": [
         {
           "type": "reflection_reality",
@@ -1963,7 +1933,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2011,7 +1981,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:09.219793",
+      "timestamp": "2026-06-17T13:58:15.127171",
       "items": [
         {
           "type": "reflection_reality",
@@ -2027,7 +1997,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2075,7 +2045,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:09.721635",
+      "timestamp": "2026-06-17T13:58:15.396530",
       "items": [
         {
           "type": "reflection_reality",
@@ -2091,7 +2061,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.80",
+          "text": "self_confidence=0.79",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2139,7 +2109,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:10.541216",
+      "timestamp": "2026-06-17T13:58:15.640557",
       "items": [
         {
           "type": "reflection_reality",
@@ -2155,7 +2125,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2203,7 +2173,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:10.906640",
+      "timestamp": "2026-06-17T13:58:15.900457",
       "items": [
         {
           "type": "reflection_reality",
@@ -2219,7 +2189,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2267,7 +2237,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:12.516849",
+      "timestamp": "2026-06-17T13:58:16.778790",
       "items": [
         {
           "type": "reflection_reality",
@@ -2283,7 +2253,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2331,7 +2301,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:12.905883",
+      "timestamp": "2026-06-17T13:58:17.014968",
       "items": [
         {
           "type": "reflection_reality",
@@ -2347,7 +2317,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2395,7 +2365,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:38:13.292869",
+      "timestamp": "2026-06-17T13:58:17.312506",
       "items": [
         {
           "type": "reflection_reality",
@@ -2411,7 +2381,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2459,7 +2429,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:51.429126",
+      "timestamp": "2026-06-17T14:04:58.066289",
       "items": [
         {
           "type": "reflection_reality",
@@ -2475,7 +2445,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2523,7 +2493,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:51.566546",
+      "timestamp": "2026-06-17T14:04:58.176362",
       "items": [
         {
           "type": "reflection_reality",
@@ -2539,7 +2509,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2587,7 +2557,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:51.991313",
+      "timestamp": "2026-06-17T14:04:58.431037",
       "items": [
         {
           "type": "reflection_reality",
@@ -2603,7 +2573,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2651,7 +2621,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:52.852072",
+      "timestamp": "2026-06-17T14:04:58.964303",
       "items": [
         {
           "type": "reflection_reality",
@@ -2667,7 +2637,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2715,7 +2685,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:53.187435",
+      "timestamp": "2026-06-17T14:04:59.080950",
       "items": [
         {
           "type": "reflection_reality",
@@ -2731,7 +2701,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2779,7 +2749,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:53.914086",
+      "timestamp": "2026-06-17T14:04:59.391656",
       "items": [
         {
           "type": "reflection_reality",
@@ -2795,7 +2765,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.80",
+          "text": "self_confidence=0.79",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2843,7 +2813,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:54.274450",
+      "timestamp": "2026-06-17T14:04:59.722635",
       "items": [
         {
           "type": "reflection_reality",
@@ -2859,7 +2829,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2907,7 +2877,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:54.669139",
+      "timestamp": "2026-06-17T14:05:00.008261",
       "items": [
         {
           "type": "reflection_reality",
@@ -2923,7 +2893,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -2971,7 +2941,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:55.940464",
+      "timestamp": "2026-06-17T14:05:00.858987",
       "items": [
         {
           "type": "reflection_reality",
@@ -2987,7 +2957,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -3035,7 +3005,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:56.466034",
+      "timestamp": "2026-06-17T14:05:01.116366",
       "items": [
         {
           "type": "reflection_reality",
@@ -3051,7 +3021,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },
@@ -3099,7 +3069,7 @@
       ]
     },
     {
-      "timestamp": "2026-06-17T09:47:57.237820",
+      "timestamp": "2026-06-17T14:05:01.349442",
       "items": [
         {
           "type": "reflection_reality",
@@ -3115,7 +3085,7 @@
         },
         {
           "type": "self_model",
-          "text": "self_confidence=0.83",
+          "text": "self_confidence=0.82",
           "strength": 0.01,
           "polarity": "support"
         },

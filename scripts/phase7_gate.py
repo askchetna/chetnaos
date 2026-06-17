@@ -20,13 +20,17 @@ CHECKS = [
     ("Canonical runtime import", [sys.executable, "-c",
      "from src.chetnaos.runtime.runtime import ChetnaRuntime; print(ChetnaRuntime)"]),
     ("No orchestrator shims (batch1)", [sys.executable, "-c",
-     "import importlib.util; "
-     "p=importlib.util.find_spec('src.chetnaos.orchestrator.cognitive_cycle'); "
-     "assert p is None or p.origin is None; "
-     "from pathlib import Path; "
-     "root=Path('src/chetnaos/orchestrator'); "
-     "gone=['cognitive_cycle.py','runtime.py','state_machine.py','sleep_manager.py','llm_router.py']; "
-     "assert all(not (root/f).exists() for f in gone); print('batch1 shims removed')"]),
+     "import importlib.util\n"
+     "try:\n"
+     "    p = importlib.util.find_spec('src.chetnaos.orchestrator.cognitive_cycle')\n"
+     "except ModuleNotFoundError:\n"
+     "    p = None\n"
+     "assert p is None or p.origin is None\n"
+     "from pathlib import Path\n"
+     "root = Path('src/chetnaos/orchestrator')\n"
+     "gone = ['cognitive_cycle.py', 'runtime.py', 'state_machine.py', 'sleep_manager.py', 'llm_router.py']\n"
+     "assert all(not (root / f).exists() for f in gone)\n"
+     "print('batch1 shims removed')"]),
     ("Memory item schema", [sys.executable, str(ROOT / "tests" / "test_memory_item.py")]),
     ("reasoning integration", [sys.executable, str(ROOT / "tests" / "test_reasoning_integration.py")]),
     ("7D2 batch2 shims removed", [sys.executable, "-c",

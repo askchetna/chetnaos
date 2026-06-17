@@ -12,6 +12,7 @@ from .agent import router as agent_router
 from .conversations import router as conversations_router
 from .workspace import router as workspace_router
 from .memory_trace import router as memory_trace_router
+from .debug_embeddings import router as debug_embeddings_router
 
 
 def register_routes(app: FastAPI) -> None:
@@ -24,3 +25,4 @@ def register_routes(app: FastAPI) -> None:
     app.include_router(conversations_router)
     app.include_router(workspace_router)
     app.include_router(memory_trace_router)
+    app.include_router(debug_embeddings_router)

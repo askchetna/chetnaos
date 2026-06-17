@@ -225,6 +225,15 @@
     .belief-meta{display:flex;align-items:center;gap:6px;}
     .belief-src{font-size:8.5px;color:var(--muted);margin-left:auto;}
 
+    /* ── Embedding diagnostics ── */
+    .emb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:6px;}
+    .emb-stat{background:var(--s2);border:1px solid var(--border);border-radius:7px;padding:6px 8px;text-align:center;}
+    .emb-val{font-size:14px;font-weight:800;}
+    .emb-lbl{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
+    .emb-on{color:var(--green);}
+    .emb-off{color:var(--red);}
+    .emb-warn{color:var(--gold);}
+
     /* ── Pulsing dot ── */
     .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:4px;animation:blink 1.5s infinite;}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
@@ -616,6 +625,26 @@ function buildMemoryInfluence(d){
   return card("Answer Influence","🔗",mrows+brows);
 }
 
+function buildEmbeddingsDiagnostics(emb){
+  if(!emb||emb.error) return card("Embedding Diagnostics","🔬",`<div class="no-data">Diagnostics unavailable.</div>`,"span2");
+  const on=v=>v?"emb-on":"emb-off";
+  const yn=v=>v?"YES":"NO";
+  const modelCls=emb.embedding_model_loaded?"emb-on":"emb-off";
+  const modelTxt=emb.embedding_model_loaded?"LOADED":"NOT LOADED";
+  return card("Embedding Diagnostics","🔬",`
+    <div class="emb-grid">
+      <div class="emb-stat"><div class="emb-val ${emb.light_mode?"emb-warn":"emb-on"}">${emb.light_mode?"ON":"OFF"}</div><div class="emb-lbl">Light Mode</div></div>
+      <div class="emb-stat"><div class="emb-val ${on(emb.embeddings_enabled)}">${yn(emb.embeddings_enabled)}</div><div class="emb-lbl">Embeddings Enabled</div></div>
+      <div class="emb-stat"><div class="emb-val ${modelCls}">${modelTxt}</div><div class="emb-lbl">Embedding Model Status</div></div>
+    </div>
+    <div class="emb-grid">
+      <div class="emb-stat"><div class="emb-val" style="color:var(--a2)">${emb.total_memories??"—"}</div><div class="emb-lbl">Total Memories</div></div>
+      <div class="emb-stat"><div class="emb-val emb-on">${emb.with_embedding??0}</div><div class="emb-lbl">DB With Embeddings</div></div>
+      <div class="emb-stat"><div class="emb-val ${(emb.without_embedding||0)>0?"emb-warn":"emb-on"}">${emb.without_embedding??0}</div><div class="emb-lbl">DB Without Embeddings</div></div>
+    </div>
+  `,"span2");
+}
+
 function buildMemoryRecallTrace(d){
   const t=d.memory_trace||{};
   if(!t||!Object.keys(t).length) return card("Memory Recall Trace","🧠",`<div class="no-data">No recall trace yet — send a chat message.</div>`);
@@ -721,8 +750,9 @@ function buildCognitiveOrgans(d){
 }
 
 // ─── RENDER ────────────────────────────────────────────────────────────────
-function renderDashboard(d){
+function renderDashboard(d, emb){
   $("dashboard-grid").innerHTML = [
+    buildEmbeddingsDiagnostics(emb),
     buildCognitiveOrgans(d),
     buildCycleTrace(d),
     buildGoalProgress(d),
@@ -749,9 +779,10 @@ function renderDashboard(d){
 
 async function loadDashboard(){
   try{
-    const [d, ws] = await Promise.all([
+    const [d, ws, emb] = await Promise.all([
       fetch("/api/dashboard").then(r=>r.json()),
       fetch("/api/workspace/session").then(r=>r.json()).catch(()=>({})),
+      fetch("/api/debug/embeddings").then(r=>r.json()).catch(e=>({error:String(e)})),
     ]);
     if(d.available===false){
       $("dashboard-grid").innerHTML=`<div style="grid-column:span 3;text-align:center;padding:40px;color:var(--red)">⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}</div>`;
@@ -763,7 +794,7 @@ async function loadDashboard(){
     if (!Array.isArray(d.belief_influence) || !d.belief_influence.length) {
       d.belief_influence = ws.belief_influence || d.belief_influence || [];
     }
-    renderDashboard(d);
+    renderDashboard(d, emb);
     const b=$("refresh-badge");
     b.innerHTML=`<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
     b.className="refresh-badge live";

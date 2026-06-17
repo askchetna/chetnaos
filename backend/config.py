@@ -1,15 +1,10 @@
 import os
 from dotenv import load_dotenv
 
+from memory.embedding_config import resolve_embedding_settings
+
 # Load environment variables from .env file
 load_dotenv()
-
-
-def _parse_bool(value: str | None, default: bool) -> bool:
-    """Parse common truthy/falsey strings from the environment."""
-    if value is None:
-        return default
-    return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
 class Settings:
@@ -25,16 +20,8 @@ class Settings:
     """
 
     def __init__(self) -> None:
-        # Runtime mode flags
-        self.LIGHT_MODE: bool = _parse_bool(os.getenv("LIGHT_MODE"), default=True)
-
-        # Embedding / vector memory toggle
-        embeddings_env = os.getenv("EMBEDDINGS_ENABLED")
-        if embeddings_env is not None:
-            self.EMBEDDINGS_ENABLED: bool = _parse_bool(embeddings_env, default=not self.LIGHT_MODE)
-        else:
-            # In LIGHT_MODE we default to no embeddings to keep boot fast/light.
-            self.EMBEDDINGS_ENABLED = not self.LIGHT_MODE
+        # Runtime mode flags (shared resolver with memory/db.py)
+        self.LIGHT_MODE, self.EMBEDDINGS_ENABLED = resolve_embedding_settings()
 
         # LLM configuration
         self.GROQ_API_KEY: str | None = os.getenv("GROQ_API_KEY")

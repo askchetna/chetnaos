@@ -5,22 +5,34 @@ from typing import List, Dict, Optional, Tuple
 import numpy as np
 from pathlib import Path
 
+from memory.embedding_config import (
+    get_embeddings_enabled,
+    get_light_mode,
+    refresh_embedding_config,
+)
+
 # Global cache for embedding model
 _embedding_model = None
 _embedding_cache: Dict[str, np.ndarray] = {}
 
 
-def _parse_bool(value: str | None, default: bool) -> bool:
-    if value is None:
-        return default
-    return value.strip().lower() in {"1", "true", "yes", "on"}
+def is_light_mode() -> bool:
+    return get_light_mode()
 
 
-# LIGHT_MODE / embeddings toggle (kept local to avoid import cycles)
-_LIGHT_MODE = _parse_bool(os.getenv("LIGHT_MODE"), default=True)
-_EMBEDDINGS_ENABLED = (
-    _parse_bool(os.getenv("EMBEDDINGS_ENABLED"), default=not _LIGHT_MODE)
-)
+def is_embeddings_enabled() -> bool:
+    return get_embeddings_enabled()
+
+
+def reset_embedding_model() -> None:
+    """Clear cached model (after config refresh or backfill)."""
+    global _embedding_model, _embedding_cache
+    _embedding_model = None
+    _embedding_cache.clear()
+
+
+def is_embedding_model_loaded() -> bool:
+    return get_embedding_model() is not None
 
 
 def get_embedding_model():
@@ -31,12 +43,14 @@ def get_embedding_model():
     """
     global _embedding_model
 
-    if not _EMBEDDINGS_ENABLED:
+    if not get_embeddings_enabled():
         # Hard-disable embeddings for lightweight / Railway-friendly deploys.
         if _embedding_model is None:
             print(
                 "[ChetnaOS] Embeddings disabled "
-                "(LIGHT_MODE/EMBEDDINGS_ENABLED). Memory will be sparse-only."
+                f"(LIGHT_MODE={get_light_mode()}, "
+                f"EMBEDDINGS_ENABLED={get_embeddings_enabled()}). "
+                "Memory will be sparse-only."
             )
             _embedding_model = None
         return _embedding_model
@@ -197,7 +211,8 @@ class MemoryDB:
         stats = self.statistics()
         trace: Dict = {
             "query": query,
-            "embeddings_enabled": _EMBEDDINGS_ENABLED,
+            "embeddings_enabled": get_embeddings_enabled(),
+            "light_mode": get_light_mode(),
             "search_method": None,
             "memories_found": [],
             "memories_selected": [],
@@ -220,13 +235,13 @@ class MemoryDB:
         trace["memories_selected"] = selected
 
         if not selected:
-            if not _EMBEDDINGS_ENABLED:
+            if not get_embeddings_enabled():
                 trace["failure_point"] = "embeddings_disabled_and_no_keyword_overlap"
             elif stats.get("with_embedding", 0) == 0:
                 trace["failure_point"] = "no_embeddings_in_db_and_no_keyword_overlap"
             else:
                 trace["failure_point"] = "no_vector_or_keyword_matches"
-        elif not _EMBEDDINGS_ENABLED or stats.get("with_embedding", 0) == 0:
+        elif not get_embeddings_enabled() or stats.get("with_embedding", 0) == 0:
             trace["failure_point"] = "recovered_via_sparse_fallback"
         return selected, trace
 

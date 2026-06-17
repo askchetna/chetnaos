@@ -6,28 +6,28 @@
     "last_practiced": null
   },
   "Research": {
-    "score": 0.918,
+    "score": 0.934,
     "interactions": 0,
     "category": "core",
     "last_practiced": null
   },
   "Philosophy": {
     "score": 0.99,
-    "interactions": 88,
+    "interactions": 104,
     "category": "core",
-    "last_practiced": "2026-06-17T09:47:57.758466"
+    "last_practiced": "2026-06-17T14:05:01.706498"
   },
   "Coding": {
     "score": 0.99,
-    "interactions": 82,
+    "interactions": 90,
     "category": "technical",
-    "last_practiced": "2026-06-17T09:47:53.076870"
+    "last_practiced": "2026-06-17T14:04:59.049643"
   },
   "Communication": {
     "score": 0.99,
-    "interactions": 494,
+    "interactions": 526,
     "category": "social",
-    "last_practiced": "2026-06-17T09:47:57.013750"
+    "last_practiced": "2026-06-17T14:05:01.318725"
   },
   "Business": {
     "score": 0.618,

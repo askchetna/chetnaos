@@ -33,12 +33,21 @@ app.add_middleware(RequestLoggingMiddleware)
 app.add_middleware(optional_auth_middleware())
 
 settings = get_settings()
+app.state.settings = settings
 
 
 @app.on_event("startup")
 async def on_startup():
     app.state.settings = settings
-    print(f"[ChetnaOS v3] Startup — GROQ_MODEL={settings.GROQ_MODEL}")
+    from memory.embedding_config import refresh_embedding_config
+    from memory.db import reset_embedding_model
+
+    light_mode, embeddings_enabled = refresh_embedding_config()
+    reset_embedding_model()
+    print(
+        f"[ChetnaOS v3] Startup — GROQ_MODEL={settings.GROQ_MODEL} "
+        f"LIGHT_MODE={light_mode} EMBEDDINGS_ENABLED={embeddings_enabled}"
+    )
     from .runtime import get_runtime
 
     rt = get_runtime()
