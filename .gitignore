@@ -50,8 +50,11 @@ logs/
 # Coverage
 .coverage
 htmlcov/
+<<<<<<< HEAD
 
 # Runtime memory state (keep memory/ folder and Python modules)
+=======
+>>>>>>> 6871b39 (Remove runtime memoryfiles from repository)
 mem.db
 memory/*.json
 memory/*.jsonl
