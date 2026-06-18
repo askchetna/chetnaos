@@ -4,6 +4,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
+from backend.api.meta import build_runtime_meta
 from backend.conversation_store import get_conversation_store
 from backend.runtime import get_runtime
 from backend import workspace_store
@@ -19,39 +20,6 @@ _store = get_conversation_store()
 class ChatRequest(BaseModel):
     text: str
     conversation_id: str | None = None
-
-
-def _honesty_from_result(result: dict) -> list:
-    """Extract honesty guard substitutions from ACT stage trace (no cycle change)."""
-    for entry in result.get("trace", []):
-        if entry.get("stage") == "ACT":
-            return list(entry.get("honesty_guard") or [])
-    return []
-
-
-def _chat_meta(result: dict) -> dict:
-    return {
-        "cycle": result.get("cycle"),
-        "quality": result.get("quality"),
-        "confidence": result.get("confidence"),
-        "confidence_level": result.get("confidence_level"),
-        "dharma_score": result.get("dharma_score"),
-        "cycle_score": result.get("cycle_score"),
-        "domain": result.get("domain"),
-        "intent": result.get("intent"),
-        "beliefs_count": result.get("beliefs_count"),
-        "health": result.get("health"),
-        "slept": result.get("slept"),
-        "stage_trace": result.get("stage_trace", []),
-        "reality": result.get("reality", {}),
-        "simulation": result.get("simulation", {}),
-        "meta_cognition": result.get("meta_cognition", {}),
-        "cognitive_organs": result.get("cognitive_organs", {}),
-        "reasoning_integration": result.get("reasoning_integration", {}),
-        "belief_changes": result.get("belief_changes", []),
-        "contradiction_resolutions": result.get("contradiction_resolutions", []),
-        "honesty_guard_changes": _honesty_from_result(result),
-    }
 
 
 @router.post("/api/chat")
@@ -90,7 +58,7 @@ async def api_chat(payload: ChatRequest):
     try:
         result = rt.process(text, mode="chat", conversation_context=context_packet)
         reply = result["reply"]
-        meta = _chat_meta(result)
+        meta = build_runtime_meta(result)
     except HTTPException:
         raise
     except Exception as e:

@@ -57,6 +57,7 @@ from src.chetnaos.cognition.belief_revision import BeliefRevisionEngine
 from src.chetnaos.memory.working_memory import WorkingMemory
 from src.chetnaos.reasoning.context_builder import ContextBuilder
 from src.chetnaos.cycle.cycle_trace import CycleTrace
+from src.chetnaos.reasoning.honesty_guard import apply_telemetry_narration_guard
 
 
 class CognitiveCycle:
@@ -624,6 +625,11 @@ class CognitiveCycle:
         self.sm.complete_cycle()
         self._last_cycle_trace = cycle_trace.to_list()
 
+        final_output, telemetry_guard_changes = apply_telemetry_narration_guard(
+            final_output,
+            {"cycle_id": cycle_trace.cycle_id, "cycle": cycle_n},
+        )
+
         return {
             "reply":            final_output,
             "cycle":            cycle_n,
@@ -668,6 +674,7 @@ class CognitiveCycle:
                 "used_agent_tool": reason_r.get("used_agent_tool", False),
                 "memory_influence": self._last_memory_influence,
                 "belief_influence": self._last_belief_influence,
+                "telemetry_guard_changes": telemetry_guard_changes,
             },
             "belief_changes": self._last_belief_changes,
             "contradiction_resolutions": self._last_contradiction_resolutions,

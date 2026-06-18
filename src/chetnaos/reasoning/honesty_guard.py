@@ -18,8 +18,22 @@ _HONESTY_SYSTEM_BLOCK = (
     "\n\n[HONESTY GUARD]\n"
     "Never claim consciousness, superiority over GPT/SOTA, or unsupported self-awareness. "
     "Use phrasing like 'Designed to…', 'Intended to…', 'Current evidence suggests…' "
-    "unless verified benchmark evidence is provided in context."
+    "unless verified benchmark evidence is provided in context.\n"
+    "Never state cycle IDs, timestamps, cycle durations, or activated organ counts in your reply. "
+    "Runtime telemetry is shown separately in the UI — do not narrate internal execution metrics."
 )
+
+_TELEMETRY_NARRATION_PATTERNS = [
+    re.compile(r"\b\d+\s+organs?\s+activated\b", re.I),
+    re.compile(r"\bactivated\s+\d+\s+organs?\b", re.I),
+    re.compile(r"\bactivated\s+organs?\b", re.I),
+    re.compile(r"\bcycle\s+duration\b[^.\n]{0,80}", re.I),
+    re.compile(r"\bcycle\s+id\s*[:=]\s*[0-9a-f-]{8,}\b", re.I),
+    re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b", re.I),
+    re.compile(
+        r"\b(?:at|on)\s+\d{4}-\d{2}-\d{2}[T\s]\d{2}:\d{2}", re.I
+    ),
+]
 
 
 def has_benchmark_evidence(context: dict[str, Any] | None) -> bool:
@@ -45,4 +59,24 @@ def apply_honesty_guard(text: str, *, benchmark_evidence: bool = False) -> tuple
         if pattern.search(out):
             out = pattern.sub(replacement, out)
             changes.append(replacement[:80])
+    return out, changes
+
+
+def apply_telemetry_narration_guard(
+    text: str,
+    runtime_meta: dict[str, Any] | None = None,
+) -> tuple[str, list[str]]:
+    """
+    Strip LLM narration of runtime telemetry (cycle IDs, durations, organ counts, timestamps).
+    UI panels are the only source of truth for these fields.
+    """
+    del runtime_meta  # reserved — telemetry is UI-only, never echoed in reply prose
+    if not text:
+        return text, []
+    changes: list[str] = []
+    out = text
+    for pattern in _TELEMETRY_NARRATION_PATTERNS:
+        if pattern.search(out):
+            out = pattern.sub("[See Runtime Trace panel for telemetry]", out)
+            changes.append("Removed telemetry narration from reply.")
     return out, changes

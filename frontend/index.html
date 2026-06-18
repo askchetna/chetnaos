@@ -178,6 +178,9 @@
     .expand-body.open { display: block; }
     .expand-body p { margin: 3px 0; line-height: 1.5; }
     .expand-body strong { color: var(--text); font-weight: 600; }
+    .telemetry-unavailable { color: var(--muted); font-style: italic; }
+    .trace-row { font-size: 10px; padding: 3px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .trace-row b { color: var(--text); }
 
     /* ── Typing ── */
     .typing-dots { display: flex; gap: 4px; padding: 10px 14px; }
@@ -466,6 +469,148 @@ function expandable(parent, label, content) {
   parent.appendChild(body);
 }
 
+function escHtml(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+const TELEMETRY_UNAVAILABLE = '<span class="telemetry-unavailable">Telemetry unavailable</span>';
+
+function renderRuntimeTracePanel(parent, meta) {
+  if (!meta || typeof meta !== "object") {
+    expandable(parent, "Runtime Trace", `<p>${TELEMETRY_UNAVAILABLE}</p>`);
+    return;
+  }
+  const parts = [];
+  const organs = meta.cognitive_organs || {};
+  const ri = meta.reasoning_integration || {};
+
+  parts.push(meta.cycle_id
+    ? `<p><strong>cycle_id:</strong> ${escHtml(meta.cycle_id)}</p>`
+    : `<p><strong>cycle_id:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+
+  parts.push(meta.cycle != null
+    ? `<p><strong>cycle:</strong> #${escHtml(meta.cycle)}</p>`
+    : `<p><strong>cycle:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+
+  parts.push(meta.confidence != null
+    ? `<p><strong>confidence:</strong> ${(meta.confidence * 100).toFixed(0)}% · ${escHtml(meta.confidence_level || "—")}</p>`
+    : `<p><strong>confidence:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+
+  if (meta.stage_trace?.length) {
+    parts.push(`<p><strong>stage_trace:</strong> ${escHtml(meta.stage_trace.join(" → "))}</p>`);
+  } else {
+    parts.push(`<p><strong>stage_trace:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  const cycleTrace = meta.cycle_trace?.length
+    ? meta.cycle_trace
+    : (organs.last_cycle_trace || []);
+  if (cycleTrace.length) {
+    const rows = cycleTrace.slice(-10).map(t => {
+      const dur = t.duration_ms != null ? `${t.duration_ms}ms` : TELEMETRY_UNAVAILABLE;
+      const conf = t.confidence != null ? `${(t.confidence * 100).toFixed(0)}%` : TELEMETRY_UNAVAILABLE;
+      return `<div class="trace-row"><b>${escHtml(t.stage || "—")}</b> · ${dur} · conf ${conf} · mem ${t.memory_used ? "Y" : "N"} · goal ${t.goal_used ? "Y" : "N"}</div>`;
+    }).join("");
+    parts.push(`<div><strong>cycle_trace:</strong>${rows}</div>`);
+  } else {
+    parts.push(`<p><strong>cycle_trace:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  if (organs && Object.keys(organs).length) {
+    const wm = organs.working_memory || {};
+    const gm = organs.goal_manager || {};
+    const sm = organs.self_model || {};
+    parts.push(
+      `<p><strong>cognitive_organs:</strong> WM ${wm.count ?? "—"} items · queue ${gm.queue_size ?? "—"} · self-confidence ${sm.self_confidence != null ? (sm.self_confidence * 100).toFixed(0) + "%" : "—"}</p>`
+    );
+  } else {
+    parts.push(`<p><strong>cognitive_organs:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  const memInfl = meta.memory_influence?.length ? meta.memory_influence : ri.memory_influence;
+  if (memInfl?.length) {
+    parts.push(`<p><strong>memory_influence:</strong></p><ul>${memInfl.map(m => `<li>${escHtml((m.text || "").slice(0, 120))}</li>`).join("")}</ul>`);
+  } else {
+    parts.push(`<p><strong>memory_influence:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  const belInfl = meta.belief_influence?.length ? meta.belief_influence : ri.belief_influence;
+  if (belInfl?.length) {
+    parts.push(`<p><strong>belief_influence:</strong></p><ul>${belInfl.map(b => `<li>#${escHtml(b.id ?? "—")} (${b.confidence != null ? (b.confidence * 100).toFixed(0) + "%" : "—"}) ${escHtml((b.text || "").slice(0, 100))}</li>`).join("")}</ul>`);
+  } else {
+    parts.push(`<p><strong>belief_influence:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  if (ri && Object.keys(ri).length) {
+    parts.push(
+      `<p><strong>reasoning_integration:</strong> WM=${ri.used_working_memory ? "Y" : "N"} · goal=${ri.used_active_goal ? "Y" : "N"} · beliefs=${ri.used_beliefs ? "Y" : "N"} · organs=${ri.used_cognitive_organs ? "Y" : "N"} · agent_tool=${ri.used_agent_tool ? "Y" : "N"}</p>`
+    );
+  } else {
+    parts.push(`<p><strong>reasoning_integration:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  const goal = meta.goal || organs.goal_manager?.active_goal;
+  if (goal?.text) {
+    parts.push(`<p><strong>goal:</strong> ${escHtml(String(goal.text).slice(0, 200))}</p>`);
+  } else {
+    parts.push(`<p><strong>goal:</strong> ${TELEMETRY_UNAVAILABLE}</p>`);
+  }
+
+  if (meta.goal_progress && Object.keys(meta.goal_progress).length) {
+    const gp = meta.goal_progress;
+    parts.push(`<p><strong>goal_progress:</strong> health=${escHtml(gp.health || "—")} · progress=${gp.actual_progress != null ? gp.actual_progress + "%" : "—"}</p>`);
+  }
+
+  if (meta.agent_tool) {
+    parts.push(`<p><strong>agent_tool:</strong> ${escHtml(meta.agent_tool)}</p>`);
+  }
+
+  expandable(parent, "Runtime Trace", parts.join(""));
+}
+
+function renderAiMetaPanels(wrap, meta) {
+  if (!meta) return;
+
+  const tags = document.createElement("div");
+  tags.className = "cycle-meta";
+
+  const qc  = {good:"green",fair:"gold",poor:"red"}[meta.quality] || "";
+  const cc  = {HIGH:"green",MEDIUM:"gold",LOW:"red",VERY_LOW:"red"}[(meta.confidence_level||"").toUpperCase()] || "";
+  const vc  = meta.meta_cognition?.self_verdict === "good" ? "green" : "gold";
+
+  if (meta.cycle)             tag(tags, `Cycle #${meta.cycle}`,              "blue");
+  if (meta.quality)           tag(tags, `Quality: ${meta.quality}`,          qc);
+  if (meta.confidence_level)  tag(tags, `Conf: ${meta.confidence_level}`,    cc);
+  if (meta.dharma_score)      tag(tags, `Dharma: ${meta.dharma_score}/100`,  meta.dharma_score>=65?"green":"red");
+  if (meta.domain)            tag(tags, meta.domain,                         "");
+  if (meta.meta_cognition?.self_verdict) tag(tags, `Self: ${meta.meta_cognition.self_verdict}`, vc);
+  if (meta.reality?.truth)    tag(tags, meta.reality.truth.replace(/_/g," "), "");
+  if (meta.agent_tool)        tag(tags, `Tool: ${meta.agent_tool}`, "purple");
+
+  wrap.appendChild(tags);
+
+  if (meta.simulation?.plans?.length) {
+    const plans = meta.simulation.plans;
+    const html  = plans.map((p,i) => `<p><strong>Plan ${["A","B","C"][i]}:</strong> ${escHtml(p.plan)}<br><span style="color:var(--muted)">→ ${escHtml(p.outcome)}</span></p>`).join("");
+    expandable(wrap, "Simulation: Plan A/B/C", html);
+  }
+
+  if (meta.meta_cognition) {
+    const mc   = meta.meta_cognition;
+    const improve = (mc.can_improve||[]).map(i => `<p>• ${escHtml(i)}</p>`).join("");
+    const html = `<p><strong>Why:</strong> ${escHtml(mc.why)}</p>
+                  <p><strong>Was correct:</strong> ${mc.was_correct ? "✅ Yes" : "⚠️ Needs review"} (${(mc.correctness*100).toFixed(0)}%)</p>
+                  ${improve ? `<p><strong>Improvements:</strong></p>${improve}` : ""}`;
+    expandable(wrap, "Meta-cognition analysis", html);
+  }
+
+  if (meta.stage_trace?.length) {
+    expandable(wrap, "Cognitive cycle trace", `<p style="line-height:1.9">${escHtml(meta.stage_trace.join(" → "))}</p>`);
+  }
+
+  renderRuntimeTracePanel(wrap, meta);
+}
+
 // ── Render bubbles ─────────────────────────────────────────────────────────
 function addBubble(text, who, meta) {
   hideEmpty();
@@ -495,44 +640,7 @@ function addBubble(text, who, meta) {
   wrap.appendChild(bub);
 
   if (who === "ai" && meta) {
-    const tags = document.createElement("div");
-    tags.className = "cycle-meta";
-
-    const qc  = {good:"green",fair:"gold",poor:"red"}[meta.quality] || "";
-    const cc  = {HIGH:"green",MEDIUM:"gold",LOW:"red",VERY_LOW:"red"}[(meta.confidence_level||"").toUpperCase()] || "";
-    const vc  = meta.meta_cognition?.self_verdict === "good" ? "green" : "gold";
-
-    if (meta.cycle)             tag(tags, `Cycle #${meta.cycle}`,              "blue");
-    if (meta.quality)           tag(tags, `Quality: ${meta.quality}`,          qc);
-    if (meta.confidence_level)  tag(tags, `Conf: ${meta.confidence_level}`,    cc);
-    if (meta.dharma_score)      tag(tags, `Dharma: ${meta.dharma_score}/100`,  meta.dharma_score>=65?"green":"red");
-    if (meta.domain)            tag(tags, meta.domain,                         "");
-    if (meta.meta_cognition?.self_verdict) tag(tags, `Self: ${meta.meta_cognition.self_verdict}`, vc);
-    if (meta.reality?.truth)    tag(tags, meta.reality.truth.replace(/_/g," "), "");
-
-    wrap.appendChild(tags);
-
-    // Simulation panel
-    if (meta.simulation?.plans?.length) {
-      const plans = meta.simulation.plans;
-      const html  = plans.map((p,i) => `<p><strong>Plan ${["A","B","C"][i]}:</strong> ${p.plan}<br><span style="color:var(--muted)">→ ${p.outcome}</span></p>`).join("");
-      expandable(wrap, "Simulation: Plan A/B/C", html);
-    }
-
-    // Meta-cognition panel
-    if (meta.meta_cognition) {
-      const mc   = meta.meta_cognition;
-      const improve = (mc.can_improve||[]).map(i => `<p>• ${i}</p>`).join("");
-      const html = `<p><strong>Why:</strong> ${mc.why}</p>
-                    <p><strong>Was correct:</strong> ${mc.was_correct ? "✅ Yes" : "⚠️ Needs review"} (${(mc.correctness*100).toFixed(0)}%)</p>
-                    ${improve ? `<p><strong>Improvements:</strong></p>${improve}` : ""}`;
-      expandable(wrap, "Meta-cognition analysis", html);
-    }
-
-    // Stage trace
-    if (meta.stage_trace?.length) {
-      expandable(wrap, "Cognitive cycle trace", `<p style="line-height:1.9">${meta.stage_trace.join(" → ")}</p>`);
-    }
+    renderAiMetaPanels(wrap, meta);
   }
 
   row.appendChild(av);
@@ -644,7 +752,7 @@ async function sendMessage() {
     if (currentMode === "agent") {
       data  = await fetchJson("/api/agent", {text, agent: currentMode});
       reply = data.reply;
-      meta  = null;
+      meta  = data.meta || null;
     } else if (currentMode === "goal") {
       data  = await fetchJson("/api/goal",  {goal: text, context:{mode:currentMode,client:"web"}});
       reply = data.reply;
@@ -719,10 +827,6 @@ async function loadConversationList() {
     });
     if (d.active_id && !currentConversationId) currentConversationId = d.active_id;
   } catch {}
-}
-
-function escHtml(s) {
-  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 }
 
 function renderConversationMessages(messages) {

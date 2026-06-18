@@ -6,6 +6,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
+from backend.api.meta import build_runtime_meta
 from backend.runtime import get_runtime
 
 router = APIRouter()
@@ -17,7 +18,7 @@ async def agent_chat(payload: dict):
         raw_message = payload.get("text") or payload.get("message") or ""
         user_message = str(raw_message).strip()
         if not user_message:
-            return {"reply": "Ask me anything about ChetnaOS.", "tool": "llm"}
+            return {"reply": "Ask me anything about ChetnaOS.", "tool": "llm", "meta": {}}
 
         rt = get_runtime()
         if not rt:
@@ -28,16 +29,7 @@ async def agent_chat(payload: dict):
         return {
             "reply": result["reply"],
             "tool": tool,
-            "meta": {
-                "cycle": result.get("cycle"),
-                "quality": result.get("quality"),
-                "confidence": result.get("confidence"),
-                "domain": result.get("domain"),
-                "intent": result.get("intent"),
-                "stage_trace": result.get("stage_trace", []),
-                "cognitive_organs": result.get("cognitive_organs", {}),
-                "reasoning_integration": result.get("reasoning_integration", {}),
-            },
+            "meta": build_runtime_meta(result),
         }
     except HTTPException:
         raise
