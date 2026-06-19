@@ -191,6 +191,8 @@
       background: rgba(99,102,241,.12); border: 1px solid rgba(99,102,241,.22);
       animation: chipFade .4s ease;
     }
+    .insight-chip.presence-shift { animation: presenceShift .45s ease; }
+    @keyframes presenceShift { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
     @keyframes chipFade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:none} }
 
     /* ── Chat ── */
@@ -219,6 +221,16 @@
       white-space: pre-wrap; word-break: break-word;
     }
     .bubble.ai     { background: var(--ai-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--border); border-top-left-radius: 4px; box-shadow: var(--shadow); }
+    .bubble.ai.streaming::after {
+      content: ""; display: inline-block; width: 2px; height: 0.95em;
+      background: var(--accent2); margin-left: 2px; vertical-align: text-bottom;
+      animation: streamCursor 1.1s ease-in-out infinite;
+    }
+    @keyframes streamCursor { 0%,45%{opacity:1} 50%,100%{opacity:.15} }
+    .typing-presence {
+      font-size: 13px; color: var(--accent2); font-weight: 500; font-style: italic;
+      padding: 12px 16px; min-height: 44px; display: flex; align-items: center;
+    }
     .bubble.user   { background: var(--user-bg); border: 1px solid rgba(99,102,241,.25); border-top-right-radius: 4px; }
     .bubble.error  { background: var(--error-bg); color: var(--error-txt); border: 1px solid rgba(127,29,29,.5); }
 
@@ -458,8 +470,10 @@ const MODE_CFG = {
 const INSIGHT_CHIPS = [
   "Thinking…",
   "Connecting memories…",
-  "Planning next actions…",
+  "Reflecting…",
   "Evaluating priorities…",
+  "Planning response…",
+  "Typing…",
 ];
 
 const HERO_GREETINGS = [
@@ -478,7 +492,190 @@ const HERO_GREETINGS = [
 let currentMode = "chat";
 let _cycleAnim  = null;
 let _insightTimer = null;
+let _sessionAiReplies = 0;
 let currentConversationId = null;
+
+// ── Response Composer (presentation layer — cognition → human voice) ─────────
+const ResponseComposer = (function() {
+  const ROBOTIC_REWRITES = [
+    [/I updated my knowledge\.?/gi, "My understanding has shifted a little from that."],
+    [/I attempted to learn\.?/gi, "I'm letting that settle into how I think about things."],
+    [/There was no change detected\.?/gi, "Nothing major has changed yet, but my focus remains the same."],
+    [/no change detected\.?/gi, "I haven't noticed a major shift — my attention is steady."],
+    [/I have updated my beliefs?\.?/gi, "That refines how I see things, gently."],
+    [/belief store updated\.?/gi, "That adds a quiet note to what I hold true."],
+    [/cognitive cycle complete\.?/gi, ""],
+    [/running (the )?cognitive cycle\.?/gi, ""],
+    [/27-stage cognitive cycle\.?/gi, ""],
+    [/self-verdict[:\s]*\w+\.?/gi, ""],
+    [/confidence level[:\s]*\w+\.?/gi, ""],
+    [/dharma score[:\s]*\d+\/?\d*\.?/gi, ""],
+  ];
+
+  const INTERNAL_LINE = /^\s*(cycle|stage_trace|cycle_trace|cycle_id|confidence|dharma|belief|organ|working_memory|goal_progress|meta_cognition|simulation|runtime trace|cognitive)/i;
+
+  function sanitize(text) {
+    let t = String(text || "");
+    t = t.split("\n").filter(line => !INTERNAL_LINE.test(line)).join("\n");
+    t = t.replace(/\bcycle\s*#?\d+\b/gi, "");
+    t = t.replace(/\b(cycle|stage)\s+\d+\b/gi, "");
+    t = t.replace(/\b\d{1,3}%\s*(confidence|confident)\b/gi, "");
+    t = t.replace(/confidence[:\s]+[\d.]+%/gi, "");
+    t = t.replace(/\bdharma[:\s]*\d+\/?\d*/gi, "");
+    t = t.replace(/\bbeliefs?\s*(count|store)?[:\s]*\d+/gi, "");
+    t = t.replace(/\b(self[- ]?verdict|quality)[:\s]*\w+/gi, "");
+    t = t.replace(/\[[\w_]+\]/g, "");
+    STAGES.forEach(s => {
+      t = t.replace(new RegExp(`\\b${s}\\b`, "gi"), "");
+    });
+    t = t.replace(/\(\s*\)/g, "").replace(/\s{2,}/g, " ").replace(/\n{3,}/g, "\n\n");
+    return t.trim();
+  }
+
+  function rewrite(text) {
+    let t = text;
+    ROBOTIC_REWRITES.forEach(([re, rep]) => { t = t.replace(re, rep); });
+    return t.replace(/\n{3,}/g, "\n\n").trim();
+  }
+
+  function warmOpening(meta) {
+    if (_sessionAiReplies > 0 && Math.random() > 0.12) return "";
+    const h = new Date().getHours();
+    const timeGreet = h < 12 ? "Good morning." : h < 17 ? "Good afternoon." : "Good evening.";
+    const pool = [
+      timeGreet,
+      "Welcome back.",
+      "Let's continue from where we left off.",
+      "What deserves attention today?",
+    ];
+    const goal = meta?.goal?.text || meta?.goal_progress?.goal;
+    if (goal && Math.random() < 0.35) {
+      const focus = String(goal).slice(0, 80);
+      return `Based on our recent conversations, I'm still focused on ${focus}.`;
+    }
+    if (_sessionAiReplies === 0 && Math.random() < 0.25) {
+      return "You worked on ChetnaOS yesterday. Shall we continue?";
+    }
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function compose(raw, meta, opts = {}) {
+    let t = sanitize(raw);
+    t = rewrite(t);
+    if (opts.skipWarm) return t;
+    const open = warmOpening(meta);
+    if (open && t && !t.toLowerCase().includes(open.slice(0, 12).toLowerCase())) {
+      t = open + "\n\n" + t;
+    }
+    return t.trim();
+  }
+
+  return { compose, sanitize, rewrite };
+})();
+
+// ── Presence Layer (typing states before stream) ────────────────────────────
+const PresenceLayer = (function() {
+  let gen = 0;
+
+  function setLabel(text) {
+    const chip = document.getElementById("insight-chip");
+    const presenceEl = document.getElementById("typing-presence-text");
+    const metaEl = document.querySelector("#typing-row .bubble-meta");
+    if (chip) {
+      chip.textContent = text;
+      chip.classList.remove("presence-shift");
+      void chip.offsetWidth;
+      chip.classList.add("presence-shift");
+    }
+    if (presenceEl) {
+      presenceEl.textContent = text;
+      presenceEl.classList.remove("presence-shift");
+      void presenceEl.offsetWidth;
+      presenceEl.classList.add("presence-shift");
+    }
+    if (metaEl) metaEl.textContent = "Chetna · " + text.replace(/…$/,"").toLowerCase();
+  }
+
+  function startRotation(states, intervalMs = 650) {
+    const myGen = ++gen;
+    let i = 0;
+    setLabel(states[0]);
+    if (_insightTimer) clearInterval(_insightTimer);
+    _insightTimer = setInterval(() => {
+      if (myGen !== gen) return;
+      i = (i + 1) % states.length;
+      setLabel(states[i]);
+    }, intervalMs);
+  }
+
+  function stop() {
+    gen++;
+    if (_insightTimer) { clearInterval(_insightTimer); _insightTimer = null; }
+  }
+
+  function dwell(minMs = 1000, maxMs = 2800) {
+    const ms = minMs + Math.random() * (maxMs - minMs);
+    return new Promise(r => setTimeout(r, ms));
+  }
+
+  return { startRotation, stop, setLabel, dwell, states: INSIGHT_CHIPS };
+})();
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function setBubbleContent(el, text) {
+  if (typeof text === "string" && text.includes("\n")) {
+    el.innerHTML = text.split("\n").map(l => escHtml(l)).join("<br/>");
+  } else {
+    el.textContent = String(text);
+  }
+}
+
+async function streamAiReply(text, meta) {
+  hideEmpty();
+  const chat = chatMessagesEl || document.getElementById("chat-messages");
+  const row  = document.createElement("div");
+  row.className = "msg-row";
+
+  const av = document.createElement("div");
+  av.className = "avatar ai";
+  av.textContent = "✦";
+
+  const wrap = document.createElement("div");
+  wrap.className = "bubble-wrap";
+
+  const metaEl = document.createElement("div");
+  metaEl.className = "bubble-meta";
+  metaEl.textContent = "Chetna · " + timeNow();
+
+  const bub = document.createElement("div");
+  bub.className = "bubble ai streaming";
+
+  wrap.appendChild(metaEl);
+  wrap.appendChild(bub);
+  row.appendChild(av);
+  row.appendChild(wrap);
+  chat.appendChild(row);
+
+  const tokens = String(text).match(/\S+|\s+/g) || [text];
+  let acc = "";
+  for (const tok of tokens) {
+    acc += tok;
+    setBubbleContent(bub, acc);
+    const scrollEl = chatWrapEl || document.getElementById("chat");
+    scrollEl.scrollTop = scrollEl.scrollHeight;
+    if (tok.trim()) {
+      const delay = 14 + Math.random() * 22 + (tok.length > 8 ? 8 : 0);
+      await sleep(delay);
+    }
+  }
+
+  bub.classList.remove("streaming");
+  if (meta) renderAiMetaPanels(wrap, meta);
+  _sessionAiReplies++;
+  const scrollEl = chatWrapEl || document.getElementById("chat");
+  scrollEl.scrollTop = scrollEl.scrollHeight;
+}
 
 // ── Living UI (presentation only) ─────────────────────────────────────────
 function updateHeroGreeting() {
@@ -490,22 +687,15 @@ function updateHeroGreeting() {
 
 function showInsightBar() {
   const bar = document.getElementById("insight-bar");
-  const chip = document.getElementById("insight-chip");
-  if (!bar || !chip) return;
+  if (!bar) return;
   bar.hidden = false;
-  let i = 0;
-  chip.textContent = INSIGHT_CHIPS[0];
-  if (_insightTimer) clearInterval(_insightTimer);
-  _insightTimer = setInterval(() => {
-    i = (i + 1) % INSIGHT_CHIPS.length;
-    chip.textContent = INSIGHT_CHIPS[i];
-  }, 2200);
+  PresenceLayer.startRotation(INSIGHT_CHIPS, 650);
 }
 
 function hideInsightBar() {
   const bar = document.getElementById("insight-bar");
   if (bar) bar.hidden = true;
-  if (_insightTimer) { clearInterval(_insightTimer); _insightTimer = null; }
+  PresenceLayer.stop();
 }
 
 async function refreshMemoryCards() {
@@ -809,10 +999,8 @@ function addBubble(text, who, meta) {
 
   const bub = document.createElement("div");
   bub.className = "bubble " + (who==="user" ? "user" : "ai");
-  if (typeof text === "string" && text.includes("\n"))
-    bub.innerHTML = text.split("\n").map(l => l.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")).join("<br/>");
-  else
-    bub.textContent = String(text);
+  const displayText = who === "ai" ? ResponseComposer.compose(text, meta, { skipWarm: true }) : text;
+  setBubbleContent(bub, displayText);
 
   wrap.appendChild(metaEl);
   wrap.appendChild(bub);
@@ -826,6 +1014,7 @@ function addBubble(text, who, meta) {
   chat.appendChild(row);
   const scrollEl = chatWrapEl || chat;
   scrollEl.scrollTop = scrollEl.scrollHeight;
+  if (who === "ai") _sessionAiReplies++;
 }
 
 function addError(text) {
@@ -852,11 +1041,14 @@ function addTyping() {
   const av   = document.createElement("div"); av.className = "avatar ai"; av.textContent = "✦";
   const wrap = document.createElement("div"); wrap.className = "bubble-wrap";
   const m    = document.createElement("div"); m.className = "bubble-meta"; m.textContent = "Chetna · thinking";
-  const dots = document.createElement("div"); dots.className = "bubble ai typing-dots";
-  dots.innerHTML = "<span></span><span></span><span></span>";
-  wrap.appendChild(m); wrap.appendChild(dots);
+  const presence = document.createElement("div");
+  presence.className = "bubble ai typing-presence";
+  presence.id = "typing-presence-text";
+  presence.textContent = INSIGHT_CHIPS[0];
+  wrap.appendChild(m); wrap.appendChild(presence);
   row.appendChild(av); row.appendChild(wrap);
-  chat.appendChild(row); chat.scrollTop = chat.scrollHeight;
+  chat.appendChild(row);
+  chatWrapEl.scrollTop = chatWrapEl.scrollHeight;
 
   let si = 0;
   _cycleAnim = setInterval(() => {
@@ -948,8 +1140,11 @@ async function sendMessage() {
       await loadConversationList();
     }
 
+    const composed = ResponseComposer.compose(reply, meta, { mode: currentMode });
+    PresenceLayer.setLabel("Typing…");
+    await PresenceLayer.dwell(1000, 2800);
     removeTyping();
-    addBubble(reply, "ai", meta);
+    await streamAiReply(composed, meta);
     updateCogPanel(meta);
 
   } catch(e) {
