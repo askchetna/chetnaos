@@ -994,6 +994,13 @@ window.addEventListener("pageshow", (e) => {
     restoreWorkspace();
   }
 });
+(function(){
+  const m = sessionStorage.getItem("chetna_mode");
+  if (m === "agent" || m === "goal") {
+    setMode(m);
+    sessionStorage.removeItem("chetna_mode");
+  }
+})();
 try { msgEl.focus(); } catch {}
 </script>
 </body>
