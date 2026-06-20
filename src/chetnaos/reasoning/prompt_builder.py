@@ -141,11 +141,48 @@ class PromptBuilder:
 
         sm = ctx.get("self_model")
         if sm:
+            who = (sm.get("who_am_i") or "")[:120]
+            becoming = (sm.get("becoming") or "")[:120]
+            focus = (sm.get("current_focus") or "")[:100]
             limits = sm.get("known_limits") or []
+            limit_line = f"\nKnown limits: {', '.join(limits[:3])}" if limits else ""
             parts.append(
                 "[SELF MODEL]\n"
-                f"Self-confidence: {sm.get('self_confidence', '—')}\n"
-                f"Known limits: {', '.join(limits[:4]) if limits else 'none noted'}"
+                f"Who I am: {who or '—'}\n"
+                f"Becoming: {becoming or '—'}\n"
+                f"Current focus: {focus or '—'}"
+                f"{limit_line}"
+            )
+
+        values = ctx.get("values")
+        if values:
+            vlines = values.get("priorities") or values.get("top") or []
+            if isinstance(vlines, list) and vlines:
+                if isinstance(vlines[0], dict):
+                    names = [p.get("name", "") for p in vlines[:4] if p.get("name")]
+                else:
+                    names = [str(v) for v in vlines[:4]]
+                if names:
+                    parts.append("[VALUES]\n" + "\n".join(names))
+
+        reflection = ctx.get("recent_reflection")
+        if reflection:
+            parts.append(f"[RECENT REFLECTION]\n{str(reflection)[:200]}")
+
+        highlight = ctx.get("episodic_highlight")
+        if highlight:
+            y = (highlight.get("yesterday_summary") or "—")[:150]
+            lesson = (highlight.get("recent_lesson") or "—")[:150]
+            parts.append(
+                "[EPISODIC HIGHLIGHT]\n"
+                f"Yesterday: {y}\n"
+                f"Recent lesson: {lesson}"
+            )
+
+        themes = ctx.get("recurring_themes")
+        if themes:
+            parts.append(
+                "[RECURRING THEMES]\n" + ", ".join(str(t) for t in themes[:5])
             )
 
         curiosity = ctx.get("curiosity")
@@ -175,6 +212,66 @@ class PromptBuilder:
                 "[AGENT TOOL RESULT]\n"
                 f"Tool: {agent_tool.get('tool', 'unknown')}\n"
                 f"Result:\n{agent_tool.get('result', '')[:1200]}"
+            )
+
+        temporal = ctx.get("temporal")
+        if temporal:
+            recent = temporal.get("recent_changes") or []
+            recent_str = recent[-2:] if isinstance(recent, list) else recent
+            parts.append(
+                "[TEMPORAL CONTINUITY]\n"
+                f"Today: {(temporal.get('today_summary') or '—')[:120]}\n"
+                f"Yesterday: {(temporal.get('yesterday_summary') or '—')[:120]}\n"
+                f"Recent changes: {recent_str}\n"
+                f"Next intentions: {(temporal.get('tomorrow_intentions') or ['—'])[0] if temporal.get('tomorrow_intentions') else '—'}"
+            )
+
+        episodic = ctx.get("episodic")
+        if episodic and not ctx.get("episodic_highlight"):
+            today_h = episodic.get("today", {}).get("highlights") or []
+            yest_h = episodic.get("yesterday", {}).get("highlights") or []
+            lines = []
+            for h in yest_h[:2]:
+                inp = (h.get("input") or h.get("domain") or "general")[:60]
+                lines.append(f"Yesterday: {inp}")
+            for h in today_h[:1]:
+                inp = (h.get("input") or h.get("domain") or "general")[:60]
+                lines.append(f"Today: {inp}")
+            if lines:
+                parts.append("[EPISODIC MEMORY]\n" + "\n".join(lines))
+
+        identity = ctx.get("identity")
+        if identity:
+            parts.append(
+                "[IDENTITY]\n"
+                f"{identity.get('name', 'Chetna')} — {identity.get('role', '')}\n"
+                f"Mission: {identity.get('mission', '')[:120]}\n"
+                f"Stage: {identity.get('development_stage', 'Early Organism')}"
+            )
+
+        founder = ctx.get("founder_relationship")
+        if founder:
+            parts.append(
+                "[FOUNDER RELATIONSHIP]\n"
+                f"{founder.get('name', '')} — {founder.get('role', 'Founder')}, "
+                f"{founder.get('relationship', 'Creator')}\n"
+                f"Trust: {founder.get('trust', 'high')} | "
+                f"Attachment: {founder.get('attachment', 'primary')}"
+            )
+
+        if any(
+            ctx.get(k)
+            for k in (
+                "identity", "founder_relationship", "self_model", "temporal",
+                "episodic_highlight", "recent_reflection", "recurring_themes",
+            )
+        ):
+            parts.append(
+                "[MEMORY GROUNDING]\n"
+                "For who you are, what changed, becoming, recent learning, or recurring "
+                "themes — answer only from organism memory blocks above. "
+                "The founder is a person (Creator), never a place. "
+                "If memory is empty, say continuity is still forming — do not invent history."
             )
 
         if not parts:

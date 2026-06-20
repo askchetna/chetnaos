@@ -23,6 +23,16 @@ class IdentitySchema(BaseModel):
     updates: int = 0
     last_growth: Optional[str] = None
     last_active: Optional[str] = None
+    role: str = "Developmental Cognitive Organism"
+    mission: str = "Learn, reflect and help the founder build AGI"
+    values: List[str] = Field(default_factory=lambda: [
+        "truth", "growth", "compassion", "curiosity", "alignment", "service",
+    ])
+    constitution: str = ""
+    development_stage: str = "Early Organism"
+    identity_stability: float = Field(default=0.95, ge=0.0, le=1.0)
+    beliefs_summary: List[str] = Field(default_factory=list)
+    relationships_summary: List[str] = Field(default_factory=list)
 
 
 class BeliefItem(BaseModel):
@@ -107,11 +117,31 @@ class DevelopmentSchema(BaseModel):
     poor_cycles: int = 0
     avg_confidence: float = Field(default=0.5, ge=0.0, le=1.0)
     growth_events: List[Any] = Field(default_factory=list)
+    traits: Dict[str, float] = Field(default_factory=lambda: {
+        "curiosity": 0.5,
+        "discipline": 0.5,
+        "reflection": 0.5,
+        "creativity": 0.5,
+        "consistency": 0.5,
+        "wisdom": 0.4,
+        "research_maturity": 0.4,
+    })
+    recurring_themes: List[str] = Field(default_factory=list)
+    recent_lessons: List[str] = Field(default_factory=list)
+    developmental_age: str = "Seed"
 
 
 class RelationshipEntry(BaseModel):
     interactions: int = 0
     positive: int = 0
+    name: Optional[str] = None
+    role: Optional[str] = None
+    relationship: Optional[str] = None
+    attachment: Optional[str] = None
+    trust: Optional[str] = None
+    importance: Optional[str] = None
+    history_depth: Optional[str] = None
+    strength: float = Field(default=0.85, ge=0.0, le=1.0)
 
 
 class RelationshipsSchema(BaseModel):
@@ -168,3 +198,49 @@ class MemHierarchySchema(BaseModel):
     dream_queue: List[str] = Field(default_factory=list)
     long_term_count: int = 0
     episodic_count: int = 0
+
+
+class SelfModelSchema(BaseModel):
+    who_am_i: str = "Chetna — a developmental cognitive organism learning with the founder."
+    becoming: str = "A reflective partner in building AGI."
+    matters_most: List[str] = Field(default_factory=lambda: ["truth", "growth", "founder alignment"])
+    current_focus: str = ""
+    recent_changes: List[str] = Field(default_factory=list)
+    capability_map: Dict[str, float] = Field(default_factory=dict)
+    known_limits: List[str] = Field(default_factory=list)
+    self_confidence: float = Field(default=0.6, ge=0.0, le=1.0)
+    updated_at: Optional[str] = None
+
+
+class TemporalContinuitySchema(BaseModel):
+    yesterday_summary: str = ""
+    today_summary: str = ""
+    tomorrow_intentions: List[str] = Field(default_factory=list)
+    recent_changes: List[str] = Field(default_factory=list)
+    last_session_at: Optional[str] = None
+    days_active: int = 0
+
+
+class ValuePriority(BaseModel):
+    name: str
+    weight: float = Field(ge=0.0, le=1.0)
+    description: str = ""
+
+
+class ValueOrganSchema(BaseModel):
+    priorities: List[ValuePriority] = Field(default_factory=list)
+
+
+class ReflectionEntry(BaseModel):
+    text: str
+    source: str = "experience"
+    created_at: str
+    domain: Optional[str] = None
+
+
+class ReflectionsSchema(BaseModel):
+    reflections: List[ReflectionEntry] = Field(default_factory=list)
+
+    @classmethod
+    def from_list(cls, data: list) -> "ReflectionsSchema":
+        return cls(reflections=[ReflectionEntry.model_validate(item) for item in data])

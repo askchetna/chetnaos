@@ -21,6 +21,14 @@ class ContextBuilder:
         curiosity: Optional[dict] = None,
         emotion: Optional[dict] = None,
         agent_tool: Optional[dict] = None,
+        temporal: Optional[dict] = None,
+        episodic: Optional[dict] = None,
+        identity: Optional[dict] = None,
+        founder_relationship: Optional[dict] = None,
+        values: Optional[dict] = None,
+        recent_reflection: Optional[str] = None,
+        episodic_highlight: Optional[dict] = None,
+        recurring_themes: Optional[List[str]] = None,
     ) -> Dict[str, Any]:
         ctx: Dict[str, Any] = {}
         if working_memory:
@@ -37,4 +45,20 @@ class ContextBuilder:
             ctx["emotion"] = emotion
         if agent_tool:
             ctx["agent_tool"] = agent_tool
+        if temporal:
+            ctx["temporal"] = temporal
+        if episodic:
+            ctx["episodic"] = episodic
+        if identity:
+            ctx["identity"] = identity
+        if founder_relationship:
+            ctx["founder_relationship"] = founder_relationship
+        if values:
+            ctx["values"] = values
+        if recent_reflection:
+            ctx["recent_reflection"] = recent_reflection
+        if episodic_highlight:
+            ctx["episodic_highlight"] = episodic_highlight
+        if recurring_themes:
+            ctx["recurring_themes"] = recurring_themes
         return ctx

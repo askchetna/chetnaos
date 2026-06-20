@@ -181,7 +181,7 @@ class TestJsonValidation(unittest.TestCase):
         health = report()
         self.assertTrue(health["locked"])
         self.assertTrue(health["overall_healthy"])
-        self.assertEqual(health["json_validation"]["valid_count"], 11)
+        self.assertEqual(health["json_validation"]["valid_count"], 15)
 
     def test_corrupt_json_backed_up_not_destroyed(self):
         from src.chetnaos.memory.validation import validate_identity, BACKUP_DIR

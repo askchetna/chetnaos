@@ -18,7 +18,17 @@ EXP_FILE   = os.path.join(os.path.dirname(__file__), "../../..", "memory", "expe
 class Sleep:
     SLEEP_EVERY = 20
 
-    def consolidate(self, beliefs_module, memory_module, cycle_count: int) -> dict:
+    def consolidate(
+        self,
+        beliefs_module,
+        memory_module,
+        cycle_count: int,
+        *,
+        identity_module=None,
+        relationship_module=None,
+        development_module=None,
+        reflection_organ=None,
+    ) -> dict:
         """Full sleep consolidation with dream replay."""
         log = {
             "timestamp": datetime.utcnow().isoformat(),
@@ -68,6 +78,29 @@ class Sleep:
         if new_beliefs:
             beliefs_module._save()
         log["new_beliefs_from_dreams"] = new_beliefs
+
+        # ── Phase 5: Themes, relationships, identity, lessons ────────────
+        domain_counts: dict[str, int] = {}
+        for exp in recent_exps:
+            d = exp.get("domain", "general")
+            domain_counts[d] = domain_counts.get(d, 0) + 1
+        themes = list(domain_counts.keys()) if domain_counts else []
+        if development_module and themes:
+            for theme in themes[:3]:
+                development_module.add_theme(theme)
+        if development_module and dream_insights:
+            for ins in dream_insights[:2]:
+                development_module.add_lesson(ins.get("insight", "")[:200])
+        if relationship_module:
+            relationship_module.strengthen_after_sleep()
+        if identity_module:
+            identity_module.after_sleep(dream_insights)
+        if reflection_organ and dream_insights:
+            for ins in dream_insights[:2]:
+                reflection_organ.record(
+                    ins.get("insight", ""),
+                    source="sleep_consolidation",
+                )
 
         self._log(log)
         return {

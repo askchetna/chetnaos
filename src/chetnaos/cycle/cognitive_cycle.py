@@ -43,6 +43,11 @@ from src.chetnaos.organism.workspace_state    import WorkspaceState
 from src.chetnaos.organism.contradiction_tracker import ContradictionTracker
 from src.chetnaos.organism.memory_hierarchy   import MemoryHierarchy
 from src.chetnaos.organism.self_trainer       import SelfTrainer
+from src.chetnaos.organism.value_organ        import ValueOrgan
+from src.chetnaos.organism.temporal_continuity import TemporalContinuity
+from src.chetnaos.organism.reflection_organ   import ReflectionOrgan
+from src.chetnaos.organism.episodic_organ     import EpisodicOrgan
+from src.chetnaos.organism.developmental_age  import DevelopmentalAge
 
 from src.chetnaos.runtime.state_machine import StateMachine, CycleStage
 from src.chetnaos.runtime.sleep_manager import SleepManager
@@ -58,6 +63,7 @@ from src.chetnaos.memory.working_memory import WorkingMemory
 from src.chetnaos.reasoning.context_builder import ContextBuilder
 from src.chetnaos.cycle.cycle_trace import CycleTrace
 from src.chetnaos.reasoning.honesty_guard import apply_telemetry_narration_guard
+from src.chetnaos.reasoning.response_composer import ResponseComposer
 
 
 class CognitiveCycle:
@@ -107,6 +113,12 @@ class CognitiveCycle:
         self.contradictions = ContradictionTracker()
         self.mem_hierarchy  = MemoryHierarchy()
         self.self_trainer   = SelfTrainer()
+
+        # Developmental organs (persistent loops)
+        self.value_organ         = ValueOrgan()
+        self.temporal_continuity = TemporalContinuity()
+        self.reflection_organ    = ReflectionOrgan()
+        self.episodic_organ      = EpisodicOrgan(self.experience)
 
         # Cognitive organs (Phase 3c — signal providers)
         self.working_memory = WorkingMemory(hierarchy=self.mem_hierarchy)
@@ -176,6 +188,27 @@ class CognitiveCycle:
             reality_confidence=0.5,
         )
 
+        id_data = self.identity.get()
+        dev_data = self.development._data
+        temp_snap = self.temporal_continuity.snapshot()
+        ep_snap = self.episodic_organ.snapshot()
+        y_parts: list[str] = []
+        if temp_snap.get("yesterday_summary"):
+            y_parts.append(str(temp_snap["yesterday_summary"])[:120])
+        for h in (ep_snap.get("yesterday", {}).get("highlights") or [])[:2]:
+            if h.get("input"):
+                y_parts.append(str(h["input"])[:60])
+        yesterday_summary = " · ".join(y_parts) or self.temporal_continuity.what_changed_since_yesterday()[:150]
+        lessons = dev_data.get("recent_lessons") or []
+        recent_lesson = lessons[-1] if lessons else ""
+        if not recent_lesson:
+            refs = self.reflection_organ.recent(1)
+            if refs:
+                recent_lesson = str(refs[0].get("text", ""))[:150]
+        recent_refs = self.reflection_organ.recent(1)
+        recent_reflection = (
+            str(recent_refs[0].get("text", ""))[:200] if recent_refs else ""
+        )
         return self.context_builder.build(
             working_memory=self.working_memory.recall(),
             active_goal=self.goal_manager.active_goal(),
@@ -187,6 +220,24 @@ class CognitiveCycle:
             },
             emotion=pre_emotion,
             agent_tool=agent_tool,
+            temporal=temp_snap,
+            episodic=ep_snap,
+            identity={
+                "name": id_data.get("name"),
+                "role": id_data.get("role"),
+                "mission": id_data.get("mission"),
+                "development_stage": id_data.get("development_stage"),
+            },
+            founder_relationship=self.relationship.founder(),
+            values={"priorities": [{"name": n} for n in (
+                "truth", "growth", "compassion", "alignment",
+            )]},
+            recent_reflection=recent_reflection,
+            episodic_highlight={
+                "yesterday_summary": yesterday_summary,
+                "recent_lesson": recent_lesson,
+            },
+            recurring_themes=dev_data.get("recurring_themes") or [],
         )
 
     def _runtime_inspection_snapshot(self) -> dict:
@@ -548,7 +599,13 @@ class CognitiveCycle:
         slept = False
         sleep_data = {}
         if self.executive.should_sleep_consolidation(cycle_n):
-            sleep_r = self.sleep_mod.consolidate(self.beliefs, self.memory, cycle_n)
+            sleep_r = self.sleep_mod.consolidate(
+                self.beliefs, self.memory, cycle_n,
+                identity_module=self.identity,
+                relationship_module=self.relationship,
+                development_module=self.development,
+                reflection_organ=self.reflection_organ,
+            )
             step(CycleStage.SLEEP,       sleep_r)
             step(CycleStage.CONSOLIDATE, {"consolidated": sleep_r.get("consolidated", 0)})
             step(CycleStage.FORGET,      {"forgotten": sleep_r.get("forgotten", 0)})
@@ -566,10 +623,35 @@ class CognitiveCycle:
             step(CycleStage.WAKE,        {"refreshed": True})
 
         # ── Side effects ───────────────────────────────────────────────
-        dev_r  = self.development.record(reflect_r, reality_r["confidence"])
+        ws_side = self.workspace.get()
+        self.experience.enrich_last({
+            "quality": reflect_r["quality"],
+            "output": final_output[:500],
+            "confidence": reality_r["confidence"],
+        })
+        dev_r  = self.development.record(
+            reflect_r, reality_r["confidence"], domain=abstr["domain"],
+        )
+        self.development.apply_age(self.identity.get())
         home_r = self.homeostasis.check(dev_r, reflect_r)
         self.habit.record(percept["intent"], abstr["domain"])
-        self.relationship.update("user")
+        self.relationship.update("user", quality=reflect_r["quality"])
+        self.value_organ.influence(reflect_r["quality"])
+        self.temporal_continuity.tick(
+            user_input=user_input,
+            domain=abstr["domain"],
+            quality=reflect_r["quality"],
+            focus=ws_side.get("current_goal", ""),
+        )
+        self.reflection_organ.from_cycle(
+            domain=abstr["domain"],
+            quality=reflect_r["quality"],
+            meta_why=meta_r.get("why", ""),
+            themes=self.development._data.get("recurring_themes", []),
+        )
+        self.self_model.record_change(
+            f"{reflect_r['quality']} cycle in {abstr['domain']}",
+        )
         self.artifacts.store(final_output, abstr["domain"], percept["intent"])
         self.civ_memory.contribute(reflect_r["cycle_score"], final_output, abstr["domain"])
         self.memory.store("interaction", f"Q: {user_input[:200]}\nA: {final_output[:300]}")
@@ -600,6 +682,7 @@ class CognitiveCycle:
                 development=self.development._data,
                 meta_cognition=meta_r,
                 reality_confidence=reality_r["confidence"],
+                current_focus=ws.get("current_goal", ""),
             ),
             "curiosity": {
                 **self.curiosity.snapshot(),
@@ -629,9 +712,11 @@ class CognitiveCycle:
             final_output,
             {"cycle_id": cycle_trace.cycle_id, "cycle": cycle_n},
         )
+        composed_reply = ResponseComposer.compose(final_output)
 
         return {
-            "reply":            final_output,
+            "reply":            composed_reply,
+            "composed_reply":   composed_reply,
             "cycle":            cycle_n,
             "cycle_id":         cycle_trace.cycle_id,
             "stage_trace":      [t["stage"] for t in trace],
@@ -753,4 +838,34 @@ class CognitiveCycle:
                 "last_signals":   self._last_cognitive_signals,
                 "last_cycle_trace": self._last_cycle_trace[-26:],
             },
+            "developmental": self._developmental_dashboard_block(id_data, dev_data),
+            "relationships": self.relationship.snapshot(),
+            "episodic": self.episodic_organ.snapshot(),
+            "temporal_continuity": self.temporal_continuity.snapshot(),
+            "reflections": self.reflection_organ.snapshot(),
+            "values": self.value_organ.snapshot(),
+        }
+
+    def _developmental_dashboard_block(self, id_data: dict, dev_data: dict) -> dict:
+        traits = dev_data.get("traits") or {}
+        age_info = DevelopmentalAge.compute(dev_data, id_data)
+        ws = self.workspace.get()
+        return {
+            "curiosity": traits.get("curiosity", 0.5),
+            "consistency": traits.get("consistency", 0.5),
+            "reflection": traits.get("reflection", 0.5),
+            "creativity": traits.get("creativity", 0.5),
+            "discipline": traits.get("discipline", 0.5),
+            "wisdom": traits.get("wisdom", 0.4),
+            "research_maturity": traits.get("research_maturity", 0.4),
+            "identity_stability": id_data.get("identity_stability", 0.95),
+            "relationship_strength": self.relationship.founder_strength(),
+            "development_stage": age_info.get("stage", dev_data.get("developmental_age", "Seed")),
+            "developmental_age": age_info,
+            "current_focus": ws.get("current_goal", "") or self.self_model.snapshot().get("current_focus", ""),
+            "recurring_themes": dev_data.get("recurring_themes", []),
+            "recent_lessons": dev_data.get("recent_lessons", []),
+            "development_timeline": dev_data.get("growth_events", [])[-10:],
+            "self_model": self.self_model.snapshot(),
+            "what_changed": self.temporal_continuity.what_changed_since_yesterday(),
         }

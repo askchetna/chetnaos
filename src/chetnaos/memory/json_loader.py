@@ -158,3 +158,35 @@ def load_mem_hierarchy(default: dict) -> dict:
         memory_path("mem_hierarchy.json"), validate_mem_hierarchy, default,
         lambda m: m.model_dump(),
     )
+
+
+def load_self_model(default: dict) -> dict:
+    from .validation import validate_self_model
+    return load_validated(
+        memory_path("self_model.json"), validate_self_model, default,
+        lambda m: m.model_dump(),
+    )
+
+
+def load_temporal_continuity(default: dict) -> dict:
+    from .validation import validate_temporal_continuity
+    return load_validated(
+        memory_path("temporal_continuity.json"), validate_temporal_continuity, default,
+        lambda m: m.model_dump(),
+    )
+
+
+def load_value_organ(default: dict) -> dict:
+    from .validation import validate_value_organ
+    return load_validated(
+        memory_path("value_organ.json"), validate_value_organ, default,
+        lambda m: m.model_dump(),
+    )
+
+
+def load_reflections(default: list) -> list:
+    from .validation import validate_reflections
+    return load_validated(
+        memory_path("reflections.json"), validate_reflections, default,
+        lambda m: [r.model_dump() for r in m.reflections],
+    )

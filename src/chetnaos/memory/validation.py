@@ -150,6 +150,26 @@ def validate_mem_hierarchy(path: Path) -> ValidationResult:
     return validate_json_file(path, MemHierarchySchema)
 
 
+def validate_self_model(path: Path) -> ValidationResult:
+    from .schemas import SelfModelSchema
+    return validate_json_file(path, SelfModelSchema)
+
+
+def validate_temporal_continuity(path: Path) -> ValidationResult:
+    from .schemas import TemporalContinuitySchema
+    return validate_json_file(path, TemporalContinuitySchema)
+
+
+def validate_value_organ(path: Path) -> ValidationResult:
+    from .schemas import ValueOrganSchema
+    return validate_json_file(path, ValueOrganSchema)
+
+
+def validate_reflections(path: Path) -> ValidationResult:
+    from .schemas import ReflectionsSchema
+    return validate_json_file(path, ReflectionsSchema, list_root=True)
+
+
 # All JSON files under memory/ with schema coverage
 VALIDATORS = {
     "identity.json": validate_identity,
@@ -163,6 +183,10 @@ VALIDATORS = {
     "training_goals.json": validate_training_goals,
     "contradictions.json": validate_contradictions,
     "mem_hierarchy.json": validate_mem_hierarchy,
+    "self_model.json": validate_self_model,
+    "temporal_continuity.json": validate_temporal_continuity,
+    "value_organ.json": validate_value_organ,
+    "reflections.json": validate_reflections,
 }
 
 

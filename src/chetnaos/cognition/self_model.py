@@ -1,14 +1,26 @@
 """
-Self Model — computational model of own capabilities and limits.
+Self Model — computational model of own capabilities, limits, and becoming.
 
-Purpose: Track what the organism can/cannot do based on skills and development.
-Inputs:  skills dict, development stats, meta-cognition verdicts
-Outputs: capability_map, known_limits, self_confidence
-Dependencies: none (reads signals only)
+Purpose: Track what the organism can/cannot do; persist across restarts.
 """
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Any, Dict, List, Optional
+
+from src.chetnaos.memory.json_loader import load_self_model, memory_path, save_json
+
+_PERSIST_DEFAULT = {
+    "who_am_i": "Chetna — a developmental cognitive organism learning with the founder.",
+    "becoming": "A reflective partner in building AGI.",
+    "matters_most": ["truth", "growth", "founder alignment"],
+    "current_focus": "",
+    "recent_changes": [],
+    "capability_map": {},
+    "known_limits": [],
+    "self_confidence": 0.6,
+    "updated_at": None,
+}
 
 
 class SelfModel:
@@ -21,6 +33,25 @@ class SelfModel:
     self._known_limits: List[str] = []
     self._self_confidence: float = 0.6
     self._development_state: Dict[str, Any] = {}
+    self._persisted = self._load_persisted()
+
+  def _load_persisted(self) -> dict:
+    return load_self_model(dict(_PERSIST_DEFAULT))
+
+  def _save_persisted(self) -> None:
+    data = {
+        "who_am_i": self._persisted.get("who_am_i", _PERSIST_DEFAULT["who_am_i"]),
+        "becoming": self._persisted.get("becoming", _PERSIST_DEFAULT["becoming"]),
+        "matters_most": self._persisted.get("matters_most", _PERSIST_DEFAULT["matters_most"]),
+        "current_focus": self._persisted.get("current_focus", ""),
+        "recent_changes": self._persisted.get("recent_changes", [])[-10:],
+        "capability_map": self.capability_map(),
+        "known_limits": self.known_limits(),
+        "self_confidence": self.self_confidence(),
+        "updated_at": datetime.utcnow().isoformat(),
+    }
+    self._persisted = data
+    save_json(memory_path("self_model.json"), data)
 
   def update(
       self,
@@ -29,6 +60,7 @@ class SelfModel:
       development: Optional[Dict[str, Any]] = None,
       meta_cognition: Optional[Dict[str, Any]] = None,
       reality_confidence: Optional[float] = None,
+      current_focus: str = "",
   ) -> Dict[str, Any]:
     if skills:
       self._capability_map = {
@@ -60,7 +92,19 @@ class SelfModel:
     if confidence_signals:
       self._self_confidence = round(sum(confidence_signals) / len(confidence_signals), 3)
 
+    if current_focus:
+      self._persisted["current_focus"] = current_focus[:200]
+
+    self._save_persisted()
     return self.snapshot()
+
+  def record_change(self, change: str) -> None:
+    if not change:
+      return
+    changes = self._persisted.get("recent_changes", [])
+    changes.append(change[:200])
+    self._persisted["recent_changes"] = changes[-10:]
+    self._save_persisted()
 
   def capability_map(self) -> Dict[str, float]:
     return dict(self._capability_map)
@@ -73,6 +117,11 @@ class SelfModel:
 
   def snapshot(self) -> Dict[str, Any]:
     return {
+        "who_am_i": self._persisted.get("who_am_i", _PERSIST_DEFAULT["who_am_i"]),
+        "becoming": self._persisted.get("becoming", _PERSIST_DEFAULT["becoming"]),
+        "matters_most": list(self._persisted.get("matters_most", [])),
+        "current_focus": self._persisted.get("current_focus", ""),
+        "recent_changes": list(self._persisted.get("recent_changes", [])),
         "capability_map": self.capability_map(),
         "known_limits": self.known_limits(),
         "self_confidence": self.self_confidence(),

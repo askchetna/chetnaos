@@ -15,6 +15,7 @@ class Experience:
             "output":     cycle_snapshot.get("output", ""),
             "confidence": cycle_snapshot.get("confidence", 0.5),
             "domain":     cycle_snapshot.get("domain", "general"),
+            "quality":    cycle_snapshot.get("quality", "fair"),
             "cycle":      cycle_snapshot.get("cycle_count", 0),
         }
         self._append(exp)
@@ -26,5 +27,23 @@ class Experience:
             os.makedirs(os.path.dirname(p), exist_ok=True)
             with open(p, "a") as f:
                 f.write(json.dumps(exp) + "\n")
+        except Exception:
+            pass
+
+    def enrich_last(self, fields: dict) -> None:
+        """Update the most recent experience entry with post-reflection fields."""
+        try:
+            p = os.path.abspath(EXP_FILE)
+            if not os.path.exists(p):
+                return
+            with open(p, encoding="utf-8") as f:
+                lines = [l.strip() for l in f if l.strip()]
+            if not lines:
+                return
+            last = json.loads(lines[-1])
+            last.update(fields)
+            lines[-1] = json.dumps(last)
+            with open(p, "w", encoding="utf-8") as f:
+                f.write("\n".join(lines) + "\n")
         except Exception:
             pass
