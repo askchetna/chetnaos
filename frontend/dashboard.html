@@ -329,48 +329,28 @@
 
 </div>
 
-<script>
+<script type="module">
+import { apiGet } from "./api.js";
+
 const $ = id => document.getElementById(id);
 const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const pct = (v,mx=1) => Math.round(Math.min(100, Math.max(0, v/mx*100)));
 const confColor = lvl => ({HIGH:"conf-high",MEDIUM:"conf-med",LOW:"conf-low",VERY_LOW:"conf-low"}[lvl]||"");
 function skillColor(s){return s>=0.8?"var(--green)":s>=0.6?"var(--cyan)":s>=0.4?"var(--gold)":"var(--red)";}
 
-/** Always same-origin relative paths — never call stale Replit/dev hostnames. */
+/** Purge any stored absolute URLs that could point at stale dev hosts. */
 (function purgeStaleApiHosts(){
-  const KEYS = [
-    "API_BASE","api_base","baseUrl","BASE_URL","workspace_url","restore_url",
-    "chetna_api_base","chetna_api","chetna_host","CHETNA_API",
-  ];
-  for (const k of KEYS) {
-    for (const store of [localStorage, sessionStorage]) {
-      try {
+  for (const store of [localStorage, sessionStorage]) {
+    try {
+      const keys = [];
+      for (let i = 0; i < store.length; i++) keys.push(store.key(i));
+      for (const k of keys) {
         const v = store.getItem(k);
-        if (v && /^https?:\/\//i.test(v)) store.removeItem(k);
-      } catch (_) {}
-    }
+        if (v && /https?:\/\//i.test(v)) store.removeItem(k);
+      }
+    } catch (_) {}
   }
 })();
-
-function apiPath(path) {
-  const p = String(path || "").trim();
-  if (/^https?:\/\//i.test(p)) {
-    try {
-      const u = new URL(p);
-      return u.pathname + (u.search || "");
-    } catch (_) {
-      return "/api/dashboard";
-    }
-  }
-  return p.startsWith("/") ? p : "/" + p;
-}
-
-async function apiGet(path) {
-  const url = apiPath(path);
-  const res = await fetch(url, { credentials: "same-origin", cache: "no-store" });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  return res.json();
-}
 function card(title,icon,body,cls=""){return `<div class="card ${cls}"><div class="ch"><span class="ch-icon">${icon}</span>${title}</div><div class="cb">${body}</div></div>`;}
 function section(num,title,subtitle,gridHtml,extraCls=""){
   return `<section class="dashboard-section ${extraCls}">
@@ -1070,36 +1050,61 @@ function renderDashboard(d, emb){
 
 async function loadDashboard(){
   const root = $("dashboard-root");
-  try{
-    let d;
-    try {
-      d = await apiGet("/api/dashboard");
-    } catch (e) {
-      root.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Could not load dashboard: ${esc(e.message||String(e))}<br><span style="font-size:12px;color:var(--muted)">Using same-origin <code>/api/dashboard</code> — check that the server is running on this host.</span></div>`;
-      $("refresh-badge").textContent = "⚠️ Error";
-      $("refresh-badge").className = "refresh-badge";
-      return;
+
+  let d = {};
+  try {
+    d = await apiGet("/api/dashboard");
+    if (!("available" in d)) {
+      throw new Error("Could not reach /api/dashboard (network or DNS error)");
     }
-    const ws = await apiGet("/api/workspace/session").catch(() => ({}));
-    const emb = await apiGet("/api/debug/embeddings").catch(e => ({ error: String(e.message || e) }));
-    if(d.available===false){
-      root.innerHTML=`<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}</div>`;
-      return;
+  } catch (e) {
+    root.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Could not load dashboard: ${esc(e.message||String(e))}<br><span style="font-size:12px;color:var(--muted)">Using same-origin <code>/api/dashboard</code> — check that the server is running on this host.</span></div>`;
+    $("refresh-badge").textContent = "⚠️ Error";
+    $("refresh-badge").className = "refresh-badge";
+    return;
+  }
+
+  if (d.available === false) {
+    root.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Dashboard unavailable: ${esc(d.error||"Runtime not started")}</div>`;
+    $("refresh-badge").textContent = "⚠️ Error";
+    $("refresh-badge").className = "refresh-badge";
+    return;
+  }
+
+  let ws = {};
+  try {
+    ws = await apiGet("/api/workspace/session");
+  } catch (e) {
+    console.error(e);
+  }
+
+  let emb = {};
+  try {
+    emb = await apiGet("/api/debug/embeddings");
+    if (!emb || Object.keys(emb).length === 0) {
+      emb = { error: "Diagnostics unavailable" };
     }
-    if (!Array.isArray(d.memory_influence) || !d.memory_influence.length) {
-      d.memory_influence = ws.memory_influence || d.memory_influence || [];
-    }
-    if (!Array.isArray(d.belief_influence) || !d.belief_influence.length) {
-      d.belief_influence = ws.belief_influence || d.belief_influence || [];
-    }
+  } catch (e) {
+    console.error(e);
+    emb = { error: String(e.message || e) };
+  }
+
+  if (!Array.isArray(d.memory_influence) || !d.memory_influence.length) {
+    d.memory_influence = ws.memory_influence || d.memory_influence || [];
+  }
+  if (!Array.isArray(d.belief_influence) || !d.belief_influence.length) {
+    d.belief_influence = ws.belief_influence || d.belief_influence || [];
+  }
+
+  try {
     renderDashboard(d, emb);
-    const b=$("refresh-badge");
-    b.innerHTML=`<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
-    b.className="refresh-badge live";
-  }catch(e){
-    root.innerHTML=`<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Dashboard error: ${esc(e.message||String(e))}</div>`;
-    $("refresh-badge").textContent="⚠️ Error";
-    $("refresh-badge").className="refresh-badge";
+    const b = $("refresh-badge");
+    b.innerHTML = `<span class="live-dot"></span>Updated ${new Date().toLocaleTimeString()}`;
+    b.className = "refresh-badge live";
+  } catch (e) {
+    root.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--red)">⚠️ Dashboard error: ${esc(e.message||String(e))}</div>`;
+    $("refresh-badge").textContent = "⚠️ Error";
+    $("refresh-badge").className = "refresh-badge";
   }
 }
 
