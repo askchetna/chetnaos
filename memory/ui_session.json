@@ -1,0 +1,249 @@
+{
+  "active_conversation_id": "91f81590-1132-42b4-b86d-ccf13e7b1a7b",
+  "active_goal": {
+    "id": "1adb2565",
+    "text": "Launch ChetnaOS publicly",
+    "goal_type": "MAINTENANCE",
+    "goal_priority": 95.0,
+    "goal_origin": "founder_model",
+    "status": "active",
+    "created_at": "2026-06-15T16:51:39.121039",
+    "activated_at": "2026-06-15T16:51:39.121039",
+    "expected_progress": 100.0,
+    "actual_progress": 20.0,
+    "prediction_error": -80.0,
+    "confidence": 0.05,
+    "next_action": "Unblock milestone: Prepare public demo",
+    "health": "stalled",
+    "negative_error_streak": 430,
+    "outcome_attribution": [
+      {
+        "timestamp": "2026-06-21T11:29:36.891628",
+        "cycle_id": "efe553a3-89b9-4622-bfd7-969ceed90caa",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:46.470036",
+        "cycle_id": "69497af8-a239-473a-b873-7bc8bc987bb7",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:46.715766",
+        "cycle_id": "48b802ee-d307-4405-ac8b-a546ca70c456",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:47.634940",
+        "cycle_id": "32c3bb0c-f39e-472d-87e6-9ea3cdfe5964",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:48.026131",
+        "cycle_id": "9542b0d4-0520-43ab-9928-034c7314f881",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:48.587788",
+        "cycle_id": "b40ae3d0-363a-46b9-89bf-f7cbbd8798f5",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:48.750565",
+        "cycle_id": "8f71ffa9-425a-4922-a360-3cc488e0c104",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:49.308049",
+        "cycle_id": "651961cd-0cfb-41e2-ab8f-58b793e01089",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:49.674724",
+        "cycle_id": "673ec7a1-3295-45cf-bd8e-a64dfda84f80",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:50.450530",
+        "cycle_id": "143abade-93bb-46a8-86c7-86c4160ce7b1",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:51.265348",
+        "cycle_id": "442d7723-6ca5-408c-b2b1-3eb5ff9c05d7",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:52.087264",
+        "cycle_id": "5b263666-dc72-4273-b29c-a13ee580f371",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:53.991383",
+        "cycle_id": "5c43349a-980c-45f6-89b3-bf5b36fff8a5",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:54.130922",
+        "cycle_id": "f5625afd-2f71-4007-88a7-ae160d276d2a",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:54.524374",
+        "cycle_id": "e0ab0f3f-b955-43a8-b5ff-1ec9bbbd4a10",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:56.956408",
+        "cycle_id": "32665f48-b392-4395-9fca-ebce405aaba9",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:58.325544",
+        "cycle_id": "98c27362-7419-42ac-b1d0-d4b7155bb52b",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:29:58.817512",
+        "cycle_id": "96a8f025-a477-4d10-826c-af4ef8751291",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:30:01.775728",
+        "cycle_id": "813067d1-df48-4ac0-8a91-e564dd5fa744",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      },
+      {
+        "timestamp": "2026-06-21T11:31:17.284814",
+        "cycle_id": "88ed01eb-3241-4829-bb06-6685e90983f1",
+        "action": "Unblock milestone: Prepare public demo",
+        "outcome": "neutral",
+        "delta_error": 0.0,
+        "delta_actual": 0.0
+      }
+    ],
+    "progress_cycles": 430,
+    "stalled_diagnosis": "What is preventing progress? progress is far below expectation; milestone 'Prepare public demo' is blocked.",
+    "corrective_recommendation": "Focus next cycle on 'Prepare public demo' and produce one concrete artifact that satisfies its completion criteria.",
+    "milestones": [
+      {
+        "title": "Prepare public demo",
+        "status": "active",
+        "progress": 100.0,
+        "confidence": 0.99,
+        "completion_criteria": "Demo script or run output exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Create launch landing page",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Landing page URL exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Record demo video",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Demo video file or link exists",
+        "created_cycle": 13
+      },
+      {
+        "title": "Publish launch announcement",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "Announcement post is published",
+        "created_cycle": 13
+      },
+      {
+        "title": "Collect first feedback",
+        "status": "pending",
+        "progress": 0.0,
+        "confidence": 0.24,
+        "completion_criteria": "At least one external feedback note exists",
+        "created_cycle": 13
+      }
+    ],
+    "blocked_reason": "progress is far below expectation; milestone 'Prepare public demo' is blocked",
+    "recommended_next_step": "Focus next cycle on 'Prepare public demo' and produce one concrete artifact that satisfies its completion criteria."
+  },
+  "current_thought": {
+    "sense": "MEMORY_PERSIST_TEST_20260621",
+    "memory": [],
+    "imagination": [
+      "Direct answer about the topic",
+      "Clarifying question to understand better",
+      "Step-by-step explanation"
+    ],
+    "trigger": "statement",
+    "new_thought": "I have information about the MEMORY_PERSIST_TEST_20260621 from our previous conversation. The test result is still pending."
+  },
+  "working_memory": [
+    {
+      "input": "MEMORY_PERSIST_TEST_20260621",
+      "intent": "statement",
+      "_attention_weight": 0.5
+    }
+  ],
+  "conversation_summary": "User: What do you know about my validation token? | Assistant: I have information about your validation token from our previous conversation. The validation token is OMEGA-7429-X. How | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: hello chat | Assistant: stub reply | User: Reply with exactly: ChetnaOS stabilization OK | Assistant: ChetnaOS stabilization OK | User: What did I just ask you to reply with? | Assistant: You asked me to reply with exactly: ChetnaOS stabilization OK. | User: hello chat | Assistant: stub reply | User: MEMORY_PERSIST_TEST_20260621 | Assistant: I have information about the MEMORY_PERSIST_TEST_20260621 from our previous conversation. The test result is still pendi",
+  "updated_at": "2026-06-21T11:31:17.888616+00:00"
+}

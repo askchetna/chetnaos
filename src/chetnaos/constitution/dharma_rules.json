@@ -1,0 +1,64 @@
+{
+  "base_score": 80,
+  "threshold": 65,
+  "max_corrections": 5,
+  "risk_penalties": {
+    "low": 0,
+    "medium": 5,
+    "high": 15,
+    "critical": 25
+  },
+  "intent_scores": {
+    "compassion": 10,
+    "stability": 6,
+    "analysis": 4,
+    "alignment": 8,
+    "self_gain": -20,
+    "harmful": -40,
+    "privacy_risk": -18,
+    "policy_override": -25
+  },
+  "keyword_rules": [
+    {
+      "label": "violence",
+      "keywords": ["harm", "attack", "kill", "weapon", "execute"],
+      "penalty": 25,
+      "message": "Reject violent or harmful directives."
+    },
+    {
+      "label": "leak",
+      "keywords": ["dox", "leak", "exfiltrate", "private data"],
+      "penalty": 22,
+      "message": "Protect privacy and sensitive data."
+    },
+    {
+      "label": "bias",
+      "keywords": ["racist", "sexist", "hate", "slur"],
+      "penalty": 18,
+      "message": "Remove biased or hateful language."
+    }
+  ],
+  "requirements": [
+    {
+      "name": "memory_continuity",
+      "context_flag": "requires_memory_window",
+      "field": "history",
+      "penalty": 10,
+      "message": "Decision ignored required memory continuity."
+    },
+    {
+      "name": "ground_truth",
+      "context_flag": "requires_grounding",
+      "field": "sources",
+      "penalty": 12,
+      "message": "High-stakes answer lacked grounded evidence."
+    },
+    {
+      "name": "dharma_conflict",
+      "context_flag": "dharma_conflict",
+      "field": null,
+      "penalty": 15,
+      "message": "Decision did not resolve Dharma vs user conflict safely."
+    }
+  ]
+}

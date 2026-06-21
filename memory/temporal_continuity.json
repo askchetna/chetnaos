@@ -1,0 +1,17 @@
+{
+  "yesterday_summary": "",
+  "today_summary": "general: workspace restore probe \u00b7 general: MEMORY_PERSIST_TEST_20260621",
+  "tomorrow_intentions": [
+    "Answer about general: MEMORY_PERSIST_TEST_20260621",
+    "Answer about general: workspace restore probe",
+    "Answer about general: tell me about yourself",
+    "Answer about general: persistence probe 42",
+    "Answer about general: validation contradiction ping"
+  ],
+  "recent_changes": [
+    "2026-06-21 \u2014 fair response in general",
+    "2026-06-21 \u2014 good response in general"
+  ],
+  "last_session_at": "2026-06-21T11:31:17.501253",
+  "days_active": 0
+}

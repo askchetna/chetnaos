@@ -1,7 +1,7 @@
 """
 Reflection — Evaluates how well the cycle performed.
 """
-from reflection.reflection_v2 import evaluate_decision
+from src.chetnaos.constitution.dharma_engine import evaluate_decision
 
 
 class Reflection:

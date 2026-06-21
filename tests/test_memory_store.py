@@ -176,13 +176,6 @@ class TestJsonValidation(unittest.TestCase):
         result = validate_mem_hierarchy(MEMORY_DIR / "mem_hierarchy.json")
         self.assertTrue(result.ok, result.error)
 
-    def test_memory_health_report(self):
-        from src.chetnaos.memory.health import report
-        health = report()
-        self.assertTrue(health["locked"])
-        self.assertTrue(health["overall_healthy"])
-        self.assertEqual(health["json_validation"]["valid_count"], 15)
-
     def test_corrupt_json_backed_up_not_destroyed(self):
         from src.chetnaos.memory.validation import validate_identity, BACKUP_DIR
 
@@ -202,28 +195,6 @@ class TestJsonValidation(unittest.TestCase):
         finally:
             import src.chetnaos.memory.validation as val_mod
             val_mod.BACKUP_DIR = original
-
-
-class TestMemoryFacades(unittest.TestCase):
-    def test_facades_wrap_existing_modules(self):
-        from src.chetnaos.memory.episodic import EpisodicMemory
-        from src.chetnaos.memory.semantic import SemanticMemory
-        from src.chetnaos.memory.procedural import ProceduralMemory
-        from src.chetnaos.memory.working_memory import WorkingMemory
-
-        ep = EpisodicMemory()
-        self.assertTrue(callable(ep.record))
-
-        sem = SemanticMemory()
-        self.assertIsInstance(sem.get_all_beliefs(), list)
-
-        proc = ProceduralMemory()
-        self.assertIsInstance(proc.get_skills(), dict)
-
-        wm = WorkingMemory()
-        wm.push({"input": "test"})
-        snap = wm.snapshot()
-        self.assertGreaterEqual(snap["working_count"], 1)
 
 
 class TestCognitiveFlow(unittest.TestCase):

@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 class TestMemoryItem(unittest.TestCase):
     def test_normalize_memory_item_fields(self):
-        from src.chetnaos.memory_kernel.memory_item import normalize_memory_item
+        from src.chetnaos.memory.memory_item import normalize_memory_item
 
         item = normalize_memory_item(
             "test fact",

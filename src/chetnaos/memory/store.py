@@ -13,7 +13,7 @@ import sqlite3
 from typing import Any, Dict, List, Optional
 
 from src.chetnaos.memory.identity_guard import filter_memory_results
-from src.chetnaos.memory_kernel.memory_item import enrich_search_result, normalize_memory_item
+from src.chetnaos.memory.memory_item import enrich_search_result, normalize_memory_item
 
 logger = logging.getLogger(__name__)
 

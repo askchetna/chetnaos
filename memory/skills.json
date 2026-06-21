@@ -1,0 +1,50 @@
+{
+  "Architecture": {
+    "score": 0.91,
+    "interactions": 0,
+    "category": "core",
+    "last_practiced": null
+  },
+  "Research": {
+    "score": 0.83,
+    "interactions": 0,
+    "category": "core",
+    "last_practiced": null
+  },
+  "Philosophy": {
+    "score": 0.75,
+    "interactions": 0,
+    "category": "core",
+    "last_practiced": null
+  },
+  "Coding": {
+    "score": 0.72,
+    "interactions": 0,
+    "category": "technical",
+    "last_practiced": null
+  },
+  "Communication": {
+    "score": 0.696,
+    "interactions": 2,
+    "category": "social",
+    "last_practiced": "2026-06-21T11:31:17.310047"
+  },
+  "Business": {
+    "score": 0.61,
+    "interactions": 0,
+    "category": "applied",
+    "last_practiced": null
+  },
+  "Agriculture": {
+    "score": 0.62,
+    "interactions": 0,
+    "category": "applied",
+    "last_practiced": null
+  },
+  "Sales": {
+    "score": 0.382,
+    "interactions": 0,
+    "category": "applied",
+    "last_practiced": null
+  }
+}

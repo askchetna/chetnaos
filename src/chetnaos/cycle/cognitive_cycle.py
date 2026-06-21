@@ -64,7 +64,6 @@ from src.chetnaos.reasoning.context_builder import ContextBuilder
 from src.chetnaos.cycle.cycle_trace import CycleTrace
 from src.chetnaos.reasoning.honesty_guard import apply_telemetry_narration_guard
 from src.chetnaos.reasoning.response_composer import ResponseComposer
-from src.chetnaos.discourse.answer_composer import DiscourseLayer
 
 
 class CognitiveCycle:
@@ -713,10 +712,7 @@ class CognitiveCycle:
             final_output,
             {"cycle_id": cycle_trace.cycle_id, "cycle": cycle_n},
         )
-        discourse_reply = DiscourseLayer.transform(
-            user_input, final_output, conversation_context=conversation_context,
-        )
-        composed_reply = ResponseComposer.compose(discourse_reply)
+        composed_reply = ResponseComposer.compose(final_output)
 
         return {
             "reply":            composed_reply,

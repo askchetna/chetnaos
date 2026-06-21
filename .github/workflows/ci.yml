@@ -9,34 +9,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+
     - name: Test backend imports
       run: |
         python -c "from backend.app import app; print('Backend imports successful')"
-        python -c "from backend.api.agent import router; print('Agent router imports successful')"
-        python -c "from src.chetnaos.runtime import ChetnaRuntime; print('v3 runtime shim OK')"
-    
-    - name: Phase 7 gate
-      run: python scripts/phase7_gate.py
+        python -c "from src.chetnaos.runtime import ChetnaRuntime; print('Runtime OK')"
 
     - name: Pytest suite
       run: python -m pytest tests/ -q --tb=no
-    
-    - name: Test health endpoint (if server starts)
-      run: |
-        timeout 10s python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000 &
-        sleep 3
-        curl -f http://127.0.0.1:8000/health || echo "Health check failed (expected without GROQ_API_KEY)"

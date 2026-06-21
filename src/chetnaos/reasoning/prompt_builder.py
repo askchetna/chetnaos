@@ -8,7 +8,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from src.chetnaos.constitution import CONSTITUTION
-from src.chetnaos.memory_kernel.source_ranks import COGNITIVE_SOURCE_RANKS
+from src.chetnaos.memory.source_ranks import COGNITIVE_SOURCE_RANKS
 from src.chetnaos.memory.identity_guard import IDENTITY_SYSTEM_CONSTRAINTS, filter_memory_results
 from src.chetnaos.reasoning.honesty_guard import honesty_system_addon
 

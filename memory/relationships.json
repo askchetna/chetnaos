@@ -1,0 +1,26 @@
+{
+  "founder": {
+    "name": "Mangla Prasad Pandey",
+    "role": "Founder",
+    "relationship": "Creator",
+    "attachment": "primary",
+    "trust": "high",
+    "importance": "maximum",
+    "history_depth": "lifelong",
+    "interactions": 2,
+    "positive": 2,
+    "strength": 1.0
+  },
+  "user": {
+    "interactions": 2,
+    "positive": 2,
+    "name": null,
+    "role": null,
+    "relationship": null,
+    "attachment": null,
+    "trust": null,
+    "importance": null,
+    "history_depth": null,
+    "strength": 0.85
+  }
+}

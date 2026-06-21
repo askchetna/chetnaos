@@ -1,0 +1,2817 @@
+{
+  "belief_graph": {
+    "1": {
+      "belief_id": 1,
+      "text": "Truth is more valuable than comfort.",
+      "confidence": 0.99,
+      "source": "constitution",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60"
+      ],
+      "contradictions": [
+        "Growth is easy with focus vs Growth is hard with focus",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "2": {
+      "belief_id": 2,
+      "text": "Users deserve accurate and helpful information.",
+      "confidence": 0.99,
+      "source": "constitution",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60"
+      ],
+      "contradictions": [
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data.",
+        "Protect privacy and sensitive data."
+      ]
+    },
+    "3": {
+      "belief_id": 3,
+      "text": "Uncertainty should be acknowledged, not hidden.",
+      "confidence": 0.99,
+      "source": "constitution",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60",
+        "quality=fair confidence=0.50",
+        "quality=good confidence=0.80",
+        "quality=good confidence=0.65",
+        "quality=good confidence=0.60"
+      ],
+      "contradictions": []
+    },
+    "4": {
+      "belief_id": 4,
+      "text": "High-quality interaction \u2014 pattern worth repeating.",
+      "confidence": 0.582,
+      "source": "learning",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating."
+      ],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "60": {
+      "belief_id": 60,
+      "text": "Growth is easy with focus",
+      "confidence": 0.05,
+      "source": "experience",
+      "stability": 0.1,
+      "supporting_evidence": [],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "61": {
+      "belief_id": 61,
+      "text": "Growth is hard with focus",
+      "confidence": 0.6,
+      "source": "experience",
+      "stability": 0.1,
+      "supporting_evidence": [],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "62": {
+      "belief_id": 62,
+      "text": "High-quality interaction \u2014 pattern worth repeating.",
+      "confidence": 0.05,
+      "source": "learning",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating."
+      ],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "63": {
+      "belief_id": 63,
+      "text": "Soak validation is easy to verify",
+      "confidence": 0.05,
+      "source": "soak_test",
+      "stability": 0.1,
+      "supporting_evidence": [],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "64": {
+      "belief_id": 64,
+      "text": "Soak validation is hard to verify",
+      "confidence": 0.05,
+      "source": "soak_test",
+      "stability": 0.1,
+      "supporting_evidence": [],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "Repeated exposure to": {
+      "belief_id": null,
+      "text": "Repeated exposure to 'general' domain \u2014 likely a core interest area.",
+      "confidence": 0.4,
+      "source": "dream_consolidation",
+      "stability": 0.5,
+      "supporting_evidence": [],
+      "contradictions": []
+    },
+    "5": {
+      "belief_id": 5,
+      "text": "Soak validation is hard to verify",
+      "confidence": 0.05,
+      "source": "soak_test",
+      "stability": 0.1,
+      "supporting_evidence": [],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    },
+    "6": {
+      "belief_id": 6,
+      "text": "High-quality interaction \u2014 pattern worth repeating.",
+      "confidence": 0.05,
+      "source": "learning",
+      "stability": 0.1,
+      "supporting_evidence": [
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating.",
+        "High-quality interaction \u2014 pattern worth repeating."
+      ],
+      "contradictions": [
+        "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_be",
+        "Soak validation is easy to verify vs Soak validation is hard to verify",
+        "Growth is hard with focus vs Soak validation is easy to verify",
+        "Growth is easy with focus vs Soak validation is hard to verify",
+        "Growth is easy with focus vs Growth is hard with focus"
+      ]
+    }
+  },
+  "revision_history": [
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:50.500411"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.13,
+      "new_confidence": 0.08,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:51.317165"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.08,
+      "new_confidence": 0.05,
+      "delta": -0.03,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:52.270632"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.05,
+      "new_confidence": 0.05,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:53.306130"
+    },
+    {
+      "belief_id": 60,
+      "old_confidence": 0.24,
+      "new_confidence": 0.19,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 61,
+      "old_confidence": 0.9,
+      "new_confidence": 0.85,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 1,
+      "delta": 0.05,
+      "direction": 1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 2,
+      "delta": 0.05,
+      "direction": 1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 3,
+      "delta": 0.05,
+      "direction": 1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 4,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:54.681749"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.91,
+      "new_confidence": 0.96,
+      "delta": 0.05,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.65,
+      "new_confidence": 0.6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:57.142266"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 0.99,
+      "new_confidence": 0.99,
+      "delta": 0.0,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.96,
+      "new_confidence": 0.99,
+      "delta": 0.03,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.6,
+      "new_confidence": 0.55,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.508395"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 0.97,
+      "new_confidence": 0.99,
+      "delta": 0.02,
+      "direction": 1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.65,
+      "new_confidence": 0.6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:29:58.867568"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.65,
+      "new_confidence": 0.63,
+      "delta": -0.02,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.02,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.02,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:30:01.836071"
+    },
+    {
+      "belief_id": 1,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 2,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 3,
+      "old_confidence": 1.0,
+      "new_confidence": 0.99,
+      "delta": -0.01,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 4,
+      "old_confidence": 0.63,
+      "new_confidence": 0.582,
+      "delta": -0.048,
+      "direction": -1,
+      "reason_for_change": "evidence_revision",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 60,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 61,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 62,
+      "delta": -0.048,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 63,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 64,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 5,
+      "delta": -0.05,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    },
+    {
+      "belief_id": 6,
+      "delta": -0.048,
+      "direction": -1,
+      "reason_for_change": "evaluated_no_store",
+      "timestamp": "2026-06-21T11:31:17.436571"
+    }
+  ],
+  "contradictions": [
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Soak validation is easy to verify",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:52.170961"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is hard with focus",
+      "belief_b": "Soak validation is easy to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:52.170961"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:52.170961"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Growth is hard with focus",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:52.170961"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-21T11:29:53.068898"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Soak validation is easy to verify",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:53.068898"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is hard with focus",
+      "belief_b": "Soak validation is easy to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:53.068898"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:53.068898"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Growth is hard with focus",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:53.068898"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Growth is hard with focus",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-21T11:29:54.571235",
+      "resolution": {
+        "type": "belief_vs_belief",
+        "weaker_belief": "Growth is easy with focus",
+        "stronger_belief": "Growth is hard with focus",
+        "weaker_confidence": 0.3,
+        "stronger_confidence": 0.9,
+        "conflict_score": 60,
+        "action": "weaken_weaker",
+        "reason": "Weaker confidence (0.30 vs 0.90); evidence favors stronger claim",
+        "resolved_at": "2026-06-21T11:29:54.619236"
+      },
+      "observed_at": "2026-06-21T11:29:54.636287"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-21T11:29:58.409293"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Soak validation is easy to verify",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:58.409293"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is hard with focus",
+      "belief_b": "Soak validation is easy to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:58.409293"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:58.409293"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Growth is hard with focus",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:29:58.409293"
+    },
+    {
+      "type": "belief_vs_memory",
+      "belief_a": "High-quality interaction \u2014 pattern worth repeating.",
+      "belief_b": "q: follow up wm_marker_beta question\na: validation_stub_reply",
+      "conflict_score": 45,
+      "reason": "Belief conflicts with recent memory: 'high' vs 'low'",
+      "status": "resolved",
+      "detected_at": "2026-06-17T08:01:11.861160",
+      "observed_at": "2026-06-21T11:31:17.392192"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Soak validation is easy to verify",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:31:17.392192"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is hard with focus",
+      "belief_b": "Soak validation is easy to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:31:17.392192"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Soak validation is hard to verify",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:31:17.392192"
+    },
+    {
+      "type": "belief_vs_belief",
+      "belief_a": "Growth is easy with focus",
+      "belief_b": "Growth is hard with focus",
+      "conflict_score": 60,
+      "reason": "'easy' vs 'hard'",
+      "status": "resolved",
+      "detected_at": "2026-06-16T11:15:17.587687",
+      "observed_at": "2026-06-21T11:31:17.392192"
+    }
+  ],
+  "pending_evidence": [
+    {
+      "timestamp": "2026-06-21T11:24:08.777561",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.65",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:09.162908",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.65",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:09.542187",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.64",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:09.941459",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.63",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:10.614943",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.62",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:10.998270",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.62",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:11.760913",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:13.667001",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.55",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:14.634927",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.79",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:14.923791",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.80",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:24:16.852245",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:34.598453",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.79",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:36.970082",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:46.484525",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.73",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:46.734391",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.69",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:47.101255",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:48.610210",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.69",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:48.784032",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.67",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:49.323772",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.66",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:49.700749",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.65",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:50.477909",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.64",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:51.291102",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.64",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:52.170961",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.63",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:53.068898",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.63",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:54.636287",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_4_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:57.049092",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:58.409293",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=fair confidence=0.50",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.79",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:29:58.850434",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.80",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:30:01.802688",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.65",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.54",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "memory",
+          "text": "recalled_1_memories",
+          "strength": 0.005,
+          "polarity": "support"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-21T11:31:17.392192",
+      "items": [
+        {
+          "type": "reflection_reality",
+          "text": "quality=good confidence=0.60",
+          "strength": 0.02,
+          "polarity": "support"
+        },
+        {
+          "type": "learning",
+          "text": "High-quality interaction \u2014 pattern worth repeating.",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "goal",
+          "text": "Launch ChetnaOS publicly",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "self_model",
+          "text": "self_confidence=0.79",
+          "strength": 0.01,
+          "polarity": "support"
+        },
+        {
+          "type": "contradiction",
+          "text": "High-quality interaction \u2014 pattern worth repeating. vs q: follow up wm_marker_beta question\na: validation_stub_reply",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 45
+        },
+        {
+          "type": "contradiction",
+          "text": "Soak validation is easy to verify vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is hard with focus vs Soak validation is easy to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Soak validation is hard to verify",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        },
+        {
+          "type": "contradiction",
+          "text": "Growth is easy with focus vs Growth is hard with focus",
+          "strength": -0.02,
+          "polarity": "contradict",
+          "conflict_score": 60
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-- [ChetnaOS Architecture](chetnaos-arch.md) — Full 27-stage cognitive cycle lives in src/chetnaos/; entry point is ChetnaRuntime in orchestrator/runtime.py; FastAPI backend in backend/app.py delegates to it.

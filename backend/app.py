@@ -10,7 +10,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from .config import get_settings
-from .plugins import setup_kalpavriksha_routes
 from .api import register_routes
 from .middleware import RequestLoggingMiddleware, optional_auth_middleware
 
@@ -61,7 +60,6 @@ async def on_startup():
 
 
 register_routes(app)
-setup_kalpavriksha_routes(app)
 
 
 @app.get("/")
