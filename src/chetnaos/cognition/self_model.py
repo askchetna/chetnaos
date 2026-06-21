@@ -11,8 +11,8 @@ from typing import Any, Dict, List, Optional
 from src.chetnaos.memory.json_loader import load_self_model, memory_path, save_json
 
 _PERSIST_DEFAULT = {
-    "who_am_i": "Chetna — a developmental cognitive organism learning with the founder.",
-    "becoming": "A reflective partner in building AGI.",
+    "who_am_i": "I am Chetna, a cognitive AI system with memory, goals, and reasoning.",
+    "becoming": "A reflective partner serving with truth and compassion.",
     "matters_most": ["truth", "growth", "founder alignment"],
     "current_focus": "",
     "recent_changes": [],
@@ -36,7 +36,9 @@ class SelfModel:
     self._persisted = self._load_persisted()
 
   def _load_persisted(self) -> dict:
-    return load_self_model(dict(_PERSIST_DEFAULT))
+    from src.chetnaos.memory.identity_guard import scrub_self_model_record
+
+    return scrub_self_model_record(load_self_model(dict(_PERSIST_DEFAULT)))
 
   def _save_persisted(self) -> None:
     data = {

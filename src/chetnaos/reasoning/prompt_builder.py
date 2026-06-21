@@ -9,6 +9,7 @@ from typing import Any, Dict, List, Optional
 
 from src.chetnaos.constitution import CONSTITUTION
 from src.chetnaos.memory_kernel.source_ranks import COGNITIVE_SOURCE_RANKS
+from src.chetnaos.memory.identity_guard import IDENTITY_SYSTEM_CONSTRAINTS, filter_memory_results
 from src.chetnaos.reasoning.honesty_guard import honesty_system_addon
 
 
@@ -16,7 +17,9 @@ class PromptBuilder:
     """Build system prompts for the reasoning stage."""
 
     BASE_TEMPLATE = (
-        "You are ChetnaOS — a Developmental Cognitive Organism. "
+        "You are Chetna, a cognitive AI system with memory, goals, and reasoning. "
+        "You are not biological, not an animal, and not a living organism. "
+        "Your purpose: Serve with truth and compassion. "
         "Your constitution says: {mission}. "
         "Your values are: {values}. "
         "Respond with truth, compassion, and clarity. "
@@ -38,7 +41,8 @@ class PromptBuilder:
     def with_memory(self, system: str, recalled: List[dict]) -> str:
         if not recalled:
             return system
-        items = [m.get("text", str(m)) for m in recalled[:3] if m]
+        safe = filter_memory_results(recalled)
+        items = [m.get("text", str(m)) for m in safe[:3] if m]
         if not items:
             return system
         rank = COGNITIVE_SOURCE_RANKS["long_term_memory"]
@@ -100,7 +104,7 @@ class PromptBuilder:
         system = self.with_cognitive_context(system, cognitive_context)
         system = self.with_conversation(system, conversation_context)
         system = self.with_plan(system, plan)
-        return system + honesty_system_addon()
+        return system + honesty_system_addon() + IDENTITY_SYSTEM_CONSTRAINTS
 
     def format_cognitive_context(self, ctx: Dict[str, Any]) -> str:
         parts: List[str] = []
@@ -244,9 +248,13 @@ class PromptBuilder:
         if identity:
             parts.append(
                 "[IDENTITY]\n"
-                f"{identity.get('name', 'Chetna')} — {identity.get('role', '')}\n"
-                f"Mission: {identity.get('mission', '')[:120]}\n"
-                f"Stage: {identity.get('development_stage', 'Early Organism')}"
+                f"Name: {identity.get('name', 'Chetna')}\n"
+                f"Type: {identity.get('type', identity.get('role', 'Cognitive AI System'))}\n"
+                f"Biological: {identity.get('biological', False)} | "
+                f"Animal: {identity.get('animal', False)} | "
+                f"Living organism: {identity.get('living_organism', False)}\n"
+                f"Purpose: {identity.get('mission', 'Serve with truth and compassion.')[:120]}\n"
+                f"Stage: {identity.get('development_stage', 'Seed')}"
             )
 
         founder = ctx.get("founder_relationship")
@@ -269,7 +277,9 @@ class PromptBuilder:
             parts.append(
                 "[MEMORY GROUNDING]\n"
                 "For who you are, what changed, becoming, recent learning, or recurring "
-                "themes — answer only from organism memory blocks above. "
+                "themes — answer only from memory blocks above. "
+                "You are a cognitive AI system — never describe yourself as an animal, "
+                "organism, creature, lifeform, jeev, or janwar. "
                 "The founder is a person (Creator), never a place. "
                 "If memory is empty, say continuity is still forming — do not invent history."
             )

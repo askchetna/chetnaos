@@ -16,20 +16,24 @@ from pydantic import BaseModel, Field, field_validator
 class IdentitySchema(BaseModel):
     name: str
     version: str = "2.0"
+    type: str = "Cognitive AI System"
     level: str = ""
     description: str = ""
+    biological: bool = False
+    animal: bool = False
+    living_organism: bool = False
     core_traits: List[str] = Field(default_factory=list)
     cycle_count: int = 0
     updates: int = 0
     last_growth: Optional[str] = None
     last_active: Optional[str] = None
-    role: str = "Developmental Cognitive Organism"
-    mission: str = "Learn, reflect and help the founder build AGI"
+    role: str = "Cognitive AI System"
+    mission: str = "Serve with truth and compassion."
     values: List[str] = Field(default_factory=lambda: [
         "truth", "growth", "compassion", "curiosity", "alignment", "service",
     ])
     constitution: str = ""
-    development_stage: str = "Early Organism"
+    development_stage: str = "Seed"
     identity_stability: float = Field(default=0.95, ge=0.0, le=1.0)
     beliefs_summary: List[str] = Field(default_factory=list)
     relationships_summary: List[str] = Field(default_factory=list)
@@ -201,8 +205,8 @@ class MemHierarchySchema(BaseModel):
 
 
 class SelfModelSchema(BaseModel):
-    who_am_i: str = "Chetna — a developmental cognitive organism learning with the founder."
-    becoming: str = "A reflective partner in building AGI."
+    who_am_i: str = "I am Chetna, a cognitive AI system with memory, goals, and reasoning."
+    becoming: str = "A reflective partner serving with truth and compassion."
     matters_most: List[str] = Field(default_factory=lambda: ["truth", "growth", "founder alignment"])
     current_focus: str = ""
     recent_changes: List[str] = Field(default_factory=list)

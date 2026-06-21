@@ -13,7 +13,11 @@ def test_identity_defaults_include_chetna():
     assert Identity.DEFAULT["name"] == "Chetna"
     identity = Identity()
     data = identity.get()
-    assert data["role"] == "Developmental Cognitive Organism"
+    assert data["role"] == "Cognitive AI System"
+    assert data["type"] == "Cognitive AI System"
+    assert data["biological"] is False
+    assert data["animal"] is False
+    assert data["living_organism"] is False
     assert "identity_stability" in data
     assert data["identity_stability"] >= 0.7
 

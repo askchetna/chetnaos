@@ -1,8 +1,10 @@
-"""Benchmark guard — block unsupported self-claims unless evidence exists."""
+"""Benchmark and identity guard — block unsupported or contaminated self-claims."""
 from __future__ import annotations
 
 import re
 from typing import Any
+
+from src.chetnaos.memory.identity_guard import apply_identity_guard
 
 _FORBIDDEN = [
     (re.compile(r"\bi am conscious\b", re.I), "Designed to model reflective processing; I do not claim consciousness."),
@@ -17,6 +19,8 @@ _FORBIDDEN = [
 _HONESTY_SYSTEM_BLOCK = (
     "\n\n[HONESTY GUARD]\n"
     "Never claim consciousness, superiority over GPT/SOTA, or unsupported self-awareness. "
+    "Never describe yourself as an animal, organism, creature, lifeform, biological being, "
+    "living intelligence, jeev, or janwar. "
     "Use phrasing like 'Designed to…', 'Intended to…', 'Current evidence suggests…' "
     "unless verified benchmark evidence is provided in context.\n"
     "Never state cycle IDs, timestamps, cycle durations, or activated organ counts in your reply. "
@@ -59,6 +63,8 @@ def apply_honesty_guard(text: str, *, benchmark_evidence: bool = False) -> tuple
         if pattern.search(out):
             out = pattern.sub(replacement, out)
             changes.append(replacement[:80])
+    out, id_changes = apply_identity_guard(out)
+    changes.extend(id_changes)
     return out, changes
 
 

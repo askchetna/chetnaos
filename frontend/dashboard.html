@@ -305,7 +305,7 @@
       <div class="tb-icon">🧠</div>
       <div>
         <div class="tb-name">ChetnaOS Founder Dashboard</div>
-        <div class="tb-sub">Developmental cognitive organism — MRI view · auto-refresh 5s</div>
+        <div class="tb-sub">Cognitive AI System — MRI view · auto-refresh 5s</div>
       </div>
     </div>
     <nav class="global-nav" aria-label="Primary">
@@ -516,7 +516,7 @@ function buildIdentity(d){
   const stab=id.stability||80, drift=id.drift||20;
   return card("Identity","👤",`
     <div class="identity-name">${esc(id.name||"ChetnaOS")}</div>
-    <div class="identity-level">${esc(id.level||"Level 6")} — ${esc(id.description||"Computational Developmental Organism")}</div>
+    <div class="identity-level">${esc(id.level||"Level 6")} — ${esc(id.description||"Cognitive AI System")}</div>
     <div class="tags">${traits}</div>
     <div class="tags">${roles}</div>
     <div class="stab-row">
@@ -989,7 +989,7 @@ function renderDashboard(d, emb){
   const researchKw=["agi","research","publish","architecture","cognitive","milestone","paper"];
 
   $("dashboard-root").innerHTML = [
-    section("1","Current Mind","What the organism is actively processing.",
+    section("1","Current Mind","What Chetna is actively processing.",
       buildCurrentMind(d)+
       `<div style="grid-column:1/-1;display:flex;flex-direction:column;gap:12px">`+
       collapseBlock("Thought Birth Pipeline","✨",buildThoughtBirth(d))+

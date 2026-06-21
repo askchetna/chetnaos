@@ -26,12 +26,12 @@ class TestMemoryStore(unittest.TestCase):
         db_path = os.path.join(tmp, "store_test.db")
         try:
             store = MemoryStore(db=MemoryDB(db_path=db_path))
-            row_id = store.upsert("hello organism", meta={"category": "test"})
+            row_id = store.upsert("hello memory kernel test", meta={"category": "test"})
             self.assertGreater(row_id, 0)
 
             recent = store.recent(5)
             self.assertEqual(len(recent), 1)
-            self.assertEqual(recent[0]["text"], "hello organism")
+            self.assertEqual(recent[0]["text"], "hello memory kernel test")
             self.assertIn("created_at", recent[0])
 
             stats = store.statistics()
@@ -39,7 +39,7 @@ class TestMemoryStore(unittest.TestCase):
             self.assertEqual(stats["with_embedding"], 0)
 
             # search uses sparse fallback when embeddings disabled
-            hits = store.search("hello organism")
+            hits = store.search("hello memory")
             self.assertGreaterEqual(len(hits), 1)
             self.assertIn("hello", hits[0]["text"].lower())
 

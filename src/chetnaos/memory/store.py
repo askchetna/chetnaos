@@ -12,6 +12,7 @@ import logging
 import sqlite3
 from typing import Any, Dict, List, Optional
 
+from src.chetnaos.memory.identity_guard import filter_memory_results
 from src.chetnaos.memory_kernel.memory_item import enrich_search_result, normalize_memory_item
 
 logger = logging.getLogger(__name__)
@@ -63,7 +64,7 @@ class MemoryStore:
             else:
                 rows = self._db.search(query, k=k) or []
                 self._last_trace = {"query": query, "memories_selected": rows}
-            return [enrich_search_result(r) for r in rows]
+            return filter_memory_results([enrich_search_result(r) for r in rows])
         except Exception as exc:
             logger.error("MemoryStore.search failed: %s", exc)
             raise
@@ -72,7 +73,7 @@ class MemoryStore:
         """Return entries ordered by created_at timestamp (newest first)."""
         try:
             rows = self._db.recent(n) or []
-            return [enrich_search_result(r) for r in rows]
+            return filter_memory_results([enrich_search_result(r) for r in rows])
         except Exception as exc:
             logger.error("MemoryStore.recent failed: %s", exc)
             raise

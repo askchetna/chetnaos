@@ -783,7 +783,7 @@ class CognitiveCycle:
                 "stability":           stability,
                 "drift":               round(100 - stability, 1),
                 "core_values_preserved": True,
-                "roles": ["Founder Partner", "Research Organism",
+                "roles": ["Founder Partner", "Research Partner",
                           "AI Consultant", "Learning System"],
             },
             "skills": {
