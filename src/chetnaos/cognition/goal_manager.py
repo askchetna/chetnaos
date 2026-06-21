@@ -192,7 +192,7 @@ class GoalManager:
     ) -> Dict[str, Any]:
         goal = self._make_goal(text, goal_type, priority, origin)
         self._goal_queue.append(goal)
-        self._goal_queue.sort(key=lambda g: g["goal_priority"], reverse=True)
+        self._goal_queue.sort(key=lambda g: g.get("goal_priority", 50.0), reverse=True)
         self._save()
         logger.debug("GoalManager added goal %s type=%s", goal["id"], goal["goal_type"])
         return dict(goal)
@@ -269,7 +269,7 @@ class GoalManager:
             "failed": len(self._failed_goals),
             "by_type": by_type,
             "avg_queue_priority": round(
-                sum(g["goal_priority"] for g in self._goal_queue) / max(len(self._goal_queue), 1),
+                sum(g.get("goal_priority", 50.0) for g in self._goal_queue) / max(len(self._goal_queue), 1),
                 2,
             ) if self._goal_queue else 0.0,
         }
